@@ -11,9 +11,19 @@ entire publishing workflow for the sections below.
 |---|---|---|
 | Feature Story (hero) | `data/feature-story.json` | One object: kicker, headline, teaser, scene, link. |
 | Happening This Weekend | `data/weekend.json` | Six entries: Friday, Saturday, Sunday, Next Weekend, Later This Month, Holiday Weekend. |
-| New on Instagram | `data/instagram.json` | Paste a real post/reel permalink into `permalink` once you have one — the embed goes live automatically. Leave it blank to show the fallback card. |
+| New on Instagram | `data/instagram.json` | Paste a real post/reel permalink into `permalink` once you have one — the embed goes live automatically. Leave it blank to show a fallback card that links to your Instagram profile instead. |
+| Coastal Moments (video) | `data/coastal-moments.json` | Paste a Vimeo/YouTube link or a direct `.mp4/.webm/.mov` URL into `embedUrl` to show a real video. Leave it blank to show a fallback card that links to your Instagram profile instead. |
 | Hidden Gem of the Week | `data/hidden-gems.json` | An array — add a new object at the top with `"current": true` and set the previous one to `false`. It becomes an archive automatically. |
 | Community | `data/community.json` | See below — this is the one followers feed into. |
+
+### Getting an Instagram permalink
+
+Open the post or reel in the Instagram app or on instagram.com, tap the ···
+menu, and choose Copy Link. That's the `permalink` value — paste it in
+exactly as copied, no editing needed. There's no automatic "always show the
+newest post" mode (Instagram's embed system requires a specific post's URL),
+so this is a quick manual step each time you want to feature something new —
+same 30-second update as everything else on this list.
 
 To edit any of these on GitHub: open the file, click the pencil (edit) icon,
 make the change, and commit to `main`. The live site updates within a minute

@@ -96,7 +96,8 @@
        s.async = true; s.src = 'https://www.instagram.com/embed.js';
        document.body.appendChild(s);
      } else {
-       igMount.innerHTML = `<div class="scene">${sceneImg(d.scene,'Latest on Instagram')}</div><div class="feature-inner" style="position:relative;z-index:2;padding:22px;color:#fff"><p style="margin:0">${esc(d.caption)}</p></div>`;
+       const igHref = withUtm(c.instagramUrl, 'instagram');
+       igMount.innerHTML = `<a href="${esc(igHref)}" target="_blank" rel="noopener noreferrer" style="display:block;position:relative;height:100%;color:inherit"><div class="scene">${sceneImg(d.scene,'Latest on Instagram')}</div><div class="feature-inner" style="position:relative;z-index:2;padding:22px;color:#fff"><p style="margin:0">${esc(d.caption)}</p><p style="margin:8px 0 0;font-weight:700;font-size:.85rem">View @delawarebeachfinds &rarr;</p></div></a>`;
      }
    }).catch(()=>{});
  }
@@ -151,7 +152,8 @@
          : `<div class="video-frame"><iframe src="${esc(d.embedUrl)}" title="Coastal Moments video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
        videoMount.innerHTML = `${player}<p class="video-caption">${esc(d.caption)}</p>`;
      } else {
-       videoMount.innerHTML = `<div class="video-frame"><div class="scene">${sceneImg(d.scene,'Coastal Moments')}</div></div><p class="video-caption">${esc(d.caption)}</p>`;
+       const igHref = withUtm(c.instagramUrl, 'coastal_moments');
+       videoMount.innerHTML = `<a class="video-frame" href="${esc(igHref)}" target="_blank" rel="noopener noreferrer" style="display:block"><div class="scene">${sceneImg(d.scene,'Coastal Moments')}</div></a><p class="video-caption">${esc(d.caption)}</p>`;
      }
    }).catch(()=>{});
  }
