@@ -140,7 +140,23 @@
    }).catch(()=>{});
  }
 
- // Latest stories
+// Coastal Moments (video showcase)
+ const videoMount = document.querySelector('[data-mount="coastal-moments"]');
+ if(videoMount){
+   fetchJson('coastal-moments.json').then(d=>{
+     if(d.embedUrl){
+       const isVideoFile = /\.(mp4|webm|mov)$/i.test(d.embedUrl);
+       const player = isVideoFile
+         ? `<video class="video-frame" controls playsinline preload="metadata" src="${esc(d.embedUrl)}"></video>`
+         : `<div class="video-frame"><iframe src="${esc(d.embedUrl)}" title="Coastal Moments video" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>`;
+       videoMount.innerHTML = `${player}<p class="video-caption">${esc(d.caption)}</p>`;
+     } else {
+       videoMount.innerHTML = `<div class="video-frame"><div class="scene">${sceneImg(d.scene,'Coastal Moments')}</div></div><p class="video-caption">${esc(d.caption)}</p>`;
+     }
+   }).catch(()=>{});
+ }
+
+  // Latest stories
  const storiesMount = document.querySelector('[data-mount="stories"]');
  if(storiesMount){
    const limit = parseInt(storiesMount.getAttribute('data-limit')||'0',10);
