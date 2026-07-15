@@ -3,8 +3,8 @@
   "short_name": "DBF",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#eef8f7",
-  "theme_color": "#123f54",
+  "background_color": "#faf6ef",
+  "theme_color": "#122b34",
   "icons": [
     {
       "src": "assets/images/favicon.svg",

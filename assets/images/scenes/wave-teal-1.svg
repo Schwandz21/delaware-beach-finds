@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" preserveAspectRatio="xMidYMid slice">
+<defs>
+
+<linearGradient id="sea401" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#bfe7e6"/><stop offset="45%" stop-color="#3f97a0"/><stop offset="100%" stop-color="#0f4b53"/>
+</linearGradient>
+
+<filter id="grain401"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="401" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0"/></filter>
+<radialGradient id="vig401" cx="50%" cy="42%" r="75%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.30"/></radialGradient>
+</defs>
+
+<rect x="0" y="0" width="1600" height="1200" fill="url(#sea401)"/>
+<path d="M-40 139.9074563686039 Q 352.0 93.9074563686039 800.0 147.9074563686039 T 1640 121.9074563686039" stroke="#ffffff" stroke-width="8.421485592273573" fill="none" opacity="0.4" stroke-linecap="round"/><path d="M-40 322.9535166263827 Q 352.0 276.9535166263827 800.0 330.9535166263827 T 1640 304.9535166263827" stroke="#ffffff" stroke-width="11.35755858244844" fill="none" opacity="0.36000000000000004" stroke-linecap="round"/><path d="M-40 491.7542287551377 Q 352.0 445.7542287551377 800.0 499.7542287551377 T 1640 473.7542287551377" stroke="#ffffff" stroke-width="8.139027207017623" fill="none" opacity="0.32" stroke-linecap="round"/><path d="M-40 668.1491948126107 Q 352.0 622.1491948126107 800.0 676.1491948126107 T 1640 650.1491948126107" stroke="#ffffff" stroke-width="6.4984255020572865" fill="none" opacity="0.28" stroke-linecap="round"/><path d="M-40 831.6512372889425 Q 352.0 785.6512372889425 800.0 839.6512372889425 T 1640 813.6512372889425" stroke="#ffffff" stroke-width="10.353855516831967" fill="none" opacity="0.24000000000000002" stroke-linecap="round"/><path d="M-40 977.4981722606947 Q 352.0 931.4981722606947 800.0 985.4981722606947 T 1640 959.4981722606947" stroke="#ffffff" stroke-width="12.548905176755092" fill="none" opacity="0.2" stroke-linecap="round"/>
+
+<rect x="0" y="0" width="1600" height="1200" filter="url(#grain401)"/>
+<rect x="0" y="0" width="1600" height="1200" fill="url(#vig401)"/>
+</svg>

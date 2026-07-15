@@ -1,0 +1,68 @@
+[
+  {
+    "type": "photographer",
+    "name": "Jess Marino",
+    "handle": "@jessshootsthecoast",
+    "caption": "Low tide, Herring Point, 6:40 AM — shot on a whim on the walk back to the car.",
+    "scene": "wave-navy-1",
+    "featured": true
+  },
+  {
+    "type": "dog",
+    "name": "Biscuit",
+    "handle": "@biscuitthecorgi",
+    "caption": "First trip to Cape Henlopen. Unimpressed by the ocean, thrilled by the sand.",
+    "scene": "beach-dog-1",
+    "featured": true
+  },
+  {
+    "type": "sunrise",
+    "name": "Marcus T.",
+    "handle": "@marcust_de",
+    "caption": "Fenwick, 5:52 AM.",
+    "scene": "dune-sunrise-2"
+  },
+  {
+    "type": "sunrise",
+    "name": "Priya K.",
+    "handle": "@priya.explores",
+    "caption": "Dewey Beach, from the bay side.",
+    "scene": "bay-morning-1"
+  },
+  {
+    "type": "sunrise",
+    "name": "The Halloran Family",
+    "handle": "@halloranfamilytravels",
+    "caption": "Bethany, first morning of vacation.",
+    "scene": "ocean-blue-1"
+  },
+  {
+    "type": "sunrise",
+    "name": "Devon R.",
+    "handle": "@devon.rides",
+    "caption": "Assateague, before the horses woke up.",
+    "scene": "marsh-dawn-1"
+  },
+  {
+    "type": "sunrise",
+    "name": "Katie B.",
+    "handle": "@katiebeachhouse",
+    "caption": "Lewes, from the end of the fishing pier.",
+    "scene": "lighthouse-day-1"
+  },
+  {
+    "type": "sunrise",
+    "name": "Old Salt",
+    "handle": "@oldsaltcasts",
+    "caption": "Indian River Inlet, waiting on the tide to turn.",
+    "scene": "fishing-dawn-1"
+  },
+  {
+    "type": "fishing",
+    "name": "Ray D.",
+    "handle": "@raydfishes",
+    "caption": "First keeper flounder of the season, off the Indian River jetty.",
+    "scene": "wave-gold-1",
+    "featured": true
+  }
+]

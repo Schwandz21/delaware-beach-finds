@@ -1,0 +1,162 @@
+[
+  {
+    "slug": "lewes",
+    "name": "Lewes",
+    "state": "Delaware",
+    "kicker": "The Town Before the Beach Town",
+    "dek": "Delaware's oldest town has a beach almost as an afterthought — everything else came first.",
+    "heroScene": "lighthouse-dusk-1",
+    "tileScene": "lighthouse-day-1",
+    "intro": [
+      "Lewes doesn't try very hard to be a beach town, which is exactly why people who've done the other Delaware beaches end up loving it most. The historic district runs on foot traffic and porch light, not boardwalk noise. The beach itself — calm, bay-facing, more Sound than Atlantic — is almost beside the point.",
+      "What Lewes actually offers is a whole day that doesn't require sand at all: a bike ride down to Cape Henlopen, a wander through Zwaanendael's brick streets, an afternoon watching the ferry come in from Cape May loaded with cars and bikes and sunburned families. It's the only Delaware beach town where the ferry terminal counts as a legitimate afternoon activity."
+    ],
+    "signature": "Go to the fishing pier at the end of Cape Henlopen Drive right as the evening ferry comes in — you'll have the view of the harbor mouth mostly to yourself while everyone else is still parking downtown.",
+    "notes": [
+      "Best light: early evening, looking east across the harbor as the ferry comes in.",
+      "Park once, walk everywhere — the historic district and the canal are a 12-minute walk apart.",
+      "The Lightship Overfalls is real and free to see from the dock, no ticket required."
+    ],
+    "pullQuote": "It's the only Delaware beach town where the ferry terminal counts as a legitimate afternoon activity."
+  },
+  {
+    "slug": "rehoboth-beach",
+    "name": "Rehoboth Beach",
+    "state": "Delaware",
+    "kicker": "The One Everyone Comes Home To",
+    "dek": "The boardwalk that taught half the Mid-Atlantic what a beach vacation is supposed to feel like.",
+    "heroScene": "boardwalk-evening-1",
+    "tileScene": "boardwalk-morning-1",
+    "intro": [
+      "Rehoboth is the Delaware beach town other towns get measured against, and it earns it honestly — the boardwalk actually goes somewhere, the fudge shops are actually good, and the crowd on a Friday night in July is doing exactly what beach-town crowds are supposed to do: eating too much, staying out too late, arguing about where to get pizza at midnight.",
+      "It's also bigger than its reputation as pure boardwalk chaos. Walk two blocks off Rehoboth Avenue and the town turns into quiet cottage streets and towering shade trees. The trick to loving Rehoboth is treating the boardwalk as dessert, not the whole meal."
+    ],
+    "signature": "Skip the boardwalk between noon and 4 PM in high summer — it's a different, better town at 9 AM with coffee, and again after 9 PM once the day-trippers clear out.",
+    "notes": [
+      "Free Bandstand concerts run most summer weekend nights — arrive by 7:30 for grass space.",
+      "Park in the Rehoboth Avenue garage and walk; street spots vanish by 10 AM in season.",
+      "The quiet blocks north of the boardwalk are worth the detour, even without a destination in mind."
+    ],
+    "pullQuote": "The trick to loving Rehoboth is treating the boardwalk as dessert, not the whole meal."
+  },
+  {
+    "slug": "dewey-beach",
+    "name": "Dewey Beach",
+    "state": "Delaware",
+    "kicker": "The Narrow Strip Between Two Waters",
+    "dek": "Ocean on one side, bay on the other, and about four blocks of sand between them.",
+    "heroScene": "bay-morning-1",
+    "tileScene": "wave-teal-1",
+    "intro": [
+      "Dewey is Delaware's smallest big idea: a sliver of land narrow enough that you can watch the sun rise over the Atlantic and set over Rehoboth Bay without moving your car. That geography does something to the town's whole personality — loud and social after dark, but genuinely serene at low tide on the bay side before anyone else is up.",
+      "It's known as the party cousin of the Delaware beaches, and some of that reputation is earned after 9 PM in July. But arrive early, or come in shoulder season, and Dewey is one of the best-kept sunrise-to-noon towns on the whole coast."
+    ],
+    "signature": "The bay side at Rodney Street, right around sunset, is Dewey at its best — quiet water, no boardwalk, just the light doing all the work.",
+    "notes": [
+      "The bay beach is calmer and shallower than the ocean side — better for younger kids and paddleboards.",
+      "Restaurants along Route 1 fill up fast after dark in season; a 6 PM reservation beats a 9 PM walk-in.",
+      "Sunrise on the ocean side and sunset on the bay side are a fifteen-minute walk apart."
+    ],
+    "pullQuote": "Arrive early, or come in shoulder season, and Dewey is one of the best-kept sunrise-to-noon towns on the whole coast."
+  },
+  {
+    "slug": "bethany-beach",
+    "name": "Bethany Beach",
+    "state": "Delaware",
+    "kicker": "The Quiet One",
+    "dek": "A small boardwalk, a Sunday-night bandstand, and a pace that never speeds up much past a walk.",
+    "heroScene": "dune-sunrise-2",
+    "tileScene": "dune-sunrise-1",
+    "intro": [
+      "Bethany calls itself the Quiet Resorts, and unlike most tourism taglines, it's just accurate. The boardwalk is short on purpose — a few blocks of ice cream and beach shops instead of an entertainment district — and the town seems to prefer it that way.",
+      "This is the Delaware beach for people whose ideal vacation day has more naps in it than activities. Mornings on the sand, an afternoon bike ride down the boardwalk, dinner early enough to still catch the last of the light. Nothing about Bethany asks you to hurry."
+    ],
+    "signature": "The bandstand concerts happen right at the boardwalk's center — show up with a beach chair and you've got the whole evening handled.",
+    "notes": [
+      "The boardwalk is compact — you can walk the whole thing in under fifteen minutes, which is sort of the point.",
+      "Family-paced beach days here; nightlife is genuinely minimal past 10 PM.",
+      "Route 26 gets congested on Saturday changeover days — side streets move faster."
+    ],
+    "pullQuote": "This is the Delaware beach for people whose ideal vacation day has more naps in it than activities."
+  },
+  {
+    "slug": "fenwick-island",
+    "name": "Fenwick Island",
+    "state": "Delaware",
+    "kicker": "The Last Mile Before Maryland",
+    "dek": "A quiet lighthouse town at Delaware's southern edge, close enough to Ocean City to borrow its energy without keeping it.",
+    "heroScene": "lighthouse-day-1",
+    "tileScene": "lighthouse-dusk-1",
+    "intro": [
+      "Fenwick sits right on the Delaware-Maryland line, and it uses that position well: a calm, residential beach town during the day, with Ocean City's boardwalk and bigger-city energy fifteen minutes south whenever you want it.",
+      "The town itself is unhurried — the historic Fenwick Island Lighthouse still stands watch a few blocks from the beach, and the sand rarely feels crowded even in the middle of August. It's a base camp more than a destination, and that's precisely its appeal."
+    ],
+    "signature": "Golden hour at the lighthouse, looking back north up the coastline toward Bethany — fewer people photograph this stretch than almost anywhere else on the Delaware shore.",
+    "notes": [
+      "The state park beach at the Maryland line has some of the least crowded sand in the area.",
+      "Ocean City's boardwalk is a short drive south when you want more going on.",
+      "Fenwick's public beach access points are underused compared to towns just north — easy parking most mornings."
+    ],
+    "pullQuote": "It's a base camp more than a destination, and that's precisely its appeal."
+  },
+  {
+    "slug": "cape-henlopen",
+    "name": "Cape Henlopen",
+    "state": "Delaware",
+    "kicker": "Where the Bay Meets the Ocean",
+    "dek": "Dunes, pine forest and a WWII watchtower, all inside the point where Delaware Bay hands off to the Atlantic.",
+    "heroScene": "dune-dusk-1",
+    "tileScene": "marsh-green-1",
+    "intro": [
+      "Cape Henlopen State Park does more in one afternoon than most towns manage in a whole weekend: a swimming beach, a fishing pier that stretches out past the breakers, walking trails through maritime pine forest, and the concrete WWII observation towers standing over the dunes like something out of another decade entirely.",
+      "It's the rare spot where the bay side and the ocean side genuinely feel like two different bodies of water — calm and warm on one shore, cooler and rougher a ten-minute walk away. Bring the whole day; there's no version of Cape Henlopen that fits into an hour."
+    ],
+    "signature": "Climb Observation Tower 7 near sunset — free, open most of the year, and the view stretches from the Lewes ferry terminal to the open Atlantic in one turn.",
+    "notes": [
+      "The fishing pier is one of the longest on the Delaware coast and doesn't require a license to fish from.",
+      "Trails through the pine forest stay noticeably cooler than the open beach in midsummer.",
+      "Bay Point and Herring Point offer two very different beaches inside the same park — worth doing both in one visit."
+    ],
+    "pullQuote": "There's no version of Cape Henlopen that fits into an hour."
+  },
+  {
+    "slug": "assateague",
+    "name": "Assateague Island",
+    "state": "Maryland / Virginia",
+    "kicker": "Wild Coast First",
+    "dek": "A barrier island with no boardwalk, no traffic light and a herd of wild horses that outrank everyone.",
+    "heroScene": "marsh-dawn-1",
+    "tileScene": "marsh-gold-1",
+    "intro": [
+      "Assateague is what the Delaware beaches looked like before any of them had a boardwalk. No commercial strip, no high-rises — just dunes, salt marsh and the wild horses that have run the island for centuries and clearly know it.",
+      "It rewards patience more than any other stop on this coast. Low tide opens up wide flats where the horses wander down to graze on marsh grass, and a quiet early morning here — tent still damp, coffee still hot — is one of the few genuinely wild mornings left on the whole Mid-Atlantic shoreline."
+    ],
+    "signature": "Low tide, early morning, is when the horses come down off the dunes to graze the flats — give the island a few unhurried hours and it usually delivers.",
+    "notes": [
+      "Wild horses are wild — park rules require staying at least 40 feet away, always.",
+      "Camping is oceanfront and first-come in parts of the park; book ahead in summer.",
+      "Bring your own shade — there's very little of it on the open beach."
+    ],
+    "pullQuote": "It's one of the few genuinely wild mornings left on the whole Mid-Atlantic shoreline."
+  },
+  {
+    "slug": "ocean-city",
+    "name": "Ocean City",
+    "state": "Maryland",
+    "kicker": "The Boardwalk Finale",
+    "dek": "Bigger, brasher and three miles longer than anything Delaware's beaches attempt — and it knows it.",
+    "heroScene": "night-pier-1",
+    "tileScene": "boardwalk-evening-1",
+    "intro": [
+      "Ocean City is what happens when you let a boardwalk town grow up completely unbothered — three miles of arcades, fries stands, hotel towers and a Ferris wheel that lights up the whole southern end of the strip after dark. It's louder and bigger than every Delaware beach town combined, and some nights that's exactly the point.",
+      "The trick with OC is picking your version of it. The northern end is quieter, more residential, closer to a Delaware-style beach day. The southern boardwalk near the inlet is pure carnival energy — Thrasher's fries, the smell of funnel cake, and enough neon to see from the water."
+    ],
+    "signature": "Walk the boardwalk from the inlet north at golden hour, right as the Ferris wheel lights come on and the crowd shifts from beach chairs to fries baskets.",
+    "notes": [
+      "Thrasher's French Fries only serves them plain with vinegar — no ketchup, on principle.",
+      "The inlet at the south end has the boardwalk's biggest crowds and biggest energy after dark.",
+      "Free trams run the length of the boardwalk if three miles sounds like a lot."
+    ],
+    "pullQuote": "It's louder and bigger than every Delaware beach town combined, and some nights that's exactly the point."
+  }
+]

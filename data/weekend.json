@@ -1,0 +1,41 @@
+{
+  "updated": "2026-07-15",
+  "days": [
+    {
+      "label": "Friday",
+      "date": "July 17",
+      "title": "On Bleecker Street at the Bandstand",
+      "description": "The Simon & Garfunkel tribute act takes the Rehoboth Bandstand at 8 PM. Free, all ages, and the boardwalk smells like popcorn the whole walk over."
+    },
+    {
+      "label": "Saturday",
+      "date": "July 18",
+      "title": "Echoes plays the Bandstand",
+      "description": "Rehoboth's summer concert series keeps going with an American Pink Floyd tribute, 8 to 9:15 PM. Bring a blanket and get there by 7:30 for a spot on the grass."
+    },
+    {
+      "label": "Sunday",
+      "date": "July 19",
+      "title": "Slow paddle out of Lewes",
+      "description": "The canal is closest to glass in the first hour after sunrise, before the wake boats start. Coffee at the Lightship after works every time."
+    },
+    {
+      "label": "Next Weekend",
+      "date": "July 24–26",
+      "title": "Elvis at the Bandstand, one more time",
+      "description": "Jesse Garron's Elvis tribute hits the Rehoboth Bandstand July 24. The free concert series runs every weekend through Labor Day, so this is nowhere near the last one."
+    },
+    {
+      "label": "Later This Month",
+      "date": "Through August",
+      "title": "Bandstand season, in full swing",
+      "description": "Rehoboth's free concerts keep the boardwalk loud on weekend nights straight through the end of summer. Worth building a whole evening around, not just a stop on the way somewhere else."
+    },
+    {
+      "label": "Holiday Weekend",
+      "date": "Oct 23–25",
+      "title": "Sea Witch Festival returns",
+      "description": "Rehoboth's costume parade, pet costume contest and boardwalk crowds mark the unofficial end of the season. It's on the calendar early because it sells out hotels early, too."
+    }
+  ]
+}
