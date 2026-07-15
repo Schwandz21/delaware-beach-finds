@@ -5,5 +5,5 @@ window.DBF_CONFIG = {
   shopifyUrl: "https://YOUR-SHOPIFY-STORE.myshopify.com",
   contactEmail: "michael@rentdelawarebeaches.com",
   newsletterAction: "",
-  googleAnalyticsId: ""
+  googleAnalyticsId: "G-XR94ZKCF9J"
 };
