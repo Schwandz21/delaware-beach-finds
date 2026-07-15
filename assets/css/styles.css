@@ -265,3 +265,8 @@ p{margin:0 0 1.05rem}
 .video-caption{max-width:800px;margin:18px auto 0;text-align:center;font-size:.9rem;color:var(--muted)}
 .video-caption a{color:var(--coral-deep);font-weight:700}
 .video-caption a:hover{color:var(--coral)}
+
+/* ---------- weekend calendar: stale-content fallback ---------- */
+.calendar-stale{grid-column:1/-1;padding:40px 30px;text-align:center;background:var(--paper)}
+.calendar-stale a{color:var(--coral-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.calendar-stale a:hover{color:var(--coral)}

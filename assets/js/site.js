@@ -57,6 +57,12 @@
  if(weekendMount){
    const limit = parseInt(weekendMount.getAttribute('data-limit')||'6',10);
    fetchJson('weekend.json').then(d=>{
+     const updated = d.updated ? new Date(d.updated + 'T00:00:00') : null;
+     const staleDays = updated ? Math.floor((Date.now() - updated.getTime()) / 86400000) : 0;
+     if(updated && staleDays > 10){
+       weekendMount.innerHTML = `<div class="calendar-stale"><p class="muted" style="margin:0">This week's lineup is being refreshed — check back soon, or see the <a href="events.html">Events page</a> for what's recurring all summer.</p></div>`;
+       return;
+     }
      const days = (d.days||[]).slice(0, limit);
      weekendMount.innerHTML = days.map((day,i)=>`
        <div class="calendar-day${i===0?' is-today':''}">
