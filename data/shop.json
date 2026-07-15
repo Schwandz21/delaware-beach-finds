@@ -1,58 +1,66 @@
 [
   {
     "store": "etsy",
-    "name": "Hand-Blocked Lewes Lighthouse Print",
-    "description": "A small-batch letterpress print of the Delaware Breakwater Lighthouse, inked by hand.",
-    "price": "$28",
-    "scene": "lighthouse-day-1"
+    "name": "Vintage Rehoboth Beach Coaster Set",
+    "description": "Delaware travel souvenir, retro coastal decor, set of 4.",
+    "price": "$34.99",
+    "url": "https://www.etsy.com/listing/4536906363/vintage-rehoboth-beach-coaster-set",
+    "scene": "boardwalk-morning-1"
   },
   {
     "store": "etsy",
-    "name": "Sea Glass Drop Earrings",
-    "description": "Bay-tumbled sea glass, each pair genuinely one of one.",
-    "price": "$34",
+    "name": "Cape Henlopen Coordinates Throw Blanket",
+    "description": "Woven fringe blanket printed with Cape Henlopen's coordinates.",
+    "price": "$58.43",
+    "url": "https://www.etsy.com/listing/4530762959/cape-henlopen-delaware-coordinates-woven",
+    "scene": "marsh-green-1"
+  },
+  {
+    "store": "etsy",
+    "name": "Cape Henlopen Coordinates Weekender Bag",
+    "description": "Canvas tote sized for an actual overnight beach trip.",
+    "price": "$52.83",
+    "url": "https://www.etsy.com/listing/4530771114/cape-henlopen-delaware-coordinates",
+    "scene": "dune-dusk-1"
+  },
+  {
+    "store": "etsy",
+    "name": "Delaware Beach Towns Canvas Art",
+    "description": "Vintage-style coastal map print of the Delaware beach towns.",
+    "price": "$38.99",
+    "url": "https://www.etsy.com/listing/4524229819/delaware-beach-towns-canvas-art-vintage",
     "scene": "wave-navy-1"
   },
   {
     "store": "etsy",
-    "name": "\"Low Tide\" Coordinates Print",
-    "description": "Your favorite stretch of coastline, plotted and framed.",
-    "price": "$22",
-    "scene": "marsh-gold-1"
-  },
-  {
-    "store": "shopify",
-    "name": "Quick-Dry Beach Towel, Dune Stripe",
-    "description": "Sand shakes off in one snap. Big enough for two, light enough for a bike basket.",
-    "price": "$38",
+    "name": "Bethany Beach Hoodie",
+    "description": "Vintage coastal sunset sweatshirt, named for the Quiet Resorts.",
+    "price": "$44.99",
+    "url": "https://www.etsy.com/listing/4524196068/bethany-beach-delaware-hoodie-vintage",
     "scene": "dune-sunrise-2"
   },
   {
-    "store": "shopify",
-    "name": "The Everyday Beach Tote",
-    "description": "Canvas, sand-proof lining, a pocket that actually fits your keys.",
-    "price": "$42",
-    "scene": "boardwalk-morning-1"
-  },
-  {
-    "store": "shopify",
-    "name": "Coastal Crew Sweatshirt",
-    "description": "Heavyweight cotton, faded like it's already survived a few Octobers on the boardwalk.",
-    "price": "$56",
-    "scene": "night-pier-1"
+    "store": "etsy",
+    "name": "Dewey Beach Boardwalk Tee",
+    "description": "Beach-scene pocket tee for the narrow strip between two waters.",
+    "price": "$51.13",
+    "url": "https://www.etsy.com/listing/4523909610/dewey-beach-boardwalk-t-shirt-beach",
+    "scene": "wave-teal-1"
   },
   {
     "store": "etsy",
-    "name": "Beach Dog Portrait Ornament",
-    "description": "Send a photo, get a hand-painted wooden ornament back. A Blue Hen Basement favorite.",
-    "price": "$24",
-    "scene": "beach-dog-2"
+    "name": "First State Beach Vibes Can Cooler",
+    "description": "Delaware drink sleeve for the 302 beach-day cooler.",
+    "price": "$11.99",
+    "url": "https://www.etsy.com/listing/4524468048/first-state-beach-vibes-can-cooler",
+    "scene": "boardwalk-evening-1"
   },
   {
-    "store": "shopify",
-    "name": "Wide-Brim Boardwalk Hat",
-    "description": "Packable, UPF 50, doesn't blow off the second the wind picks up.",
-    "price": "$32",
-    "scene": "wave-gold-1"
+    "store": "etsy",
+    "name": "Horseshoe Crab Sticker",
+    "description": "Delaware beach souvenir, ocean animal art.",
+    "price": "$2.99",
+    "url": "https://www.etsy.com/listing/4524189050/horseshoe-crab-sticker-delaware-beach",
+    "scene": "marsh-gold-1"
   }
 ]
