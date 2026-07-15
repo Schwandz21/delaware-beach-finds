@@ -25,8 +25,8 @@
     "state": "Delaware",
     "kicker": "The One Everyone Comes Home To",
     "dek": "The boardwalk that taught half the Mid-Atlantic what a beach vacation is supposed to feel like.",
-    "heroScene": "boardwalk-evening-1",
-    "tileScene": "boardwalk-morning-1",
+        "heroScene": "boardwalk-dusk-rehoboth-1.jpg",
+        "tileScene": "rehoboth-boardwalk-day-1.jpg",
     "intro": [
       "Rehoboth is the Delaware beach town other towns get measured against, and it earns it honestly — the boardwalk actually goes somewhere, the fudge shops are actually good, and the crowd on a Friday night in July is doing exactly what beach-town crowds are supposed to do: eating too much, staying out too late, arguing about where to get pizza at midnight.",
       "It's also bigger than its reputation as pure boardwalk chaos. Walk two blocks off Rehoboth Avenue and the town turns into quiet cottage streets and towering shade trees. The trick to loving Rehoboth is treating the boardwalk as dessert, not the whole meal."
@@ -65,8 +65,8 @@
     "state": "Delaware",
     "kicker": "The Quiet One",
     "dek": "A small boardwalk, a Sunday-night bandstand, and a pace that never speeds up much past a walk.",
-    "heroScene": "dune-sunrise-2",
-    "tileScene": "dune-sunrise-1",
+        "heroScene": "dune-fence-sunset-1.jpg",
+        "tileScene": "dune-fence-sunset-2.jpg",
     "intro": [
       "Bethany calls itself the Quiet Resorts, and unlike most tourism taglines, it's just accurate. The boardwalk is short on purpose — a few blocks of ice cream and beach shops instead of an entertainment district — and the town seems to prefer it that way.",
       "This is the Delaware beach for people whose ideal vacation day has more naps in it than activities. Mornings on the sand, an afternoon bike ride down the boardwalk, dinner early enough to still catch the last of the light. Nothing about Bethany asks you to hurry."
@@ -105,7 +105,7 @@
     "state": "Delaware",
     "kicker": "Where the Bay Meets the Ocean",
     "dek": "Dunes, pine forest and a WWII watchtower, all inside the point where Delaware Bay hands off to the Atlantic.",
-    "heroScene": "dune-dusk-1",
+        "heroScene": "cape-henlopen-aerial-1.jpg",
     "tileScene": "marsh-green-1",
     "intro": [
       "Cape Henlopen State Park does more in one afternoon than most towns manage in a whole weekend: a swimming beach, a fishing pier that stretches out past the breakers, walking trails through maritime pine forest, and the concrete WWII observation towers standing over the dunes like something out of another decade entirely.",
