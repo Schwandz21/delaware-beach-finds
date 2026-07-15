@@ -31,7 +31,8 @@
  function sceneImg(scene, alt){
    const depth = document.body.getAttribute('data-depth') || '0';
    const prefix = depth === '1' ? '../' : '';
-   return `<img src="${prefix}assets/images/scenes/${esc(scene)}.svg" alt="${esc(alt||'')}" loading="lazy">`;
+   const file = /\.(svg|jpe?g|png|webp)$/i.test(scene) ? scene : scene + '.svg';
+      return `<img src="${prefix}assets/images/scenes/${esc(file)}" alt="${esc(alt||'')}" loading="lazy">`;
  }
  function fetchJson(name){
    return fetch(dataUrl(name)).then(r=>{ if(!r.ok) throw new Error('missing '+name); return r.json(); });
