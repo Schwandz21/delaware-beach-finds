@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Community Submission Helper (internal) | Delaware Beach Finds</title>
+<link rel="stylesheet" href="../assets/css/styles.css">
+<style>
+  body{background:var(--paper-deep)}
+  .tool-wrap{max-width:760px;margin:0 auto;padding:60px 24px}
+  .tool-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);padding:32px;margin-bottom:24px}
+  textarea.output{width:100%;min-height:220px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;border:1px solid var(--line-strong);border-radius:12px;padding:16px;background:#0d1b21;color:#cdeee8;white-space:pre}
+  .preview-img{max-width:220px;border-radius:12px;border:1px solid var(--line);margin-top:10px}
+  .step{display:flex;gap:14px;margin-bottom:18px}
+  .step-num{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
+  code{background:var(--paper-deep);padding:2px 6px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="tool-wrap">
+  <div class="kicker">Internal tool — not linked in site navigation</div>
+  <h1 style="margin-top:10px">Community Submission Helper</h1>
+  <p class="muted">Turn a follower's tagged photo into a live homepage feature in about a minute — no HTML, no code. This page runs entirely in your browser; nothing is uploaded or sent anywhere.</p>
+
+  <div class="tool-card">
+    <h3>1. Fill in the post</h3>
+    <div class="form-grid">
+      <div class="field">
+        <label for="type">Feature type</label>
+        <select id="type">
+          <option value="photographer">Photographer of the Week</option>
+          <option value="dog">Today's Beach Dog</option>
+          <option value="sunrise">Your Sunrise (reader grid)</option>
+          <option value="fishing">Favorite Fishing Photo</option>
+        </select>
+      </div>
+      <div class="field"><label for="name">Name</label><input id="name" placeholder="Jess Marino"></div>
+      <div class="field"><label for="handle">Instagram handle</label><input id="handle" placeholder="@jessshootsthecoast"></div>
+      <div class="field full"><label for="caption">Caption</label><input id="caption" placeholder="Low tide, Herring Point, 6:40 AM"></div>
+      <div class="field full">
+        <label for="photo">Photo (for filename + preview only)</label>
+        <input id="photo" type="file" accept="image/*">
+        <img id="preview" class="preview-img hidden">
+      </div>
+    </div>
+  </div>
+
+  <div class="tool-card">
+    <h3>2. Save the photo</h3>
+    <p class="muted" style="margin-bottom:0">Save the image into <code>assets/images/community/</code> using this exact filename:</p>
+    <p style="margin-top:8px"><code id="filename-out">—</code></p>
+  </div>
+
+  <div class="tool-card">
+    <h3>3. Paste this into <code>data/community.json</code></h3>
+    <p class="muted">Open the file on GitHub, click the pencil (edit) icon, add this object inside the square-bracket array (comma-separated from the others), then commit to <code>main</code>.</p>
+    <textarea class="output" id="json-out" readonly></textarea>
+  </div>
+
+  <p class="muted small">That's the whole workflow: drop the photo, paste the snippet, commit. The homepage and Community page read this file live — no layout or code changes, ever.</p>
+</div>
+
+<script>
+function slugify(s){
+  return (s||'submission').toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+}
+function update(){
+  const type = document.getElementById('type').value;
+  const name = document.getElementById('name').value || 'Name';
+  const handle = document.getElementById('handle').value || '@handle';
+  const caption = document.getElementById('caption').value || 'Caption goes here.';
+  const fileInput = document.getElementById('photo');
+  const file = fileInput.files[0];
+  const ext = file ? '.' + file.name.split('.').pop().toLowerCase() : '.jpg';
+  const today = new Date().toISOString().slice(0,10);
+  const filename = `${today}-${type}-${slugify(name)}${ext}`;
+  document.getElementById('filename-out').textContent = filename;
+
+  const obj = {
+    type: type,
+    name: name,
+    handle: handle,
+    caption: caption,
+    image: filename,
+    featured: (type === 'photographer' || type === 'dog' || type === 'fishing')
+  };
+  document.getElementById('json-out').value = JSON.stringify(obj, null, 2) + ",";
+}
+['type','name','handle','caption'].forEach(id => document.getElementById(id).addEventListener('input', update));
+document.getElementById('photo').addEventListener('change', function(e){
+  const file = e.target.files[0];
+  const preview = document.getElementById('preview');
+  if(file){
+    preview.src = URL.createObjectURL(file);
+    preview.classList.remove('hidden');
+  }
+  update();
+});
+update();
+</script>
+</body>
+</html>

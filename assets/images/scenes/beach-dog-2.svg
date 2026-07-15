@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" preserveAspectRatio="xMidYMid slice">
+<defs>
+
+<linearGradient id="sky502" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#ffe6c2"/><stop offset="100%" stop-color="#f2a15f"/>
+</linearGradient>
+
+<filter id="grain502"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="502" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0"/></filter>
+<radialGradient id="vig502" cx="50%" cy="42%" r="75%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.30"/></radialGradient>
+</defs>
+
+<rect x="0" y="0" width="1600" height="720.0" fill="url(#sky502)"/>
+<rect x="0" y="720.0" width="1600" height="480.0" fill="#e9dcc0"/>
+<ellipse cx="992.0" cy="960.0" rx="120" ry="18" fill="#000" opacity="0.10"/>
+<g fill="#7d6650">
+<ellipse cx="992.0" cy="890.0" rx="88" ry="60"/>
+<circle cx="896.0" cy="856.0" r="52"/>
+<path d="M854.0 820.0 q-22 -34 6 -54 q26 8 20 46 Z"/>
+<ellipse cx="1062.0" cy="940.0" rx="20" ry="46" transform="rotate(18 1062.0 940.0)"/>
+</g>
+
+<rect x="0" y="0" width="1600" height="1200" filter="url(#grain502)"/>
+<rect x="0" y="0" width="1600" height="1200" fill="url(#vig502)"/>
+</svg>

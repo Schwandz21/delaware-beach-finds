@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" preserveAspectRatio="xMidYMid slice">
+<defs>
+
+<linearGradient id="sky105" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#bfe6ea"/><stop offset="100%" stop-color="#5ea6b0"/>
+</linearGradient>
+<linearGradient id="sea105" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#25707a"/><stop offset="100%" stop-color="#0f3d47"/>
+</linearGradient>
+
+<filter id="grain105"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="105" stitchTiles="stitch" result="noise"/><feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0"/></filter>
+<radialGradient id="vig105" cx="50%" cy="42%" r="75%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="0.30"/></radialGradient>
+</defs>
+
+<rect x="0" y="0" width="1600" height="672.0000000000001" fill="url(#sky105)"/>
+<rect x="0" y="672.0000000000001" width="1600" height="527.9999999999999" fill="url(#sea105)"/>
+<circle cx="1088.0" cy="562.5600000000001" r="150" fill="#fff7e0"/>
+<g opacity="0.5">
+<rect x="0" y="702.0000000000001" width="1600" height="3" fill="#fff7e0" opacity="0.1"/><rect x="0" y="748.0000000000001" width="1600" height="3" fill="#fff7e0" opacity="0.08800000000000001"/><rect x="0" y="794.0000000000001" width="1600" height="3" fill="#fff7e0" opacity="0.07600000000000001"/><rect x="0" y="840.0000000000001" width="1600" height="3" fill="#fff7e0" opacity="0.064"/><rect x="0" y="886.0000000000001" width="1600" height="3" fill="#fff7e0" opacity="0.052000000000000005"/><rect x="0" y="932.0000000000001" width="1600" height="3" fill="#fff7e0" opacity="0.04000000000000001"/>
+</g>
+<path d="M0 682.0000000000001 Q 288.0 644.0000000000001 640.0 678.0000000000001 T 1312.0 662.0000000000001 T 1640 686.0000000000001 L1640 712.0000000000001 L-40 712.0000000000001 Z" fill="#e3d3a9"/>
+<path d="M1246.9359562557906 196.80610230385486 Q1257.8895745553207 183.11407942944237 1268.8431928548507 196.80610230385486 Q1279.7968111543807 183.11407942944237 1290.7504294539108 196.80610230385486" stroke="rgba(20,20,20,0.38)" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M1338.2852689531103 188.6881270653612 Q1349.1268787429315 175.13611482808457 1359.9684885327529 188.6881270653612 Q1370.8100983225743 175.13611482808457 1381.6517081123955 188.6881270653612" stroke="rgba(20,20,20,0.38)" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M577.5433500806492 156.03348066627117 Q586.2848654103399 145.1065865041578 595.0263807400306 156.03348066627117 Q603.7678960697214 145.1065865041578 612.509411399412 156.03348066627117" stroke="rgba(20,20,20,0.38)" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M1090.9303570299303 152.4647689014538 Q1101.2266240624049 139.59443511086053 1111.5228910948795 152.4647689014538 Q1121.819158127354 139.59443511086053 1132.1154251598286 152.4647689014538" stroke="rgba(20,20,20,0.38)" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M597.2656690797874 157.1871053151336 Q606.4162554991755 145.74887229089848 615.5668419185636 157.1871053151336 Q624.7174283379517 145.74887229089848 633.8680147573398 157.1871053151336" stroke="rgba(20,20,20,0.38)" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+<rect x="0" y="0" width="1600" height="1200" filter="url(#grain105)"/>
+<rect x="0" y="0" width="1600" height="1200" fill="url(#vig105)"/>
+</svg>

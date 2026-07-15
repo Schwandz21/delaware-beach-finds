@@ -1,0 +1,58 @@
+[
+  {
+    "store": "etsy",
+    "name": "Hand-Blocked Lewes Lighthouse Print",
+    "description": "A small-batch letterpress print of the Delaware Breakwater Lighthouse, inked by hand.",
+    "price": "$28",
+    "scene": "lighthouse-day-1"
+  },
+  {
+    "store": "etsy",
+    "name": "Sea Glass Drop Earrings",
+    "description": "Bay-tumbled sea glass, each pair genuinely one of one.",
+    "price": "$34",
+    "scene": "wave-navy-1"
+  },
+  {
+    "store": "etsy",
+    "name": "\"Low Tide\" Coordinates Print",
+    "description": "Your favorite stretch of coastline, plotted and framed.",
+    "price": "$22",
+    "scene": "marsh-gold-1"
+  },
+  {
+    "store": "shopify",
+    "name": "Quick-Dry Beach Towel, Dune Stripe",
+    "description": "Sand shakes off in one snap. Big enough for two, light enough for a bike basket.",
+    "price": "$38",
+    "scene": "dune-sunrise-2"
+  },
+  {
+    "store": "shopify",
+    "name": "The Everyday Beach Tote",
+    "description": "Canvas, sand-proof lining, a pocket that actually fits your keys.",
+    "price": "$42",
+    "scene": "boardwalk-morning-1"
+  },
+  {
+    "store": "shopify",
+    "name": "Coastal Crew Sweatshirt",
+    "description": "Heavyweight cotton, faded like it's already survived a few Octobers on the boardwalk.",
+    "price": "$56",
+    "scene": "night-pier-1"
+  },
+  {
+    "store": "etsy",
+    "name": "Beach Dog Portrait Ornament",
+    "description": "Send a photo, get a hand-painted wooden ornament back. A Blue Hen Basement favorite.",
+    "price": "$24",
+    "scene": "beach-dog-2"
+  },
+  {
+    "store": "shopify",
+    "name": "Wide-Brim Boardwalk Hat",
+    "description": "Packable, UPF 50, doesn't blow off the second the wind picks up.",
+    "price": "$32",
+    "scene": "wave-gold-1"
+  }
+]
