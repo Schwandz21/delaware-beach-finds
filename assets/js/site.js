@@ -1,19 +1,16 @@
 (function(){
  const c=window.DBF_CONFIG||{};
- const validShopify=c.shopifyUrl && !c.shopifyUrl.includes('YOUR-SHOPIFY');
  function withUtm(url, campaign, content){
    try{const u=new URL(url);u.searchParams.set('utm_source','delawarebeachfinds');u.searchParams.set('utm_medium','website');u.searchParams.set('utm_campaign',campaign||'sitewide');if(content)u.searchParams.set('utm_content',content);return u.toString()}catch(e){return url}
  }
  document.querySelectorAll('[data-instagram-link]').forEach(a=>a.href=withUtm(c.instagramUrl,'instagram'));
  document.querySelectorAll('[data-etsy-link]').forEach(a=>a.href=withUtm(c.etsyUrl,'etsy_shop'));
- document.querySelectorAll('[data-shopify-link]').forEach(a=>{
-   if(validShopify){a.href=withUtm(c.shopifyUrl,'shopify_store')}else{a.href=(a.dataset.fallback||'shop.html');a.title='Add your Shopify URL in assets/js/config.js before launch';}
- });
  document.querySelectorAll('[data-contact-email]').forEach(a=>{a.href='mailto:'+c.contactEmail;a.textContent=c.contactEmail});
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
  const t=document.querySelector('.menu-toggle'),n=document.querySelector('.nav-links');if(t&&n)t.addEventListener('click',()=>{const o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')});
  document.querySelectorAll('a[target="_blank"]').forEach(a=>a.setAttribute('rel','noopener noreferrer'));
  if(c.googleAnalyticsId){const g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(c.googleAnalyticsId);document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',c.googleAnalyticsId);}
+ document.addEventListener('click',function(e){var a=e.target.closest('[data-etsy-link]');if(!a||!window.gtag)return;var isProduct=a.hasAttribute('data-product');var pid=(a.href.match(/listing\/(\d+)/)||[])[1];gtag('event',isProduct?'etsy_product_click':'etsy_collection_click',{destination:a.href,product_name:a.dataset.product||undefined,product_id:pid||undefined,source_page:location.pathname,link_placement:a.dataset.placement||(a.closest('.footer')?'footer':a.closest('.shop-grid')?'shop_grid':a.closest('.nav-links')?'nav':a.closest('.cta-strip')?'hero_cta':'body'),content_category:'shop'});});
  const f=document.querySelector('[data-newsletter-form]');if(f){if(c.newsletterAction)f.action=c.newsletterAction;else f.addEventListener('submit',e=>{e.preventDefault();window.location.href='mailto:'+c.contactEmail+'?subject=Add me to Delaware Beach Finds&body=Please add this email to the Delaware Beach Finds list: '+encodeURIComponent(f.querySelector('input[type=email]').value)})}
 
  /* ---------------------------------------------------------------
@@ -203,9 +200,8 @@
      let items = list.slice();
      if(limit) items = items.slice(0, limit);
      shopMount.innerHTML = items.map(p=>{
-       const storeAttr = p.store === 'etsy' ? 'data-etsy-link' : 'data-shopify-link data-fallback="shop.html"';
-       const storeLabel = p.store === 'etsy' ? 'The Blue Hen Basement · Etsy' : 'Shopify';
-       return `<a class="product-card" ${storeAttr} target="_blank" href="#">
+               const storeLabel = p.storeLabel || 'The Blue Hen Basement · Etsy';
+              return `<a class="product-card" data-etsy-link data-product="${esc(p.name)}" target="_blank" href="#">
          <div class="product-art"><div class="scene">${sceneImg(p.scene, p.name)}</div></div>
          <span class="store-tag">${storeLabel}</span>
          <h4>${esc(p.name)}</h4>
@@ -213,10 +209,8 @@
          <span class="price-line">${esc(p.price)}</span>
        </a>`;
      }).join('');
-     document.querySelectorAll('[data-etsy-link]').forEach(a=>a.href=withUtm(c.etsyUrl,'etsy_shop'));
-     document.querySelectorAll('[data-shopify-link]').forEach(a=>{
-       if(validShopify){a.href=withUtm(c.shopifyUrl,'shopify_store')}else{a.href=(a.dataset.fallback||'shop.html');}
-     });
+         document.querySelectorAll('[data-etsy-link]').forEach(a=>a.href=withUtm(c.etsyUrl,'etsy_shop'));
+        if(window.gtag) gtag('event','view_shop',{source_page:location.pathname,product_count:list.length});
    }).catch(()=>{});
  }
 })();
