@@ -1,8 +1,8 @@
 (function(){
  const c=window.DBF_CONFIG||{};
  const validShopify=c.shopifyUrl && !c.shopifyUrl.includes('YOUR-SHOPIFY');
- function withUtm(url, campaign){
-   try{const u=new URL(url);u.searchParams.set('utm_source','delawarebeachfinds');u.searchParams.set('utm_medium','website');u.searchParams.set('utm_campaign',campaign||'sitewide');return u.toString()}catch(e){return url}
+ function withUtm(url, campaign, content){
+   try{const u=new URL(url);u.searchParams.set('utm_source','delawarebeachfinds');u.searchParams.set('utm_medium','website');u.searchParams.set('utm_campaign',campaign||'sitewide');if(content)u.searchParams.set('utm_content',content);return u.toString()}catch(e){return url}
  }
  document.querySelectorAll('[data-instagram-link]').forEach(a=>a.href=withUtm(c.instagramUrl,'instagram'));
  document.querySelectorAll('[data-etsy-link]').forEach(a=>a.href=withUtm(c.etsyUrl,'etsy_shop'));
@@ -31,8 +31,9 @@
  function sceneImg(scene, alt){
    const depth = document.body.getAttribute('data-depth') || '0';
    const prefix = depth === '1' ? '../' : '';
-   const file = /\.(svg|jpe?g|png|webp)$/i.test(scene) ? scene : scene + '.svg';
-      return `<img src="${prefix}assets/images/scenes/${esc(file)}" alt="${esc(alt||'')}" loading="lazy">`;
+   if(/^https?:\/\//i.test(scene)) return `<img src="${esc(scene)}" alt="${esc(alt||'')}" loading="lazy" decoding="async">`;
+  const file = /\.(svg|jpe?g|png|webp)$/i.test(scene) ? scene : scene + '.svg';
+  return `<img src="${prefix}assets/images/scenes/${esc(file)}" alt="${esc(alt||'')}" loading="lazy" decoding="async">`;
  }
  function fetchJson(name){
    return fetch(dataUrl(name)).then(r=>{ if(!r.ok) throw new Error('missing '+name); return r.json(); });
