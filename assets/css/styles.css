@@ -271,3 +271,10 @@ p{margin:0 0 1.05rem}
 .calendar-stale{grid-column:1/-1;padding:40px 30px;text-align:center;background:var(--paper)}
 .calendar-stale a{color:var(--coral-deep);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .calendar-stale a:hover{color:var(--coral)}
+/* ---------- homepage cta strip ---------- */
+.cta-strip{background:var(--navy);color:#fff}
+.cta-strip-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-strip .lede{color:rgba(255,255,255,.9);margin:0;max-width:560px}
+.cta-strip-actions{display:flex;gap:14px;flex-wrap:wrap}
+.cta-strip .btn-line{border-color:rgba(255,255,255,.4);color:#fff}
+.cta-strip .btn-line:hover{border-color:#fff}
