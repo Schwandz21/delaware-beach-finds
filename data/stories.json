@@ -4,7 +4,7 @@
     "kicker": "Indian River Inlet",
     "headline": "The Six O'Clock Shift at Indian River Inlet",
     "hook": "Every morning the surfcasters pack up right as the paddleboarders wade in — a ten-minute handoff between two different Delawares.",
-        "scene": "paddleboard-sunrise-1.jpg",
+    "scene": "paddleboard-sunrise-1.jpg",
     "tag": "Dawn Patrol",
     "date": "2026-07-15",
     "readTime": "5 min read",
@@ -38,7 +38,7 @@
     "etsyProductIds": [],
     "headline": "What the Boardwalk Smells Like in July",
     "hook": "Grotto pizza, salt water taffy and sunscreen, in that order, from the top of Rehoboth Avenue to the water.",
-        "scene": "rehoboth-boardwalk-day-1.jpg",
+    "scene": "rehoboth-boardwalk-day-1.jpg",
     "tag": "Field Notes",
     "date": "2026-07-08",
     "readTime": "4 min read",
@@ -55,7 +55,7 @@
     "kicker": "Bethany Beach",
     "headline": "A Field Guide to Bethany's Bandstand Nights",
     "hook": "Beach chairs go down by 7, the band starts by 8, and nobody in Bethany seems to be in a hurry to leave once it's over.",
-        "scene": "dune-fence-sunset-1.jpg",
+    "scene": "dune-fence-sunset-1.jpg",
     "tag": "Field Notes",
     "date": "2026-06-30",
     "readTime": "4 min read",
@@ -123,6 +123,87 @@
       "Wide sand and mud flats emerge along the bay side, and the horses come down off higher ground to graze on the exposed marsh grass, sometimes close enough to a quiet trail that a long lens isn't strictly necessary. Shorebirds move in behind them, working the same flats for whatever the tide left behind.",
       "It lasts a few hours, tide-dependent, and then it's gone — water creeps back in, the horses drift back to higher ground, and the island returns to its regular, more distant version of itself. Checking the tide chart before a visit is worth the extra two minutes; showing up at the wrong tide means missing the whole show entirely.",
       "It's a reminder that Assateague was never really built for a schedule. The island runs on its own clock, and the best visits are the ones that show up to match it instead of the other way around."
+    ]
+  },
+  {
+    "slug": "towers-on-the-dunes",
+    "kicker": "Delaware at War",
+    "headline": "The Towers on the Dunes",
+    "hook": "Every summer thousands of people photograph the concrete towers along the Delaware coast without knowing what they are. They were optical instruments, built to last about ten years.",
+    "scene": "cape-henlopen-aerial-1.jpg",
+    "date": "2026-07-25",
+    "readTime": "9 min read",
+    "featured": false,
+    "category": "coast",
+    "series": "delaware-at-war",
+    "seriesInstallment": 7,
+    "seriesTotal": 8,
+    "status": "published",
+    "photoCredit": "@delawarebeachfinds",
+    "sources": [
+      "Delaware Division of Historical and Cultural Affairs, \"Fire Control Towers\" (history.delaware.gov/preservation/firetowers)",
+      "Delaware State Parks and Cape Gazette/WGMD reporting on the 2023 reopening of Tower 3"
+    ],
+    "etsyProductIds": [],
+    "body": [
+      "You have seen them: plain cylindrical concrete towers along the Delaware coast, several storeys of grey, with narrow horizontal slits near the top. They are fire control towers, built during the Second World War to aim coastal artillery, and they solved a real problem — a gun crew at ground level cannot judge a warship's distance, course, or speed well enough to hit it.",
+      "The solution was triangulation. Observers in two or more towers at precisely surveyed positions took simultaneous bearings on a target, and a plotting room combined those readings into a firing solution for the guns at Fort Miles. The towers were the sensor array of a distributed weapons system — the eyes of guns that could not see for themselves.",
+      "By the state's own account the towers were expected to last roughly a decade. The technology they served was approaching obsolescence before the war even ended, as radar replaced optical triangulation. Nobody knocked them down anyway — reinforced concrete built to withstand naval gunfire is difficult and expensive to demolish, so the towers stayed and slowly became landmarks instead of weapons.",
+      "Eleven of these towers still stand in Delaware, across Cape Henlopen, Delaware Seashore, and Fenwick Island state parks. Tower 3, at Delaware Seashore State Park, reopened to the public in 2023 with a rebuilt staircase. This publication does not repeat the widely circulated claim that Delaware is the only state with all of its original towers — the state's own published material doesn't make that claim, and we couldn't verify it independently."
+    ]
+  },
+  {
+    "slug": "why-delaware-looks-like-that",
+    "kicker": "How Delaware Became Delaware",
+    "headline": "Why Delaware Looks Like That",
+    "hook": "Delaware's northern boundary is a circular arc, unlike any other state line in the country. It exists because of a property dispute and a survey nobody could execute cleanly.",
+    "scene": "dune-sunrise-1.svg",
+    "date": "2026-07-25",
+    "readTime": "10 min read",
+    "featured": false,
+    "category": "history",
+    "series": "how-delaware-became-delaware",
+    "seriesInstallment": 6,
+    "seriesTotal": 9,
+    "status": "published",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "U.S. National Park Service, \"Delaware's 12-Mile Arc\" (nps.gov)",
+      "Delaware Division of Historical and Cultural Affairs, \"Surveying the Landscape of the 'Delaware Wedge'\" (history.delaware.gov, 2023)"
+    ],
+    "etsyProductIds": [],
+    "body": [
+      "Delaware's northern border curves — a circular arc, unlike any other state line in the country. It began in 1681, when the Duke of York directed that the boundary between his remaining Delaware holdings and William Penn's new Pennsylvania charter be drawn as a circle with a twelve-mile radius centered on New Castle.",
+      "Surveying a true twelve-mile arc through colonial forest and swamp was nearly impossible with the instruments available. The first serious attempt, in 1701, wasn't approved by both colonies until 1715–1719. By the mid-1700s the circle's formal center point had been fixed at the cupola of the New Castle Court House, which still stands.",
+      "In 1763 Charles Mason and Jeremiah Dixon surveyed the boundary with far better precision, but found the tangent point didn't match earlier surveys — so the North Line cut through the Circle instead of running clear of it. Their fix, the short Arc Line, added a reported thirteen acres to Delaware and left behind a second problem: a leftover triangular parcel called the Wedge.",
+      "The Wedge sat in jurisdictional limbo for most of the nineteenth century. A joint commission awarded it to Delaware in 1889; Pennsylvania ratified in 1897; Delaware ratified in 1921; and Congress approved it the same year. Two hundred and forty years after the original 1681 grant, the shape of the state was finally settled — and many of Mason and Dixon's original boundary stones, including ornately carved crownstones, still stand where they were placed."
+    ]
+  },
+  {
+    "slug": "three-counties-become-the-first-state",
+    "kicker": "How Delaware Became Delaware",
+    "headline": "Three Counties Become the First State",
+    "hook": "Delaware declared independence from Britain and Pennsylvania in the same week of 1776 — and eleven years later became the first state to ratify the Constitution, in a rented tavern, unanimously, in five days.",
+    "scene": "dune-sunrise-2.svg",
+    "date": "2026-07-25",
+    "readTime": "9 min read",
+    "featured": false,
+    "category": "history",
+    "series": "how-delaware-became-delaware",
+    "seriesInstallment": 7,
+    "seriesTotal": 9,
+    "status": "published",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "Delaware Public Archives, Ratification Document record",
+      "U.S. National Park Service, First State National Historical Park materials"
+    ],
+    "etsyProductIds": [],
+    "body": [
+      "In the first week of December 1787, thirty delegates gathered at Battell's Tavern on the Dover Green — the State House wasn't finished yet — to vote on the constitution drafted in Philadelphia that September. They deliberated five days and ratified unanimously on December 7, 1787, making Delaware the first state to ratify the U.S. Constitution.",
+      "Getting there took most of a century. Delaware's three counties had been attached to William Penn's Pennsylvania since 1682, mainly because Pennsylvania needed the Delaware River's mouth. The two territories split into separate legislatures in 1704 but kept sharing a governor for 72 more years — an arrangement nobody designed; it accumulated.",
+      "Delaware separated from both Britain and Pennsylvania in the same June 1776 session, an event now called the Act of Separation. Caesar Rodney's famous ride to Philadelphia that July, breaking a tied delegation vote on independence, really happened — though the dramatic details usually attached to it go beyond what the documentary record supports.",
+      "Delaware's rapid, unanimous ratification in 1787 wasn't primarily patriotic zeal — it was arithmetic. The new Constitution's compromise gave every state equal representation in the Senate, which mattered enormously to one of the smallest states in the union. Being first was a consequence of moving quickly, and moving quickly was a consequence of having already gotten what they needed."
     ]
   }
 ]
