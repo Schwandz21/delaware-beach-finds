@@ -269,4 +269,31 @@ if(storiesMount){
          if(window.gtag) gtag('event','view_shop',{source_page:location.pathname,product_count:list.length});
    }).catch(()=>{});
  }
+
+// Shop the Story (used on article pages: <div data-mount="shop-the-story" data-story="story-slug"></div>)
+document.querySelectorAll('[data-mount="shop-the-story"]').forEach(mount=>{
+  const storySlug = mount.getAttribute('data-story');
+  if(!storySlug) return;
+  Promise.all([fetchJson('stories.json'), fetchJson('shop.json')]).then(([stories, shop])=>{
+    const story = stories.find(s=>s.slug===storySlug);
+    const ids = (story && story.etsyProductIds) || [];
+    if(!ids.length){ mount.remove(); return; }
+    const products = shop.filter(p=>{
+      const m = (p.url||'').match(/listing\/(\d+)/);
+      return m && ids.includes(m[1]);
+    });
+    if(!products.length){ mount.remove(); return; }
+    mount.innerHTML = `<div class="section-head"><div><div class="kicker">Shop the Story</div><h3 style="margin-top:6px">Bring a piece of this one home</h3></div></div>
+      <div class="shop-grid">${products.map(p=>{
+        const storeLabel = p.storeLabel || 'DelawareBeachFinds \u00b7 Etsy';
+        return `<a class="product-card" data-etsy-link data-product="${esc(p.name)}" target="_blank" href="${esc(p.url)}">
+          <div class="product-art"><div class="scene">${sceneImg(p.scene, p.name)}</div></div>
+          <span class="store-tag">${esc(storeLabel)}</span>
+          <h4>${esc(p.name)}</h4>
+          <span class="price-line">${esc(p.price)}</span>
+        </a>`;
+      }).join('')}</div>`;
+  }).catch(()=>{});
+});
+
 })();
