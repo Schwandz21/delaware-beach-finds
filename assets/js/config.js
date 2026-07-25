@@ -5,7 +5,7 @@ window.DBF_CONFIG = {
   etsyUrl: "https://www.etsy.com/shop/TheBlueHenBasement",
  // Named references to each shop, so shop.json can tag products by shop and site.js can link/label them correctly during the DBF transition.
   blueHenBasementUrl: "https://www.etsy.com/shop/TheBlueHenBasement",
-  delawareBeachFindsUrl: "",
+  delawareBeachFindsUrl: "https://www.etsy.com/shop/DelawareBeachFinds",
   contactEmail: "michael@rentdelawarebeaches.com",
   newsletterAction: "",
   googleAnalyticsId: "G-XR94ZKCF9J"
