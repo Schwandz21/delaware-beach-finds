@@ -155,6 +155,37 @@
     }).catch(()=>{});
  }
 
+ // First State Frame of the Week
+ const frameMount = document.querySelector('[data-mount="frame-of-week"]');
+ if(frameMount){
+    fetchJson('frame-of-the-week.json').then(d=>{
+         const current = d.current;
+         const hallOfFame = d.hallOfFame || [];
+         if(!current){
+                frameMount.innerHTML = `<div class="community-cta" style="text-align:center;padding:48px 24px;border:1px solid #e2ddd3;border-radius:12px">
+                        <div class="kicker">First State Frame of the Week</div>
+                                <h3 style="margin-top:8px">Submissions opening soon.</h3>
+                                        <p class="muted" style="max-width:480px;margin:10px auto 0">Every week we will pick one reader photo as the First State Frame &mdash; full credit, a feature here, and a spot in the Hall of Fame. Tag @delawarebeachfinds to be considered.</p>
+                                              </div>`;
+                return;
+         }
+         function frameCard(entry, isCurrent){
+                return `<article class="community-card">
+                        <div class="scene">${sceneImg(entry.scene, entry.name)}</div>
+                                <div class="card-copy">
+                                          <div class="kicker">${isCurrent ? 'First State Frame of the Week' : esc(entry.week||'')}</div>
+                                                    <h4>${esc(entry.name)}</h4>
+                                                              <p>${esc(entry.handle)} &mdash; ${esc(entry.caption)}</p>
+                                                                      </div>
+                                                                            </article>`;
+         }
+         const hofTiles = hallOfFame.map(e=>frameCard(e,false)).join('');
+         frameMount.innerHTML = `
+               <div class="community-grid">${frameCard(current,true)}</div>
+                     ${hofTiles ? `<div class="section-head" style="margin-top:56px"><div><div class="kicker">Hall of Fame</div><h3 style="margin-top:6px">Past First State Frames</h3></div></div><div class="community-grid">${hofTiles}</div>` : ''}`;
+    }).catch(()=>{});
+ }
+
 // Coastal Moments (video showcase)
  const videoMount = document.querySelector('[data-mount="coastal-moments"]');
  if(videoMount){
