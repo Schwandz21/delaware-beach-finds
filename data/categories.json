@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "coast",
+    "label": "Delaware Coast",
+    "description": "Dunes, tides, wildlife and the working waterfronts of the Delaware coastline."
+  },
+  {
+    "slug": "history",
+    "label": "The First State Story",
+    "description": "Long-form Delaware history, from before the name existed to how the myths took hold."
+  },
+  {
+    "slug": "people",
+    "label": "People of Delaware",
+    "description": "Profiles of the Delawareans quietly shaping the state."
+  },
+  {
+    "slug": "field-guide",
+    "label": "Delaware Field Guide",
+    "description": "Walks, wildlife, seasonal guides and what locals actually notice."
+  },
+  {
+    "slug": "community",
+    "label": "Through the Local Lens",
+    "description": "Community photography and the weekly First State Frame."
+  }
+]
