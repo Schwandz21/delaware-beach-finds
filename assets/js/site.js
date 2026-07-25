@@ -204,23 +204,38 @@
  }
 
   // Latest stories
- const storiesMount = document.querySelector('[data-mount="stories"]');
- if(storiesMount){
-   const limit = parseInt(storiesMount.getAttribute('data-limit')||'0',10);
-   fetchJson('stories.json').then(list=>{
-     let items = list.slice();
-     if(limit) items = items.filter(s=>!s.featured).slice(0, limit);
-     storiesMount.innerHTML = items.map(s=>`
-       <a class="story-card" href="stories/${esc(s.slug)}.html">
-         <div class="story-art"><div class="scene">${sceneImg(s.scene, s.headline)}</div></div>
-         <div class="kicker">${esc(s.kicker)}</div>
-         <h3>${esc(s.headline)}</h3>
-         <p>${esc(s.hook)}</p>
-       </a>`).join('');
-   }).catch(()=>{});
- }
+const storiesMount = document.querySelector('[data-mount="stories"]');
+if(storiesMount){
+  const limit = parseInt(storiesMount.getAttribute('data-limit')||'0',10);
+  const categoryFilter = storiesMount.getAttribute('data-category');
+  const seriesFilter = storiesMount.getAttribute('data-series');
+  const storiesDepth = document.body.getAttribute('data-depth') || '0';
+  const storiesPrefix = storiesDepth === '1' ? '' : 'stories/';
+  fetchJson('stories.json').then(list=>{
+    let items = list.slice();
+    if(categoryFilter) items = items.filter(s=>s.category===categoryFilter);
+    if(seriesFilter) items = items.filter(s=>s.series===seriesFilter);
+    if(limit) items = items.filter(s=>!s.featured).slice(0, limit);
+    if(seriesFilter) items.sort((a,b)=>(a.seriesInstallment||0)-(b.seriesInstallment||0));
+    if(!items.length){
+      storiesMount.innerHTML = `<div class="community-cta" style="text-align:center;padding:48px 24px;border:1px solid #e2ddd3;border-radius:12px">
+        <div class="kicker">More on the way</div>
+        <h3 style="margin-top:8px">Nothing published here yet.</h3>
+        <p class="muted" style="max-width:480px;margin:10px auto 0">Check back soon &mdash; new stories are in the works.</p>
+      </div>`;
+      return;
+    }
+    storiesMount.innerHTML = items.map(s=>`
+      <a class="story-card" href="${storiesPrefix}${esc(s.slug)}.html">
+        <div class="story-art"><div class="scene">${sceneImg(s.scene, s.headline)}</div></div>
+        <div class="kicker">${esc(s.kicker)}</div>
+        <h3>${esc(s.headline)}</h3>
+        <p>${esc(s.hook)}</p>
+      </a>`).join('');
+  }).catch(()=>{});
+}
 
- // Towns
+// Towns
  const townsMount = document.querySelector('[data-mount="towns"]');
  if(townsMount){
    fetchJson('towns.json').then(list=>{
