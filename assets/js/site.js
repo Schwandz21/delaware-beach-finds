@@ -296,4 +296,56 @@ document.querySelectorAll('[data-mount="shop-the-story"]').forEach(mount=>{
   }).catch(()=>{});
 });
 
+// Series hero (data-mount="series-hero" data-series="[slug]") — overwrites static fallback content already in the mount
+document.querySelectorAll('[data-mount="series-hero"]').forEach(mount=>{
+const seriesSlug = mount.getAttribute('data-series');
+if(!seriesSlug) return;
+fetchJson('series.json').then(list=>{
+const s = list.find(x=>x.slug===seriesSlug);
+if(!s) return;
+mount.innerHTML = `<div class="kicker">A Delaware Beach Finds Series</div><h1>${esc(s.title)}</h1><p class="lede">${esc(s.description)}</p>`;
+}).catch(()=>{});
+});
+
+// Series prev/next navigation (data-mount="series-nav" data-story="[slug]")
+document.querySelectorAll('[data-mount="series-nav"]').forEach(mount=>{
+const slug = mount.getAttribute('data-story');
+if(!slug) return;
+fetchJson('stories.json').then(list=>{
+const story = list.find(s=>s.slug===slug);
+if(!story || !story.series){ mount.remove(); return; }
+const items = list.filter(s=>s.series===story.series && s.status==='published').sort((a,b)=>(a.seriesInstallment||0)-(b.seriesInstallment||0));
+const idx = items.findIndex(s=>s.slug===slug);
+const prev = idx>0 ? items[idx-1] : null;
+const next = (idx>=0 && idx<items.length-1) ? items[idx+1] : null;
+if(!prev && !next){ mount.remove(); return; }
+mount.innerHTML = `<div class="series-nav">
+${prev ? `<a class="series-nav-link prev" href="${esc(prev.slug)}.html"><span class="muted small">&larr; Installment ${esc(prev.seriesInstallment)}</span><br>${esc(prev.headline)}</a>` : '<span></span>'}
+${next ? `<a class="series-nav-link next" href="${esc(next.slug)}.html"><span class="muted small">Installment ${esc(next.seriesInstallment)} &rarr;</span><br>${esc(next.headline)}</a>` : '<span></span>'}
+</div>`;
+}).catch(()=>{ mount.remove(); });
+});
+
+// Related stories (data-mount="related-stories" data-story="[slug]" data-limit="3") — replaces the static "Keep reading" list already in the mount
+document.querySelectorAll('[data-mount="related-stories"]').forEach(mount=>{
+const slug = mount.getAttribute('data-story');
+const relLimit = parseInt(mount.getAttribute('data-limit')||'3',10);
+if(!slug) return;
+const relDepth = document.body.getAttribute('data-depth') || '0';
+const relPrefix = relDepth === '1' ? '' : 'stories/';
+fetchJson('stories.json').then(list=>{
+const story = list.find(s=>s.slug===slug);
+if(!story) return;
+let related = list.filter(s=>s.slug!==slug && s.status==='published' && ((story.series && s.series===story.series) || s.category===story.category));
+related.sort((a,b)=>{
+const aSame = story.series && a.series===story.series ? 0 : 1;
+const bSame = story.series && b.series===story.series ? 0 : 1;
+return aSame - bSame;
+});
+related = related.slice(0, relLimit);
+if(!related.length) return;
+mount.innerHTML = `<h4>Keep reading</h4><ul>${related.map(r=>`<li><a href="${relPrefix}${esc(r.slug)}.html">${esc(r.headline)}</a></li>`).join('')}</ul><hr class="rule" style="margin:16px 0"><a class="link-arrow" href="${relPrefix}index.html">All stories &rarr;</a>`;
+}).catch(()=>{});
+});
+
 })();
