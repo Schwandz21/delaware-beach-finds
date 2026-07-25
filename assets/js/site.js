@@ -36,19 +36,20 @@
    return fetch(dataUrl(name)).then(r=>{ if(!r.ok) throw new Error('missing '+name); return r.json(); });
  }
 
- // Feature story (hero)
  const featureMount = document.querySelector('[data-mount="feature-story"]');
  if(featureMount){
-   fetchJson('feature-story.json').then(d=>{
-     featureMount.innerHTML = `
-       <div class="scene">${sceneImg(d.scene, d.headline)}</div>
-       <div class="container feature-inner">
-         <div class="kicker">${esc(d.kicker)}</div>
-         <h1>${esc(d.headline)}</h1>
-         <p class="lede">${esc(d.teaser)}</p>
-         <a class="link-arrow" href="${esc(d.link)}" style="color:#fff;font-size:1.05rem">${esc(d.linkText||'Read Story')} →</a>
-       </div>`;
-   }).catch(()=>{});
+  Promise.all([fetchJson('feature-story.json'), fetchJson('stories.json')]).then(([f,stories])=>{
+   const d = stories.find(s=>s.slug===f.slug);
+   if(!d) return;
+   featureMount.innerHTML = `
+   <div class="scene">${sceneImg(d.scene, d.headline)}</div>
+   <div class="container feature-inner">
+   <div class="kicker">${esc(d.kicker)}</div>
+   <h1>${esc(d.headline)}</h1>
+   <p class="lede">${esc(d.hook)}</p>
+   <a class="link-arrow" href="${esc('stories/'+d.slug+'.html')}" style="color:#fff;font-size:1.05rem">Read the story &rarr;</a>
+   </div>`;
+  }).catch(()=>{});
  }
 
  // Weekend calendar
