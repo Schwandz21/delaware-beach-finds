@@ -25,14 +25,19 @@
 <div class="article-meta"><span>By [AUTHOR NAME]</span><span>[Month DD, YYYY]</span><span>[N] min read</span><span>[KICKER]</span></div>
 <p>[Paragraph 1 — open on a scene or moment, not a summary.]</p><p>[Paragraph 2.]</p><p>[Paragraph 3.]</p><p>[Paragraph 4 — close with a beat, not a conclusion.]</p>
 </article>
-<aside class="side-note">
+<aside class="side-note" data-mount="related-stories" data-story="[SLUG]" data-limit="3">
 <h4>Keep reading</h4>
-<ul><li><a href="[related-slug-1].html">[Related story 1 headline]</a></li><li><a href="[related-slug-2].html">[Related story 2 headline]</a></li><li><a href="[related-slug-3].html">[Related story 3 headline]</a></li></ul>
+<ul><li><a href="index.html">More stories</a></li></ul>
 <hr class="rule" style="margin:16px 0">
 <a class="link-arrow" href="index.html">All stories &rarr;</a>
 </aside>
 </div>
 </section>
+<!-- Optional: if this article is part of a series, uncomment to show automatic previous/next installment navigation.
+<section class="section-tight"><div class="container">
+<div data-mount="series-nav" data-story="[SLUG]"></div>
+</div></section>
+-->
 <!-- Optional: once this story has real etsyProductIds set in stories.json, uncomment to show a Shop the Story block.
 <section class="section"><div class="container">
 <div data-mount="shop-the-story" data-story="[SLUG]"></div>
