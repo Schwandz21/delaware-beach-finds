@@ -278,3 +278,10 @@ p{margin:0 0 1.05rem}
 .cta-strip-actions{display:flex;gap:14px;flex-wrap:wrap}
 .cta-strip .btn-line{border-color:rgba(255,255,255,.4);color:#fff}
 .cta-strip .btn-line:hover{border-color:#fff}
+
+/* ---------- series prev/next navigation ---------- */
+.series-nav{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:28px 0}
+.series-nav-link{padding:20px;border:1px solid var(--line);border-radius:var(--radius-md);font-family:var(--serif);font-size:1.05rem;color:var(--navy);transition:.2s border-color}
+.series-nav-link:hover{border-color:var(--line-strong)}
+.series-nav-link.next{text-align:right}
+@media(max-width:640px){.series-nav{grid-template-columns:1fr}}
