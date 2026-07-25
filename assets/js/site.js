@@ -200,8 +200,10 @@
      let items = list.slice();
      if(limit) items = items.slice(0, limit);
      shopMount.innerHTML = items.map(p=>{
-               const storeLabel = p.storeLabel || 'The Blue Hen Basement · Etsy';
-              return `<a class="product-card" data-etsy-link data-product="${esc(p.name)}" target="_blank" href="#">
+               const storeLabel = p.storeLabel || (p.shop==='dbf' ? 'DelawareBeachFinds · Etsy' : 'The Blue Hen Basement · Etsy');
+              const shopBase = p.shop==='dbf' ? (c.delawareBeachFindsUrl||c.etsyUrl) : (c.blueHenBasementUrl||c.etsyUrl);
+      const productHref = withUtm(p.url||shopBase, 'etsy_shop', p.shop||'bhb');
+    return `<a class="product-card" data-etsy-link data-product="${esc(p.name)}" target="_blank" href="${esc(productHref)}">
          <div class="product-art"><div class="scene">${sceneImg(p.scene, p.name)}</div></div>
          <span class="store-tag">${storeLabel}</span>
          <h4>${esc(p.name)}</h4>
@@ -209,8 +211,7 @@
          <span class="price-line">${esc(p.price)}</span>
        </a>`;
      }).join('');
-         document.querySelectorAll('[data-etsy-link]').forEach(a=>a.href=withUtm(c.etsyUrl,'etsy_shop'));
-        if(window.gtag) gtag('event','view_shop',{source_page:location.pathname,product_count:list.length});
+         if(window.gtag) gtag('event','view_shop',{source_page:location.pathname,product_count:list.length});
    }).catch(()=>{});
  }
 })();
