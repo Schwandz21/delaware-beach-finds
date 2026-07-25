@@ -320,8 +320,8 @@ const prev = idx>0 ? items[idx-1] : null;
 const next = (idx>=0 && idx<items.length-1) ? items[idx+1] : null;
 if(!prev && !next){ mount.remove(); return; }
 mount.innerHTML = `<div class="series-nav">
-${prev ? `<a class="series-nav-link prev" href="${esc(prev.slug)}.html"><span class="muted small">&larr; Installment ${esc(prev.seriesInstallment)}</span><br>${esc(prev.headline)}</a>` : '<span></span>'}
-${next ? `<a class="series-nav-link next" href="${esc(next.slug)}.html"><span class="muted small">Installment ${esc(next.seriesInstallment)} &rarr;</span><br>${esc(next.headline)}</a>` : '<span></span>'}
+${prev ? `<a class="series-nav-link prev" href="${esc(prev.slug)}.html"><span class="muted small">&larr; Installment ${prev.seriesInstallment}</span><br>${esc(prev.headline)}</a>` : '<span></span>'}
+${next ? `<a class="series-nav-link next" href="${esc(next.slug)}.html"><span class="muted small">Installment ${next.seriesInstallment} &rarr;</span><br>${esc(next.headline)}</a>` : '<span></span>'}
 </div>`;
 }).catch(()=>{ mount.remove(); });
 });
