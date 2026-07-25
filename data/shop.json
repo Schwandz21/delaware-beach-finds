@@ -9,10 +9,11 @@
   },
   {
     "store": "etsy",
-    "name": "Cape Henlopen Coordinates Throw Blanket",
-    "description": "Woven fringe blanket printed with Cape Henlopen's coordinates.",
-    "price": "$58.43",
-    "url": "https://www.etsy.com/listing/4530762959/cape-henlopen-delaware-coordinates-woven",
+        "shop": "dbf",
+        "name": "Cape Henlopen Woven Throw Blanket",
+        "description": "Woven coastal throw featuring Cape Henlopen coordinates and understated Delaware beach-house style.",
+        "price": "$59.95",
+        "url": "https://www.etsy.com/listing/4543710756/cape-henlopen-woven-throw-blanket",
     "scene": "https://i.etsystatic.com/66256405/r/il/58af1f/8198683412/il_1080xN.8198683412_nxqk.jpg"
   },
   {
@@ -62,5 +63,14 @@
     "price": "$2.99",
     "url": "https://www.etsy.com/listing/4524189050/horseshoe-crab-sticker-delaware-beach",
     "scene": "https://i.etsystatic.com/66256405/r/il/cbfd4f/8200697729/il_1080xN.8200697729_5t6f.jpg"
+  },
+{
+        "store": "etsy",
+        "shop": "dbf",
+        "name": "Personalized Address Planter Sign",
+        "description": "A handcrafted wooden porch sign combining custom house numbers or a family name with a built-in planter box.",
+        "price": "From $125",
+        "url": "https://www.etsy.com/listing/4543750656/personalized-wooden-address-sign-with",
+        "scene": "https://i.etsystatic.com/67097156/r/il/9d6833/8295602758/il_1080xN.8295602758_3i8u.jpg"
   }
 ]
