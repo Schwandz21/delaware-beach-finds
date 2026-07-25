@@ -108,43 +108,51 @@
    }).catch(()=>{});
  }
 
- // Community
+// Community
  const communityMount = document.querySelector('[data-mount="community"]');
  if(communityMount){
-   const mode = communityMount.getAttribute('data-mode') || 'compact';
-   fetchJson('community.json').then(list=>{
-     const byType = t => list.filter(x=>x.type===t);
-     const photographer = byType('photographer').find(x=>x.featured) || byType('photographer')[0];
-     const dog = byType('dog').find(x=>x.featured) || byType('dog')[0];
-     const fishing = byType('fishing').find(x=>x.featured) || byType('fishing')[0];
-     const sunrises = byType('sunrise');
-     function mediaFor(entry){
-       if(entry.image){
-         const depth = document.body.getAttribute('data-depth') || '0';
-         const prefix = depth === '1' ? '../' : '';
-         return `<img src="${prefix}assets/images/community/${esc(entry.image)}" alt="${esc(entry.name||'')}" loading="lazy">`;
-       }
-       return sceneImg(entry.scene, entry.name);
-     }
-     function card(entry, label){
-       if(!entry) return '';
-       return `<article class="community-card">
-         <div class="scene">${mediaFor(entry)}</div>
-         <div class="card-copy">
-           <div class="kicker">${esc(label)}</div>
-           <h4>${esc(entry.name)}</h4>
-           <p>${esc(entry.handle)} — ${esc(entry.caption)}</p>
-         </div>
-       </article>`;
-     }
-     const cards = [card(photographer,'Photographer of the Week'), card(dog,"Today's Beach Dog"), card(fishing,'Favorite Fishing Photo')].join('');
-     const sunriseLimit = mode === 'full' ? sunrises.length : 6;
-     const sunTiles = sunrises.slice(0, sunriseLimit).map(s=>`<div class="tile" title="${esc(s.name)} — ${esc(s.caption)}">${mediaFor(s)}</div>`).join('');
-     communityMount.innerHTML = `
-       <div class="community-grid">${cards}</div>
-       <div class="section-head" style="margin-top:56px"><div><div class="kicker">Your Sunrise</div><h3 style="margin-top:6px">Tagged this week</h3></div></div>
-       <div class="sunrise-grid">${sunTiles}</div>`;
-   }).catch(()=>{});
+    const mode = communityMount.getAttribute('data-mode') || 'compact';
+    fetchJson('community.json').then(list=>{
+         const real = list.filter(x=>!x.placeholder);
+         const byType = t => real.filter(x=>x.type===t);
+         const photographer = byType('photographer').find(x=>x.featured) || byType('photographer')[0];
+         const dog = byType('dog').find(x=>x.featured) || byType('dog')[0];
+         const fishing = byType('fishing').find(x=>x.featured) || byType('fishing')[0];
+         const sunrises = byType('sunrise');
+         function mediaFor(entry){
+                if(entry.image){
+                         const depth = document.body.getAttribute('data-depth') || '0';
+                         const prefix = depth === '1' ? '../' : '';
+                         return `<img src="${prefix}assets/images/community/${esc(entry.image)}" alt="${esc(entry.name||'')}" loading="lazy">`;
+                }
+                return sceneImg(entry.scene, entry.name);
+         }
+         function card(entry, label){
+                if(!entry) return '';
+                return `<article class="community-card">
+                        <div class="scene">${mediaFor(entry)}</div>
+                                <div class="card-copy">
+                                          <div class="kicker">${esc(label)}</div>
+                                                    <h4>${esc(entry.name)}</h4>
+                                                              <p>${esc(entry.handle)} — ${esc(entry.caption)}</p>
+                                                                      </div>
+                                                                            </article>`;
+         }
+         const cards = [card(photographer,'Photographer of the Week'), card(dog,"Today's Beach Dog"), card(fishing,'Favorite Fishing Photo')].join('');
+         const sunriseLimit = mode === 'full' ? sunrises.length : 6;
+         const sunTiles = sunrises.slice(0, sunriseLimit).map(s=>`<div class="tile" title="${esc(s.name)} — ${esc(s.caption)}">${mediaFor(s)}</div>`).join('');
+         if(!photographer && !dog && !fishing && !sunrises.length){
+                communityMount.innerHTML = `<div class="community-cta" style="text-align:center;padding:48px 24px;border:1px solid #e2ddd3;border-radius:12px">
+                        <div class="kicker">Submissions Opening Soon</div>
+                                <h3 style="margin-top:8px">Be the first to show up here.</h3>
+                                        <p class="muted" style="max-width:480px;margin:10px auto 0">Tag <strong>@delawarebeachfinds</strong> with your best shot of the coast, your beach dog, your catch of the day, or your sunrise. The first Photographer of the Week, Beach Dog and First State Frame are picked from real reader tags.</p>
+                                              </div>`;
+                return;
+         }
+         communityMount.innerHTML = `
+               <div class="community-grid">${cards}</div>
+                     ${sunTiles ? `<div class="section-head" style="margin-top:56px"><div><div class="kicker">Your Sunrise</div><h3 style="margin-top:6px">Tagged this week</h3></div></div><div class="sunrise-grid">${sunTiles}</div>` : ''}`;
+    }).catch(()=>{});
  }
 
 // Coastal Moments (video showcase)
