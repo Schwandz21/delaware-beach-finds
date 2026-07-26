@@ -173,3 +173,21 @@ Verified live (delawarebeachfinds.com):
 - Interactive tool: full 5-step click-through tested live, restart button tested live, focus-visible CSS confirmed present on option buttons.
 
 Next action if picked back up: do a real phone-width visual QA pass on the guide page specifically (the resize_window tool does not reliably change rendered viewport in this environment — may need actual device emulation or a real narrow browser window). Also spot-check the interactive tool's keyboard-only (Tab + Enter) path end to end, not just mouse clicks. No content gaps — manuscript fully supported the complete free-edition scope described above.
+
+
+---
+
+## Final production verification pass (2026-07-26, same session)
+
+Scope: homepage, surf-fishing guide, navigation, Etsy links, mobile overflow, browser console. Fix only confirmed defects, no new features/content.
+
+Results:
+- Homepage: clean console on fresh load, no horizontal overflow at a 375px-equivalent width (tested via sandboxed iframe rendering since this environment's window-resize tool doesn't reliably emulate a narrow viewport), all nav links resolve.
+- Surf-fishing guide: clean console on fresh load, no horizontal overflow at 375px, all 4 official source links previously verified real, interactive tool previously verified end to end.
+- Etsy links: spot-checked the shop link (etsy.com/shop/DelawareBeachFinds) by loading it directly — real, live shop page. Full link audit was already done in a prior session (see "Audit all Etsy links site-wide" above); no changes needed.
+- Mobile overflow: none found on either page.
+- Browser console: no errors on either page.
+
+One confirmed defect found and fixed: the Surf Guide nav link was in a different position on its own page (`surf-fishing-guide.html`: between Stories and Community) than on the homepage (between Explore and Stories, which is the documented/intended placement). Fixed by reordering the guide page's own nav to match the homepage. Commit `f84efcd`. Verified live via a no-store fetch of the page HTML (the browser's own cached copy of the page briefly still showed the old order after the fix deployed — this is the same `max-age=600` HTTP caching behavior already documented above, not a real bug; a genuinely fresh fetch confirmed the corrected order is live).
+
+No other defects found. No other changes made. Site-wide nav propagation to the ~39 other pages that don't yet link to the surf guide (story pages, town pages, category pages, shop, etc.) was considered and deliberately NOT done in this pass — that would be a scope decision/content rollout, not a confirmed defect fix, and was explicitly out of bounds for this verification-only pass. If broader nav coverage for the guide is wanted, that's a follow-up decision for the next session, not a bug.
