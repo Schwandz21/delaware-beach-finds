@@ -33,6 +33,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
   const file = /\.(svg|jpe?g|png|webp)$/i.test(scene) ? scene : scene + '.svg';
   return `<img src="${prefix}assets/images/scenes/${esc(file)}" alt="${esc(alt||'')}" loading="lazy" decoding="async">`;
  }
+ const CAT_LABELS={coast:'Delaware Coast',history:'The First State Story',people:'People of Delaware','field-guide':'Delaware Field Guide',community:'Through the Local Lens'};
  function fetchJson(name){
    return fetch(dataUrl(name)).then(r=>{ if(!r.ok) throw new Error('missing '+name); return r.json(); });
  }
@@ -46,9 +47,11 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
    <div class="scene">${sceneImg(d.scene, d.headline)}</div>
    <div class="container feature-inner">
    <div class="kicker">${esc(d.kicker)}</div>
+    <div class="feature-meta" style="color:rgba(255,255,255,.78);font-size:.85rem;letter-spacing:.03em;margin:.25em 0 .5em;text-transform:uppercase">${esc(CAT_LABELS[d.category]||d.category)}${d.readTime? " · "+esc(d.readTime):""}</div>
    <h1>${esc(d.headline)}</h1>
    <p class="lede">${esc(d.hook)}</p>
    <a class="link-arrow" href="${esc('stories/'+d.slug+'.html')}" style="color:#fff;font-size:1.05rem">Read the story &rarr;</a>
+    <a class="link-arrow" href="stories/index.html" style="color:rgba(255,255,255,.85);font-size:.95rem;margin-left:28px">Explore All Stories &rarr;</a>
    </div>`;
   }).catch(()=>{});
  }
@@ -230,6 +233,7 @@ if(storiesMount){
       <a class="story-card" href="${storiesPrefix}${esc(s.slug)}.html">
         <div class="story-art"><div class="scene">${sceneImg(s.scene, s.headline)}</div></div>
         <div class="kicker">${esc(s.kicker)}</div>
+         <div class="card-meta muted" style="font-size:.75rem;letter-spacing:.02em;margin:.15em 0">${esc(CAT_LABELS[s.category]||s.category)}${s.readTime? " · "+esc(s.readTime):""}</div>
         <h3>${esc(s.headline)}</h3>
         <p>${esc(s.hook)}</p>
       </a>`).join('');
