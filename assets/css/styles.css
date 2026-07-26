@@ -340,3 +340,6 @@ p{margin:0 0 1.05rem}
 
 .guide-tool .guide-step h3{color:var(--ink)}
 .guide-tool .guide-result-block p,.guide-tool .guide-result-block strong{color:var(--ink)}
+
+.guide-tool p{color:var(--ink)}
+.guide-tool .small.muted{color:var(--muted)}
