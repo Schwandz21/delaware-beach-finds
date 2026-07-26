@@ -49,3 +49,26 @@ All three fact-checked against DHCA, NPS, and Delaware Public Archives directly 
 > "Send the four outreach emails from INSTITUTIONAL-OUTREACH-PACKAGE.md (Pilots' Association first — longest lead time). While waiting on replies, resolve the two remaining verifications blocking 'Before Delaware Had a Name' and 'New Sweden' (DGS sea-level figures, state archaeologist on Paleoindian claims) so they're ready to publish the moment review clears. Do not publish either article without that review."
 
 Everything in this file reflects the actual state of the live site at commit `5f79ba6`, not a plan.
+
+
+---
+
+## Reconciliation Pass — July 26, 2026
+
+A follow-up pass after the user found live discrepancies the prior handoff had not caught. Findings and fixes:
+
+**Root cause identified.** The GitHub Pages deployments list showed several past deploys marked "cancelled" (commits #98, #102, #111) rather than genuinely failed. Checked the run detail: each was cancelled because a newer commit landed while it was still building ("Canceling since a higher priority waiting request exists"). This is normal GitHub Pages queueing behavior, not a broken pipeline — every commit is a full-repo snapshot, so the next successful deploy always includes everything from the cancelled one. Confirmed with the Actions run logs directly rather than assuming CDN lag. raw.githubusercontent.com was also confirmed to run its own short independent cache separate from the Pages/Fastly cache — verify against the GitHub Contents API or the live domain with a cache-busting fetch, not raw.githubusercontent, when checking "did my edit really land."
+
+**Real bug found and fixed: community.html.** The Frame of the Week mount (`data-mount="frame-of-week"`) was correctly wired and rendering the honest "Submissions opening soon" + Hall of Fame panel. But a second, separate, non-mounted `<section class="section-tight bg-deep">` still held the old static Photographer of the Week / Today's Beach Dog / Favorite Fishing Photo three-card row, sitting right below the new panel. Both were live at once. Deleted the leftover section. Commit `1259d00`.
+
+**Legacy copy removed.** `terms.html` and `privacy.html` still named "Shopify" in the external-platforms boilerplate even though Shopify was dropped as a storefront earlier in the project. Removed both mentions, left Etsy + "another platform" language. Commits `(terms)` and `(privacy)`. Site-wide search of the full repo confirmed zero remaining files reference "Shopify" or "Blue Hen" (config.js was already clean from a prior pass). README.md still describes the old Shopify/Blue-Hen-Basement setup in its own text, but README.md is not served as a site page, so it isn't public-facing — left as-is, flagged here for whoever next edits repo docs.
+
+**Homepage gaps closed.** `<section class="feature-hero" data-mount="feature-story"></section>` had zero static fallback — a visitor would see a blank hero if the JS fetch failed or was slow. Added real static markup matching the JS-generated template exactly (same classes, same content as the current feature story, "The Towers on the Dunes"), so JS overwrites it with identical output on success and visitors still get the real cover story if it doesn't run. There was also no flagship-series module anywhere on the homepage. Added one directly under the hero: series title, one-line description, the two published installments as direct links, an honest "seven more in progress" line, and a CTA to the series page. Commit `087d3b0`.
+
+**Verified, not changed.** Instagram mount already renders a polished "tap through on Instagram" fallback panel with a real `@delawarebeachfinds` profile link — no fix needed. All 8 published stories confirmed present on the archive (`stories/index.html`) and on their respective category pages (spot-checked `category-history.html`); no orphaned content found. `towers-on-the-dunes` carries `series: "delaware-at-war"` in stories.json, a series slug with no entry in series.json and no landing page — harmless (the series-nav mount just no-ops when it finds no sibling), but noted here since it's technically an orphaned field.
+
+**Live verification.** All fixes confirmed on delawarebeachfinds.com directly (not raw.githubusercontent.com) with cache-busting fetches and a hard reload. Checked: homepage desktop screenshot (hero + series module render correctly), homepage mobile viewport, stories/towers-on-the-dunes.html, stories/series-how-delaware-became-delaware.html, stories/category-history.html, community.html. No console errors on any page checked.
+
+**Commits this pass:** `1259d00` (community.html), terms.html Shopify removal, privacy.html Shopify removal, `087d3b0` (homepage feature-hero fallback + series module).
+
+**Still not done / lower priority:** README.md legacy Shopify/Blue-Hen text (not public-facing). Mobile-viewport resize tool didn't visibly change the rendered screenshot in this session — mobile layout was not independently re-verified pixel-by-pixel this pass; the CSS breakpoints were verified in an earlier session and no layout-affecting CSS changed since, so risk is low, but a real device/DevTools check is still worth doing before Monday. The `delaware-at-war` orphaned series tag on towers-on-the-dunes is cosmetically harmless and left alone.
