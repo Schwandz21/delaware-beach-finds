@@ -50,8 +50,8 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
     <div class="feature-meta" style="color:rgba(255,255,255,.78);font-size:.85rem;letter-spacing:.03em;margin:.25em 0 .5em;text-transform:uppercase">${esc(CAT_LABELS[d.category]||d.category)}${d.readTime? " · "+esc(d.readTime):""}</div>
    <h1>${esc(d.headline)}</h1>
    <p class="lede">${esc(d.hook)}</p>
-   <a class="link-arrow" href="${esc('stories/'+d.slug+'.html')}" style="color:#fff;font-size:1.05rem">Read the story &rarr;</a>
-    <a class="link-arrow" href="stories/index.html" style="color:rgba(255,255,255,.85);font-size:.95rem;margin-left:28px">Explore All Stories &rarr;</a>
+   <div class="feature-cta-row" style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 28px;margin-top:2px"><a class="link-arrow" href="${esc('stories/'+d.slug+'.html')}" style="color:#fff;font-size:1.05rem">Read the story &rarr;</a>
+    <a class="link-arrow" href="stories/index.html" style="color:rgba(255,255,255,.85);font-size:.95rem">Explore All Stories &rarr;</a></div>
    </div>`;
   }).catch(()=>{});
  }
