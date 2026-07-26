@@ -87,11 +87,12 @@ p{margin:0 0 1.05rem}
 .feature-hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .feature-hero .scene{position:absolute;inset:0;z-index:0}
 .feature-hero .scene svg{width:100%;height:100%;object-fit:cover}
-.feature-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,24,29,.86) 0%,rgba(10,24,29,.42) 46%,rgba(10,24,29,.06) 78%);z-index:1}
+.feature-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,24,29,.92) 0%,rgba(10,24,29,.72) 40%,rgba(10,24,29,.28) 68%,rgba(10,24,29,.05) 92%);z-index:1}
+.feature-hero .scene img{object-position:center 68%}
 .feature-hero .feature-inner{position:relative;z-index:2;padding:0 0 84px;max-width:760px}
-.feature-hero h1{color:#fff;margin:.3em 0 .4em}
-.feature-hero .lede{color:rgba(255,255,255,.88);max-width:600px}
-.feature-hero .kicker{color:#f3d9c4}
+.feature-hero h1{color:#fff;margin:.3em 0 .4em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.feature-hero .lede{color:rgba(255,255,255,.88);max-width:600px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+.feature-hero .kicker{color:#f3d9c4;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 
 /* ---------- weekend calendar ---------- */
 .calendar-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
