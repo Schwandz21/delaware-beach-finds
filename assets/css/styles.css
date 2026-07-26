@@ -286,3 +286,54 @@ p{margin:0 0 1.05rem}
 .series-nav-link:hover{border-color:var(--line-strong)}
 .series-nav-link.next{text-align:right}
 @media(max-width:640px){.series-nav{grid-template-columns:1fr}}
+
+
+/* ---------- surf fishing guide ---------- */
+.guide-callout{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius-md);padding:24px 28px;margin:1.8rem 0}
+.guide-callout h4{margin:0 0 10px;font-size:1rem}
+.guide-callout.warn{border-color:var(--coral);background:#fbf1ea}
+.guide-callout ul{margin:0;padding-left:1.2em}
+.guide-callout li{margin:4px 0}
+.guide-spec-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 28px;margin:1rem 0}
+.guide-spec-grid div{padding:8px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.guide-spec-grid strong{color:var(--navy)}
+.guide-diagram{background:var(--paper-deep);border:1px solid var(--line);border-radius:var(--radius-md);padding:20px;margin:1.6rem 0}
+.guide-diagram svg{width:100%;height:auto;display:block}
+.guide-diagram figcaption{margin-top:10px;font-size:.85rem;color:var(--muted);text-align:center}
+.guide-bait-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:1.4rem 0}
+.guide-bait-card{border:1px solid var(--line);border-radius:var(--radius-md);padding:18px 20px}
+.guide-bait-card h4{margin:0 0 6px;font-size:.98rem;color:var(--teal-deep)}
+.guide-bait-card p{margin:0;font-size:.9rem;color:var(--ink-soft)}
+.guide-species-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:1.4rem 0}
+.guide-species-card{border:1px solid var(--line);border-radius:var(--radius-md);padding:20px 22px}
+.guide-species-card h4{margin:0 0 8px;font-family:var(--serif);font-size:1.15rem}
+.guide-species-card dl{margin:10px 0 0;font-size:.88rem}
+.guide-species-card dt{font-weight:700;color:var(--muted);margin-top:6px}
+.guide-species-card dd{margin:2px 0 0}
+.guide-tool{background:var(--paper-deep);border:1px solid var(--line-strong);border-radius:var(--radius-lg);padding:32px;margin:1.6rem 0}
+.guide-tool-progress{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:14px}
+.guide-step h3{margin:0 0 18px;font-size:1.3rem}
+.guide-option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.guide-option{display:block;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line-strong);border-radius:var(--radius-sm);padding:14px 18px;font-family:var(--sans);font-size:.96rem;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.guide-option:hover,.guide-option:focus-visible{border-color:var(--teal-deep);background:#eef4f1;outline:none}
+.guide-option:focus-visible{box-shadow:0 0 0 3px rgba(31,75,82,.25)}
+.guide-result h3{margin-top:0}
+.guide-result-block{background:var(--paper);border-left:3px solid var(--coral);padding:16px 22px;margin:16px 0;border-radius:0 var(--radius-sm) var(--radius-sm) 0}
+.guide-restart{margin-top:18px}
+.guide-checklist{list-style:none;margin:0;padding:0;columns:2;column-gap:36px}
+.guide-checklist li{padding:6px 0 6px 26px;position:relative;font-size:.92rem;break-inside:avoid}
+.guide-checklist li:before{content:"";position:absolute;left:0;top:9px;width:14px;height:14px;border:1.5px solid var(--line-strong);border-radius:3px}
+.guide-source-list{list-style:none;margin:0;padding:0}
+.guide-source-list li{padding:12px 0;border-bottom:1px solid var(--line)}
+.guide-source-list a{font-weight:700}
+.guide-premium{background:var(--paper-deep);border:1px dashed var(--line-strong);border-radius:var(--radius-md);padding:26px 28px;margin:1.6rem 0;text-align:center}
+.guide-premium .kicker{justify-content:center}
+@media(max-width:900px){
+  .guide-spec-grid,.guide-species-grid{grid-template-columns:1fr}
+  .guide-bait-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .guide-bait-grid{grid-template-columns:1fr}
+  .guide-checklist{columns:1}
+  .guide-tool{padding:22px 18px}
+}
