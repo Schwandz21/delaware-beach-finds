@@ -103,3 +103,48 @@ Continued directly from the reconciliation pass (commit `8ddf85d`) per explicit 
 **Next highest-value task:** Send the outreach emails this project has been blocked on since the ranking was written — Delaware Historical Society (Underground Railroad chronology review), Fort Miles Museum (access + technical review), DGS (channel-alignment and sea-level claims for two Tier B articles), and the two tribal contacts (Nanticoke Indian Association, Lenape Indian Tribe of Delaware) for the two Tier C pieces. Those four contacts are, per the ranking document's own cross-cutting finding, what unlock most of the remaining archive — not more drafting.
 
 **Suggested Monday restart prompt:** "Check whether any outreach responses have come in from Delaware Historical Society, Fort Miles Museum, DGS, or the tribal contacts. If any Tier B article's blocking claim has been confirmed, move it to publication following the same process as this sprint. If real USFWS photography has been dropped into assets/images/scenes/ under the filenames noted in DBF-MONDAY-HANDOFF.md, update the three new articles' photoCredit fields and og:image tags accordingly and commit. Otherwise, continue expanding the Coast-and-Nature department with new Tier-A-achievable topics researched fresh from primary agency sources, following the same sourcing discipline as this sprint."
+
+
+---
+
+## Visual Transformation Sprint — July 26, 2026 (evening)
+
+Continued from commit 4f1eed1 under a tight remaining-capacity constraint. Focus: highest-impact visible fixes over new planning docs.
+
+**Real bug found and fixed:** the homepage cover-story hero (`.feature-hero`) was rendering with a real, correctly-sized photo (cape-henlopen-aerial-1.jpg — confirmed a genuine aerial coastline photo, not a placeholder), but the dark gradient overlay faded to near-zero opacity well before the bottom of the hero, where the kicker/headline/lede text sits. Result: "DELAWARE AT WAR" and the headline were low-contrast and hard to read against the sky. Fixed by deepening and extending the gradient stops and adding text-shadow to h1/lede/kicker as a safety net. Confirmed live: hero text is now clearly legible over the photo.
+
+**Homepage hero upgraded** to match the Phase-1 spec: added a category + read-time meta line ("DELAWARE COAST · 9 MIN READ") under the kicker, and a second, secondary discovery CTA ("Explore All Stories →") next to the existing "Read the story →" primary CTA, wrapped in a flex row (`gap`, `flex-wrap`) so it degrades cleanly at narrow widths instead of using a fixed margin. Done in both the JS-rendered feature-story template (site.js) and the static HTML fallback (index.html), so it's visible with or without JS.
+
+**Story cards upgraded site-wide** (shared component, one change affects every card grid — homepage rail, stories archive, category pages, series page): each card now shows a "Category · Read time" line (e.g. "Delaware Coast · 7 min read") under the kicker. Added a small `CAT_LABELS` map in site.js so category slugs render as their real display names (Delaware Coast, The First State Story, People of Delaware, Delaware Field Guide, Through the Local Lens).
+
+**Archive/category discovery — verified, not rebuilt:** stories/index.html already has pill-style links to all 4 real category pages plus the flagship series, and the "stories" mount in site.js already has a graceful "More on the way" empty state for any category with zero matching stories. This already satisfies the discovery/filter requirement, so no duplicate filter UI was built — confirmed live that stories/index.html renders all 11 stories with real photos/illustrations and the category pills work.
+
+**Mobile:** confirmed responsive breakpoints already exist in styles.css (1080px, 900px, 640px) covering grid columns, section padding, and feature-hero height. New elements (feature-meta, card-meta, cta-row) use relative sizing and flex-wrap so they don't require new breakpoints. Note: the sandbox's browser-resize tool did not actually change the rendered viewport in this session, so narrow-width layout could not be screenshotted directly this pass — worth a manual phone check next session.
+
+**Surf-fishing guide — honest correction to a false premise:** the prior instruction assumed a rough draft of an interactive surf-fishing guide already existed in the repo. It does not. A full recursive scan of all 106 repo files found zero surf-fishing HTML/JS/JSON — only two unrelated decorative SVG illustrations (fishing-dawn-1.svg, marsh-fishing-1.svg) whose filenames matched the search. Building a real decision-tree guide (location → season → conditions → species → bait → rig → casting → safe handling → DE regulations with a real agency link) from scratch is a substantial multi-page feature, not a small polish — it was not attempted under the stated capacity constraint rather than shipping something fabricated or rushed. This is the single biggest remaining gap against the sprint's stated priorities.
+
+### Commits this pass (all verified live via delawarebeachfinds.com with cache-busting fetch, newest first)
+- `bd608a1` — Refactor feature-hero and series layout in index.html (CTA row wrapper)
+- `111d972` — Refactor links into a feature CTA row (site.js)
+- `5c4bfb6` — Enhance feature-hero section with metadata and links (index.html)
+- `d4c8073` — Add category labels for features and stories (site.js)
+- `34ace16` — Enhance feature hero styles with text shadows (styles.css gradient/contrast fix)
+
+**Final commit hash: `bd608a1`**
+
+### Live URLs verified this pass
+- https://delawarebeachfinds.com/ — hero contrast fix, meta line, secondary CTA all confirmed live and legible
+- https://delawarebeachfinds.com/stories/index.html — category pills + all 11 story cards with new meta line confirmed live
+- https://delawarebeachfinds.com/stories/why-delaware-looks-like-that.html — article template, series label, related module confirmed healthy
+- https://delawarebeachfinds.com/stories/series-how-delaware-became-delaware.html — series page renders both published installments
+- https://delawarebeachfinds.com/community.html — loads clean, no console errors
+- Console checked clean (no errors) on homepage, an article page, and community.html
+
+### Unfinished / genuinely still needed
+1. **Surf-fishing guide does not exist** — needs to be scoped and built as its own task; requires real Delaware fishing-regulation source links (DNREC) which should be verified against the live agency site, not assumed.
+2. **Hero photo is low-resolution** (cape-henlopen-aerial-1.jpg is only 387×258px natural size, stretched across a 92vh hero) — looks acceptable now that contrast is fixed, but a higher-resolution replacement would visibly sharpen the site's most important surface. Could not source a replacement this pass — sandbox network is allowlisted and blocked fetching from external photo sources (e.g. fws.gov) directly.
+3. **Mobile layout not visually screenshotted** this pass due to a tool limitation (browser resize didn't affect the actual rendered viewport in this session) — CSS breakpoints exist and were code-reviewed, but a real phone/narrow-viewport visual pass is still worth doing.
+4. Phases 3, 6, 7, 8 (article template deep polish, nav/identity pass, Instagram/Etsy/newsletter copy refresh, broader visual-system pass) were not re-touched this pass — they were already in reasonable shape from prior sessions and the remaining capacity went to the highest-visibility fix (the hero) first, per instructions.
+
+### Suggested Monday restart prompt
+"Continue delawarebeachfinds.com from commit bd608a1. The homepage hero contrast bug is fixed and story cards now show category + read time. Next: (1) scope and build a real interactive surf-fishing guide from scratch — it does not exist yet in the repo, so start clean with location/season/conditions/species/bait/rig decision points and a real DNREC regulations link; (2) do a real phone-width visual QA pass on homepage, archive, and an article page; (3) consider sourcing a higher-resolution hero photo for cape-henlopen-aerial-1.jpg. Inspect first, then execute — no new planning docs."
