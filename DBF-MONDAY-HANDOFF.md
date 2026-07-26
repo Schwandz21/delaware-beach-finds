@@ -148,3 +148,28 @@ Continued from commit 4f1eed1 under a tight remaining-capacity constraint. Focus
 
 ### Suggested Monday restart prompt
 "Continue delawarebeachfinds.com from commit bd608a1. The homepage hero contrast bug is fixed and story cards now show category + read time. Next: (1) scope and build a real interactive surf-fishing guide from scratch — it does not exist yet in the repo, so start clean with location/season/conditions/species/bait/rig decision points and a real DNREC regulations link; (2) do a real phone-width visual QA pass on homepage, archive, and an article page; (3) consider sourcing a higher-resolution hero photo for cape-henlopen-aerial-1.jpg. Inspect first, then execute — no new planning docs."
+
+
+---
+
+## Surf Fishing Guide — built, deployed, verified (session ending 2026-07-26)
+
+Source: the real rough-draft manuscript was located in Google Drive ("The Delaware Beach Finds Guide to Surf Fishing - Premium Manuscript", owned by michael@rentdelawarebeaches.com) and read in full. It was NOT modified. The free web guide below is built entirely from that manuscript's strongest, beginner-safe material; the full species catalog, seasonal calendar, and vehicle-recovery instructions are intentionally reserved for a future paid Etsy print/ebook edition, with an honest on-page note saying so.
+
+What shipped:
+- `surf-fishing-guide.html` — full field-guide page: hero, Start Here, How to Read the Surf (inline SVG beach cross-section), Tackle & Rigs (inline SVG high-low rig diagram), Bait Guide, 4 headline Delaware surf species, a 5-step interactive "what should I try today" tool, Beach & Fishing Etiquette, Safety Guidance, Licenses/Permits/Rules (verification-only language, 4 real DNREC/State Parks links, explicit "this guide does not publish current fees/limits/dates" warning), Quick Reference checklist, an honest "Premium Edition — Coming Soon" panel linking to the general Etsy shop (no fake product link), and Related Stories + Instagram follow.
+- Interactive tool is vanilla JS, no framework: 5 questions (location/season/conditions/target/bait) → a hedged, non-guaranteed recommendation, with a working Start Over control. Verified live end-to-end via real clicks through all 5 steps to the result screen.
+- Homepage: new `.section-tight.bg-ink` module ("Surf Fishing Delaware" / suggested tagline / "Open the Surf Fishing Guide" CTA) placed after the flagship-series module, before the weekend calendar. Nav has a "Surf Guide" link. Footer has a matching link.
+- Cross-link added from `stories/towers-on-the-dunes.html` to the guide.
+- CSS: new `.guide-*` component library added to `assets/css/styles.css`.
+
+Bug found and fixed during live verification: the interactive tool's step/result headings and two result paragraphs were rendering white-on-cream (invisible) because the site's existing `.section.bg-ink h2,h3{color:#fff}` and inherited body color rules leaked into the light-colored tool card. Fixed with two follow-up commits scoping `.guide-tool` text back to `var(--ink)`. Confirmed fixed with computed-style checks and live screenshots after forcing a fresh (non-cached) stylesheet load — the site's CSS is served with `max-age=600`, so a hard-cache-busted reload is required to see very recent CSS commits; this is a caching artifact, not a deploy failure.
+
+Verified live (delawarebeachfinds.com):
+- Guide page loads clean, no console errors, no horizontal overflow, all images have real alt text, all 4 official source links are real/verified (destateparks.com, dnrec.delaware.gov x3).
+- Homepage module renders with correct copy and links to the guide.
+- Nav "Surf Guide" link present site-wide.
+- towers-on-the-dunes.html cross-link present and correct.
+- Interactive tool: full 5-step click-through tested live, restart button tested live, focus-visible CSS confirmed present on option buttons.
+
+Next action if picked back up: do a real phone-width visual QA pass on the guide page specifically (the resize_window tool does not reliably change rendered viewport in this environment — may need actual device emulation or a real narrow browser window). Also spot-check the interactive tool's keyboard-only (Tab + Enter) path end to end, not just mouse clicks. No content gaps — manuscript fully supported the complete free-edition scope described above.
