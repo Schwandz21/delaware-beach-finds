@@ -205,5 +205,81 @@
       "Delaware separated from both Britain and Pennsylvania in the same June 1776 session, an event now called the Act of Separation. Caesar Rodney's famous ride to Philadelphia that July, breaking a tied delegation vote on independence, really happened — though the dramatic details usually attached to it go beyond what the documentary record supports.",
       "Delaware's rapid, unanimous ratification in 1787 wasn't primarily patriotic zeal — it was arithmetic. The new Constitution's compromise gave every state equal representation in the Senate, which mattered enormously to one of the smallest states in the union. Being first was a consequence of moving quickly, and moving quickly was a consequence of having already gotten what they needed."
     ]
+  },
+  {
+    "slug": "oldest-migration-on-the-bay",
+    "kicker": "Delaware Bay Wildlife",
+    "headline": "The Oldest Migration on the Bay",
+    "hook": "On a handful of nights each spring, timed to the moon, Delaware Bay hosts what wildlife agencies call the largest horseshoe crab spawning event on Earth — feeding a shorebird that flies here from the bottom of South America and cannot finish the trip without it.",
+    "scene": "bay-morning-1.svg",
+    "date": "2026-07-26",
+    "readTime": "7 min read",
+    "featured": false,
+    "category": "coast",
+    "series": null,
+    "status": "published",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "U.S. Fish and Wildlife Service, Rufa Red Knot species profile and Delaware Bay Rufa Red Knot and Horseshoe Crab FAQ",
+      "DNREC, Delaware Bay Horseshoe Crab Spawning Survey",
+      "The Conservation Fund, Mispillion Harbor protection history",
+      "Smithsonian National Zoo and Conservation Biology Institute, horseshoe crab natural history"
+    ],
+    "etsyProductIds": [],
+    "body": [
+      "Every May and June, on nights timed to the moon, Delaware Bay hosts one of the largest horseshoe crab spawning events on Earth.",
+      "Red knots fly here from the bottom of South America and depend on horseshoe crab eggs to fuel the final leg of their migration to the Arctic.",
+      "Conservation of Mispillion Harbor and tighter harvest limits have helped both species begin to recover after a steep decline."
+    ]
+  },
+  {
+    "slug": "the-galloping-dune",
+    "kicker": "Cape Henlopen State Park",
+    "headline": "The Galloping Dune",
+    "hook": "Delaware's tallest sand dune buried a WWII bunker, swallowed a pine forest, and earned its nickname because it used to move. Nearby, part of the park still does.",
+    "scene": "dune-fence-sunset-2.jpg",
+    "date": "2026-07-26",
+    "readTime": "6 min read",
+    "featured": false,
+    "category": "coast",
+    "series": null,
+    "status": "published",
+    "photoCredit": "@delawarebeachfinds",
+    "sources": [
+      "Delaware State Parks state historical marker, \"The Great Dune: Living Sands,\" Cape Henlopen State Park",
+      "Delaware State Parks, Cape Henlopen State Park park description and trail information"
+    ],
+    "etsyProductIds": [],
+    "body": [
+      "Cape Henlopen's Great Dune stands about 80 feet above the ocean, built by wind and sand over thousands of years.",
+      "Deforestation in the early 1800s set the dune loose, and it moved inland fast enough to earn the nickname 'Galloping Dune.'",
+      "The Army added sand to hide a WWII bunker, raising the dune to its current height and stabilizing it; nearby, the Walking Dunes Trail is still actively migrating today."
+    ]
+  },
+  {
+    "slug": "where-the-marsh-is-going",
+    "kicker": "Delaware's Wetlands",
+    "headline": "Where the Marsh Is Going",
+    "hook": "Nearly half of Delaware's wetlands lie between the tides, quietly filtering water, buffering storms, and raising nearly every fish on your plate. As seas rise, the state's plan isn't to hold the line — it's to let the marsh move.",
+    "scene": "marsh-gold-1.svg",
+    "date": "2026-07-26",
+    "readTime": "7 min read",
+    "featured": false,
+    "category": "coast",
+    "series": null,
+    "status": "published",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "DNREC, Delaware wetlands acreage data and Marsh Migration in Delaware program materials",
+      "DNREC Wildlife Action Plan, tidal wetland nursery habitat and ecosystem service data",
+      "Yale Environment 360, \"Domino Effect: The Myriad Impacts of Warming on an East Coast Estuary\"",
+      "Reporting on Bombay Hook and Prime Hook National Wildlife Refuge marsh loss and restoration"
+    ],
+    "etsyProductIds": [],
+    "body": [
+      "Delaware's tidal wetlands cover more than 113,000 acres and provide nursery habitat for around 90 percent of the coast's commercially important fish and shellfish.",
+      "Bombay Hook National Wildlife Refuge has already lost about 2,000 acres of salt marsh to sea level rise and erosion since the 1970s.",
+      "Rather than fighting the water, Delaware's Prime Hook restoration and DNREC's marsh migration program aim to let marshes move inland as seas rise."
+    ]
   }
 ]
