@@ -95,18 +95,21 @@ p{margin:0 0 1.05rem}
 .feature-hero .kicker{color:#f3d9c4;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 
 /* ---------- Brand Hero (homepage opening) ---------- */
-.brand-hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.brand-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .brand-hero .scene{position:absolute;inset:0;z-index:0}
 .brand-hero .scene img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
-.brand-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,24,29,.9) 0%,rgba(10,24,29,.66) 42%,rgba(10,24,29,.24) 72%,rgba(10,24,29,.05) 94%);z-index:1}
-.brand-hero .brand-hero-inner{position:relative;z-index:2;padding:0 0 76px;max-width:700px}
-.brand-hero .kicker{color:#f3d9c4;text-shadow:0 1px 6px rgba(0,0,0,.4)}
-.brand-hero h1{color:#fff;margin:.3em 0 .4em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
-.brand-hero .lede{color:rgba(255,255,255,.9);max-width:600px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
-.brand-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:8px}
+.brand-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,20,25,.94) 0%,rgba(10,24,29,.7) 38%,rgba(10,24,29,.26) 68%,rgba(10,24,29,.06) 92%),radial-gradient(120% 90% at 18% 100%,rgba(9,20,25,.35),transparent 60%);z-index:1}
+.brand-hero .brand-hero-inner{position:relative;z-index:2;padding:0 0 84px;max-width:720px}
+.brand-hero .kicker{color:#f3d9c4;text-shadow:0 1px 6px rgba(0,0,0,.4);display:inline-flex;align-items:center;gap:12px}
+.brand-hero .kicker:before{content:"";width:34px;height:2px;background:var(--coral);display:inline-block}
+.brand-hero h1{color:#fff;margin:.32em 0 .42em;text-shadow:0 2px 20px rgba(0,0,0,.4);letter-spacing:-.015em}
+.brand-hero .lede{color:rgba(255,255,255,.92);max-width:600px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+.brand-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:12px}
+.brand-hero .btn{font-size:.98rem;padding:15px 26px}
+.brand-hero .btn-coral{box-shadow:0 10px 28px rgba(9,20,25,.35)}
 .brand-hero .btn-line{border-color:rgba(255,255,255,.5);color:#fff}
 .brand-hero .btn-line:hover{border-color:#fff}
-@media(max-width:640px){.brand-hero{min-height:80vh}}
+@media(max-width:640px){.brand-hero{min-height:84vh}}
 
 /* ---------- weekend calendar ---------- */
 .calendar-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
@@ -373,19 +376,21 @@ p{margin:0 0 1.05rem}
 .guide-tool .small.muted{color:var(--muted)}
 
 /* ---------- guide hub cards (reusable guide-card component) ---------- */
-.guide-hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.guide-hub-card{display:block;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);background:var(--paper);transition:.2s border-color,.2s transform}
-a.guide-hub-card:hover{border-color:var(--line-strong);transform:translateY(-3px)}
-.guide-hub-card .guide-hub-art{position:relative;aspect-ratio:4/3}
+.guide-hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.guide-hub-card{display:block;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);background:var(--paper);transition:.25s border-color,.3s transform,.3s box-shadow;box-shadow:0 1px 2px rgba(9,20,25,.04)}
+a.guide-hub-card:hover{border-color:transparent;transform:translateY(-5px);box-shadow:0 24px 44px rgba(9,20,25,.22)}
+.guide-hub-card .guide-hub-art{position:relative;aspect-ratio:4/3;overflow:hidden}
 .guide-hub-card .guide-hub-art .scene{position:absolute;inset:0}
-.guide-hub-card .guide-hub-art svg,.guide-hub-card .guide-hub-art img{width:100%;height:100%;object-fit:cover}
+.guide-hub-card .guide-hub-art svg,.guide-hub-card .guide-hub-art img{width:100%;height:100%;object-fit:cover;transition:.5s transform}
+a.guide-hub-card:hover .guide-hub-art img{transform:scale(1.06)}
 .guide-hub-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:#fff;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;padding:6px 12px;border-radius:999px}
 .guide-hub-card.is-soon{opacity:.7}
 .guide-hub-card.is-soon .guide-hub-badge{background:var(--muted)}
-.guide-hub-body{padding:20px 22px 24px}
-.guide-hub-body .kicker{margin-bottom:6px;font-size:.68rem}
-.guide-hub-body h3{margin:0 0 8px;font-size:1.22rem}
-.guide-hub-body p{margin:0 0 10px;font-size:.92rem;color:var(--muted)}
+.guide-hub-body{padding:22px 24px 26px}
+.guide-hub-body .kicker{margin-bottom:8px;font-size:.68rem}
+.guide-hub-body h3{margin:0 0 8px;font-size:1.26rem;transition:.2s color}
+a.guide-hub-card:hover h3{color:var(--coral-deep)}
+.guide-hub-body p{margin:0 0 12px;font-size:.93rem;color:var(--muted)}
 .guide-hub-meta{font-size:.78rem;font-weight:700;color:var(--teal-deep);text-transform:uppercase;letter-spacing:.04em}
 @media(max-width:1080px){.guide-hub-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.guide-hub-grid{grid-template-columns:1fr}}
@@ -393,7 +398,9 @@ a.guide-hub-card:hover{border-color:var(--line-strong);transform:translateY(-3px
 /* featured-first: homepage variant that gives the first guide card (the flagship) extra room */
 .guide-hub-grid.featured-first .guide-hub-card:first-child{grid-column:span 2}
 .guide-hub-grid.featured-first .guide-hub-card:first-child .guide-hub-art{aspect-ratio:16/9}
-.guide-hub-grid.featured-first .guide-hub-card:first-child h3{font-size:1.5rem}
+.guide-hub-grid.featured-first .guide-hub-card:first-child h3{font-size:1.7rem}
+.guide-hub-grid.featured-first .guide-hub-card:first-child .guide-hub-body{padding:26px 28px 30px}
+.guide-hub-grid.featured-first .guide-hub-card:first-child p{font-size:1rem;max-width:520px}
 @media(max-width:640px){.guide-hub-grid.featured-first .guide-hub-card:first-child{grid-column:span 1}}
 
 /* ---------- walking guide quick-facts strip ---------- */
