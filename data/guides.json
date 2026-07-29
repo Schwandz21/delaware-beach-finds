@@ -39,11 +39,13 @@
   },
   {
     "slug": "sunset-spots",
+    "href": "sunset-spots.html",
     "title": "The Best Sunset Spots on the Coast",
-    "kicker": "Coming Soon",
-    "dek": "Bay-side sunsets don't get the same hype as sunrise photos. Here's where locals actually go — next up in the guide series.",
-    "scene": "dune-dusk-1",
-    "status": "coming-soon"
+    "kicker": "Local Guide",
+    "dek": "Five real spots, one per town — the golden-hour recommendation we'd actually give a friend, not a highlight reel.",
+    "scene": "coastal-sunset-aerial-1.jpg",
+    "meta": "Coastwide · 5 Real Spots",
+    "status": "published"
   },
   {
     "slug": "family-friendly-beaches",
