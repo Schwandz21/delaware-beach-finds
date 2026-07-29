@@ -94,6 +94,20 @@ p{margin:0 0 1.05rem}
 .feature-hero .lede{color:rgba(255,255,255,.88);max-width:600px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
 .feature-hero .kicker{color:#f3d9c4;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 
+/* ---------- Brand Hero (homepage opening) ---------- */
+.brand-hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.brand-hero .scene{position:absolute;inset:0;z-index:0}
+.brand-hero .scene img{width:100%;height:100%;object-fit:cover;object-position:center 55%}
+.brand-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,24,29,.9) 0%,rgba(10,24,29,.66) 42%,rgba(10,24,29,.24) 72%,rgba(10,24,29,.05) 94%);z-index:1}
+.brand-hero .brand-hero-inner{position:relative;z-index:2;padding:0 0 76px;max-width:700px}
+.brand-hero .kicker{color:#f3d9c4;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.brand-hero h1{color:#fff;margin:.3em 0 .4em;text-shadow:0 2px 18px rgba(0,0,0,.35)}
+.brand-hero .lede{color:rgba(255,255,255,.9);max-width:600px;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+.brand-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:8px}
+.brand-hero .btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.brand-hero .btn-line:hover{border-color:#fff}
+@media(max-width:640px){.brand-hero{min-height:80vh}}
+
 /* ---------- weekend calendar ---------- */
 .calendar-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
 .calendar-day{background:var(--paper);padding:26px 20px;min-height:230px;display:flex;flex-direction:column;gap:10px}
@@ -361,6 +375,12 @@ a.guide-hub-card:hover{border-color:var(--line-strong);transform:translateY(-3px
 .guide-hub-meta{font-size:.78rem;font-weight:700;color:var(--teal-deep);text-transform:uppercase;letter-spacing:.04em}
 @media(max-width:1080px){.guide-hub-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.guide-hub-grid{grid-template-columns:1fr}}
+
+/* featured-first: homepage variant that gives the first guide card (the flagship) extra room */
+.guide-hub-grid.featured-first .guide-hub-card:first-child{grid-column:span 2}
+.guide-hub-grid.featured-first .guide-hub-card:first-child .guide-hub-art{aspect-ratio:16/9}
+.guide-hub-grid.featured-first .guide-hub-card:first-child h3{font-size:1.5rem}
+@media(max-width:640px){.guide-hub-grid.featured-first .guide-hub-card:first-child{grid-column:span 1}}
 
 /* ---------- walking guide quick-facts strip ---------- */
 .guide-facts-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;margin:1.8rem 0}
