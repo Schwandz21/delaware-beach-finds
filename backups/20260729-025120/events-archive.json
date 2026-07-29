@@ -94,29 +94,5 @@
     "relatedUrl": null,
     "archiveEligible": true,
     "access_level": "public"
-  },
-  {
-    "id": "evt-bandstand-season-2026",
-    "title": "Bandstand season, in full swing",
-    "description": "Rehoboth's free concerts keep the boardwalk loud on weekend nights straight through the end of summer. Worth building a whole evening around, not just a stop on the way somewhere else.",
-    "town": "Rehoboth Beach",
-    "venue": "Rehoboth Bandstand",
-    "category": "recurring",
-    "startDate": "2026-07-15",
-    "endDate": "2026-08-31",
-    "startTime": null,
-    "endTime": null,
-    "displayDate": "Through August",
-    "sourceUrl": null,
-    "sourceOrg": null,
-    "verifiedAt": "2026-07-15",
-    "lastModified": "2026-07-29",
-    "status": "expired",
-    "featured": false,
-    "editorialNote": null,
-    "scene": "boardwalk-evening-1",
-    "relatedUrl": null,
-    "archiveEligible": true,
-    "access_level": "public"
   }
 ]
