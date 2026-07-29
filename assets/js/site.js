@@ -56,26 +56,44 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
   }).catch(()=>{});
  }
 
- // Weekend calendar
+ // Weekend / event calendar — reads data/events.json, filters by real dates
+ function todayEasternISO(){
+   try{ return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date()); }
+   catch(e){ return new Date().toISOString().slice(0,10); }
+ }
+ const STATUS_BADGE = {tentative:'Tentative',cancelled:'Cancelled',postponed:'Postponed','sold-out':'Sold Out'};
  const weekendMount = document.querySelector('[data-mount="weekend"]');
  if(weekendMount){
    const limit = parseInt(weekendMount.getAttribute('data-limit')||'6',10);
-   fetchJson('weekend.json').then(d=>{
-     const updated = d.updated ? new Date(d.updated + 'T00:00:00') : null;
-     const staleDays = updated ? Math.floor((Date.now() - updated.getTime()) / 86400000) : 0;
-     if(updated && staleDays > 10){
-       weekendMount.innerHTML = `<div class="calendar-stale"><p class="muted" style="margin:0">This week's lineup is being refreshed — check back soon, or see the <a href="events.html">Events page</a> for what's recurring all summer.</p></div>`;
+   fetchJson('events.json').then(d=>{
+     const today = todayEasternISO();
+     const verifiedAt = d.verifiedAt || null;
+     const policyDays = d.freshnessPolicyDays || 7;
+     const staleDays = verifiedAt ? Math.floor((Date.now() - new Date(verifiedAt+'T00:00:00').getTime()) / 86400000) : null;
+     const staleDataset = verifiedAt===null || staleDays > policyDays;
+     const upcoming = (d.events||[])
+       .filter(e => e.endDate && e.endDate >= today)
+       .sort((a,b) => (a.startDate||'').localeCompare(b.startDate||''));
+     if(staleDataset || !upcoming.length){
+       weekendMount.innerHTML = `<div class="calendar-stale"><p class="muted" style="margin:0">Fresh events are being verified — check back shortly for this week's confirmed picks, or explore our <a href="guides.html">current local guides</a> in the meantime.</p></div>`;
        return;
      }
-     const days = (d.days||[]).slice(0, limit);
-     weekendMount.innerHTML = days.map((day,i)=>`
+     const items = upcoming.slice(0, limit);
+     weekendMount.innerHTML = items.map((e,i)=>{
+       const badge = STATUS_BADGE[e.status];
+       let weekday = '';
+       try{ weekday = new Intl.DateTimeFormat('en-US',{weekday:'long',timeZone:'America/New_York'}).format(new Date(e.startDate+'T12:00:00Z')); }catch(err){}
+       return `
        <div class="calendar-day${i===0?' is-today':''}">
-         <div class="day-label">${esc(day.label)}</div>
-         <div class="day-date muted">${esc(day.date)}</div>
-         <h4>${esc(day.title)}</h4>
-         <p class="muted">${esc(day.description)}</p>
-       </div>`).join('');
-   }).catch(()=>{});
+         <div class="day-label">${esc(weekday)}${badge?` &middot; <span class="event-status-badge">${esc(badge)}</span>`:''}</div>
+         <div class="day-date muted">${esc(e.displayDate||e.startDate||'')}${e.town?` &middot; ${esc(e.town)}`:''}</div>
+         <h4>${esc(e.title)}</h4>
+         <p class="muted">${esc(e.description||'')}</p>
+       </div>`;
+     }).join('');
+   }).catch(()=>{
+     weekendMount.innerHTML = `<div class="calendar-stale"><p class="muted" style="margin:0">Fresh events are being verified — check back shortly, or explore our <a href="guides.html">current local guides</a> in the meantime.</p></div>`;
+   });
  }
 
  // Hidden gem
@@ -310,14 +328,22 @@ if(guidesMount){
   fetchJson('guides.json').then(list=>{
     let items = list.slice();
     if(guideLimit) items = items.slice(0, guideLimit);
+    const todayStr = todayEasternISO();
     guidesMount.innerHTML = items.map(g=>{
       const isSoon = g.status !== 'published';
+      let soonLabel = 'Coming Soon', soonMeta = 'In the works';
+      if(isSoon){
+        const interval = g.reviewIntervalDays || 14;
+        const reviewed = g.lastReviewed || null;
+        const daysSince = reviewed ? Math.floor((new Date(todayStr) - new Date(reviewed)) / 86400000) : null;
+        if(daysSince===null || daysSince > interval){ soonLabel = 'On Our List'; soonMeta = 'Under review — check back later'; }
+      }
       const inner = `
-        <div class="guide-hub-art"><span class="guide-hub-badge">${isSoon?'Coming Soon':esc(g.kicker)}</span><div class="scene">${sceneImg(g.scene, g.title)}</div></div>
+        <div class="guide-hub-art"><span class="guide-hub-badge">${isSoon?soonLabel:esc(g.kicker)}</span><div class="scene">${sceneImg(g.scene, g.title)}</div></div>
         <div class="guide-hub-body">
           <h3>${esc(g.title)}</h3>
           <p>${esc(g.dek)}</p>
-          <div class="guide-hub-meta">${isSoon?'In the works':(esc(g.meta||'')+' &rarr;')}</div>
+          <div class="guide-hub-meta">${isSoon?soonMeta:(esc(g.meta||'')+' &rarr;')}</div>
         </div>`;
       return isSoon
         ? `<div class="guide-hub-card is-soon">${inner}</div>`

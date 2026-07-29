@@ -114,6 +114,20 @@ p{margin:0 0 1.05rem}
 .calendar-day.is-today{background:var(--navy);color:#fff}
 .calendar-day.is-today .day-label,.calendar-day.is-today .muted{color:rgba(255,255,255,.72)}
 .calendar-day .day-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--coral-deep)}
+.event-status-badge{color:var(--muted);font-weight:700}
+.calendar-day.is-today .event-status-badge{color:rgba(255,255,255,.65)}
+
+/* ---------- archive & search ---------- */
+.archive-filters{display:flex;flex-wrap:wrap;gap:10px}
+.archive-filter{padding:9px 18px;border-radius:999px;border:1px solid var(--line-strong);background:var(--paper);color:var(--ink-soft);font-weight:700;font-size:.86rem;cursor:pointer;transition:.15s border-color,.15s background}
+.archive-filter:hover{border-color:var(--teal-deep)}
+.archive-filter.is-active{background:var(--navy);border-color:var(--navy);color:#fff}
+.story-card-static{cursor:default}
+.story-card-static:hover h3{color:inherit}
+.search-box{display:flex;gap:10px;max-width:560px}
+.search-box input[type="search"]{flex:1;border:1px solid var(--line-strong);border-radius:999px;padding:14px 20px;font-size:1rem;background:#fff}
+.search-box input[type="search"]:focus{outline:2px solid var(--teal-deep);outline-offset:2px}
+.search-result-count{margin:18px 0;color:var(--muted);font-size:.9rem}
 .calendar-day.is-today .day-label{color:#f3d9c4}
 .calendar-day .day-date{font-family:var(--serif);font-size:1.3rem;margin-bottom:4px}
 .calendar-day h4{font-family:var(--sans);font-size:.98rem;font-weight:700;margin:0 0 6px;color:inherit}

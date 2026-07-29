@@ -1,0 +1,45 @@
+{
+  "candidateMarker": "DBF_FRESHNESS_CANDIDATE",
+  "_note": "SAMPLE DATA for schema demonstration only. Not verified, not real, never apply this file as-is.",
+  "generatedAt": "2026-07-29T11:00:00Z",
+  "verifiedAt": "2026-07-29",
+  "editorialPeriodCovered": "Aug 1 – Aug 15, 2026",
+  "activeEvents": [
+    {
+      "title": "Lewes Farmers Market",
+      "description": "Weekly market on the Zwaanendael Museum lawn — produce, flowers and baked goods, 8 AM to noon.",
+      "town": "Lewes",
+      "venue": "Zwaanendael Museum lawn",
+      "category": "market",
+      "startDate": "2026-08-02",
+      "endDate": "2026-08-02",
+      "startTime": "08:00",
+      "endTime": "12:00",
+      "displayDate": "Sunday, August 2",
+      "sourceUrl": "https://example.org/lewes-farmers-market",
+      "sourceOrg": "Lewes Historical Society (example)",
+      "verifiedAt": "2026-07-29",
+      "status": "confirmed",
+      "featured": false,
+      "editorialNote": null,
+      "scene": "lighthouse-day-1",
+      "relatedUrl": "lewes-canal-waterfront-walk.html",
+      "archiveEligible": true,
+      "access_level": "public"
+    }
+  ],
+  "laterEvents": [],
+  "expireEventIds": [],
+  "cancelledOrPostponed": [],
+  "comingSoonUpdates": [
+    {
+      "slug": "beach-access-parking",
+      "status": "coming-soon",
+      "lastReviewed": "2026-07-29",
+      "note": "Still on the reporting list; no new source material found this cycle."
+    }
+  ],
+  "reviewNotes": "Sample only: one confirmed weekly market added as a demonstration of the schema. No stale events found to expire this cycle (none existed at generation time in this sample).",
+  "sourceUrls": ["https://example.org/lewes-farmers-market"],
+  "validationWarnings": []
+}

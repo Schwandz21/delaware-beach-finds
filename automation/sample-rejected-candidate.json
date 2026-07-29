@@ -1,0 +1,63 @@
+{
+  "candidateMarker": "DBF_FRESHNESS_CANDIDATE",
+  "_note": "SAMPLE DATA — intentionally broken, for validator demonstration only.",
+  "generatedAt": "2026-07-29T11:00:00Z",
+  "verifiedAt": "2026-07-29",
+  "editorialPeriodCovered": "Example broken candidate",
+  "activeEvents": [
+    {
+      "title": "Already-Over Beach Cleanup",
+      "description": "Proposed as active but its own end date is in the past.",
+      "town": "Dewey Beach",
+      "venue": "Dewey Beach",
+      "category": "outdoors",
+      "startDate": "2026-07-01",
+      "endDate": "2026-07-01",
+      "status": "confirmed",
+      "featured": false,
+      "editorialNote": null,
+      "archiveEligible": true,
+      "access_level": "public"
+    },
+    {
+      "title": "Duplicate Test Concert",
+      "description": "First copy of a duplicate pair.",
+      "town": "Bethany Beach",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-10",
+      "status": "confirmed",
+      "sourceUrl": "https://example.org/concert",
+      "verifiedAt": "2026-07-29"
+    },
+    {
+      "title": "Duplicate Test Concert",
+      "description": "Second copy of the same event — same title, date and town.",
+      "town": "Bethany Beach",
+      "startDate": "2026-08-10",
+      "endDate": "2026-08-10",
+      "status": "confirmed",
+      "sourceUrl": "https://example.org/concert",
+      "verifiedAt": "2026-07-29"
+    }
+  ],
+  "laterEvents": [],
+  "expireEventIds": [],
+  "cancelledOrPostponed": [],
+  "comingSoonUpdates": [
+    {
+      "slug": "not-a-real-guide-slug",
+      "status": "published",
+      "lastReviewed": "2026-07-29"
+    }
+  ],
+  "reviewNotes": "This candidate is expected to be rejected by scripts/validate_candidate.py.",
+  "sourceUrls": [],
+  "validationWarnings": [],
+  "_expectedValidatorErrors": [
+    "Already-Over Beach Cleanup: proposed as active but endDate has already passed and status is not \"expired\"",
+    "Already-Over Beach Cleanup: missing verifiedAt",
+    "Duplicate Test Concert: duplicate event in candidate (appears twice)",
+    "not-a-real-guide-slug: comingSoonUpdates references unknown guide slug",
+    "not-a-real-guide-slug: marked published but no href given"
+  ]
+}

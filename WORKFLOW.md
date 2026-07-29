@@ -10,7 +10,7 @@ entire publishing workflow for the sections below.
 | Homepage section | File | Notes |
 |---|---|---|
 | Feature Story (hero) | `data/feature-story.json` | One object: kicker, headline, teaser, scene, link. |
-| Happening This Weekend | `data/weekend.json` | Six entries: Friday, Saturday, Sunday, Next Weekend, Later This Month, Holiday Weekend. |
+| Happening This Weekend / Events | `data/events.json` (+ `data/events-archive.json`) | Date-driven, not a manual edit — see **"Weekly Freshness & Archive System"** below. Don't hand-edit these two files; use `UPDATE_DBF_FRESHNESS.command`. |
 | New on Instagram | `data/instagram.json` | Paste a real post/reel permalink into `permalink` once you have one — the embed goes live automatically. Leave it blank to show a fallback card that links to your Instagram profile instead. |
 | Coastal Moments (video) | `data/coastal-moments.json` | Paste a Vimeo/YouTube link or a direct `.mp4/.webm/.mov` URL into `embedUrl` to show a real video. Leave it blank to show a fallback card that links to your Instagram profile instead. |
 | Hidden Gem of the Week | `data/hidden-gems.json` | An array — add a new object at the top with `"current": true` and set the previous one to `false`. It becomes an archive automatically. |
@@ -61,7 +61,54 @@ To add a new story or town, the cleanest path is asking for one more page in
 the same format — or duplicating an existing file under `/towns/` or
 `/stories/` and editing the text directly.
 
+## Weekly Freshness & Archive System
+
+The site now keeps event data honest automatically instead of relying on
+someone remembering to update it. Full detail lives in `automation/`, but
+the short version:
+
+- **`data/events.json`** holds only current/upcoming events with real
+  `startDate`/`endDate` fields. The public site filters this by date at
+  render time — an event past its `endDate` simply stops appearing,
+  no redeploy required. If the file's own `verifiedAt` is more than 7
+  days old, the calendar shows an honest "being verified" message instead
+  of stale events.
+- **`data/events-archive.json`** holds past events for the public
+  [Archive](archive.html) — nothing gets deleted just because its date
+  passed.
+- **`data/content-index.json`** powers [Search](search.html) and the
+  Archive. Rebuild it any time editorial content changes:
+  `python3 scripts/build_content_index.py`
+- **Coming Soon guides** (`data/guides.json`, `status: "coming-soon"`)
+  carry `lastReviewed` + `reviewIntervalDays`. If a stub goes stale past
+  its interval, the homepage/hub automatically relabels it from
+  "Coming Soon" to "On Our List" rather than an indefinite false promise.
+
+### The weekly loop
+
+1. A scheduled Claude task (`dbf-weekly-freshness-research`, see
+   `automation/CLAUDE_WEEKLY_FRESHNESS_PROMPT.md`) researches real events
+   and writes a candidate file to `automation/candidates/`. It cannot
+   publish anything itself.
+2. Read its summary. Double-click **`UPDATE_DBF_FRESHNESS.command`**.
+3. Select the candidate file. The updater validates it, shows a
+   plain-language preview of every change, and waits for your yes before
+   touching anything.
+4. Approve → it backs up current data to `backups/`, applies the
+   changes, rebuilds the search index, runs link/JSON checks, then asks
+   again before committing, and again before pushing to `origin/main`.
+5. It polls the live site and reports success or the exact failure.
+
+No manual JSON editing or git commands required. Cancel at any prompt and
+nothing beyond that point happens.
+
+To check freshness status any time without running a full update:
+`python3 scripts/freshness_report.py`
+
 ## Deployment
 
 Unchanged: GitHub Pages, deployed from `main` / root, custom domain via
-`CNAME`. No build step, no dependencies, nothing to install.
+`CNAME`. No build step, no dependencies, nothing to install. A daily
+GitHub Action (`.github/workflows/freshness-check.yml`) validates data
+and opens a GitHub issue if something needs review — it never edits
+content itself.

@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Archive | Delaware Beach Finds</title><meta name="description" content="Every current and past Delaware Beach Finds story, guide and event in one browsable archive."><link rel="canonical" href="https://delawarebeachfinds.com/archive.html"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:type" content="website"><meta property="og:title" content="Archive | Delaware Beach Finds"><meta property="og:description" content="Every current and past Delaware Beach Finds story, guide and event in one browsable archive."><meta property="og:url" content="https://delawarebeachfinds.com/archive.html"><meta property="og:image" content="https://delawarebeachfinds.com/assets/images/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#122b34"><link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml"><link rel="manifest" href="site.webmanifest"><link rel="stylesheet" href="assets/css/styles.css"></head><body data-depth="0"><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="container masthead"><a class="brand" href="index.html"><span class="brand-name">Delaware Beach Finds</span><span class="brand-tag">The Delaware Coast, Weekly</span></a><nav class="nav-links" aria-label="Main navigation"><a href="index.html">Home</a><a href="this-week.html">This Week</a><a href="hidden-gems.html">Hidden Gems</a><a href="events.html">Events</a><a href="explore.html">Explore</a><a href="guides.html">Guides</a><a href="stories/index.html">Stories</a><a href="community.html">Community</a><a href="shop.html">Shop</a><a href="about.html">About</a></nav><button class="menu-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button></div></header><main id="main">
+<section class="page-hero"><div class="container">
+  <div class="kicker">Archive</div>
+  <h1>Everything we've published, current and past.</h1>
+  <p class="lede">Guides, stories, town features and event coverage — browsable by type, town and year. Nothing gets deleted just because time has passed. Looking for a specific word or place? Try <a href="search.html">Search</a> instead.</p>
+</div></section>
+<section class="section"><div class="container">
+  <div class="archive-filters" role="group" aria-label="Filter archive">
+    <button class="archive-filter is-active" data-filter-type="all">All</button>
+    <button class="archive-filter" data-filter-type="guide">Guides</button>
+    <button class="archive-filter" data-filter-type="story">Stories</button>
+    <button class="archive-filter" data-filter-type="town">Towns</button>
+    <button class="archive-filter" data-filter-type="event">Past Events</button>
+  </div>
+  <div id="archiveResults" class="grid-3" style="margin-top:28px"></div>
+  <p id="archiveEmpty" class="muted hidden" style="text-align:center;padding:40px 0">Nothing matches that filter yet.</p>
+</div></section>
+</main><footer class="footer"><div class="container"><div class="footer-grid">
+<div class="footer-about"><a class="brand" href="index.html"><span class="brand-name">Delaware Beach Finds</span></a><p>A weekly look at the Delaware coast — the towns, the tides, the people who never leave the beach parking lot without talking to a stranger first.</p></div>
+<div class="footer-col"><h5>Read</h5><a href="this-week.html">This Week</a><a href="hidden-gems.html">Hidden Gems</a><a href="stories/index.html">Stories</a><a href="explore.html">Explore by Town</a><a href="guides.html">Guides</a><a href="archive.html">Archive</a><a href="search.html">Search</a></div>
+<div class="footer-col"><h5>Join In</h5><a href="community.html">Community</a><a href="events.html">Events</a><a data-instagram-link target="_blank" href="https://www.instagram.com/delawarebeachfinds/">Instagram</a><a href="contact.html">Say Hello</a></div>
+<div class="footer-col"><h5>Shop</h5><a href="shop.html">Coastal Shop</a><a data-etsy-link target="_blank" href="https://www.etsy.com/shop/DelawareBeachFinds">Delaware Beach Finds on Etsy</a><a href="disclosure.html">Affiliate Disclosure</a></div>
+</div><div class="footer-bottom"><span>&copy; <span data-year></span> Delaware Beach Finds</span><span><a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></span></div></div></footer><script src="assets/js/config.js"></script><script src="assets/js/site.js"></script>
+<script>
+(function(){
+  var resultsEl = document.getElementById('archiveResults');
+  var emptyEl = document.getElementById('archiveEmpty');
+  var filterBtns = document.querySelectorAll('.archive-filter');
+  var records = [];
+  var activeType = 'all';
+
+  function esc(s){return (s||'').replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]})}
+
+  function render(){
+    var filtered = records.filter(function(r){ return activeType==='all' || r.type===activeType; });
+    if(!filtered.length){
+      resultsEl.innerHTML = '';
+      emptyEl.classList.remove('hidden');
+      return;
+    }
+    emptyEl.classList.add('hidden');
+    resultsEl.innerHTML = filtered.map(function(r){
+      var badge = r.status === 'archived' ? 'Archived' : 'Current';
+      var meta = [r.town, r.publishedDate].filter(Boolean).join(' &middot; ');
+      var tag = r.url ? 'a' : 'div';
+      var hrefAttr = r.url ? ' href="'+esc(r.url)+'"' : '';
+      var cls = r.url ? 'story-card' : 'story-card story-card-static';
+      return '<'+tag+' class="'+cls+'"'+hrefAttr+'>' +
+        '<div class="kicker">'+esc(r.type.charAt(0).toUpperCase()+r.type.slice(1))+' &middot; '+badge+'</div>' +
+        '<h3>'+esc(r.title)+'</h3>' +
+        '<p>'+esc(r.excerpt||'')+'</p>' +
+        (meta ? '<p class="small muted" style="margin-top:6px">'+meta+'</p>' : '') +
+        '</'+tag+'>';
+    }).join('');
+  }
+
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      activeType = btn.getAttribute('data-filter-type');
+      render();
+    });
+  });
+
+  Promise.all([
+    fetch('data/content-index.json').then(function(r){ return r.ok ? r.json() : {records:[]}; }).catch(function(){ return {records:[]}; }),
+    fetch('data/events-archive.json').then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; })
+  ]).then(function(results){
+    var index = results[0].records || [];
+    var pastEvents = results[1] || [];
+    records = index.slice();
+    pastEvents.forEach(function(e){
+      records.push({
+        id: 'event-'+e.id,
+        type: 'event',
+        title: e.title,
+        excerpt: e.description,
+        url: e.relatedUrl || null,
+        town: e.town,
+        publishedDate: e.startDate,
+        status: 'archived'
+      });
+    });
+    render();
+  });
+})();
+</script>
+</body></html>
