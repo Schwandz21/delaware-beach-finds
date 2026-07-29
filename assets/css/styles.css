@@ -343,3 +343,29 @@ p{margin:0 0 1.05rem}
 
 .guide-tool p{color:var(--ink)}
 .guide-tool .small.muted{color:var(--muted)}
+
+/* ---------- guide hub cards (reusable guide-card component) ---------- */
+.guide-hub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.guide-hub-card{display:block;border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--line);background:var(--paper);transition:.2s border-color,.2s transform}
+a.guide-hub-card:hover{border-color:var(--line-strong);transform:translateY(-3px)}
+.guide-hub-card .guide-hub-art{position:relative;aspect-ratio:4/3}
+.guide-hub-card .guide-hub-art .scene{position:absolute;inset:0}
+.guide-hub-card .guide-hub-art svg,.guide-hub-card .guide-hub-art img{width:100%;height:100%;object-fit:cover}
+.guide-hub-badge{position:absolute;top:14px;left:14px;z-index:2;background:var(--navy);color:#fff;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;padding:6px 12px;border-radius:999px}
+.guide-hub-card.is-soon{opacity:.7}
+.guide-hub-card.is-soon .guide-hub-badge{background:var(--muted)}
+.guide-hub-body{padding:20px 22px 24px}
+.guide-hub-body .kicker{margin-bottom:6px;font-size:.68rem}
+.guide-hub-body h3{margin:0 0 8px;font-size:1.22rem}
+.guide-hub-body p{margin:0 0 10px;font-size:.92rem;color:var(--muted)}
+.guide-hub-meta{font-size:.78rem;font-weight:700;color:var(--teal-deep);text-transform:uppercase;letter-spacing:.04em}
+@media(max-width:1080px){.guide-hub-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.guide-hub-grid{grid-template-columns:1fr}}
+
+/* ---------- walking guide quick-facts strip ---------- */
+.guide-facts-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden;margin:1.8rem 0}
+.guide-facts-strip div{background:var(--paper);padding:20px 18px}
+.guide-facts-strip .fact-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--coral-deep);margin-bottom:6px}
+.guide-facts-strip .fact-value{font-family:var(--serif);font-size:1.1rem;color:var(--navy)}
+@media(max-width:900px){.guide-facts-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.guide-facts-strip{grid-template-columns:1fr}}

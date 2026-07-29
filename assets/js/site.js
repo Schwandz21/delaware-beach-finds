@@ -301,6 +301,31 @@ document.querySelectorAll('[data-mount="shop-the-story"]').forEach(mount=>{
   }).catch(()=>{});
 });
 
+// Guides (reusable guide-card grid: data-mount="guides" data-limit="0")
+const guidesMount = document.querySelector('[data-mount="guides"]');
+if(guidesMount){
+  const guideLimit = parseInt(guidesMount.getAttribute('data-limit')||'0',10);
+  const guidesDepth = document.body.getAttribute('data-depth') || '0';
+  const guidesPrefix = guidesDepth === '1' ? '../' : '';
+  fetchJson('guides.json').then(list=>{
+    let items = list.slice();
+    if(guideLimit) items = items.slice(0, guideLimit);
+    guidesMount.innerHTML = items.map(g=>{
+      const isSoon = g.status !== 'published';
+      const inner = `
+        <div class="guide-hub-art"><span class="guide-hub-badge">${isSoon?'Coming Soon':esc(g.kicker)}</span><div class="scene">${sceneImg(g.scene, g.title)}</div></div>
+        <div class="guide-hub-body">
+          <h3>${esc(g.title)}</h3>
+          <p>${esc(g.dek)}</p>
+          <div class="guide-hub-meta">${isSoon?'In the works':(esc(g.meta||'')+' &rarr;')}</div>
+        </div>`;
+      return isSoon
+        ? `<div class="guide-hub-card is-soon">${inner}</div>`
+        : `<a class="guide-hub-card" href="${guidesPrefix}${esc(g.href)}">${inner}</a>`;
+    }).join('');
+  }).catch(()=>{});
+}
+
 // Series hero (data-mount="series-hero" data-series="[slug]") — overwrites static fallback content already in the mount
 document.querySelectorAll('[data-mount="series-hero"]').forEach(mount=>{
 const seriesSlug = mount.getAttribute('data-series');

@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "gordons-pond-walking-guide",
+    "href": "gordons-pond-walking-guide.html",
+    "title": "Gordon's Pond to the Water",
+    "kicker": "Local Guide",
+    "dek": "A local's turn-by-turn guide to one of the best easy walks near Rehoboth and Lewes — the boardwalk everyone takes, and the quiet trail past it that most people never find.",
+    "scene": "dune-fence-sunset-1.jpg",
+    "meta": "Cape Henlopen · Easy · 45–75 min",
+    "status": "published"
+  },
+  {
+    "slug": "surf-fishing-guide",
+    "href": "surf-fishing-guide.html",
+    "title": "Surf Fishing Delaware",
+    "kicker": "Field Guide",
+    "dek": "Read the beach, choose the bait, and know the rules — a practical field guide for Cape Henlopen, Delaware Seashore, Fenwick Island and Beach Plum Island.",
+    "scene": "dune-fence-sunset-2.jpg",
+    "meta": "Coastwide · Beginner-Friendly",
+    "status": "published"
+  },
+  {
+    "slug": "beach-access-parking",
+    "title": "Beach Access & Parking, Town by Town",
+    "kicker": "Coming Soon",
+    "dek": "Where to actually park at every Delaware beach town — in progress, published once we've confirmed it ourselves.",
+    "scene": "boardwalk-morning-1",
+    "status": "coming-soon"
+  },
+  {
+    "slug": "sunset-spots",
+    "title": "The Best Sunset Spots on the Coast",
+    "kicker": "Coming Soon",
+    "dek": "Bay-side sunsets don't get the same hype as sunrise photos. Here's where locals actually go — next up in the guide series.",
+    "scene": "dune-dusk-1",
+    "status": "coming-soon"
+  },
+  {
+    "slug": "family-friendly-beaches",
+    "title": "Family-Friendly Beach Days",
+    "kicker": "Coming Soon",
+    "dek": "Shallow water, easy parking and bathrooms within reach — the towns that make it easiest with kids in tow.",
+    "scene": "wave-teal-1",
+    "status": "coming-soon"
+  }
+]
