@@ -156,13 +156,16 @@ p{margin:0 0 1.05rem}
 .sunrise-grid .tile svg{width:100%;height:100%;object-fit:cover}
 
 /* ---------- hidden gem ---------- */
-.gem-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
-.gem-photo{position:relative;min-height:460px}
+.gem-feature{display:grid;grid-template-columns:1.05fr .95fr;gap:0;align-items:start;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+.gem-photo{position:relative;aspect-ratio:5/4;width:100%;background:var(--paper);align-self:start}
 .gem-photo .scene{position:absolute;inset:0}
 .gem-photo svg{width:100%;height:100%;object-fit:cover}
-.gem-copy{background:var(--paper);padding:52px}
+.gem-copy{background:var(--paper);padding:52px;color:var(--ink)}
 .gem-copy .kicker{margin-bottom:14px}
 .gem-copy .signoff{margin-top:26px;font-family:var(--serif);font-style:italic;color:var(--ink-soft)}
+/* .section.bg-ink h2,h3 forces white text sitewide — this component carries its own
+   light background regardless of section, so it must re-assert dark text here. */
+.gem-feature .gem-copy h2{color:var(--navy)}
 
 /* ---------- explore by town ---------- */
 .town-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
@@ -290,6 +293,11 @@ p{margin:0 0 1.05rem}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
+/* ---------- shared keyboard-focus state for clickable cards ---------- */
+a.guide-hub-card:focus-visible,a.story-card:focus-visible,a.town-tile:focus-visible,a.product-card:focus-visible,a.community-card:focus-visible{
+  outline:3px solid var(--teal-deep);outline-offset:3px;border-radius:var(--radius-md)
+}
+
 /* ---------- coastal moments (video showcase) ---------- */
 .video-showcase .video-frame{position:relative;width:100%;max-width:800px;margin:0 auto;aspect-ratio:16/9;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:var(--navy)}
 .video-frame video,.video-frame iframe{width:100%;height:100%;object-fit:cover;border:0;display:block}
@@ -389,6 +397,9 @@ a.guide-hub-card:hover .guide-hub-art img{transform:scale(1.06)}
 .guide-hub-body{padding:22px 24px 26px}
 .guide-hub-body .kicker{margin-bottom:8px;font-size:.68rem}
 .guide-hub-body h3{margin:0 0 8px;font-size:1.26rem;transition:.2s color}
+/* .section.bg-ink h2,h3 forces white text sitewide (see styles.css top) — this card
+   carries its own light background regardless of section, so it must win that fight. */
+.guide-hub-grid .guide-hub-card h3{color:var(--navy)}
 a.guide-hub-card:hover h3{color:var(--coral-deep)}
 .guide-hub-body p{margin:0 0 12px;font-size:.93rem;color:var(--muted)}
 .guide-hub-meta{font-size:.78rem;font-weight:700;color:var(--teal-deep);text-transform:uppercase;letter-spacing:.04em}
