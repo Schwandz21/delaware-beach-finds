@@ -420,4 +420,67 @@ a.guide-hub-card:hover h3{color:var(--coral-deep)}
 .guide-facts-strip .fact-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--coral-deep);margin-bottom:6px}
 .guide-facts-strip .fact-value{font-family:var(--serif);font-size:1.1rem;color:var(--navy)}
 @media(max-width:900px){.guide-facts-strip{grid-template-columns:repeat(2,1fr)}}
+
+/* ==========================================================================
+   Editorial expansion preview — department navigator, Homes & Design,
+   The Edit, and restrained scroll-reveal motion.
+   ========================================================================== */
+
+/* ---------- department navigator (four pathways) ----------
+   The Edit panel is conditionally revealed by JS (content gating), so the
+   stack uses flex rather than a fixed grid-row count — a variable number of
+   stacked panels (2 or 3) always divides the lead panel's height evenly,
+   with no leftover row math to get wrong when the 4th panel appears. */
+.dept-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;align-items:stretch}
+.dept-stack{display:flex;flex-direction:column;gap:22px}
+.dept-panel{position:relative;display:block;flex:1;min-height:200px;border-radius:var(--radius-lg);overflow:hidden;color:#fff;box-shadow:0 1px 2px rgba(9,20,25,.06);transition:.3s transform,.3s box-shadow}
+.dept-panel:hover,.dept-panel:focus-visible{transform:translateY(-4px);box-shadow:0 22px 44px rgba(9,20,25,.24)}
+.dept-panel .dept-art{position:absolute;inset:0}
+.dept-panel .dept-art img{width:100%;height:100%;object-fit:cover;transition:.6s transform}
+.dept-panel:hover .dept-art img,.dept-panel:focus-visible .dept-art img{transform:scale(1.05)}
+.dept-panel:before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(9,20,25,.88) 0%,rgba(9,20,25,.45) 55%,rgba(9,20,25,.12) 100%);z-index:1}
+.dept-panel .dept-copy{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:26px}
+.dept-panel .kicker{color:#f3d9c4;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+.dept-panel h3{color:#fff;margin:.25em 0 .3em;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.dept-panel p{color:rgba(255,255,255,.86);font-size:.9rem;margin:0 0 12px;max-width:36ch;text-shadow:0 1px 8px rgba(0,0,0,.3)}
+.dept-panel .dept-cta{font-weight:700;font-size:.85rem;color:#fff;display:inline-flex;align-items:center;gap:6px}
+.dept-panel.dept-lead{min-height:460px}
+.dept-panel.dept-lead h3{font-size:1.7rem}
+.dept-panel.dept-lead p{font-size:1rem;max-width:42ch}
+.is-hidden{display:none}
+@media(max-width:1080px){.dept-grid{grid-template-columns:1fr}.dept-panel.dept-lead{min-height:340px}.dept-stack{flex-direction:row}.dept-panel{min-height:220px}}
+@media(max-width:640px){.dept-stack{flex-direction:column}}
+
+/* ---------- Homes & Design editorial panel ---------- */
+.homes-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);align-items:stretch}
+.homes-panel .homes-art{position:relative;min-height:360px}
+.homes-panel .homes-art img{width:100%;height:100%;object-fit:cover;display:block}
+.homes-panel .homes-copy{background:var(--paper);padding:52px;color:var(--ink);display:flex;flex-direction:column;justify-content:center}
+.homes-panel .homes-copy .kicker{margin-bottom:14px}
+.homes-panel .homes-copy p{max-width:46ch}
+/* .section.bg-ink h2,h3 forces white text sitewide (see top of file) — this panel
+   carries its own light background regardless of section, so it must win that fight. */
+.homes-panel .homes-copy h3{color:var(--navy)}
+@media(max-width:900px){.homes-panel{grid-template-columns:1fr}.homes-panel .homes-art{min-height:280px}.homes-panel .homes-copy{padding:34px 28px}}
+
+/* ---------- The Edit (content-gated curation) ---------- */
+.edit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.edit-card{display:block;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);background:var(--paper);box-shadow:0 1px 2px rgba(9,20,25,.04);transition:.25s transform,.3s box-shadow}
+.edit-card:hover,.edit-card:focus-visible{transform:translateY(-4px);box-shadow:0 20px 38px rgba(9,20,25,.18)}
+.edit-card .edit-art{position:relative;aspect-ratio:5/4;overflow:hidden}
+.edit-card .edit-art img{width:100%;height:100%;object-fit:cover;transition:.5s transform}
+.edit-card:hover .edit-art img{transform:scale(1.06)}
+.edit-card .edit-body{padding:20px 22px 24px}
+.edit-card .edit-tag{font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--coral-deep);margin-bottom:8px;display:block}
+.edit-card h3{margin:0 0 8px;font-size:1.12rem;color:var(--navy)}
+.edit-card p{margin:0 0 10px;font-size:.9rem;color:var(--muted)}
+.edit-disclosure{font-size:.78rem;color:var(--muted);margin-top:20px}
+.edit-disclosure a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1080px){.edit-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.edit-grid{grid-template-columns:1fr}}
+
+/* ---------- restrained scroll-reveal (respects prefers-reduced-motion) ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:.6s opacity,.6s transform}
+.reveal.is-visible{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 @media(max-width:640px){.guide-facts-strip{grid-template-columns:1fr}}

@@ -404,4 +404,53 @@ mount.innerHTML = `<h4>Keep reading</h4><ul>${related.map(r=>`<li><a href="${rel
 }).catch(()=>{});
 });
 
+// The Edit (content-gated curation: data-mount="dbf-edit", hides itself and its
+// department-nav panel unless data/dbf-edit.json has enough valid real entries)
+const editMount = document.querySelector('[data-mount="dbf-edit"]');
+if(editMount){
+  const editSection = editMount.closest('section');
+  const editNavPanel = document.querySelector('[data-dept-panel="the-edit"]');
+  fetchJson('dbf-edit.json').then(d=>{
+    const minCount = d.minPublishCount || 3;
+    const valid = (d.entries||[]).filter(e=>e.title && e.image && e.url && e.description);
+    if(valid.length < minCount){
+      if(editSection) editSection.classList.add('is-hidden');
+      if(editNavPanel) editNavPanel.classList.add('is-hidden');
+      return;
+    }
+    editMount.innerHTML = valid.map(e=>`
+      <a class="edit-card" href="${esc(e.url)}" target="_blank" rel="noopener noreferrer" data-etsy-link data-product="${esc(e.title)}" data-placement="the_edit">
+        <div class="edit-art"><img src="${esc(e.image)}" alt="${esc(e.title)}" loading="lazy" decoding="async"></div>
+        <div class="edit-body">
+          <span class="edit-tag">${esc(e.tag||'')}</span>
+          <h3>${esc(e.title)}</h3>
+          <p>${esc(e.editorialNote || e.description)}</p>
+          <span class="price-line">${esc(e.price||'')}</span>
+        </div>
+      </a>`).join('');
+    if(editNavPanel) editNavPanel.classList.remove('is-hidden');
+  }).catch(()=>{
+    if(editSection) editSection.classList.add('is-hidden');
+    if(editNavPanel) editNavPanel.classList.add('is-hidden');
+  });
+}
+
+// Restrained scroll-reveal for .reveal elements — no-op visually under prefers-reduced-motion
+// (CSS already neutralizes the effect there; this just avoids the redundant observer work)
+const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealEls = document.querySelectorAll('.reveal');
+if(revealEls.length && !prefersReducedMotion && 'IntersectionObserver' in window){
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el=>io.observe(el));
+} else {
+  revealEls.forEach(el=>el.classList.add('is-visible'));
+}
+
 })();

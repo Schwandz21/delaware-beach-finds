@@ -1,0 +1,44 @@
+{
+  "minPublishCount": 3,
+  "entries": [
+    {
+      "id": "edit-antique-steamer-trunk",
+      "title": "Antique Dome-Top Steamer Trunk",
+      "tag": "Delaware Maker · Vintage",
+      "description": "A real one-of-a-kind piece, not a reproduction — the kind of trunk that already looks like it belongs at the foot of a Rehoboth guest-room bed.",
+      "editorialNote": "We picked this one because it's genuinely one-of-a-kind, not a print-on-demand reproduction — the kind of thing that earns its place in a house instead of just filling a corner.",
+      "image": "https://i.etsystatic.com/67097156/r/il/0e7c6a/8343599485/il_1080xN.8343599485_jffz.jpg",
+      "price": "$425",
+      "url": "https://www.etsy.com/listing/4543752641/antique-dome-top-steamer-trunk-vintage",
+      "store": "Etsy",
+      "affiliateDisclosure": true,
+      "access_level": "public"
+    },
+    {
+      "id": "edit-address-planter-sign",
+      "title": "Personalized Address Planter Sign",
+      "tag": "Delaware Maker · Made to Order",
+      "description": "A handcrafted wooden porch sign combining custom house numbers with a built-in planter box — the kind of detail that makes a rental feel like somebody's actual home.",
+      "editorialNote": "Porch details are an easy way to tell a cared-for house from a rented-out one. This is a real maker piece, made to order, not a mass-produced sign.",
+      "image": "https://i.etsystatic.com/67097156/r/il/9d6833/8295602758/il_1080xN.8295602758_3i8u.jpg",
+      "price": "From $125",
+      "url": "https://www.etsy.com/listing/4543750656/personalized-wooden-address-sign-with",
+      "store": "Etsy",
+      "affiliateDisclosure": true,
+      "access_level": "public"
+    },
+    {
+      "id": "edit-cape-henlopen-throw",
+      "title": "Cape Henlopen Woven Throw Blanket",
+      "tag": "Delaware Maker · Home Textile",
+      "description": "A woven throw featuring Cape Henlopen's coordinates — understated Delaware beach-house style, not a novelty souvenir print.",
+      "editorialNote": "Most coordinate merchandise is loud. This one reads as a real home textile first, a Delaware reference second.",
+      "image": "https://i.etsystatic.com/66256405/r/il/58af1f/8198683412/il_1080xN.8198683412_nxqk.jpg",
+      "price": "$59.95",
+      "url": "https://www.etsy.com/listing/4543710756/cape-henlopen-woven-throw-blanket",
+      "store": "Etsy",
+      "affiliateDisclosure": true,
+      "access_level": "public"
+    }
+  ]
+}
