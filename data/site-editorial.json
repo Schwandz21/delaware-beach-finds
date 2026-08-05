@@ -1,0 +1,19 @@
+{
+  "_note": "Central editorial configuration. Byline presentation only — this does NOT change legal/business identity, which stays accurate on About, Contact, Privacy, Terms and Disclosure.",
+
+  "byline": {
+    "houseByline": "Delaware Beach Finds Editorial",
+    "houseBylineNote": "Some features are published under our house editorial byline.",
+    "defaultToHouseByline": true,
+    "_swapInstructions": "To publish under a chosen pen name later, change houseByline here once. Every article using the house byline updates from this one field — no page-by-page edits."
+  },
+
+  "moduleThresholds": {
+    "_note": "Minimum real content required before a homepage module is allowed to render. Below threshold the module hides cleanly rather than advertising an empty experience.",
+    "latestStories": 1,
+    "thisWeek": 2,
+    "community": 3,
+    "theEdit": 3,
+    "watchDbf": 1
+  }
+}

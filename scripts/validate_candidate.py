@@ -20,7 +20,8 @@ from datetime import datetime, date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 
-VALID_EVENT_STATUSES = {"confirmed", "tentative", "cancelled", "postponed", "sold-out", "expired"}
+VALID_EVENT_STATUSES = {"confirmed", "tentative", "cancelled", "postponed", "sold-out",
+                        "expired", "superseded"}
 VALID_GUIDE_STATUSES = {"coming-soon", "published", "paused", "planned"}
 CANDIDATE_MARKER = "DBF_FRESHNESS_CANDIDATE"
 

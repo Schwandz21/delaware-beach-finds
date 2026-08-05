@@ -61,10 +61,39 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
    try{ return new Intl.DateTimeFormat('en-CA',{timeZone:'America/New_York'}).format(new Date()); }
    catch(e){ return new Date().toISOString().slice(0,10); }
  }
+ /* ---------------------------------------------------------------
+    Module gating. A homepage module that cannot be filled with real
+    content hides itself entirely rather than advertising an empty
+    experience. Direct pages keep their honest empty states — they are
+    a destination someone chose, not a promise the homepage made.
+
+    Opt in with data-gate-hide on the mount. Also hides any department
+    panel wired to the same key via data-dept-panel.
+    --------------------------------------------------------------- */
+ function gateHide(mount, deptKey){
+   if(!mount) return;
+   if(!mount.hasAttribute('data-gate-hide')) return false;
+   const section = mount.closest('section');
+   if(section) section.classList.add('is-hidden');
+   if(deptKey){
+     const panel = document.querySelector('[data-dept-panel="'+deptKey+'"]');
+     if(panel) panel.classList.add('is-hidden');
+     // A primary-nav link must not advertise a destination with no content.
+     document.querySelectorAll('[data-nav-gate="'+deptKey+'"]').forEach(a=>a.classList.add('is-hidden'));
+   }
+   return true;
+ }
+ function gateShow(deptKey){
+   if(!deptKey) return;
+   const panel = document.querySelector('[data-dept-panel="'+deptKey+'"]');
+   if(panel) panel.classList.remove('is-hidden');
+ }
+
  const STATUS_BADGE = {tentative:'Tentative',cancelled:'Cancelled',postponed:'Postponed','sold-out':'Sold Out'};
  const weekendMount = document.querySelector('[data-mount="weekend"]');
  if(weekendMount){
    const limit = parseInt(weekendMount.getAttribute('data-limit')||'6',10);
+   const minEntries = parseInt(weekendMount.getAttribute('data-min')||'0',10);
    fetchJson('events.json').then(d=>{
      const today = todayEasternISO();
      const verifiedAt = d.verifiedAt || null;
@@ -74,6 +103,9 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
      const upcoming = (d.events||[])
        .filter(e => e.endDate && e.endDate >= today)
        .sort((a,b) => (a.startDate||'').localeCompare(b.startDate||''));
+     if(staleDataset || upcoming.length < minEntries){
+       if(gateHide(weekendMount)) return;
+     }
      if(staleDataset || !upcoming.length){
        weekendMount.innerHTML = `<div class="calendar-stale"><p class="muted" style="margin:0">Fresh events are being verified — check back shortly for this week's confirmed picks, or explore our <a href="guides.html">current local guides</a> in the meantime.</p></div>`;
        return;
@@ -92,6 +124,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
        </div>`;
      }).join('');
    }).catch(()=>{
+     if(gateHide(weekendMount)) return;
      weekendMount.innerHTML = `<div class="calendar-stale"><p class="muted" style="margin:0">Fresh events are being verified — check back shortly, or explore our <a href="guides.html">current local guides</a> in the meantime.</p></div>`;
    });
  }
@@ -125,6 +158,9 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
        document.body.appendChild(s);
      } else {
        const igHref = withUtm(c.instagramUrl, 'instagram');
+       // No verified permalink: on the homepage this would be a section header
+       // promising "New on Instagram" over a stand-in card, so hide it instead.
+       if(gateHide(igMount)) return;
        igMount.innerHTML = `<a href="${esc(igHref)}" target="_blank" rel="noopener noreferrer" style="display:block;position:relative;height:100%;color:inherit"><div class="scene">${sceneImg(d.scene,'Latest on Instagram')}</div><div class="feature-inner" style="position:relative;z-index:2;padding:22px;color:#fff"><p style="margin:0">${esc(d.caption)}</p><p style="margin:8px 0 0;font-weight:700;font-size:.85rem">View @delawarebeachfinds &rarr;</p></div></a>`;
      }
    }).catch(()=>{});
@@ -163,6 +199,12 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
          const cards = [card(photographer,'Photographer of the Week'), card(dog,"Today's Beach Dog"), card(fishing,'Favorite Fishing Photo')].join('');
          const sunriseLimit = mode === 'full' ? sunrises.length : 6;
          const sunTiles = sunrises.slice(0, sunriseLimit).map(s=>`<div class="tile" title="${esc(s.name)} — ${esc(s.caption)}">${mediaFor(s)}</div>`).join('');
+         // Reader-submission features must never imply an active submission
+         // programme that has produced content when it has not.
+         const minReal = parseInt(communityMount.getAttribute('data-min')||'0',10);
+         if(real.length < minReal){
+                if(gateHide(communityMount)) return;
+         }
          if(!photographer && !dog && !fishing && !sunrises.length){
                 communityMount.innerHTML = `<div class="community-cta" style="text-align:center;padding:48px 24px;border:1px solid #e2ddd3;border-radius:12px">
                         <div class="kicker">Submissions Opening Soon</div>
@@ -416,6 +458,7 @@ if(editMount){
     if(valid.length < minCount){
       if(editSection) editSection.classList.add('is-hidden');
       if(editNavPanel) editNavPanel.classList.add('is-hidden');
+      document.querySelectorAll('[data-nav-gate="the-edit"]').forEach(a=>a.classList.add('is-hidden'));
       return;
     }
     editMount.innerHTML = valid.map(e=>`
@@ -435,11 +478,114 @@ if(editMount){
   });
 }
 
+// Flagship story — the lead of the publication, rendered from real stories.json
+// metadata. Picks the featured record; falls back to the newest published one so
+// this can never render empty while any story exists.
+const flagshipMount = document.querySelector('[data-mount="flagship-story"]');
+if(flagshipMount){
+  fetchJson('stories.json').then(list=>{
+    const published = (list||[]).filter(s=>s.status==='published');
+    if(!published.length){ if(gateHide(flagshipMount)) return; return; }
+    const lead = published.find(s=>s.featured) ||
+                 published.slice().sort((a,b)=>(b.date||'').localeCompare(a.date||''))[0];
+    if(!lead){ gateHide(flagshipMount); return; }
+    let dateLabel = '';
+    try{
+      dateLabel = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'})
+        .format(new Date(lead.date+'T12:00:00Z'));
+    }catch(err){ dateLabel = lead.date || ''; }
+    const meta = [CAT_LABELS[lead.category]||lead.category, dateLabel, lead.readTime].filter(Boolean);
+    flagshipMount.innerHTML = `
+      <a class="flagship" href="stories/${esc(lead.slug)}.html">
+        <div class="flagship-art">${sceneImg(lead.scene, lead.heroAlt || lead.headline)}</div>
+        <div class="flagship-copy">
+          <div class="kicker">${esc(lead.kicker||'The Lead Story')}</div>
+          <h2>${esc(lead.headline)}</h2>
+          <p class="flagship-hook">${esc(lead.hook||'')}</p>
+          <div class="flagship-meta">${meta.map(m=>esc(m)).join(' &middot; ')}</div>
+          <span class="flagship-cta">Read the Story &rarr;</span>
+        </div>
+      </a>`;
+  }).catch(()=>{ gateHide(flagshipMount); });
+}
+
+// Watch DBF — native video feature. Stays hidden unless an entry is published
+// AND has a local rights-cleared source plus a poster. Never renders a
+// placeholder player. See automation/VIDEO_ASSET_REQUIREMENTS.md.
+const watchMount = document.querySelector('[data-mount="watch-dbf"]');
+if(watchMount){
+  fetchJson('watch-dbf.json').then(d=>{
+    const ready = (d.entries||[]).filter(e =>
+      e.published && e.src && e.poster && e.posterAlt && e.textAlternative);
+    if(!ready.length){ gateHide(watchMount, 'watch-dbf'); return; }
+    const v = ready[0];
+    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const webm = v.srcWebm ? `<source src="${esc(v.srcWebm)}" type="video/webm">` : '';
+    watchMount.innerHTML = `
+      <div class="watch-panel">
+        <figure class="watch-media">
+          <video class="watch-video" poster="${esc(v.poster)}" preload="none" playsinline muted controls
+                 aria-label="${esc(v.title)}"${reduced?'':' data-autoloop="1"'}>
+            ${webm}<source src="${esc(v.src)}" type="video/mp4">
+          </video>
+          <figcaption class="watch-alt">${esc(v.textAlternative)}</figcaption>
+        </figure>
+        <div class="watch-copy">
+          <div class="kicker">Watch DBF</div>
+          <h3>${esc(v.title)}</h3>
+          <p>${esc(v.context||'')}</p>
+          ${v.relatedUrl?`<a class="link-arrow" href="${esc(v.relatedUrl)}">${esc(v.relatedLabel||'Read the story')} &rarr;</a>`:''}
+          ${v.instagramUrl?`<a class="link-arrow watch-ig" href="${esc(v.instagramUrl)}" target="_blank" rel="noopener noreferrer">Watch on Instagram (opens Instagram) &rarr;</a>`:''}
+          <p class="watch-credit small muted">${esc(v.credit||'Delaware Beach Finds')}${v.audio==='muted'?' &middot; silent clip':''}</p>
+        </div>
+      </div>`;
+    gateShow('watch-dbf');
+    const videoEl = watchMount.querySelector('.watch-video');
+    if(videoEl && 'IntersectionObserver' in window){
+      // Load only when near the viewport, and stop playback once well out of it.
+      const vo = new IntersectionObserver(entries=>{
+        entries.forEach(en=>{
+          if(en.isIntersecting){
+            if(videoEl.preload === 'none') videoEl.preload = 'metadata';
+            if(videoEl.dataset.autoloop && videoEl.paused){
+              videoEl.loop = true;
+              const p = videoEl.play();
+              if(p && p.catch) p.catch(()=>{});
+            }
+          } else if(!videoEl.paused){
+            videoEl.pause();
+          }
+        });
+      }, {threshold:0.25});
+      vo.observe(videoEl);
+    }
+  }).catch(()=>{ gateHide(watchMount, 'watch-dbf'); });
+}
+
+// Editorial byline — one config field drives every article using the house
+// byline. Presentation only; legal/business identity is unchanged elsewhere.
+const bylineEls = document.querySelectorAll('[data-byline]');
+if(bylineEls.length){
+  fetchJson('site-editorial.json').then(cfg=>{
+    const house = (cfg.byline && cfg.byline.houseByline) || 'Delaware Beach Finds Editorial';
+    bylineEls.forEach(el=>{
+      const explicit = el.getAttribute('data-byline');
+      el.textContent = explicit && explicit !== 'house' ? explicit : house;
+    });
+  }).catch(()=>{
+    bylineEls.forEach(el=>{
+      if(!el.textContent.trim()) el.textContent = 'Delaware Beach Finds Editorial';
+    });
+  });
+}
+
 // Restrained scroll-reveal for .reveal elements — no-op visually under prefers-reduced-motion
 // (CSS already neutralizes the effect there; this just avoids the redundant observer work)
 const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const revealEls = document.querySelectorAll('.reveal');
+// Only arm the hidden start state once we know we can undo it.
 if(revealEls.length && !prefersReducedMotion && 'IntersectionObserver' in window){
+  document.documentElement.classList.add('js-reveal');
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){

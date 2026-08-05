@@ -1,0 +1,25 @@
+{
+  "_note": "Watch DBF video feature. The module stays hidden until an entry has BOTH a local rights-cleared `src` and a local `poster`. Never point `src` at an Instagram URL or any third-party host — see automation/VIDEO_ASSET_REQUIREMENTS.md for the exact file spec needed to activate this.",
+
+  "entries": [
+    {
+      "id": "watch-towers-on-the-dunes",
+      "title": "Standing under the towers at Cape Henlopen",
+      "context": "The concrete fire-control towers read very differently in person than they do in a photograph — this is what the walk up to one actually looks like.",
+      "src": "",
+      "srcWebm": "",
+      "poster": "",
+      "posterAlt": "",
+      "durationSeconds": null,
+      "textAlternative": "",
+      "credit": "Delaware Beach Finds",
+      "rights": "original-dbf-footage",
+      "audio": "muted",
+      "relatedUrl": "stories/towers-on-the-dunes.html",
+      "relatedLabel": "Read: The Towers on the Dunes",
+      "instagramUrl": "",
+      "published": false,
+      "access_level": "public"
+    }
+  ]
+}
