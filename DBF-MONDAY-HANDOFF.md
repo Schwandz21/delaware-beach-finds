@@ -191,3 +191,134 @@ Results:
 One confirmed defect found and fixed: the Surf Guide nav link was in a different position on its own page (`surf-fishing-guide.html`: between Stories and Community) than on the homepage (between Explore and Stories, which is the documented/intended placement). Fixed by reordering the guide page's own nav to match the homepage. Commit `f84efcd`. Verified live via a no-store fetch of the page HTML (the browser's own cached copy of the page briefly still showed the old order after the fix deployed — this is the same `max-age=600` HTTP caching behavior already documented above, not a real bug; a genuinely fresh fetch confirmed the corrected order is live).
 
 No other defects found. No other changes made. Site-wide nav propagation to the ~39 other pages that don't yet link to the surf guide (story pages, town pages, category pages, shop, etc.) was considered and deliberately NOT done in this pass — that would be a scope decision/content rollout, not a confirmed defect fix, and was explicitly out of bounds for this verification-only pass. If broader nav coverage for the guide is wanted, that's a follow-up decision for the next session, not a bug.
+
+
+---
+
+## August 11, 2026 — Publication Engine Recovery & Live Issue Sprint
+
+**Starting state:** local branch `dbf/editorial-expansion-preview` @ `988fa51`, 4 commits
+unpushed. `main` = `origin/main` = `58ab4ee`. Safety refs created before any edit:
+tag `safety/preview-2026-08-11` and branch `safety/preview-backup`, both at `988fa51`.
+
+**Final state:** `main` @ `eb59d78`, pushed and deployed. Preview branch merged
+fast-forward (it was linear on main — no conflicts to resolve).
+
+### Freshness monitor — root cause and fix
+
+Failed daily 08-01 → 08-11 with `SyntaxError: Invalid or unexpected token`. The
+workflow interpolated generated report text directly into JavaScript source:
+
+    const body = [ "...", "${{ steps.summary.outputs.body }}", ... ]
+
+GitHub substitutes that *before* the JS parses, so the first newline in a
+multi-warning report left an unterminated string literal. Reproduced locally
+against the real report output.
+
+Why it started exactly on Aug 1: the step is guarded by `if: status != 'OK'`.
+While data was fresh the step never ran, so the bug sat latent for the three
+"successful" days. The first event expiry on Aug 1 flipped status to
+REVIEW NEEDED, the step executed, and it has crashed every day since.
+
+Fixed durably (not by escaping one string): the status enum still travels via
+`GITHUB_OUTPUT`, but the body is written to a **file** that `github-script`
+reads with `fs.readFileSync` — data, never source. Safe for quotes, apostrophes,
+backticks, `${...}`, newlines, Unicode, URLs, Markdown, and a literal `EOF` line
+(which would have prematurely closed the old `GITHUB_OUTPUT` heredoc).
+
+New: `scripts/build_freshness_issue_body.py`, `scripts/test_freshness_workflow.py`
+(14 assertions). Verified the test genuinely catches the bug by reintroducing the
+old interpolation — 3 failures, then 0 when restored.
+
+### ⚠️ One manual step remains
+
+This environment's push credential lacks GitHub's `workflow` OAuth scope, so
+`.github/workflows/freshness-check.yml` **cannot be pushed from here** — the
+attempt is rejected outright and would have blocked the entire content deploy.
+
+The repaired workflow is committed at **`automation/freshness-check.FIXED.yml`**.
+
+To activate: GitHub → repo → `.github/workflows/freshness-check.yml` → edit →
+replace entire contents with `automation/freshness-check.FIXED.yml` → commit.
+
+Until then the daily monitor keeps failing. It is a **monitor, not a publisher**,
+so the public site is unaffected — data is current and freshness status is OK.
+`scripts/test_freshness_workflow.py` prints a loud NOTE while the two differ.
+
+### Scheduled weekly research — finding (no backfill)
+
+The only candidate that has ever existed in this repo is
+`candidate-2026-07-29.json`, created by an earlier Claude Code session — **not**
+by the scheduled task. Searched the working tree and all git refs: **zero**
+artifacts from the Jul 20, Jul 26, Aug 2 or Aug 9 runs. No `weekend.json` since
+commit `17630b4` removed it.
+
+**Conclusion: the scheduled task has been running with no durable write path
+into this repository. Its output was never persisted.** No retroactive issues
+were fabricated. `automation/CLAUDE_WEEKLY_FRESHNESS_PROMPT.md` now states
+plainly that the run cannot publish, and specifies a full seven-day package
+plus the single manual handoff step.
+
+### Current issue published — Week of August 10, 2026 (`2026-W33`)
+
+Researched today from primary sources:
+- City of Rehoboth Beach summer concert calendar
+- Town of Bethany Beach Seaside Concert Series
+- Friends of Cape Henlopen State Park
+- Historic Lewes Farmers Market
+
+9 current events; 3 that ended Aug 8/9 archived. `events.json verifiedAt`
+2026-08-11, next review 2026-08-18. Freshness status **OK** for the first time
+since Aug 1.
+
+**Hidden Gem:** Thompson Island Nature Preserve — sourced to Delaware State
+Parks and the Center for the Inland Bays, leading with the facts that change a
+trip (the island is closed, the trail ends at an overlook, no dogs). The July
+gem is preserved, not replaced — accumulation now demonstrably works.
+
+### Issue archive (new)
+
+`data/issues/` holds immutable weekly issues + `index.json` registry.
+`scripts/publish_issue.py` promotes an issue and archives the outgoing one with
+`supersededBy`/`supersededAt` — never deletes. `scripts/test_issue_archive.py`
+(17 assertions) proves no issue is lost across a transition and refuses unknown
+IDs, duplicate IDs and re-promotion. Archive page now surfaces **Past Issues**
+above the article filters. Access-level fields are present throughout so a
+future paywall needs no data migration.
+
+**No issue predates `2026-W33`** — none ever existed.
+
+### Two bugs caught during verification
+
+1. **Duplicate Lewes market listing** — the older record was still date-current
+   so expiry-based archival never caught it. Properly superseded with a note.
+2. **Wrong weekday on recurring events** — the label was computed from whatever
+   day a date range started, so a Saturday market read "Tuesday". Multi-day and
+   recurring runs now label as Recurring/Multi-day.
+
+### Commerce audit
+
+51/51 Etsy links resolve to `etsy.com/shop/DelawareBeachFinds`. Zero Blue Hen
+Basement / Shopify references in any HTML/JSON/JS. Zero blanket handmade
+claims. README's obsolete Shopify section removed.
+
+### Tests
+
+`scripts/run_tests.sh` 17 → **19 suites green**. Plus 14 workflow assertions and
+17 issue-archive assertions. 1,295 internal links, 0 dead. 0 console errors.
+
+### Live verification (cache-bypassed, delawarebeachfinds.com)
+
+14 routes returned 200. Homepage shows the 6-item nav, the flagship, 6 real
+August events, Thompson Island as current Hidden Gem; Instagram and Community
+correctly hidden. Archive shows Past Issues + 36 archived items.
+
+### Remaining genuine blockers
+
+1. The workflow paste above — the only thing standing between here and a green
+   daily monitor.
+2. The Scheduled task prompt needs replacing (exact text supplied separately) so
+   future runs emit a persistable weekly candidate rather than an ephemeral
+   fragment.
+3. Community has no real submissions; module stays hidden by design.
+4. Watch DBF stays gated — still no owned video assets.
