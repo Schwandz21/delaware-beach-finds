@@ -39,7 +39,7 @@ UPDATE_DBF_FRESHNESS.command  Double-click updater — review, validate and
 admin/submit-helper.html  Internal tool for turning a follower photo into a
                          ready-to-paste community.json entry (not linked in nav)
 assets/css/styles.css     One shared stylesheet
-assets/js/config.js       Etsy / Shopify / Instagram / GA4 config — edit here
+assets/js/config.js       Etsy / Instagram / GA4 config — edit here
 assets/js/site.js         Nav toggle, link wiring, and the JSON-driven renderers
 assets/images/scenes/     Placeholder photography (custom coastal art) —
                          swap individual files for real photos any time,
@@ -76,8 +76,3 @@ GitHub Pages, deployed from `main` / root. Custom domain via `CNAME`
 (`delawarebeachfinds.com`). Google Analytics (GA4) is wired through
 `assets/js/config.js` — unchanged from before.
 
-## Connecting the Shopify store
-
-Open `assets/js/config.js` and replace `https://YOUR-SHOPIFY-STORE.myshopify.com`
-with the real store URL. Every Shopify link sitewide updates from that one
-setting. Etsy is already live at `etsy.com/shop/TheBlueHenBasement`.

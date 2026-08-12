@@ -1,0 +1,83 @@
+{
+  "issueId": "2026-W33",
+  "weekOf": "2026-08-10",
+  "weekEnding": "2026-08-16",
+  "title": "Week of August 10, 2026",
+  "publishedAt": "2026-08-11",
+  "status": "current",
+  "byline": "Delaware Beach Finds Editorial",
+  "summary": "Bandstand season peaks in both towns — the US Army Field Band plays Bethany on Thursday and Rehoboth on Friday — and this week's Hidden Gem is the trail almost everyone drives past on Route 1.",
+  "coverStory": {
+    "slug": "towers-on-the-dunes",
+    "title": "The Towers on the Dunes",
+    "url": "stories/towers-on-the-dunes.html"
+  },
+  "hiddenGem": {
+    "name": "Thompson Island Nature Preserve",
+    "dateFeatured": "2026-08-11"
+  },
+  "eventIds": [
+    "evt-fochsp-members-social-2026-08-13",
+    "evt-bethany-us-army-field-band-2026-08-13",
+    "evt-rehoboth-us-army-field-band-2026-08-14",
+    "evt-lewes-farmers-market-saturday-2026",
+    "evt-rehoboth-sugar-mountain-2026-08-15",
+    "evt-bethany-quiet-fire-2026-08-15",
+    "evt-rehoboth-yacht-lobsters-2026-08-16",
+    "evt-bethany-usaf-blue-aces-2026-08-17"
+  ],
+  "dailySlots": [
+    {
+      "date": "2026-08-10",
+      "day": "Monday",
+      "kind": "week-ahead",
+      "headline": "The week ahead on the coast",
+      "note": "Two Army Field Band dates, a members' social at Cape Henlopen, and markets in Lewes.",
+      "ref": null
+    },
+    {
+      "date": "2026-08-11",
+      "day": "Tuesday",
+      "kind": "hidden-gem",
+      "headline": "Hidden Gem: Thompson Island Nature Preserve",
+      "note": "A designated Natural Area Preserve you can look at but not walk onto — and why the trail ends where it does.",
+      "ref": "hidden-gems.html"
+    },
+    {
+      "date": "2026-08-13",
+      "day": "Thursday",
+      "kind": "events",
+      "headline": "Bethany's bandstand gets the Army Field Band",
+      "note": "7:30 PM at the Bethany Bandstand, free.",
+      "ref": "this-week.html"
+    },
+    {
+      "date": "2026-08-14",
+      "day": "Friday",
+      "kind": "events",
+      "headline": "The same band, one town north",
+      "note": "8 PM on the Rehoboth boardwalk.",
+      "ref": "this-week.html"
+    },
+    {
+      "date": "2026-08-15",
+      "day": "Saturday",
+      "kind": "guide",
+      "headline": "Market morning in Lewes",
+      "note": "George H.P. Smith Park, 8 AM to noon — pair it with the canal-to-harbour walk.",
+      "ref": "lewes-canal-waterfront-walk.html"
+    }
+  ],
+  "sources": [
+    "https://www.rehobothbeachde.gov/events/category/summer-concert-series/",
+    "https://www.coasttv.com/news/bethany-beach-releases-full-2026-seaside-concert-schedule/article_d0861885-4e1c-4975-b1af-eeb1b75d2b0e.html",
+    "https://www.fochsp.org/calendar",
+    "https://www.historiclewesfarmersmarket.org/market-hours-and-locations/",
+    "https://destateparks.com/ (Thompson Island Nature Preserve trail listing)"
+  ],
+  "editorialNotes": "First formal weekly issue under the issue-archive system. No retroactive issues were created for earlier weeks: the scheduled research task ran but never persisted output into this repository, so no evidence of a prior formal issue exists.",
+  "community": null,
+  "instagram": null,
+  "access_level": "public",
+  "revision": 1
+}

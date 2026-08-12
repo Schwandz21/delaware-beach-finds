@@ -98,3 +98,57 @@ publish it for him.
 See `automation/CANDIDATE_SCHEMA.md` for the file format, and the root
 `README.md` "Weekly Operating Procedure" section for the full review →
 approve → deploy flow via `UPDATE_DBF_FRESHNESS.command`.
+
+---
+
+## UPDATE 2026-08-11 — produce a WEEK, not a day
+
+Two things changed and this section overrides anything above that conflicts.
+
+**1. Research once, cover seven days.** Earlier runs produced only a weekend
+calendar fragment. That is not enough to keep the site alive Monday to Sunday.
+Each run must now return a candidate that can carry the whole week, including a
+`dailySlots` array. Suggested rhythm — *only fill a day when real material
+exists, never pad*:
+
+| Day | Slot |
+|---|---|
+| Mon | Week ahead / coast outlook |
+| Tue | Nature, history or a Delaware micro-feature |
+| Wed | Hidden Gem |
+| Thu | Practical guide / local knowledge |
+| Fri | Weekend calendar emphasis |
+| Sat | Community or Instagram, only if real material exists |
+| Sun | Quieter evergreen or recap |
+
+**2. Your output is not published.** This is the important one. The scheduled
+environment has no write access to the GitHub repository. Runs on 2026-07-20,
+07-26, 08-02 and 08-09 all executed, and **none of their output ever reached the
+site** — there is no record of them anywhere in the repo. If you finish a run
+and do nothing else, the work is lost.
+
+So end every run by printing the complete candidate JSON in a single fenced
+code block, preceded by a short human summary. That block is the deliverable.
+The one manual step is: save it to
+`automation/candidates/candidate-YYYY-MM-DD.json`, then run
+`UPDATE_DBF_FRESHNESS.command`, which validates, previews, backs up, applies and
+deploys after approval.
+
+Never claim the website was updated. You cannot update it.
+
+### Candidate shape (additions)
+
+Alongside the existing event fields, include where real material supports them:
+
+```
+issueId              e.g. "2026-W34"   (ISO year + ISO week)
+weekOf               Monday of the covered week, YYYY-MM-DD
+dailySlots[]         {date, day, kind, headline, note, ref}
+hiddenGemCandidate   {name, location, body[], sources[]}
+sources[]            every URL actually used
+```
+
+Hidden Gem rules: a real, publicly accessible Delaware coastal place, sourced to
+an authority (state parks, DNREC, a land trust, a municipality). Include the
+practical detail that changes someone's trip — closures, dog rules, where the
+trail actually ends. Never claim first-hand observation.

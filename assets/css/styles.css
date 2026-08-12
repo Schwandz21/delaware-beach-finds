@@ -528,3 +528,23 @@ html.js-reveal .reveal.is-visible{opacity:1;transform:none}
 /* On dark sections these two components sit directly on the ink background */
 .section.bg-ink .watch-copy h3{color:#fff}
 .section.bg-ink .watch-copy p{color:rgba(255,255,255,.82)}
+
+/* ---------- past issues (weekly issue archive) ---------- */
+.issue-list{display:grid;gap:16px;margin:6px 0 42px}
+.issue-card{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;
+  padding:22px 26px;border:1px solid var(--line);border-radius:var(--radius-md);background:var(--paper);
+  transition:.2s border-color,.25s transform,.25s box-shadow}
+a.issue-card:hover,a.issue-card:focus-visible{border-color:transparent;transform:translateY(-3px);
+  box-shadow:0 18px 34px rgba(9,20,25,.16)}
+.issue-badge{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800;
+  padding:6px 12px;border-radius:999px;white-space:nowrap}
+.issue-badge.is-current{background:var(--navy);color:#fff}
+.issue-badge.is-archived{background:var(--paper-deep);color:var(--muted);border:1px solid var(--line)}
+.issue-card h3{margin:0 0 5px;font-size:1.22rem;color:var(--navy)}
+.issue-card p{margin:0;font-size:.92rem;color:var(--muted);max-width:62ch}
+.issue-meta{font-size:.78rem;color:var(--muted);white-space:nowrap;font-weight:700}
+.issue-note{font-size:.86rem;color:var(--muted);margin:0 0 26px;max-width:70ch}
+@media(max-width:760px){
+  .issue-card{grid-template-columns:1fr;gap:10px;padding:20px}
+  .issue-meta{white-space:normal}
+}

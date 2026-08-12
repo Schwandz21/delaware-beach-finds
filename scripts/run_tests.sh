@@ -51,6 +51,30 @@ sys.exit(0 if d.get("candidateMarker") == "DBF_FRESHNESS_CANDIDATE" else 1)
 PYEOF
 
 echo ""
+echo "=== Freshness workflow (Aug 2026 regression) ==="
+python3 scripts/test_freshness_workflow.py >/tmp/dbf-wf-out 2>&1
+if [ $? -eq 0 ]; then
+  echo "  ok  - freshness workflow handles arbitrary report text safely"
+  PASS=$((PASS+1))
+else
+  echo "FAIL  - freshness workflow regression test failed"
+  sed 's/^/        /' /tmp/dbf-wf-out
+  FAIL=$((FAIL+1))
+fi
+
+echo ""
+echo "=== Weekly issue archive ==="
+python3 scripts/test_issue_archive.py >/tmp/dbf-iss-out 2>&1
+if [ $? -eq 0 ]; then
+  echo "  ok  - issue archive preserves superseded issues"
+  PASS=$((PASS+1))
+else
+  echo "FAIL  - issue archive regression test failed"
+  sed 's/^/        /' /tmp/dbf-iss-out
+  FAIL=$((FAIL+1))
+fi
+
+echo ""
 echo "=== Site integrity ==="
 check "no dead internal links" python3 scripts/check_links.py
 check "content index builds cleanly" python3 scripts/build_content_index.py

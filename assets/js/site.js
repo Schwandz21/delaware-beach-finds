@@ -113,8 +113,16 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
      const items = upcoming.slice(0, limit);
      weekendMount.innerHTML = items.map((e,i)=>{
        const badge = STATUS_BADGE[e.status];
+       // A computed weekday is only meaningful for a single-day event. A
+       // recurring/multi-day run (e.g. a market open every Saturday) would
+       // otherwise be labelled with whatever weekday its range happens to start on.
        let weekday = '';
-       try{ weekday = new Intl.DateTimeFormat('en-US',{weekday:'long',timeZone:'America/New_York'}).format(new Date(e.startDate+'T12:00:00Z')); }catch(err){}
+       const multiDay = e.endDate && e.startDate && e.endDate !== e.startDate;
+       if(multiDay){
+         weekday = e.category === 'market' ? 'Recurring' : 'Multi-day';
+       } else {
+         try{ weekday = new Intl.DateTimeFormat('en-US',{weekday:'long',timeZone:'America/New_York'}).format(new Date(e.startDate+'T12:00:00Z')); }catch(err){}
+       }
        return `
        <div class="calendar-day${i===0?' is-today':''}">
          <div class="day-label">${esc(weekday)}${badge?` &middot; <span class="event-status-badge">${esc(badge)}</span>`:''}</div>
@@ -577,6 +585,44 @@ if(bylineEls.length){
       if(!el.textContent.trim()) el.textContent = 'Delaware Beach Finds Editorial';
     });
   });
+}
+
+// Past Issues — the weekly issue archive. Superseding an issue never deletes it,
+// so every issue ever published stays reachable here.
+const issuesMount = document.querySelector('[data-mount="past-issues"]');
+if(issuesMount){
+  fetchJson('issues/index.json').then(idx=>{
+    const list = (idx.issues||[]).slice()
+      .sort((a,b)=>(b.weekOf||'').localeCompare(a.weekOf||''));
+    if(!list.length){ if(gateHide(issuesMount)) return; return; }
+    const rows = list.map(i=>{
+      const isCurrent = i.issueId === idx.currentIssueId;
+      const badge = isCurrent ? 'Current Issue' : 'Past Issue';
+      const cls = isCurrent ? 'is-current' : 'is-archived';
+      let when = i.weekOf;
+      try{
+        when = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'})
+          .format(new Date(i.weekOf+'T12:00:00Z'));
+      }catch(e){}
+      return `<div class="issue-card">
+        <span class="issue-badge ${cls}">${esc(badge)}</span>
+        <div>
+          <h3>${esc(i.title||('Week of '+when))}</h3>
+          <p>Week of ${esc(when)}</p>
+        </div>
+        <span class="issue-meta">${esc(i.issueId)}</span>
+      </div>`;
+    }).join('');
+    issuesMount.innerHTML = `
+      <div class="section-head" style="margin-bottom:14px">
+        <div><div class="kicker">Past Issues</div><h2 style="margin:0">Every weekly issue we've published</h2></div>
+      </div>
+      <p class="issue-note">Each week becomes its own issue. When a new one goes live the previous
+      issue is archived, never deleted — this list only grows. Formal issues begin with the week of
+      August 10, 2026, when the issue archive was introduced; earlier work remains discoverable below
+      and in <a href="stories/index.html">Delaware Stories</a>.</p>
+      <div class="issue-list">${rows}</div>`;
+  }).catch(()=>{ gateHide(issuesMount); });
 }
 
 // Restrained scroll-reveal for .reveal elements — no-op visually under prefers-reduced-motion
