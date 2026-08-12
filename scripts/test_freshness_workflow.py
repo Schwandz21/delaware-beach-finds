@@ -20,7 +20,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from build_freshness_issue_body import build  # noqa: E402
 
-WORKFLOW = os.path.join(ROOT, ".github", "workflows", "freshness-check.yml")
+# The push credential in this environment lacks GitHub's `workflow` scope, so
+# .github/workflows/ cannot always be updated from here. The paste-ready fixed
+# workflow therefore lives at automation/freshness-check.FIXED.yml and is the
+# authoritative artifact to test whenever it is present.
+_FIXED = os.path.join(ROOT, "automation", "freshness-check.FIXED.yml")
+_LIVE = os.path.join(ROOT, ".github", "workflows", "freshness-check.yml")
+WORKFLOW = _FIXED if os.path.exists(_FIXED) else _LIVE
 
 passed = failed = 0
 
@@ -128,6 +134,14 @@ with tempfile.TemporaryDirectory() as td:
     )
     check("missing report is reported, not fatal",
           r.returncode == 0 and "REVIEW NEEDED" in r.stdout, r.stdout + r.stderr)
+
+# Loud, non-fatal notice while the live workflow still awaits a manual paste.
+if os.path.exists(_FIXED) and os.path.exists(_LIVE):
+    if open(_FIXED, encoding="utf-8").read() != open(_LIVE, encoding="utf-8").read():
+        print()
+        print("  NOTE - .github/workflows/freshness-check.yml still differs from the")
+        print("         fixed version. Paste automation/freshness-check.FIXED.yml over")
+        print("         it via the GitHub web UI to activate the repair.")
 
 print()
 print("================================")

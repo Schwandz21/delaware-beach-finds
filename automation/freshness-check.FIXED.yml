@@ -36,23 +36,21 @@ jobs:
           cat freshness-report.json
           set -e
 
+      # Only the status enum goes through GITHUB_OUTPUT. The report body is
+      # arbitrary generated prose (quotes, apostrophes, backticks, newlines,
+      # URLs, Markdown, Unicode) and is written to a FILE instead. It is never
+      # interpolated into JavaScript source or into a heredoc delimiter, which
+      # is what broke this workflow every day from 2026-08-01.
       - name: Read report summary
         id: summary
+        env:
+          TESTS_OUTCOME: ${{ steps.tests.outcome }}
         run: |
-          python3 - <<'PYEOF' >> "$GITHUB_OUTPUT"
-          import json
-          d = json.load(open("freshness-report.json"))
-          status = d.get("overallStatus", "UNKNOWN")
-          warnings = list(d.get("warnings", []))
-          if "${{ steps.tests.outcome }}" == "failure":
-              status = "REVIEW NEEDED"
-              warnings.append("scripts/run_tests.sh failed — see the 'Run deterministic test suite' step log for detail.")
-          print(f"status={status}")
-          body = "\n".join(f"- {w}" for w in warnings) or "- (no warnings — this run should not be reachable if status is REVIEW NEEDED)"
-          print("body<<EOF")
-          print(body)
-          print("EOF")
-          PYEOF
+          python3 scripts/build_freshness_issue_body.py \
+            --report freshness-report.json \
+            --tests-outcome "$TESTS_OUTCOME" \
+            --body-out freshness-issue-body.md \
+            --status-out "$GITHUB_OUTPUT"
 
       # ---- This job enforces and warns. It never researches or invents
       # ---- events — that only happens in the human-approved weekly
@@ -62,11 +60,14 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
+            const fs = require("fs");
             const title = "DBF freshness: review needed";
+            // Read as data, never as source. Any character is safe here.
+            const report = fs.readFileSync("freshness-issue-body.md", "utf8");
             const body = [
               "Automated daily freshness check found something that needs human review.",
               "",
-              "${{ steps.summary.outputs.body }}",
+              report,
               "",
               "Run `python3 scripts/freshness_report.py` locally for the full report, or use `UPDATE_DBF_FRESHNESS.command` to review and apply a new candidate.",
               "",
