@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Thompson Island Nature Preserve",
+    "location": "Delaware Seashore State Park, off Route 1 just south of Dewey Beach",
+    "kicker": "Hidden Gem of the Week",
+    "scene": "marsh-green-1",
+    "photoCredit": "Delaware Beach Finds",
+    "body": [
+      "Almost everyone who drives Route 1 past Dewey is heading somewhere else. The Thompson Island trailhead sits right there on that stretch, inside Delaware Seashore State Park, and it is one of the few places on this coast where you can be in mature pine and hardwood forest about a minute after leaving the highway.",
+      "Delaware State Parks lists the walk at roughly 1.3 miles out and back, easy going, through forest and a short stretch of marsh before it opens onto an overlook across the Lewes-Rehoboth Canal toward Rehoboth Bay. The island itself is a designated Natural Area Preserve and is closed to the public — the trail deliberately ends at the overlook rather than crossing to it, which is the single most useful thing to know before you drive out.",
+      "Two other things worth knowing. Dogs are not permitted, which is unusual for a Delaware trail and catches people out. And the shoreline you are looking at is an active Living Shoreline restoration site run by the Delaware Center for the Inland Bays, so the marsh edge you see is being actively rebuilt rather than simply left alone."
+    ],
+    "signoff": "— fifteen minutes off Route 1, and almost nobody stops.",
+    "current": true,
+    "dateFeatured": "2026-08-11",
+    "sources": [
+      "Delaware State Parks, Thompson Island Nature Preserve trail listing (destateparks.com)",
+      "Delaware Center for the Inland Bays, Thompson Island Living Shoreline Initiative"
+    ],
+    "issueId": "2026-W33",
+    "access_level": "public"
+  },
+  {
+    "name": "Beach Plum Island Nature Preserve",
+    "location": "Between Lewes and Cape Henlopen, off Cape Henlopen Drive",
+    "kicker": "Hidden Gem of the Week",
+    "scene": "marsh-gold-1",
+    "photoCredit": "Photo: @delawarebeachfinds",
+    "body": [
+      "There's a gravel pull-off between Lewes and Cape Henlopen that most people drive straight past because it looks like nothing — a small sign, a short boardwalk, no snack bar, no flags. That's Beach Plum Island, and it's the closest thing Delaware has to having a marsh entirely to yourself.",
+      "The boardwalk loop takes maybe twenty-five minutes if you actually stop and look, which you should. It cuts through beach plum thickets and low dunes before opening onto the Lewes-Rehoboth Canal, where herons stand around like they own the place and the only sound most mornings is wind moving through the grass.",
+      "Go early — 7 or 8 AM — with coffee, and go in shoulder season if you can swing it. There's no shade and the boardwalk gets hot fast by midday in July. But for a fifteen-minute detour off the road everyone else is driving, it's the best quiet we know."
+    ],
+    "signoff": "— the kind of place you tell one friend about, not the whole group chat.",
+    "current": false,
+    "dateFeatured": "2026-07-15"
+  }
+]

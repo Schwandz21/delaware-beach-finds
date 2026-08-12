@@ -1,0 +1,24 @@
+{
+  "currentIssueId": "2026-W33",
+  "_note": "Immutable registry of published weekly issues. A new issue becomes current; prior issues move to status 'archived' and are never deleted. No issues predate 2026-W33 because no earlier formal issue was ever persisted — see PHASE 3 finding in the handoff.",
+  "issues": [
+    {
+      "issueId": "2026-W33",
+      "weekOf": "2026-08-10",
+      "title": "Week of August 10, 2026",
+      "publishedAt": "2026-08-11",
+      "status": "current",
+      "file": "issues/2026-W33.json",
+      "access_level": "public"
+    },
+    {
+      "issueId": "2026-W34",
+      "weekOf": "2026-08-17",
+      "title": "Week of August 17, 2026",
+      "publishedAt": null,
+      "status": "draft",
+      "file": "issues/2026-W34.json",
+      "access_level": "public"
+    }
+  ]
+}

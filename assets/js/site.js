@@ -592,6 +592,45 @@ if(bylineEls.length){
   });
 }
 
+// Worth Knowing Today — the CURRENT-WEEK editorial surface.
+// Reads data/daily-slots.json only. It never touches data/issues/*.json, so
+// publishing or superseding a weekly issue can never disturb what renders here.
+// Shows today's slots; hides future ones; hides entirely once the week's
+// material is spent or the dataset goes stale. Never invents fallback copy.
+const dailyMount = document.querySelector('[data-mount="daily-slots"]');
+if(dailyMount){
+  fetchJson('daily-slots.json').then(d=>{
+    const today = todayEasternISO();
+    const slots = Array.isArray(d.slots) ? d.slots : [];
+
+    // A slot with no real date can't be placed in time — never guess one.
+    const dated = slots.filter(s => s && typeof s.date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s.date));
+
+    // Freshness: same policy shape as events.json.
+    const policyDays = d.freshnessPolicyDays || 7;
+    const stale = !d.verifiedAt ||
+      Math.floor((Date.now() - new Date(d.verifiedAt+'T00:00:00').getTime())/86400000) > policyDays;
+
+    const forToday = dated.filter(s => s.date === today);
+    if(stale || !forToday.length){ gateHide(dailyMount); return; }
+
+    dailyMount.innerHTML = `
+      <div class="section-head" style="margin-bottom:18px">
+        <div><div class="kicker">Worth Knowing Today</div>
+        <h2 style="margin:0">${esc(new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/New_York'}).format(new Date(today+'T12:00:00Z')))}</h2></div>
+      </div>
+      <ul class="daily-slots">
+        ${forToday.map(s=>`
+          <li class="daily-slot">
+            <span class="daily-slot-kind">${esc(s.kind||'')}</span>
+            <h3>${esc(s.headline||'')}</h3>
+            ${s.note?`<p>${esc(s.note)}</p>`:''}
+            ${s.ref?`<a class="link-arrow" href="${esc(s.ref)}"${/^https?:/i.test(s.ref)?' target="_blank" rel="noopener noreferrer"':''}>Source${/^https?:/i.test(s.ref)?' (opens external site)':''} &rarr;</a>`:''}
+          </li>`).join('')}
+      </ul>`;
+  }).catch(()=>{ gateHide(dailyMount); });
+}
+
 // Past Issues — the weekly issue archive. Superseding an issue never deletes it,
 // so every issue ever published stays reachable here.
 const issuesMount = document.querySelector('[data-mount="past-issues"]');

@@ -1,0 +1,56 @@
+{
+  "_note": "Mutable CURRENT-WEEK editorial surface. Weekly issue files in data/issues/ are immutable publication history and are never read at render time. Candidate ingestion updates this file; it never rewrites an issue record.",
+  "weekOf": "2026-08-10",
+  "verifiedAt": "2026-08-12",
+  "sourceCandidate": "automation/candidates/candidate-2026-08-12.json",
+  "slots": [
+    {
+      "date": "2026-08-12",
+      "day": "Wednesday",
+      "kind": "Week Ahead",
+      "headline": "A waterfront concert run, a War of 1812 weekend, and coastal Delaware's first Dockside & IRM fishing tournament",
+      "note": "The week opens with back-to-back Melvin Seals & JGB shows at Rocking the Docks in Lewes and a ranger-led hike across the Indian River Inlet Bridge, builds to Historic Lewes' 'Under Enemy Guns' living-history weekend (Aug. 15–16) and a stacked run of free Bandstand concerts in Rehoboth, and closes with the first-ever Dockside & IRM Classic fishing tournament at Indian River Marina (Aug. 22–23).",
+      "ref": "https://www.destateparks.com/programs/"
+    },
+    {
+      "date": "2026-08-12",
+      "day": "Wednesday",
+      "kind": "wildlife note",
+      "headline": "Fowler Beach stays closed through October for nesting shorebirds",
+      "note": "At Prime Hook National Wildlife Refuge, Fowler Beach remains closed to protect federally threatened piping plovers and state-endangered least terns; it's scheduled to reopen October 1. The rest of the refuge's trails remain open sunrise to sunset.",
+      "ref": "https://www.fws.gov/refuge/prime-hook/visit-us"
+    },
+    {
+      "date": "2026-08-13",
+      "day": "Thursday",
+      "kind": "Delaware history micro-feature",
+      "headline": "Segregated Sands: the Jim Crow-era history behind Delaware's beaches",
+      "note": "The Zwaanendael Museum in Lewes hosts 'Segregated Sands,' an exhibit on the Black American experience at Delaware's segregated beaches during the Jim Crow era, alongside an oral-history initiative inviting community members to share their own stories. Free admission; open Tuesday–Saturday, 10 a.m.–4:15 p.m.",
+      "ref": "https://history.delaware.gov/zwaanendael-museum/segregated-sands/"
+    },
+    {
+      "date": "2026-08-14",
+      "day": "Friday",
+      "kind": "field-guide insight",
+      "headline": "Why the Cedar Islands matter more than they look",
+      "note": "The marsh islands along Delaware Seashore's Cedar Island Water Trail are active nesting habitat for osprey, laughing gulls, herring and great black-backed gulls, Forster's and common terns, and multiple heron species — worth knowing before paddling the 2.8-mile loop, which is geared toward experienced kayakers given heat, wind, and tide.",
+      "ref": "https://www.destateparks.com/paddle-sports/"
+    },
+    {
+      "date": "2026-08-15",
+      "day": "Saturday",
+      "kind": "Hidden Gem",
+      "headline": "Beach Plum Island: Delaware's only 'wilderness beach'",
+      "note": "A 129-acre state nature preserve on an undeveloped barrier spit north of Lewes — the only beach in the Delaware State Parks system left in a wilderness state. Open March through December for hiking, surf fishing, and wildlife viewing on marked trails only; the southern half stays closed year-round to protect it.",
+      "ref": "https://delawarebayshorebyway.org/attractions/beach-plum-island-nature-preserve/"
+    },
+    {
+      "date": "2026-08-15",
+      "day": "Saturday",
+      "kind": "maritime/coastal history",
+      "headline": "When the Royal Navy blockaded Lewes",
+      "note": "This weekend's 'Under Enemy Guns' living-history event revisits 1813, when Commodore John P. Beresford's British squadron shelled Lewes during the War of 1812 — the town's most-told maritime siege story, reenacted with musket volleys and boat drills on the Lewes-Rehoboth Canal.",
+      "ref": "https://www.historiclewes.org/event/under-enemy-guns-lewes-blockade-in-the-war-of-1812/"
+    }
+  ]
+}

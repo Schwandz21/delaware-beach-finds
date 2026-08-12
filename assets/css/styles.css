@@ -552,3 +552,14 @@ a.issue-card:hover,a.issue-card:focus-visible{border-color:transparent;transform
 /* Access notice — an event not open to the general public must say so. */
 .event-access-badge{color:var(--coral-deep);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
 .calendar-day.is-today .event-access-badge{color:#f3d9c4}
+
+/* ---------- Worth Knowing Today (current-week daily slots) ---------- */
+.daily-slots{list-style:none;padding:0;margin:0;display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
+.daily-slot{background:var(--paper);padding:24px 26px}
+.daily-slot-kind{display:inline-block;font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;
+  font-weight:800;color:var(--coral-deep);margin-bottom:8px}
+.daily-slot h3{margin:0 0 8px;font-size:1.24rem;color:var(--navy)}
+.daily-slot p{margin:0 0 12px;color:var(--ink-soft);max-width:70ch;font-size:.95rem}
+.daily-slot .link-arrow{font-size:.84rem}
+@media(max-width:640px){.daily-slot{padding:20px 18px}}

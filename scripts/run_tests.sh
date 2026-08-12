@@ -75,6 +75,18 @@ else
 fi
 
 echo ""
+echo "=== Current-week daily slots ==="
+python3 scripts/test_daily_slots.py >/tmp/dbf-ds-out 2>&1
+if [ $? -eq 0 ]; then
+  echo "  ok  - daily slots render by real date and stay separate from issue history"
+  PASS=$((PASS+1))
+else
+  echo "FAIL  - daily slots regression test failed"
+  sed 's/^/        /' /tmp/dbf-ds-out
+  FAIL=$((FAIL+1))
+fi
+
+echo ""
 echo "=== Site integrity ==="
 check "no dead internal links" python3 scripts/check_links.py
 check "content index builds cleanly" python3 scripts/build_content_index.py

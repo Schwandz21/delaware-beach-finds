@@ -16,9 +16,10 @@ and data/guides.json's status/lastReviewed fields. It cannot invent or
 modify editorial article content.
 """
 import json
+import re
 import os
 import sys
-from datetime import date
+from datetime import date, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -44,6 +45,64 @@ def next_id(title, start_date):
     while "--" in slug:
         slug = slug.replace("--", "-")
     return f"evt-{slug}-{start_date}"
+
+
+
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+class DailySlotError(Exception):
+    """Malformed dailySlots must fail loudly, never be silently dropped."""
+
+
+def build_daily_slots(candidate):
+    """Return the new data/daily-slots.json payload, or None if the candidate
+    carries no dailySlots key at all.
+
+    Rules enforced here:
+      * every slot needs a real YYYY-MM-DD date -- a missing date is never inferred
+      * every slot needs a headline -- an untitled slot cannot render honestly
+      * dates are used exactly as given -- nothing is re-dated into another week
+      * an explicitly empty list produces an explicitly empty file, so the module
+        hides rather than carrying stale material forward
+    """
+    if "dailySlots" not in candidate:
+        return None
+
+    slots = candidate.get("dailySlots")
+    if not isinstance(slots, list):
+        raise DailySlotError(f"dailySlots must be a list, got {type(slots).__name__}")
+
+    problems = []
+    for i, s in enumerate(slots):
+        label = f"dailySlots[{i}]"
+        if not isinstance(s, dict):
+            problems.append(f"{label}: expected an object, got {type(s).__name__}")
+            continue
+        date = s.get("date")
+        if not date:
+            problems.append(f"{label}: missing 'date' — a slot date is never inferred")
+        elif not (isinstance(date, str) and DATE_RE.match(date)):
+            problems.append(f'{label}: date "{date}" is not YYYY-MM-DD')
+        else:
+            try:
+                datetime.strptime(date, "%Y-%m-%d")
+            except ValueError:
+                problems.append(f'{label}: date "{date}" is not a real calendar date')
+        if not s.get("headline"):
+            problems.append(f"{label}: missing 'headline'")
+    if problems:
+        raise DailySlotError("; ".join(problems))
+
+    return {
+        "_note": ("Mutable CURRENT-WEEK editorial surface. Weekly issue files in data/issues/ are "
+                  "immutable publication history and are never read at render time. Candidate "
+                  "ingestion updates this file; it never rewrites an issue record."),
+        "weekOf": candidate.get("weekOf"),
+        "verifiedAt": candidate.get("verifiedAt"),
+        "sourceCandidate": candidate.get("_sourcePath"),
+        "slots": [dict(s) for s in slots],
+    }
 
 
 def compute_plan(candidate, events_doc, archive, guides):
@@ -153,6 +212,7 @@ def main():
 
     with open(args[0], encoding="utf-8") as f:
         candidate = json.load(f)
+    candidate["_sourcePath"] = args[0]
 
     events_doc = load("events.json", {"events": [], "verifiedAt": None, "freshnessPolicyDays": 7})
     archive = load("events-archive.json", [])
@@ -160,6 +220,20 @@ def main():
 
     plan = compute_plan(candidate, events_doc, archive, guides)
     print(describe_plan(plan))
+
+    # Fail loudly before anything is written.
+    try:
+        daily_payload = build_daily_slots(candidate)
+    except DailySlotError as exc:
+        print(f"\nREFUSED — malformed dailySlots: {exc}")
+        return 1
+    if daily_payload is None:
+        print("Daily slots:              (candidate has no dailySlots key — leaving existing file untouched)")
+    else:
+        n = len(daily_payload["slots"])
+        print(f"Daily slots to write:     {n}" + ("  (explicitly empty — module will hide)" if n == 0 else ""))
+        for s in daily_payload["slots"]:
+            print(f"  * {s['date']}  {s.get('kind','')}  {s['headline'][:52]}")
 
     if not apply_mode:
         print("\n(dry run — no files written; re-run with --apply to write changes)")
@@ -169,7 +243,11 @@ def main():
     save("events.json", new_events_doc)
     save("events-archive.json", new_archive)
     save("guides.json", new_guides)
-    print("\nWrote data/events.json, data/events-archive.json, data/guides.json")
+    written = ["data/events.json", "data/events-archive.json", "data/guides.json"]
+    if daily_payload is not None:
+        save("daily-slots.json", daily_payload)
+        written.append("data/daily-slots.json")
+    print("\nWrote " + ", ".join(written))
     return 0
 
 

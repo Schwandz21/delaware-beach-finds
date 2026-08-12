@@ -1,0 +1,408 @@
+{
+  "generatedAt": "2026-08-12T22:57:12Z",
+  "recordCount": 23,
+  "records": [
+    {
+      "id": "story-oldest-migration-on-the-bay",
+      "type": "story",
+      "title": "The Oldest Migration on the Bay",
+      "excerpt": "On a handful of nights each spring, timed to the moon, Delaware Bay hosts what wildlife agencies call the largest horseshoe crab spawning event on Earth — feeding a shorebird that flies here from the bottom of South America and cannot finish the trip without it.",
+      "url": "stories/oldest-migration-on-the-bay.html",
+      "town": "Delaware Bay Wildlife",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-07-26",
+      "updatedDate": "2026-07-26",
+      "status": "current",
+      "access_level": "public",
+      "scene": "bay-morning-1.svg"
+    },
+    {
+      "id": "story-the-galloping-dune",
+      "type": "story",
+      "title": "The Galloping Dune",
+      "excerpt": "Delaware's tallest sand dune buried a WWII bunker, swallowed a pine forest, and earned its nickname because it used to move. Nearby, part of the park still does.",
+      "url": "stories/the-galloping-dune.html",
+      "town": "Cape Henlopen State Park",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-07-26",
+      "updatedDate": "2026-07-26",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-fence-sunset-2.jpg"
+    },
+    {
+      "id": "story-where-the-marsh-is-going",
+      "type": "story",
+      "title": "Where the Marsh Is Going",
+      "excerpt": "Nearly half of Delaware's wetlands lie between the tides, quietly filtering water, buffering storms, and raising nearly every fish on your plate. As seas rise, the state's plan isn't to hold the line — it's to let the marsh move.",
+      "url": "stories/where-the-marsh-is-going.html",
+      "town": "Delaware's Wetlands",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-07-26",
+      "updatedDate": "2026-07-26",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-gold-1.svg"
+    },
+    {
+      "id": "story-towers-on-the-dunes",
+      "type": "story",
+      "title": "The Towers on the Dunes",
+      "excerpt": "Every summer thousands of people photograph the concrete towers along the Delaware coast without knowing what they are. They were optical instruments, built to last about ten years.",
+      "url": "stories/towers-on-the-dunes.html",
+      "town": "Delaware at War",
+      "category": "coast",
+      "tags": [
+        "coast",
+        "delaware-at-war"
+      ],
+      "publishedDate": "2026-07-25",
+      "updatedDate": "2026-07-25",
+      "status": "current",
+      "access_level": "public",
+      "scene": "cape-henlopen-aerial-1.jpg"
+    },
+    {
+      "id": "story-why-delaware-looks-like-that",
+      "type": "story",
+      "title": "Why Delaware Looks Like That",
+      "excerpt": "Delaware's northern boundary is a circular arc, unlike any other state line in the country. It exists because of a property dispute and a survey nobody could execute cleanly.",
+      "url": "stories/why-delaware-looks-like-that.html",
+      "town": "How Delaware Became Delaware",
+      "category": "history",
+      "tags": [
+        "history",
+        "how-delaware-became-delaware"
+      ],
+      "publishedDate": "2026-07-25",
+      "updatedDate": "2026-07-25",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-sunrise-1.svg"
+    },
+    {
+      "id": "story-three-counties-become-the-first-state",
+      "type": "story",
+      "title": "Three Counties Become the First State",
+      "excerpt": "Delaware declared independence from Britain and Pennsylvania in the same week of 1776 — and eleven years later became the first state to ratify the Constitution, in a rented tavern, unanimously, in five days.",
+      "url": "stories/three-counties-become-the-first-state.html",
+      "town": "How Delaware Became Delaware",
+      "category": "history",
+      "tags": [
+        "history",
+        "how-delaware-became-delaware"
+      ],
+      "publishedDate": "2026-07-25",
+      "updatedDate": "2026-07-25",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-sunrise-2.svg"
+    },
+    {
+      "id": "story-six-oclock-shift-indian-river-inlet",
+      "type": "story",
+      "title": "The Six O'Clock Shift at Indian River Inlet",
+      "excerpt": "Every morning the surfcasters pack up right as the paddleboarders wade in — a ten-minute handoff between two different Delawares.",
+      "url": "stories/six-oclock-shift-indian-river-inlet.html",
+      "town": "Indian River Inlet",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-07-15",
+      "updatedDate": "2026-07-15",
+      "status": "current",
+      "access_level": "public",
+      "scene": "paddleboard-sunrise-1.jpg"
+    },
+    {
+      "id": "story-what-the-boardwalk-smells-like-in-july",
+      "type": "story",
+      "title": "What the Boardwalk Smells Like in July",
+      "excerpt": "Grotto pizza, salt water taffy and sunscreen, in that order, from the top of Rehoboth Avenue to the water.",
+      "url": "stories/what-the-boardwalk-smells-like-in-july.html",
+      "town": "Rehoboth Beach",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-07-08",
+      "updatedDate": "2026-07-08",
+      "status": "current",
+      "access_level": "public",
+      "scene": "rehoboth-boardwalk-day-1.jpg"
+    },
+    {
+      "id": "story-bethany-bandstand-nights",
+      "type": "story",
+      "title": "A Field Guide to Bethany's Bandstand Nights",
+      "excerpt": "Beach chairs go down by 7, the band starts by 8, and nobody in Bethany seems to be in a hurry to leave once it's over.",
+      "url": "stories/bethany-bandstand-nights.html",
+      "town": "Bethany Beach",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-06-30",
+      "updatedDate": "2026-06-30",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-fence-sunset-1.jpg"
+    },
+    {
+      "id": "story-unmarked-trail-behind-gordons-pond",
+      "type": "story",
+      "title": "The Unmarked Trail Behind Gordons Pond",
+      "excerpt": "Most people park at Gordons Pond, walk the boardwalk to the beach, and turn around. The trail that keeps going is where the park gets quiet.",
+      "url": "stories/unmarked-trail-behind-gordons-pond.html",
+      "town": "Cape Henlopen",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-06-18",
+      "updatedDate": "2026-06-18",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-green-1"
+    },
+    {
+      "id": "story-low-tide-assateague-different-island",
+      "type": "story",
+      "title": "Low Tide at Assateague Is a Different Island",
+      "excerpt": "When the water pulls back, the horses come down off the dunes to graze flats that don't exist three hours later.",
+      "url": "stories/low-tide-assateague-different-island.html",
+      "town": "Assateague Island",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-06-05",
+      "updatedDate": "2026-06-05",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-dawn-1"
+    },
+    {
+      "id": "guide-gordons-pond-walking-guide",
+      "type": "guide",
+      "title": "Gordon's Pond to the Water",
+      "excerpt": "A local's turn-by-turn guide to one of the best easy walks near Rehoboth and Lewes — the boardwalk everyone takes, and the quiet trail past it that most people never find.",
+      "url": "gordons-pond-walking-guide.html",
+      "town": "Cape Henlopen",
+      "category": "guide",
+      "tags": [
+        "guide"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-fence-sunset-1.jpg"
+    },
+    {
+      "id": "guide-lewes-canal-waterfront-walk",
+      "type": "guide",
+      "title": "Lewes Canal to the Harbor",
+      "excerpt": "Park once and walk the whole thing — historic Lewes, the canal, the free Lightship Overfalls, and the pier where the evening ferry comes in.",
+      "url": "lewes-canal-waterfront-walk.html",
+      "town": "Lewes",
+      "category": "guide",
+      "tags": [
+        "guide"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "lighthouse-dusk-1"
+    },
+    {
+      "id": "guide-surf-fishing-guide",
+      "type": "guide",
+      "title": "Surf Fishing Delaware",
+      "excerpt": "Read the beach, choose the bait, and know the rules — a practical field guide for Cape Henlopen, Delaware Seashore, Fenwick Island and Beach Plum Island.",
+      "url": "surf-fishing-guide.html",
+      "town": "Coastwide",
+      "category": "guide",
+      "tags": [
+        "guide"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-fence-sunset-2.jpg"
+    },
+    {
+      "id": "guide-sunset-spots",
+      "type": "guide",
+      "title": "The Best Sunset Spots on the Coast",
+      "excerpt": "Five real spots, one per town — the golden-hour recommendation we'd actually give a friend, not a highlight reel.",
+      "url": "sunset-spots.html",
+      "town": "Coastwide",
+      "category": "guide",
+      "tags": [
+        "guide"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "coastal-sunset-aerial-1.jpg"
+    },
+    {
+      "id": "town-lewes",
+      "type": "town",
+      "title": "Lewes",
+      "excerpt": "Delaware's oldest town has a beach almost as an afterthought — everything else came first.",
+      "url": "towns/lewes.html",
+      "town": "Lewes",
+      "category": "town",
+      "tags": [
+        "town",
+        "Delaware"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "lighthouse-day-1"
+    },
+    {
+      "id": "town-rehoboth-beach",
+      "type": "town",
+      "title": "Rehoboth Beach",
+      "excerpt": "The boardwalk that taught half the Mid-Atlantic what a beach vacation is supposed to feel like.",
+      "url": "towns/rehoboth-beach.html",
+      "town": "Rehoboth Beach",
+      "category": "town",
+      "tags": [
+        "town",
+        "Delaware"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "rehoboth-boardwalk-day-1.jpg"
+    },
+    {
+      "id": "town-dewey-beach",
+      "type": "town",
+      "title": "Dewey Beach",
+      "excerpt": "Ocean on one side, bay on the other, and about four blocks of sand between them.",
+      "url": "towns/dewey-beach.html",
+      "town": "Dewey Beach",
+      "category": "town",
+      "tags": [
+        "town",
+        "Delaware"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "wave-teal-1"
+    },
+    {
+      "id": "town-bethany-beach",
+      "type": "town",
+      "title": "Bethany Beach",
+      "excerpt": "A small boardwalk, a Sunday-night bandstand, and a pace that never speeds up much past a walk.",
+      "url": "towns/bethany-beach.html",
+      "town": "Bethany Beach",
+      "category": "town",
+      "tags": [
+        "town",
+        "Delaware"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-fence-sunset-2.jpg"
+    },
+    {
+      "id": "town-fenwick-island",
+      "type": "town",
+      "title": "Fenwick Island",
+      "excerpt": "A quiet lighthouse town at Delaware's southern edge, close enough to Ocean City to borrow its energy without keeping it.",
+      "url": "towns/fenwick-island.html",
+      "town": "Fenwick Island",
+      "category": "town",
+      "tags": [
+        "town",
+        "Delaware"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "lighthouse-dusk-1"
+    },
+    {
+      "id": "town-cape-henlopen",
+      "type": "town",
+      "title": "Cape Henlopen",
+      "excerpt": "Dunes, pine forest and a WWII watchtower, all inside the point where Delaware Bay hands off to the Atlantic.",
+      "url": "towns/cape-henlopen.html",
+      "town": "Cape Henlopen",
+      "category": "town",
+      "tags": [
+        "town",
+        "Delaware"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-green-1"
+    },
+    {
+      "id": "town-assateague",
+      "type": "town",
+      "title": "Assateague Island",
+      "excerpt": "A barrier island with no boardwalk, no traffic light and a herd of wild horses that outrank everyone.",
+      "url": "towns/assateague.html",
+      "town": "Assateague Island",
+      "category": "town",
+      "tags": [
+        "town",
+        "Maryland / Virginia"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-gold-1"
+    },
+    {
+      "id": "town-ocean-city",
+      "type": "town",
+      "title": "Ocean City",
+      "excerpt": "Bigger, brasher and three miles longer than anything Delaware's beaches attempt — and it knows it.",
+      "url": "towns/ocean-city.html",
+      "town": "Ocean City",
+      "category": "town",
+      "tags": [
+        "town",
+        "Maryland"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "boardwalk-evening-1"
+    }
+  ]
+}
