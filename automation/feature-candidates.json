@@ -1,0 +1,32 @@
+{
+  "_note": "Verified research held for future features. Not published; nothing here renders publicly.",
+  "candidates": [
+    {
+      "id": "feature-beach-plum-island-wilderness-beach",
+      "title": "Beach Plum Island: Delaware's only 'wilderness beach'",
+      "type": "nature/ecology feature",
+      "status": "researched-not-published",
+      "sourcedFrom": "automation/candidates/candidate-2026-08-12.json (hiddenGemCandidate)",
+      "stagedAt": "2026-08-12",
+      "whyHeld": "Beach Plum Island already ran as Hidden Gem on 2026-07-15; Thompson Island is the current gem as of 2026-08-11. Re-running it would show readers the same selection four weeks later. This research is materially richer than the July entry — fees, closures, permits, access rules — so it is preserved for a standalone feature.",
+      "research": {
+        "name": "Beach Plum Island Nature Preserve",
+        "location": "South Bayshore Drive, north of Lewes via Route 1 to Broadkill Road (Route 16)",
+        "town": "Lewes",
+        "access": "Open daily, 8 a.m. to sunset, March 1–December 31. Access restricted to marked hiking trails and state-designated fishing areas; the southern half of the preserve is closed to all access year-round.",
+        "parking": "On-site parking; administratively part of Cape Henlopen State Park but physically separate, reached via South Bayshore Drive.",
+        "trailDetails": "A roughly two-mile undeveloped barrier spit with a northern-half trail system used for hiking, beachcombing, wildlife viewing, and surf fishing along the Broadkill River and Delaware Bay shoreline.",
+        "seasonalLimitations": "Closed December–February; insect repellent recommended in warmer months.",
+        "closures": "Southern half of the preserve is permanently closed to protect the barrier dune system and its wildlife.",
+        "rules": "Stay on marked trails and designated fishing areas; this is a dedicated state nature preserve, not a general-use beach.",
+        "practicalDetail": "Delaware State Parks' official 2026 rate sheet lists a daily entrance fee at ocean parks (which includes Beach Plum Island) of $10 for Delaware-registered vehicles and $20 for out-of-state vehicles, charged March 1–November 30. A vehicle surf-fishing permit (separate from the entrance fee) is required for 4WD beach access; per DNREC's 2026 season announcement, reservations are no longer required for surf-fishing access at Beach Plum Island specifically, though the underlying annual/off-peak permit is still required.",
+        "whyItMatters": "Dedicated a State Nature Preserve in 1990, it's described by Delaware's own tourism byway program as the only 'wilderness beach' left in the state park system — undeveloped, uncrowded, and protecting a barrier-spit ecosystem of beach, dune, tidal marsh, and river habitat.",
+        "sourceUrl": "https://www.destateparks.com/passes-permits-and-fees/"
+      },
+      "relatedReviewNotes": [
+        "Long-form opportunity: Beach Plum Island's designation as the state park system's only 'wilderness beach' could support a dedicated nature/ecology feature beyond this week's Hidden Gem slot."
+      ],
+      "access_level": "public"
+    }
+  ]
+}

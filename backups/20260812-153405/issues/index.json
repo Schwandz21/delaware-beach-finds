@@ -10,15 +10,6 @@
       "status": "current",
       "file": "issues/2026-W33.json",
       "access_level": "public"
-    },
-    {
-      "issueId": "2026-W34",
-      "weekOf": "2026-08-17",
-      "title": "Week of August 17, 2026",
-      "publishedAt": null,
-      "status": "draft",
-      "file": "issues/2026-W34.json",
-      "access_level": "public"
     }
   ]
 }

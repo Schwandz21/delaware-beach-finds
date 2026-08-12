@@ -548,3 +548,7 @@ a.issue-card:hover,a.issue-card:focus-visible{border-color:transparent;transform
   .issue-card{grid-template-columns:1fr;gap:10px;padding:20px}
   .issue-meta{white-space:normal}
 }
+
+/* Access notice — an event not open to the general public must say so. */
+.event-access-badge{color:var(--coral-deep);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.calendar-day.is-today .event-access-badge{color:#f3d9c4}

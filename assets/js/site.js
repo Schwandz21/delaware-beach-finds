@@ -90,6 +90,9 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
  }
 
  const STATUS_BADGE = {tentative:'Tentative',cancelled:'Cancelled',postponed:'Postponed','sold-out':'Sold Out'};
+ // An event that is not open to the general public must never render as if
+ // it were. Anything other than 'public' gets an explicit visible notice.
+ const ACCESS_NOTICE = {members:'Members only','members-only':'Members only',private:'Private event',ticketed:'Ticketed'};
  const weekendMount = document.querySelector('[data-mount="weekend"]');
  if(weekendMount){
    const limit = parseInt(weekendMount.getAttribute('data-limit')||'6',10);
@@ -113,6 +116,8 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
      const items = upcoming.slice(0, limit);
      weekendMount.innerHTML = items.map((e,i)=>{
        const badge = STATUS_BADGE[e.status];
+       const access = e.access_level || e.accessLevel || 'public';
+       const accessNotice = access === 'public' ? '' : (ACCESS_NOTICE[access] || 'Restricted access');
        // A computed weekday is only meaningful for a single-day event. A
        // recurring/multi-day run (e.g. a market open every Saturday) would
        // otherwise be labelled with whatever weekday its range happens to start on.
@@ -125,7 +130,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
        }
        return `
        <div class="calendar-day${i===0?' is-today':''}">
-         <div class="day-label">${esc(weekday)}${badge?` &middot; <span class="event-status-badge">${esc(badge)}</span>`:''}</div>
+         <div class="day-label">${esc(weekday)}${badge?` &middot; <span class="event-status-badge">${esc(badge)}</span>`:''}${accessNotice?` &middot; <span class="event-access-badge">${esc(accessNotice)}</span>`:''}</div>
          <div class="day-date muted">${esc(e.displayDate||e.startDate||'')}${e.town?` &middot; ${esc(e.town)}`:''}</div>
          <h4>${esc(e.title)}</h4>
          <p class="muted">${esc(e.description||'')}</p>
@@ -592,7 +597,12 @@ if(bylineEls.length){
 const issuesMount = document.querySelector('[data-mount="past-issues"]');
 if(issuesMount){
   fetchJson('issues/index.json').then(idx=>{
-    const list = (idx.issues||[]).slice()
+    // Only published issues are public. A staged/draft issue for a future week
+    // must never render as though it had been published — that would falsify
+    // the publication chronology.
+    const PUBLIC_STATES = new Set(['current','archived']);
+    const list = (idx.issues||[])
+      .filter(i => PUBLIC_STATES.has(i.status))
       .sort((a,b)=>(b.weekOf||'').localeCompare(a.weekOf||''));
     if(!list.length){ if(gateHide(issuesMount)) return; return; }
     const rows = list.map(i=>{
