@@ -591,6 +591,7 @@ const bylineEls = document.querySelectorAll('[data-byline]');
 if(bylineEls.length){
   fetchJson('site-editorial.json').then(cfg=>{
     const house = (cfg.byline && cfg.byline.houseByline) || 'Delaware Beach Finds Editorial';
+    window.DBF_HOUSE_BYLINE = house;
     bylineEls.forEach(el=>{
       const explicit = el.getAttribute('data-byline');
       el.textContent = explicit && explicit !== 'house' ? explicit : house;
@@ -600,6 +601,53 @@ if(bylineEls.length){
       if(!el.textContent.trim()) el.textContent = 'Delaware Beach Finds Editorial';
     });
   });
+}
+
+// FRONT PAGE — cover story + secondary stack, composed from real stories.json.
+// The cover is the featured record; secondaries are the next-newest published
+// stories. Photography comes from each story's own scene, never borrowed.
+const frontMount = document.querySelector('[data-mount="front-page"]');
+if(frontMount){
+  fetchJson('stories.json').then(list=>{
+    const pub = (list||[]).filter(s=>s.status==='published')
+      .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+    if(!pub.length){ if(gateHide(frontMount)) return; return; }
+    const cover = pub.find(s=>s.featured) || pub[0];
+    const rest  = pub.filter(s=>s.slug!==cover.slug).slice(0,4);
+    const fmt = d => { try{ return new Intl.DateTimeFormat('en-US',
+      {month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'})
+      .format(new Date(d+'T12:00:00Z')); }catch(e){ return d||''; } };
+    const meta = [CAT_LABELS[cover.category]||cover.category, fmt(cover.date), cover.readTime]
+      .filter(Boolean).map(esc);
+
+    frontMount.innerHTML = `
+      <a class="cover-story" href="stories/${esc(cover.slug)}.html">
+        <div class="cover-art">
+          <span class="cover-flag">Cover Story</span>
+          ${sceneImg(cover.scene, cover.heroAlt || cover.headline)}
+        </div>
+        <span class="cover-label">${esc(cover.kicker||'')}</span>
+        <h2 class="cover-headline">${esc(cover.headline)}</h2>
+        <p class="cover-dek">${esc(cover.hook||'')}</p>
+        <div class="cover-byline">
+          <span>By ${esc((window.DBF_HOUSE_BYLINE)||'Delaware Beach Finds Editorial')}</span>
+          ${meta.map(m=>`<span class="sep">&middot;</span><span>${m}</span>`).join('')}
+        </div>
+      </a>
+      <div class="cover-secondaries">
+        <div class="stack-head">Also This Week</div>
+        ${rest.map(s=>`
+          <a class="stack-item" href="stories/${esc(s.slug)}.html">
+            <div class="stack-copy">
+              <span class="stack-label">${esc(CAT_LABELS[s.category]||s.category||'')}</span>
+              <h3>${esc(s.headline)}</h3>
+              <p>${esc(s.hook||'')}</p>
+            </div>
+            <div class="stack-thumb">${sceneImg(s.scene, s.heroAlt || s.headline)}</div>
+          </a>`).join('')}
+        <div class="stack-more"><a class="ed-link" href="stories/index.html">All Delaware Stories &rarr;</a></div>
+      </div>`;
+  }).catch(()=>{ gateHide(frontMount); });
 }
 
 // Issue folio strip — current issue + date context, from the live registry.

@@ -747,3 +747,90 @@ a:focus-visible,button:focus-visible,.story-card:focus-visible,.guide-hub-card:f
 .archive-filter{font-size:var(--fs-meta);letter-spacing:.08em;text-transform:uppercase;
   border-color:var(--hairline);transition:.18s background,.18s border-color,.18s color}
 .archive-filter:hover{border-color:var(--navy);color:var(--navy)}
+
+/* ==========================================================================
+   PHASE 2 — Front-page art direction
+   A composed magazine front page, not a website hero.
+   ========================================================================== */
+
+/* ---- Publication nameplate (homepage only; sticky nav stays separate) ---- */
+.nameplate{background:var(--paper);border-bottom:1px solid var(--hairline);
+  padding:clamp(26px,3.4vw,46px) 0 clamp(18px,2vw,26px);text-align:center}
+.nameplate-title{font-family:var(--serif);font-weight:600;color:var(--navy);
+  font-size:clamp(2.5rem,7.4vw,5.6rem);line-height:.9;letter-spacing:-.045em;margin:0;
+  text-transform:none}
+.nameplate-rule{display:flex;align-items:center;gap:18px;margin:clamp(14px,1.6vw,20px) 0 0}
+.nameplate-rule:before,.nameplate-rule:after{content:"";flex:1;min-width:14px;height:2px;
+  background:var(--navy);opacity:.85}
+/* Must be allowed to shrink and wrap — nowrap pushed this past the viewport at
+   tablet width and produced horizontal overflow. */
+.nameplate-tag{font-size:var(--fs-eyebrow);letter-spacing:.34em;text-transform:uppercase;
+  font-weight:700;color:var(--muted);min-width:0;text-align:center}
+@media(max-width:1080px){.nameplate-tag{letter-spacing:.22em}}
+@media(max-width:760px){
+  .nameplate-rule{gap:12px}
+  .nameplate-tag{letter-spacing:.14em;font-size:.58rem;line-height:1.5}
+}
+
+/* ---- Front page: asymmetric cover + secondary stack ---- */
+.frontpage{display:grid;grid-template-columns:1.62fr 1fr;gap:0;align-items:stretch}
+.frontpage > * + *{border-left:1px solid var(--hairline)}
+
+/* Cover story */
+.cover-story{display:block;padding:clamp(26px,2.6vw,40px) clamp(28px,3vw,46px) clamp(30px,3vw,44px) 0}
+.cover-art{position:relative;overflow:hidden;border-radius:var(--radius-sm);
+  aspect-ratio:16/10;background:var(--paper-deep);margin-bottom:clamp(20px,2vw,28px)}
+.cover-art img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.cover-story:hover .cover-art img{transform:scale(1.03)}
+.cover-art:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(9,20,25,.1),transparent 34%);pointer-events:none}
+.cover-flag{position:absolute;top:16px;left:16px;z-index:2;background:var(--coral);color:#fff;
+  font-size:var(--fs-eyebrow);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  padding:8px 15px;border-radius:2px}
+.cover-label{font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);display:block;margin-bottom:14px}
+.cover-headline{font-family:var(--serif);font-weight:500;color:var(--navy);
+  font-size:clamp(2.3rem,4.6vw,4.1rem);line-height:.98;letter-spacing:-.035em;margin:0 0 .38em;
+  max-width:17ch;transition:color .2s}
+.cover-story:hover .cover-headline{color:var(--coral-deep)}
+.cover-dek{font-family:var(--serif);font-size:clamp(1.1rem,1.5vw,1.34rem);line-height:1.44;
+  color:var(--ink-soft);max-width:46ch;margin:0 0 20px;font-weight:400}
+.cover-byline{font-size:var(--fs-meta);letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.cover-byline .sep{opacity:.4}
+
+/* Secondary stack */
+.cover-secondaries{padding:clamp(26px,2.6vw,40px) 0 clamp(30px,3vw,44px) clamp(28px,3vw,46px);
+  display:flex;flex-direction:column}
+.stack-head{font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;font-weight:800;
+  color:var(--navy);padding-bottom:12px;border-bottom:var(--rule-strong);margin-bottom:4px}
+.stack-item{display:grid;grid-template-columns:1fr 92px;gap:18px;align-items:start;
+  padding:20px 0;border-bottom:1px solid var(--hairline)}
+.stack-item:last-of-type{border-bottom:0}
+.stack-item .stack-copy{min-width:0}
+.stack-item .stack-label{font-size:var(--fs-eyebrow);letter-spacing:.15em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);display:block;margin-bottom:7px}
+.stack-item h3{font-family:var(--serif);font-size:clamp(1.06rem,1.35vw,1.24rem);line-height:1.16;
+  letter-spacing:-.018em;margin:0 0 6px;color:var(--navy);transition:color .18s}
+.stack-item:hover h3{color:var(--coral-deep)}
+.stack-item p{font-size:.88rem;line-height:1.5;color:var(--muted);margin:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.stack-thumb{width:92px;height:92px;border-radius:2px;overflow:hidden;background:var(--paper-deep)}
+.stack-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.stack-item:hover .stack-thumb img{transform:scale(1.06)}
+.stack-more{margin-top:auto;padding-top:22px}
+
+@media(max-width:980px){
+  .frontpage{grid-template-columns:1fr}
+  .frontpage > * + *{border-left:0;border-top:1px solid var(--hairline)}
+  .cover-story{padding:clamp(22px,3vw,32px) 0}
+  .cover-secondaries{padding:clamp(22px,3vw,32px) 0}
+  .cover-headline{max-width:20ch}
+}
+@media(max-width:520px){
+  .stack-item{grid-template-columns:1fr 72px;gap:14px}
+  .stack-thumb{width:72px;height:72px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cover-art img,.stack-thumb img{transition:none}
+}
