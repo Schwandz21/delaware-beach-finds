@@ -9,7 +9,10 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {".git", "node_modules", "backups", ".github"}
+SKIP_DIRS = {".git", "node_modules", "backups", ".github",
+             # Local-only material that is gitignored and must never be validated
+             # as if it were production: a stale July-15 snapshot, savepoints, media.
+             "dbf-rebuild-tmp", ".claude", "Instagram reels"}
 
 
 def main():

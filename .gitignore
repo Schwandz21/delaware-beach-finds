@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# Local tool/session state
+.claude/
+
+# Stale July 15 snapshot — predates ~4 weeks of production work and still
+# references the retired TheBlueHenBasement storefront. Never incorporate.
+dbf-rebuild-tmp/
+
+# Strategy/reference savepoints (GA4 + monetization notes, screenshots)
+DBF_SavePoint_*/
+
+# Local media working folders
+Instagram reels/
+
+# Office lock files
+~$*
+
+# Local reference docs
+*.docx

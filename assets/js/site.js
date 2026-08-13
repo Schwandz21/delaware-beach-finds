@@ -8,6 +8,15 @@
  document.querySelectorAll('[data-contact-email]').forEach(a=>{a.href='mailto:'+c.contactEmail;a.textContent=c.contactEmail});
  document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
  const t=document.querySelector('.menu-toggle'),n=document.querySelector('.nav-links');if(t&&n)t.addEventListener('click',()=>{const o=n.classList.toggle('open');t.setAttribute('aria-expanded',o?'true':'false')});
+ // Masthead gains a shadow once the page scrolls — a small cue that lifts the
+ // header off the page without adding chrome.
+ (function(){
+   const hdr=document.querySelector('.site-header'); if(!hdr) return;
+   let ticking=false;
+   const sync=()=>{hdr.classList.toggle('is-stuck', window.scrollY>8); ticking=false;};
+   window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(sync);}},{passive:true});
+   sync();
+ })();
  document.querySelectorAll('a[target="_blank"]').forEach(a=>a.setAttribute('rel','noopener noreferrer'));
  if(c.googleAnalyticsId){const g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(c.googleAnalyticsId);document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',c.googleAnalyticsId);}
  document.addEventListener('click',function(e){var a=e.target.closest('[data-etsy-link]');if(!a||!window.gtag)return;var isProduct=a.hasAttribute('data-product');var pid=(a.href.match(/listing\/(\d+)/)||[])[1];gtag('event',isProduct?'etsy_product_click':'etsy_collection_click',{destination:a.href,product_name:a.dataset.product||undefined,product_id:pid||undefined,source_page:location.pathname,link_placement:a.dataset.placement||(a.closest('.footer')?'footer':a.closest('.shop-grid')?'shop_grid':a.closest('.nav-links')?'nav':a.closest('.cta-strip')?'hero_cta':'body'),content_category:'shop'});});
@@ -129,7 +138,8 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
          try{ weekday = new Intl.DateTimeFormat('en-US',{weekday:'long',timeZone:'America/New_York'}).format(new Date(e.startDate+'T12:00:00Z')); }catch(err){}
        }
        return `
-       <div class="calendar-day${i===0?' is-today':''}">
+       <div class="calendar-day${i===0?' is-today':''}${e.featured?' is-marquee':''}">
+         ${e.featured?'<span class="marquee-flag">Marquee</span>':''}
          <div class="day-label">${esc(weekday)}${badge?` &middot; <span class="event-status-badge">${esc(badge)}</span>`:''}${accessNotice?` &middot; <span class="event-access-badge">${esc(accessNotice)}</span>`:''}</div>
          <div class="day-date muted">${esc(e.displayDate||e.startDate||'')}${e.town?` &middot; ${esc(e.town)}`:''}</div>
          <h4>${esc(e.title)}</h4>
@@ -151,7 +161,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
      gemMount.innerHTML = `
        <div class="gem-photo"><div class="scene">${sceneImg(gem.scene, gem.name)}</div></div>
        <div class="gem-copy">
-         <div class="kicker">${esc(gem.kicker||'Hidden Gem of the Week')}</div>
+         <div class="gem-badge">${esc(gem.kicker||'Hidden Gem of the Week')}</div>
          <h2>${esc(gem.name)}</h2>
          <p class="muted small">${esc(gem.location)}</p>
          ${(gem.body||[]).map(p=>`<p>${esc(p)}</p>`).join('')}
@@ -592,6 +602,32 @@ if(bylineEls.length){
   });
 }
 
+// Issue folio strip — current issue + date context, from the live registry.
+// Reads only the registry (issueId/weekOf/status), never issue content, so it
+// cannot disturb publication history.
+const folioMount = document.querySelector('[data-mount="issue-folio"]');
+if(folioMount){
+  fetchJson('issues/index.json').then(idx=>{
+    const cur = (idx.issues||[]).find(i => i.issueId === idx.currentIssueId && i.status === 'current');
+    if(!cur){ if(gateHide(folioMount)) return; return; }
+    let weekLabel = cur.weekOf;
+    try{
+      weekLabel = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'})
+        .format(new Date(cur.weekOf+'T12:00:00Z'));
+    }catch(e){}
+    let todayLabel = '';
+    try{
+      todayLabel = new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/New_York'})
+        .format(new Date());
+    }catch(e){}
+    folioMount.innerHTML = `
+      <span class="issue-strip-mark">Delaware Beach Finds</span>
+      <span>Week of ${esc(weekLabel)}</span>
+      ${todayLabel?`<span>${esc(todayLabel)}</span>`:''}
+      <span style="margin-left:auto"><a href="archive.html">Past issues &rarr;</a></span>`;
+  }).catch(()=>{ gateHide(folioMount); });
+}
+
 // Worth Knowing Today — the CURRENT-WEEK editorial surface.
 // Reads data/daily-slots.json only. It never touches data/issues/*.json, so
 // publishing or superseding a weekly issue can never disturb what renders here.
@@ -623,9 +659,11 @@ if(dailyMount){
         ${forToday.map(s=>`
           <li class="daily-slot">
             <span class="daily-slot-kind">${esc(s.kind||'')}</span>
-            <h3>${esc(s.headline||'')}</h3>
-            ${s.note?`<p>${esc(s.note)}</p>`:''}
-            ${s.ref?`<a class="link-arrow" href="${esc(s.ref)}"${/^https?:/i.test(s.ref)?' target="_blank" rel="noopener noreferrer"':''}>Source${/^https?:/i.test(s.ref)?' (opens external site)':''} &rarr;</a>`:''}
+            <div class="daily-slot-body">
+              <h3>${esc(s.headline||'')}</h3>
+              ${s.note?`<p>${esc(s.note)}</p>`:''}
+              ${s.ref?`<a class="ed-link" href="${esc(s.ref)}"${/^https?:/i.test(s.ref)?' target="_blank" rel="noopener noreferrer"':''}>Source${/^https?:/i.test(s.ref)?' (opens external site)':''} &rarr;</a>`:''}
+            </div>
           </li>`).join('')}
       </ul>`;
   }).catch(()=>{ gateHide(dailyMount); });
