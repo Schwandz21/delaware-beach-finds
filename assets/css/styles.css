@@ -183,8 +183,14 @@ p{margin:0 0 1.05rem}
 .search-box input[type="search"]:focus{outline:2px solid var(--teal-deep);outline-offset:2px}
 .search-result-count{margin:18px 0;color:var(--muted);font-size:.9rem}
 .calendar-day.is-today .day-label{color:#f3d9c4}
-.calendar-day .day-date{font-family:var(--serif);font-size:1.3rem;margin-bottom:4px}
-.calendar-day h4{font-family:var(--sans);font-size:.98rem;font-weight:700;margin:0 0 6px;color:inherit}
+/* A listing is read title-first. The date and place are the meta line, so they
+   stay small sans; the event name carries the serif weight. */
+.calendar-day .day-date{font-family:var(--sans);font-size:.78rem;line-height:1.35;
+  letter-spacing:.02em;margin-bottom:7px;color:var(--muted)}
+.calendar-day.is-today .day-date{color:rgba(255,255,255,.74)}
+.calendar-day h4{font-family:var(--serif);font-size:1.16rem;font-weight:600;line-height:1.22;
+  letter-spacing:-.015em;margin:0 0 7px;color:var(--navy)}
+.calendar-day.is-today h4{color:#fff}
 .calendar-day p{font-size:.86rem;margin:0}
 
 /* ---------- instagram embed panel ---------- */
@@ -834,3 +840,165 @@ a:focus-visible,button:focus-visible,.story-card:focus-visible,.guide-hub-card:f
 @media(prefers-reduced-motion:reduce){
   .cover-art img,.stack-thumb img{transition:none}
 }
+
+/* ==========================================================================
+   PHASE 2B — PUBLICATION LEGITIMACY
+   Strips the "polished component" layer: rounded cards, floating panels,
+   pill buttons, decorative shadows, hover lifts. Structure now comes from
+   rules, columns, alignment, scale and whitespace — the way an edited page
+   is built rather than an assembled one.
+   ========================================================================== */
+
+/* ---- 1. De-round. Print has corners, not capsules. ---- */
+:root{ --radius-lg:0px; --radius-md:0px; --radius-sm:0px; }
+.guide-hub-card,.edit-card,.dept-panel,.flagship,.issue-card,.homes-panel,
+.gem-feature,.product-art,.story-art,.cover-art,.stack-thumb,.guide-facts-strip,
+.calendar-strip,.watch-media,.insta-embed-frame,.eq-media,.side-note,
+.community-card,.town-tile,.daily-slots,.community-cta,.guide-tool,.guide-callout{
+  border-radius:0!important}
+
+/* ---- 2. De-float. Remove decorative elevation and hover lift. ---- */
+.guide-hub-card,.edit-card,.dept-panel,.flagship,.issue-card,.homes-panel,
+.gem-feature,.watch-media,.insta-embed-frame{box-shadow:none!important}
+.guide-hub-card:hover,.edit-card:hover,.dept-panel:hover,.flagship:hover,
+a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
+.dept-panel:focus-visible,.flagship:focus-visible{
+  transform:none!important;box-shadow:none!important}
+
+/* ---- 3. Cards become ruled editorial units, not containers. ---- */
+.guide-hub-card,.edit-card{border:0;border-top:2px solid var(--navy);background:transparent;
+  padding-top:16px;transition:none}
+.guide-hub-card .guide-hub-body,.edit-card .edit-body{padding:16px 0 0}
+.guide-hub-card:hover h3,.edit-card:hover h3{color:var(--coral-deep)}
+.guide-hub-grid,.edit-grid{gap:34px}
+
+/* ---- 4. Pills → editorial labels. ---- */
+.gem-badge,.issue-badge,.archive-filter,.guide-hub-badge{border-radius:0!important}
+.gem-badge{border:0;border-left:3px solid currentColor;padding:2px 0 2px 12px;
+  letter-spacing:.2em;margin-bottom:18px}
+.guide-hub-badge{background:transparent;color:var(--paper);position:static;padding:0;
+  font-size:var(--fs-eyebrow);letter-spacing:.18em;display:none}
+.guide-hub-card .guide-hub-body .kicker{display:inline-flex}
+.archive-filter{border:0;border-bottom:2px solid transparent;background:transparent;
+  padding:6px 0;margin-right:26px;color:var(--muted)}
+.archive-filter:hover{border-bottom-color:var(--hairline);background:transparent}
+.archive-filter.is-active{background:transparent;color:var(--navy);border-bottom-color:var(--coral-deep)}
+.issue-badge{background:transparent!important;border:0!important;padding:0;
+  color:var(--coral-deep);letter-spacing:.18em}
+/* Dropping the badge background left `.issue-badge.is-current`'s white text
+   (two classes, so it outranks the rule above) invisible on paper. */
+.issue-badge.is-current{color:var(--coral-deep)}
+.issue-badge.is-archived{color:var(--muted)}
+
+/* ---- 5. Buttons only for real actions. Reading uses text links. ---- */
+.btn{border-radius:0;padding:14px 26px;letter-spacing:.1em;text-transform:uppercase;
+  font-size:var(--fs-meta);font-weight:800}
+.btn:hover{transform:none}
+.btn-coral:hover{box-shadow:none}
+.btn-line{border-width:1.5px}
+
+/* ---- 6. Issue cards → archive ledger rows. ---- */
+.issue-card{border:0;border-bottom:1px solid var(--hairline);padding:20px 0;
+  grid-template-columns:130px 1fr auto;gap:26px}
+.issue-list{gap:0;margin-bottom:38px}
+
+/* ---- 7. Section surfaces: fewer tinted blocks, more page. ---- */
+.section.bg-deep{background:transparent;border-top:1px solid var(--hairline)}
+.section + .section:not(.bg-ink){border-top:1px solid var(--hairline)}
+
+/* ---- 8. Editorial credit line — publications say who made the picture. ---- */
+.credit{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:var(--muted);margin-top:9px;display:block}
+.credit .credit-caption{text-transform:none;letter-spacing:0;font-weight:400;
+  font-size:.84rem;color:var(--ink-soft);display:block;margin-bottom:4px;line-height:1.45}
+
+/* ---- 9. Editorial index — dense list, minimal imagery. ---- */
+/* The column track lives on the list, not the row, so every title starts at the
+   same x-position the way a printed index does. Rows opt into the parent's
+   tracks via subgrid while staying their own box for rules and hover. */
+.ed-index{border-top:2px solid var(--navy);display:grid;
+  grid-template-columns:max-content 1fr;column-gap:26px}
+.ed-index a{display:grid;grid-column:1/-1;grid-template-columns:subgrid;
+  align-items:baseline;padding:15px 0;border-bottom:1px solid var(--hairline)}
+.ed-index a:last-child{border-bottom:0}
+.ed-index .idx-label{font-size:var(--fs-eyebrow);letter-spacing:.15em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);white-space:nowrap}
+.ed-index h4{font-family:var(--serif);font-size:1.08rem;font-weight:600;letter-spacing:-.015em;
+  line-height:1.24;margin:0;color:var(--navy)}
+.ed-index a:hover h4{color:var(--coral-deep)}
+@media(max-width:640px){
+  .ed-index{grid-template-columns:1fr}
+  .ed-index a{grid-template-columns:1fr;gap:5px}
+}
+
+/* ---- 10. Two-column editorial split for asymmetric sections. ---- */
+.ed-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,60px);align-items:start}
+.ed-split-wide{grid-template-columns:1.55fr 1fr}
+@media(max-width:900px){.ed-split,.ed-split-wide{grid-template-columns:1fr;gap:34px}}
+
+/* ---- Masthead: publication identity separated from navigation ---- */
+.nameplate{border-bottom:0;padding:clamp(30px,3.6vw,52px) 0 0}
+.nameplate-title{font-size:clamp(2.6rem,8.6vw,6.6rem);letter-spacing:-.05em;font-weight:600}
+/* Rules above and below the nameplate frame it as a masthead plate. */
+.nameplate .container{border-top:3px solid var(--navy);border-bottom:1px solid var(--navy);
+  padding-top:clamp(16px,1.8vw,24px);padding-bottom:clamp(12px,1.4vw,18px)}
+.nameplate-rule{margin-top:clamp(10px,1.2vw,16px)}
+.nameplate-rule:before,.nameplate-rule:after{background:var(--hairline);height:1px}
+
+/* Folio bar sits tight under the plate as issue apparatus, not a banner. */
+.issue-strip{background:transparent;border-bottom:0;padding:12px 0 0;font-size:.7rem;letter-spacing:.16em}
+.issue-strip a{border-bottom:0;text-decoration:underline;text-underline-offset:3px;
+  text-decoration-thickness:1px;text-decoration-color:var(--hairline)}
+
+/* Navigation reads as apparatus beneath the plate, not as a site chrome bar. */
+.site-header{border-bottom:1px solid var(--navy)}
+.masthead{padding:13px 0}
+.brand .brand-name{font-size:1.32rem;letter-spacing:-.025em}
+.brand .brand-tag{font-size:.55rem;letter-spacing:.26em}
+.nav-links a{font-size:.72rem;letter-spacing:.12em}
+
+/* ---- Cover package: art-directed, with credit apparatus ---- */
+.cover-art{border-radius:0}
+.cover-flag{border-radius:0;top:0;left:0;padding:9px 16px;letter-spacing:.2em}
+.cover-headline{font-size:clamp(2.5rem,5.2vw,4.6rem);letter-spacing:-.042em;max-width:15ch}
+/* Below ~900px the font-size clamp bottoms out, so a 15ch measure collapses to
+   roughly half the column and strands the headline against dead space. Let it
+   use the full column once the type stops scaling. */
+@media(max-width:900px){ .cover-headline{max-width:none} }
+.cover-label{letter-spacing:.22em}
+/* An asset that needs better photography is flagged in the DOM for editors,
+   never visually degraded or hidden behind a gradient. */
+.cover-art[data-asset-upgrade]{outline:0}
+
+/* Secondary stack: clear tiering — secondary, supporting, brief. */
+.stack-item:first-of-type{grid-template-columns:1fr;gap:12px;padding-top:18px}
+.stack-item:first-of-type .stack-thumb{width:100%;height:auto;aspect-ratio:16/10;order:-1}
+.stack-item:first-of-type h3{font-size:clamp(1.24rem,1.7vw,1.5rem)}
+.stack-item:first-of-type p{-webkit-line-clamp:3}
+.stack-item:nth-of-type(n+3){grid-template-columns:1fr;gap:5px}
+.stack-item:nth-of-type(n+3) .stack-thumb{display:none}
+.stack-item:nth-of-type(n+3) p{display:none}
+.stack-item:nth-of-type(n+3) h3{font-size:1.02rem}
+
+/* Footer now carries 5 columns — let it breathe and wrap sensibly. */
+.footer-grid{grid-template-columns:1.4fr repeat(4,1fr);gap:34px}
+@media(max-width:1080px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+.footer-col a{margin:8px 0}
+
+/* ---- 10. Long-form is set like a magazine, not a blog post. ----
+   Serif body at a 62ch measure. `ch` on Inter runs wide (its zero is ~0.6em),
+   so the old 68ch resolved to ~694px — about 95 characters a line, well past
+   comfortable reading. Serif also separates reported long-form from the sans
+   used for listings, decks and meta. */
+.article p,.article li{font-family:var(--serif);font-size:1.12rem;line-height:1.66;
+  max-width:62ch;color:var(--ink)}
+.article p+p{margin-top:1.15rem}
+/* The opening paragraph carries a little extra weight, as a lede should. */
+.article > p:first-of-type{font-size:1.24rem;line-height:1.56}
+/* Section heads stay sans so they read as structure against the serif body. */
+.article h2,.article h3{font-family:var(--sans);font-weight:800;letter-spacing:-.01em}
+.article h2{font-size:1.32rem;text-transform:uppercase;letter-spacing:.06em;
+  padding-bottom:9px;border-bottom:1px solid var(--hairline);max-width:62ch}
+.article h3{font-size:1.06rem}

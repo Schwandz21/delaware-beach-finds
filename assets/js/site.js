@@ -622,10 +622,14 @@ if(frontMount){
 
     frontMount.innerHTML = `
       <a class="cover-story" href="stories/${esc(cover.slug)}.html">
-        <div class="cover-art">
+        <div class="cover-art"${(cover.assetUpgrade?' data-asset-upgrade="1"':'')}>
           <span class="cover-flag">Cover Story</span>
           ${sceneImg(cover.scene, cover.heroAlt || cover.headline)}
         </div>
+        ${cover.heroAlt||cover.photoCredit?`<span class="credit">
+          ${cover.heroAlt?`<span class="credit-caption">${esc(cover.heroAlt)}</span>`:''}
+          ${cover.photoCredit?`Photo: ${esc(cover.photoCredit)}`:''}
+        </span>`:''}
         <span class="cover-label">${esc(cover.kicker||'')}</span>
         <h2 class="cover-headline">${esc(cover.headline)}</h2>
         <p class="cover-dek">${esc(cover.hook||'')}</p>
@@ -648,6 +652,29 @@ if(frontMount){
         <div class="stack-more"><a class="ed-link" href="stories/index.html">All Delaware Stories &rarr;</a></div>
       </div>`;
   }).catch(()=>{ gateHide(frontMount); });
+}
+
+// Editorial index — a dense, low-imagery list. Deliberately the quiet, textual
+// counterweight to the photographic modules above it.
+const indexMount = document.querySelector('[data-mount="ed-index"]');
+if(indexMount){
+  const limit = parseInt(indexMount.getAttribute('data-limit')||'6',10);
+  Promise.all([fetchJson('stories.json'), fetchJson('guides.json')]).then(([stories,guides])=>{
+    const rows = [];
+    (stories||[]).filter(s=>s.status==='published')
+      .sort((a,b)=>(b.date||'').localeCompare(a.date||''))
+      .slice(4, 4+limit)
+      .forEach(s=>rows.push({label:CAT_LABELS[s.category]||s.category||'Story',
+                             title:s.headline, href:'stories/'+s.slug+'.html'}));
+    (guides||[]).filter(g=>g.status==='published').slice(0,3)
+      .forEach(g=>rows.push({label:'Field Notes', title:g.title, href:g.href}));
+    if(!rows.length){ if(gateHide(indexMount)) return; return; }
+    indexMount.innerHTML = rows.slice(0,limit+3).map(r=>`
+      <a href="${esc(r.href)}">
+        <span class="idx-label">${esc(r.label)}</span>
+        <h4>${esc(r.title)}</h4>
+      </a>`).join('');
+  }).catch(()=>{ gateHide(indexMount); });
 }
 
 // Issue folio strip — current issue + date context, from the live registry.
@@ -739,11 +766,17 @@ if(issuesMount){
         when = new Intl.DateTimeFormat('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'})
           .format(new Date(i.weekOf+'T12:00:00Z'));
       }catch(e){}
+      const heading = i.title || ('Week of ' + when);
+      const weekLine = 'Week of ' + when;
+      // Most issues are titled by their week, so printing the week again below
+      // the heading just repeats it. Prefer a real summary; fall back to the
+      // week line only when it actually says something the heading does not.
+      const sub = i.summary || (heading === weekLine ? '' : weekLine);
       return `<div class="issue-card">
         <span class="issue-badge ${cls}">${esc(badge)}</span>
         <div>
-          <h3>${esc(i.title||('Week of '+when))}</h3>
-          <p>Week of ${esc(when)}</p>
+          <h3>${esc(heading)}</h3>
+          ${sub ? `<p>${esc(sub)}</p>` : ''}
         </div>
         <span class="issue-meta">${esc(i.issueId)}</span>
       </div>`;
@@ -769,13 +802,35 @@ if(revealEls.length && !prefersReducedMotion && 'IntersectionObserver' in window
   document.documentElement.classList.add('js-reveal');
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
-      if(entry.isIntersecting){
+      // Reveal when intersecting, and ALSO when the element already sits above
+      // the viewport. A deep link (or a restored scroll position) can land the
+      // reader past a section that never intersected, which previously left
+      // real content stuck at opacity:0 forever.
+      if(entry.isIntersecting || entry.boundingClientRect.top < 0){
         entry.target.classList.add('is-visible');
         io.unobserve(entry.target);
       }
     });
   }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
   revealEls.forEach(el=>io.observe(el));
+
+  // Async mounts change page height after load, so a hash link resolved by the
+  // browser lands at the wrong offset. Re-resolve it once the page settles.
+  if(location.hash){
+    // Async mounts change page height after the browser has already resolved
+    // the hash, so a deep link can land far from its target. Re-resolve once the
+    // page has settled, and reveal the target so it can never be stuck hidden.
+    const settle = ()=>{
+      const target = document.getElementById(location.hash.slice(1));
+      if(!target) return;
+      target.classList.add('is-visible');
+      // 'auto' would inherit html{scroll-behavior:smooth} and animate from
+      // wherever the browser's own hash jump left us — 'instant' snaps.
+      target.scrollIntoView({block:'start', behavior:'instant'});
+    };
+    if(document.readyState === 'complete') setTimeout(settle, 400);
+    else window.addEventListener('load', ()=>setTimeout(settle, 400));
+  }
 } else {
   revealEls.forEach(el=>el.classList.add('is-visible'));
 }
