@@ -64,7 +64,11 @@ def hero_media(story):
     scene = story.get('heroImage') or story.get('scene')
     if not scene:
         return ''
-    alt = esc(story.get('heroAlt') or story.get('headline') or '')
+    # heroImageAlt is the article image's own alt text. heroAlt is the homepage
+    # cover CAPTION and is deliberately different — using it here overwrote the
+    # richer caption when the two were conflated.
+    alt = esc(story.get('heroImageAlt') or story.get('heroAlt')
+              or story.get('headline') or '')
     return ('<div class="eq-media" style="margin-bottom:34px"><div class="scene">'
             '<img src="../assets/images/scenes/%s" alt="%s" loading="lazy"></div></div>'
             % (esc(scene), alt))

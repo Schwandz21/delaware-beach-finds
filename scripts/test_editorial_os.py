@@ -287,6 +287,20 @@ def test_authors_and_integrity():
           "if(explicit === 'desk') return;" in
           open(os.path.join(REPO, 'assets', 'js', 'site.js'), encoding='utf-8').read())
 
+    # heroAlt is the homepage cover CAPTION; the article <img alt> is its own
+    # field. Conflating them silently replaced richer editorial captions.
+    stories = json.load(open(os.path.join(REPO, 'data', 'stories.json'), encoding='utf-8'))
+    conflated = [s['slug'] for s in stories
+                 if s.get('heroImageAlt') and s.get('heroAlt') == s.get('heroImageAlt')
+                 and s['slug'] in ('towers-on-the-dunes', 'oldest-migration-on-the-bay')]
+    check('cover caption stays distinct from the article image alt', not conflated,
+          conflated)
+
+    # The homepage cover and the article page must name the same desk.
+    site_js = open(os.path.join(REPO, 'assets', 'js', 'site.js'), encoding='utf-8').read()
+    check('front page resolves the cover byline from the story desk',
+          'deskName[cover.author]' in site_js)
+
     rc = subprocess.run([sys.executable, os.path.join(HERE, 'render_story.py'), '--check'],
                         capture_output=True, text=True, cwd=REPO)
     check('every published page matches its editorial source', rc.returncode == 0, rc.stdout)

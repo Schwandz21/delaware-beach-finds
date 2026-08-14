@@ -51,6 +51,20 @@ def log(msg):
     print(msg, flush=True)
 
 
+def emit_output(slugs):
+    """Publish a machine-readable result for CI.
+
+    Without this the workflow cannot tell an idle hour from a real publication,
+    and would commit `content-index.json`'s regenerated timestamp every run.
+    """
+    path = os.environ.get('GITHUB_OUTPUT')
+    if not path:
+        return
+    with open(path, 'a', encoding='utf-8') as fh:
+        fh.write('count=%d\n' % len(slugs))
+        fh.write('published=%s\n' % ','.join(slugs))
+
+
 # ------------------------------------------------------------------ issues ---
 
 def issue_path(issue_id):
@@ -77,6 +91,7 @@ def ensure_issue(issue_id, when, story, dry_run=False):
             'coverStory': None,
             'eventIds': [],
             'sources': [],
+            'access_level': 'public',
             'editorialNotes': 'Issue opened automatically when its first '
                               'approved story published.',
         }
@@ -84,6 +99,14 @@ def ensure_issue(issue_id, when, story, dry_run=False):
     if story.get('placement') == 'cover':
         existing['coverStory'] = story['slug']
     existing['status'] = 'current'
+    existing.setdefault('access_level', 'public')
+    # An issue's provenance is the provenance of the stories in it. These are
+    # carried across from the story record — never invented, never a placeholder.
+    srcs = list(existing.get('sources') or [])
+    for src in story.get('sources') or []:
+        if src not in srcs:
+            srcs.append(src)
+    existing['sources'] = srcs
     if not dry_run:
         save_json(path, existing)
     return existing
@@ -108,7 +131,9 @@ def roll_issue_index(new_issue_id, when, dry_run=False):
             'title': 'Week of %s' % week_of(when),
             'publishedAt': iso_date(when),
             'status': 'current',
-            'file': '%s.json' % new_issue_id,
+            # Paths in the index resolve from data/, so the `issues/` prefix
+            # is required — existing entries all carry it.
+            'file': 'issues/%s.json' % new_issue_id,
             'access_level': 'public',
         })
     for entry in idx.get('issues', []):
@@ -183,6 +208,7 @@ def run(at=None, dry_run=False, only_slug=None, force_now=False):
 
     if publication_paused(cal):
         log('  publication is PAUSED in data/editorial-calendar.json — nothing published.')
+        emit_output([])
         return 0
 
     stories = load_stories()
@@ -197,6 +223,7 @@ def run(at=None, dry_run=False, only_slug=None, force_now=False):
                 % only_slug)
         if target.get('status') == 'published':
             log('  %s is already published — nothing to do.' % only_slug)
+            emit_output([])
             return 0
         if force_now:
             target['status'] = 'scheduled'
@@ -210,6 +237,7 @@ def run(at=None, dry_run=False, only_slug=None, force_now=False):
             % (sum(1 for s in stories if s.get('status') == 'scheduled'),
                sum(1 for s in stories if s.get('status') == 'approved'),
                sum(1 for s in stories if s.get('status') == 'held')))
+        emit_output([])
         return 0
 
     due.sort(key=lambda s: parse_publish_at(s['publishAt']))
@@ -227,10 +255,12 @@ def run(at=None, dry_run=False, only_slug=None, force_now=False):
 
     if not published:
         log('  nothing published (all due items were in blackout windows).')
+        emit_output([])
         return 0
 
     if dry_run:
         log('\nDRY RUN — no files written. Would publish: %s' % ', '.join(published))
+        emit_output([])
         return 0
 
     save_stories(stories)
@@ -243,6 +273,7 @@ def run(at=None, dry_run=False, only_slug=None, force_now=False):
                    check=True, capture_output=True)
     log('  content index rebuilt (archive + search)')
 
+    emit_output(published)
     log('\nPublished: %s' % ', '.join(published))
     return 0
 

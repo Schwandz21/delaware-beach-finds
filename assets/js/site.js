@@ -614,7 +614,12 @@ if(bylineEls.length){
 // stories. Photography comes from each story's own scene, never borrowed.
 const frontMount = document.querySelector('[data-mount="front-page"]');
 if(frontMount){
-  fetchJson('stories.json').then(list=>{
+  Promise.all([fetchJson('stories.json'), fetchJson('authors.json')]).then(([list, authors])=>{
+    // The cover byline must match the article page's byline. Both come from the
+    // story's own desk in data/authors.json; falling back to the house byline
+    // here made the homepage and the article disagree about who wrote it.
+    const deskName = {};
+    ((authors&&authors.desks)||[]).forEach(d=>{ deskName[d.id] = d.name; });
     const pub = (list||[]).filter(s=>s.status==='published')
       .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
     if(!pub.length){ if(gateHide(frontMount)) return; return; }
@@ -640,7 +645,7 @@ if(frontMount){
         <h2 class="cover-headline">${esc(cover.headline)}</h2>
         <p class="cover-dek">${esc(cover.hook||'')}</p>
         <div class="cover-byline">
-          <span>By ${esc((window.DBF_HOUSE_BYLINE)||'Delaware Beach Finds Editorial')}</span>
+          <span>By ${esc(deskName[cover.author] || window.DBF_HOUSE_BYLINE || 'Delaware Beach Finds Editorial')}</span>
           ${meta.map(m=>`<span class="sep">&middot;</span><span>${m}</span>`).join('')}
         </div>
       </a>

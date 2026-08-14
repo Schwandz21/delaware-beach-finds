@@ -1,16 +1,17 @@
 # Delaware Beach Finds — scheduled publisher
 #
-# PASTE-READY. This file cannot be written to .github/workflows/ from this
-# machine because the configured token lacks the `workflow` OAuth scope. To
-# enable it, copy this file's contents into a new file at:
+# PASTE-READY. Destination: .github/workflows/publish-scheduled.yml
 #
-#     .github/workflows/publish-scheduled.yml
+# This file cannot be written from the build machine because the configured
+# token lacks the `workflow` OAuth scope. Create it through the GitHub web UI.
 #
-# via the GitHub web UI (Add file -> Create new file).
+# WHAT THIS DOES:    publishes stories a human already approved and scheduled.
+# WHAT IT CANNOT DO: approve, write, or invent anything.
 #
-# WHAT THIS DOES: publishes stories that a human already approved and scheduled.
-# WHAT THIS CANNOT DO: approve anything, write anything, or invent anything.
-# The gate lives in scripts/editorial_lib.py:is_due and is covered by tests.
+# The gate lives in scripts/editorial_lib.py:is_due — status must be exactly
+# `scheduled`, `approvedAt` must exist, and `publishAt` must have arrived.
+# draft / review / approved-but-unscheduled / held / retired can never publish.
+# Tests cover every one of those cases, plus idempotence.
 
 name: Publish scheduled stories
 
@@ -51,31 +52,45 @@ jobs:
       - name: Report what is due
         run: python3 scripts/publish_due.py --dry-run
 
+      # `id` matters: later steps read steps.publish.outputs.count to tell an
+      # idle hour from a real publication. Without that signal the test step
+      # regenerates data/content-index.json's `generatedAt` and the commit step
+      # pushes a timestamp-only commit EVERY HOUR, forever.
       - name: Publish due stories
+        id: publish
         if: ${{ inputs.dry_run != true }}
         run: python3 scripts/publish_due.py
 
-      # The full suite runs AFTER publication but BEFORE the commit, so a bad
-      # publication is never committed.
+      # Only runs when something actually published. Runs AFTER publication but
+      # BEFORE the commit, so a bad publication is never committed.
       - name: Run full test suite
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && steps.publish.outputs.count != '0' }}
         run: bash scripts/run_tests.sh
 
       - name: Commit publication output
-        if: ${{ inputs.dry_run != true }}
+        if: ${{ inputs.dry_run != true && steps.publish.outputs.count != '0' }}
         run: |
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "Nothing published this run — no commit."
-            exit 0
-          fi
+          set -euo pipefail
+          echo "Published: ${{ steps.publish.outputs.published }}"
           git config user.name  "dbf-publisher[bot]"
           git config user.email "dbf-publisher[bot]@users.noreply.github.com"
           # Deliberate staging: only the surfaces publication is allowed to touch.
           git add data/stories.json data/issues data/content-index.json stories
           if [ -z "$(git diff --cached --name-only)" ]; then
-            echo "No publication surfaces changed — no commit."
+            echo "No publication surfaces changed — nothing to commit."
             exit 0
           fi
           git diff --cached --name-only
-          git commit -m "Publish scheduled stories ($(date -u +%Y-%m-%dT%H:%MZ))"
-          git push
+          git commit -m "Publish scheduled stories: ${{ steps.publish.outputs.published }}"
+          # An editor may have pushed between checkout and now. Rebase rather
+          # than fail the run; the publisher is idempotent so a replay is safe.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Summary
+        if: ${{ always() }}
+        run: |
+          echo "### Delaware Beach Finds publisher" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- published count: ${{ steps.publish.outputs.count || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- slugs: ${{ steps.publish.outputs.published || '(none)' }}" >> "$GITHUB_STEP_SUMMARY"

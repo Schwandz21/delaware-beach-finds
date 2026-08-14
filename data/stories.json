@@ -25,7 +25,7 @@
       "Conservation of Mispillion Harbor and tighter harvest limits have helped both species begin to recover after a steep decline."
     ],
     "access_level": "public",
-    "heroAlt": "Delaware Bay at dawn",
+    "heroAlt": "Illustration of Delaware Bay at first light",
     "publishedAt": "2026-07-26",
     "publishAt": "2026-07-26",
     "approvedAt": "2026-07-26",
@@ -50,7 +50,8 @@
     "heroImage": "bay-morning-1.svg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/bay-morning-1.svg",
     "shopTheStory": false,
-    "metaTag": null
+    "metaTag": null,
+    "heroImageAlt": "Delaware Bay at dawn"
   },
   {
     "slug": "the-galloping-dune",
@@ -76,7 +77,7 @@
       "The Army added sand to hide a WWII bunker, raising the dune to its current height and stabilizing it; nearby, the Walking Dunes Trail is still actively migrating today."
     ],
     "access_level": "public",
-    "heroAlt": "Dune fence and sand at sunset, Delaware coast",
+    "heroAlt": "Dune fence and beach grass at sunset near Cape Henlopen",
     "publishedAt": "2026-07-26",
     "publishAt": "2026-07-26",
     "approvedAt": "2026-07-26",
@@ -101,7 +102,8 @@
     "heroImage": "dune-fence-sunset-2.jpg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-fence-sunset-2.jpg",
     "shopTheStory": false,
-    "metaTag": null
+    "metaTag": null,
+    "heroImageAlt": "Dune fence and sand at sunset, Delaware coast"
   },
   {
     "slug": "where-the-marsh-is-going",
@@ -129,7 +131,7 @@
       "Rather than fighting the water, Delaware's Prime Hook restoration and DNREC's marsh migration program aim to let marshes move inland as seas rise."
     ],
     "access_level": "public",
-    "heroAlt": "Salt marsh at golden hour",
+    "heroAlt": "Illustration of Delaware tidal wetlands at golden hour",
     "publishedAt": "2026-07-26",
     "publishAt": "2026-07-26",
     "approvedAt": "2026-07-26",
@@ -154,7 +156,8 @@
     "heroImage": "marsh-gold-1.svg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/marsh-gold-1.svg",
     "shopTheStory": false,
-    "metaTag": null
+    "metaTag": null,
+    "heroImageAlt": "Salt marsh at golden hour"
   },
   {
     "slug": "towers-on-the-dunes",
@@ -183,7 +186,7 @@
       "Eleven of these towers still stand in Delaware, across Cape Henlopen, Delaware Seashore, and Fenwick Island state parks. Tower 3, at Delaware Seashore State Park, reopened to the public in 2023 with a rebuilt staircase. This publication does not repeat the widely circulated claim that Delaware is the only state with all of its original towers — the state's own published material doesn't make that claim, and we couldn't verify it independently."
     ],
     "access_level": "public",
-    "heroAlt": "Cape Henlopen, Delaware, seen from the air",
+    "heroAlt": "Aerial view of the Cape Henlopen coastline where the fire-control towers stand",
     "publishedAt": "2026-07-25",
     "publishAt": "2026-07-25",
     "approvedAt": "2026-07-25",
@@ -207,7 +210,8 @@
     "heroImage": "cape-henlopen-aerial-1.jpg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/cape-henlopen-aerial-1.jpg",
     "shopTheStory": false,
-    "metaTag": "Delaware at War"
+    "metaTag": "Delaware at War",
+    "heroImageAlt": "Cape Henlopen, Delaware, seen from the air"
   },
   {
     "slug": "why-delaware-looks-like-that",
@@ -260,7 +264,8 @@
     "heroImage": "dune-sunrise-1.svg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
     "shopTheStory": false,
-    "metaTag": "How Delaware Became Delaware"
+    "metaTag": "How Delaware Became Delaware",
+    "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series"
   },
   {
     "slug": "three-counties-become-the-first-state",
@@ -313,7 +318,8 @@
     "heroImage": "dune-sunrise-2.svg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-2.svg",
     "shopTheStory": false,
-    "metaTag": "How Delaware Became Delaware"
+    "metaTag": "How Delaware Became Delaware",
+    "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series"
   },
   {
     "slug": "six-oclock-shift-indian-river-inlet",
@@ -373,7 +379,8 @@
     "heroImage": "paddleboard-sunrise-1.jpg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
     "shopTheStory": false,
-    "metaTag": "Dawn Patrol"
+    "metaTag": "Dawn Patrol",
+    "heroImageAlt": "The Six O'Clock Shift at Indian River Inlet"
   },
   {
     "slug": "what-the-boardwalk-smells-like-in-july",
@@ -432,7 +439,8 @@
     "heroImage": "rehoboth-boardwalk-day-1.jpg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
     "shopTheStory": false,
-    "metaTag": "Field Notes"
+    "metaTag": "Field Notes",
+    "heroImageAlt": "What the Boardwalk Smells Like in July"
   },
   {
     "slug": "bethany-bandstand-nights",
@@ -491,7 +499,8 @@
     "heroImage": "dune-fence-sunset-1.jpg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
     "shopTheStory": false,
-    "metaTag": "Field Notes"
+    "metaTag": "Field Notes",
+    "heroImageAlt": "A Field Guide to Bethany's Bandstand Nights"
   },
   {
     "slug": "unmarked-trail-behind-gordons-pond",
@@ -557,7 +566,8 @@
     "heroImage": "marsh-green-1.svg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
     "shopTheStory": true,
-    "metaTag": "Trail Notes"
+    "metaTag": "Trail Notes",
+    "heroImageAlt": "The Unmarked Trail Behind Gordons Pond"
   },
   {
     "slug": "low-tide-assateague-different-island",
@@ -616,6 +626,7 @@
     "heroImage": "marsh-dawn-1.svg",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
     "shopTheStory": false,
-    "metaTag": "Field Notes"
+    "metaTag": "Field Notes",
+    "heroImageAlt": "Low Tide at Assateague Is a Different Island"
   }
 ]
