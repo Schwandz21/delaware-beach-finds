@@ -5,6 +5,8 @@ Run this after editing the registry, the calendar or the desks. The scheduled
 publisher runs it too and refuses to publish if it fails.
 """
 
+import datetime
+import json
 import os
 import sys
 
@@ -118,6 +120,37 @@ def main():
                                   % (os.path.relpath(p), banned))
                     break
 
+    # Audience metrics. A number we publish must say when it was checked and
+    # where it came from; an empty metric must not claim verification.
+    amp = os.path.join(os.path.dirname(STORIES_DIR), 'data', 'audience-metrics.json')
+    metric_count = 0
+    if os.path.exists(amp):
+        am = json.load(open(amp, encoding='utf-8'))
+        today = datetime.date.today().isoformat()
+        seen = set()
+        for m in am.get('metrics', []):
+            k = m.get('key') or '(unnamed)'
+            if not m.get('key'):
+                errors.append('audience metric with no key')
+            if k in seen:
+                errors.append('duplicate audience metric key: %s' % k)
+            seen.add(k)
+            if not m.get('label'):
+                errors.append('audience metric %s has no label' % k)
+            has_value = m.get('value') not in (None, '', [])
+            if has_value:
+                metric_count += 1
+                if not m.get('verifiedAt'):
+                    errors.append('audience metric %s has a value but no verifiedAt '
+                                  '(an unverified public claim)' % k)
+                if not m.get('source'):
+                    errors.append('audience metric %s has a value but no source' % k)
+                if m.get('verifiedAt') and m['verifiedAt'] > today:
+                    errors.append('audience metric %s is verified in the future (%s)'
+                                  % (k, m['verifiedAt']))
+            elif m.get('verifiedAt'):
+                errors.append('audience metric %s is empty but carries verifiedAt' % k)
+
     for w in warnings:
         print('  warn - %s' % w)
     for e in errors:
@@ -125,8 +158,9 @@ def main():
     if errors:
         print('\n%d error(s). Nothing should publish until these are fixed.' % len(errors))
         return 1
-    print('  ok  - editorial data valid (%d stories, %d desks, %d cadence slots)'
-          % (len(stories), len(desk_ids), len(cal.get('cadence', []))))
+    print('  ok  - editorial data valid (%d stories, %d desks, %d cadence slots, '
+          '%d verified metric(s))'
+          % (len(stories), len(desk_ids), len(cal.get('cadence', [])), metric_count))
     return 0
 
 

@@ -1,0 +1,85 @@
+{
+  "_note": "Canonical source for every audience number Delaware Beach Finds publishes. A metric renders ONLY when it has BOTH a non-null value AND a verifiedAt date. Anything unverified stays null and is invisible on the site — there is no placeholder, no estimate, no 'coming soon'. Ground-truth the numbers, fill value + verifiedAt + period + source, run scripts/validate_editorial.py, deploy. No code or design change required.",
+  "_howToFill": "For each metric: set value (number, or string for a range you can defend), period (what window the number covers), verifiedAt (YYYY-MM-DD, the day you read it off the platform), and source (where you read it). Leave note null unless a caveat matters to a buyer. Delete nothing — an unfilled metric is simply not displayed.",
+  "_rules": [
+    "Never enter a number you have not personally read off the platform.",
+    "verifiedAt is the date you READ the number, not the end of the period.",
+    "A metric older than staleAfterDays stops rendering until re-verified.",
+    "Do not add a metric key for a channel that does not exist yet."
+  ],
+  "staleAfterDays": 120,
+  "metrics": [
+    {
+      "key": "instagram_followers",
+      "label": "Instagram followers",
+      "value": null,
+      "period": "current",
+      "verifiedAt": null,
+      "source": "Instagram Insights",
+      "note": null
+    },
+    {
+      "key": "instagram_reach_monthly",
+      "label": "Instagram accounts reached",
+      "value": null,
+      "period": "trailing 30 days",
+      "verifiedAt": null,
+      "source": "Instagram Insights",
+      "note": null
+    },
+    {
+      "key": "instagram_video_views_monthly",
+      "label": "Instagram video views",
+      "value": null,
+      "period": "trailing 30 days",
+      "verifiedAt": null,
+      "source": "Instagram Insights",
+      "note": null
+    },
+    {
+      "key": "site_users_monthly",
+      "label": "Website readers",
+      "value": null,
+      "period": "trailing 30 days",
+      "verifiedAt": null,
+      "source": "Google Analytics 4",
+      "note": null
+    },
+    {
+      "key": "site_sessions_monthly",
+      "label": "Website sessions",
+      "value": null,
+      "period": "trailing 30 days",
+      "verifiedAt": null,
+      "source": "Google Analytics 4",
+      "note": null
+    },
+    {
+      "key": "site_returning_share",
+      "label": "Returning readers",
+      "value": null,
+      "period": "trailing 30 days",
+      "verifiedAt": null,
+      "source": "Google Analytics 4",
+      "note": null
+    },
+    {
+      "key": "newsletter_subscribers",
+      "label": "Newsletter subscribers",
+      "value": null,
+      "period": "current",
+      "verifiedAt": null,
+      "source": null,
+      "note": "No newsletter exists yet. Leave null until one genuinely does."
+    },
+    {
+      "key": "outbound_clicks_monthly",
+      "label": "Tracked outbound clicks",
+      "value": null,
+      "period": "trailing 30 days",
+      "verifiedAt": null,
+      "source": "Google Analytics 4",
+      "note": null
+    }
+  ]
+}

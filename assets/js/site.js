@@ -609,6 +609,39 @@ if(bylineEls.length){
   });
 }
 
+// AUDIENCE METRICS — renders only what has been verified.
+// A metric appears if and only if it has a real value AND a verifiedAt date
+// that is not in the future and not older than staleAfterDays. With nothing
+// verified the whole section hides itself, which is the current state: the
+// advertise page makes no audience claim at all rather than a soft one.
+const audienceMount = document.querySelector('[data-mount="audience-metrics"]');
+if(audienceMount){
+  fetchJson('audience-metrics.json').then(cfg=>{
+    const today = todayEasternISO();
+    const maxAge = Number(cfg.staleAfterDays) || 120;
+    const daysBetween = (a,b)=>Math.round((Date.parse(b)-Date.parse(a))/86400000);
+    const live = (cfg.metrics||[]).filter(m=>{
+      if(m.value === null || m.value === undefined || m.value === '') return false;
+      if(!m.verifiedAt) return false;              // unverified never renders
+      if(m.verifiedAt > today) return false;       // no future-dated claims
+      return daysBetween(m.verifiedAt, today) <= maxAge;
+    });
+    if(!live.length){ gateHide(audienceMount); return; }
+    const fmt = v => typeof v === 'number' ? v.toLocaleString('en-US') : esc(String(v));
+    audienceMount.innerHTML = live.map(m=>`
+      <div class="metric">
+        <span class="metric-value">${fmt(m.value)}</span>
+        <span class="metric-label">${esc(m.label)}</span>
+        <span class="metric-prov">${esc(m.period||'')}${m.source?' &middot; '+esc(m.source):''}</span>
+      </div>`).join('');
+    const stamp = live.map(m=>m.verifiedAt).sort().slice(-1)[0];
+    const foot = document.querySelector('[data-audience-verified]');
+    if(foot && stamp) foot.textContent =
+      'Verified ' + new Date(stamp+'T12:00:00').toLocaleDateString('en-US',
+        {year:'numeric',month:'long',day:'numeric'}) + '.';
+  }).catch(()=>{ gateHide(audienceMount); });
+}
+
 // Franchise sponsor slot. Draws ONLY when data/sponsors.json holds a real,
 // currently-dated sponsor for this franchise. With no sponsor the element stays
 // empty and the franchise reads as complete on its own — there is deliberately
