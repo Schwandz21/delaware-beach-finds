@@ -1002,3 +1002,188 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
 .article h2{font-size:1.32rem;text-transform:uppercase;letter-spacing:.06em;
   padding-bottom:9px;border-bottom:1px solid var(--hairline);max-width:62ch}
 .article h3{font-size:1.06rem}
+
+/* ================================================================
+   ITERATION 1 — the first desktop viewport.
+   The cover headline was landing 76px BELOW a 900px fold: readers saw
+   a photograph but not the story. Tighten the masthead plate and build
+   the lead as a real two-column cover package (art | type) so the
+   headline, dek and byline all sit above the fold.
+   ================================================================ */
+
+/* --- Masthead plate: identity, compressed. --- */
+.nameplate{padding:clamp(14px,1.4vw,20px) 0 0}
+.nameplate .container{padding-top:clamp(10px,1vw,14px);padding-bottom:clamp(8px,.9vw,12px)}
+.nameplate-title{font-size:clamp(2.2rem,5.4vw,4.05rem);letter-spacing:-.045em;line-height:.92}
+.nameplate-rule{margin-top:clamp(6px,.7vw,9px)}
+/* The small header wordmark is redundant while the plate is on screen. */
+.site-header .brand-tag{display:none}
+@media(min-width:1081px){ .site-header .brand-name{font-size:1rem} }
+
+/* --- Lead package: art and type share the fold. --- */
+@media(min-width:1081px){
+  .frontpage{grid-template-columns:minmax(0,2.05fr) minmax(0,.95fr)}
+  .cover-story{
+    display:grid;
+    grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);
+    column-gap:clamp(26px,2.6vw,42px);
+    align-content:start;
+    grid-auto-rows:min-content;
+    padding:clamp(18px,1.8vw,26px) clamp(24px,2.6vw,40px) clamp(24px,2.4vw,36px) 0;
+  }
+  /* The lead asset is a wide aerial. Cropping it tall threw away its strongest
+     quality, so it stays landscape and carries the left column. */
+  .cover-art{aspect-ratio:3/2;margin-bottom:0;grid-row:1/span 12;grid-column:1}
+  .cover-story > :not(.cover-art){grid-column:2}
+  .cover-headline{font-size:clamp(2.05rem,2.72vw,3.05rem);max-width:none;margin:.1em 0 .26em;line-height:1.02}
+  .cover-dek{font-size:clamp(.99rem,1.04vw,1.11rem);line-height:1.48;max-width:34ch;margin:0}
+  .cover-label{margin-top:2px}
+  /* Credit belongs to the picture, so it sits under the picture. */
+  .cover-story .credit{grid-column:1;grid-row:13;margin-top:11px}
+  .cover-byline{margin-top:clamp(14px,1.5vw,20px);padding-top:12px;
+    border-top:1px solid var(--hairline)}
+}
+
+/* --- Secondary rail: tiered, not a stack of equals. --- */
+@media(min-width:1081px){
+  .cover-secondaries{padding:clamp(20px,2vw,30px) 0 clamp(24px,2.4vw,36px) clamp(24px,2.6vw,40px)}
+  .stack-head{margin-bottom:10px}
+  .stack-item:first-of-type .stack-thumb{aspect-ratio:3/2}
+  .stack-item{padding-top:13px}
+  .stack-item h3,.stack-item h4{font-size:1.02rem;line-height:1.24}
+  .stack-item:first-of-type h3,.stack-item:first-of-type h4{font-size:1.2rem}
+}
+
+/* ================================================================
+   ITERATION 2 — give the cover package authority.
+   The lead sat inside the standard 1240 text container and stopped
+   163px short of the fold. A cover should command more width than
+   body copy, so the masthead plate and lead package widen on large
+   screens and the headline scales with them.
+   ================================================================ */
+@media(min-width:1360px){
+  .nameplate .container,
+  #front-page > .container{max-width:1340px}
+  .frontpage{grid-template-columns:minmax(0,2.28fr) minmax(0,.78fr)}
+  .cover-story{grid-template-columns:minmax(0,1.28fr) minmax(0,.88fr)}
+  .cover-headline{font-size:clamp(2.6rem,3.3vw,3.5rem)}
+  .cover-dek{font-size:1.13rem;max-width:33ch}
+  .nameplate-title{font-size:clamp(3rem,5.1vw,4.35rem)}
+}
+/* Folio reads as issue apparatus: quiet, wide-tracked, hairline-ruled. */
+.issue-folio{font-size:.68rem}
+.nameplate-tag{font-size:.6rem;letter-spacing:.28em;color:var(--muted)}
+
+/* The cover label is a section flag, not a UI chip. */
+.cover-art .cover-flag,.cover-story .cover-flag{letter-spacing:.2em}
+
+/* ================================================================
+   ITERATION 3 — a type-led cover, because of the asset, not despite it.
+   The current cover story's only image is 387x258. Filling a 500px+
+   column with it upscaled ~1.3x and looked soft. A magazine solves this
+   by leading with type: the headline carries the page and the picture
+   becomes a supporting plate at honest size. Replace the asset (see
+   automation/PHOTOGRAPHY_REQUIREMENTS.md) and this scales straight up.
+   ================================================================ */
+@media(min-width:1081px){
+  .cover-story{
+    grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+    column-gap:clamp(30px,3vw,48px);
+  }
+  /* Type takes the left column and leads. */
+  .cover-story > :not(.cover-art){grid-column:1}
+  .cover-art{
+    grid-column:2;grid-row:1/span 12;
+    aspect-ratio:auto;height:auto;
+    align-self:start;
+  }
+  .cover-art img{height:auto;aspect-ratio:3/2}
+  /* Never displayed larger than it really is. */
+  .cover-story .cover-art{max-width:387px;margin-left:auto}
+  .cover-story .credit{grid-column:2;grid-row:13;max-width:387px;margin-left:auto;
+    margin-top:10px;text-align:left}
+  .cover-label{margin-top:4px}
+  .cover-headline{margin:.06em 0 .3em;line-height:.99;letter-spacing:-.032em}
+  .cover-dek{max-width:40ch}
+  .cover-byline{margin-top:clamp(16px,1.7vw,22px)}
+}
+@media(min-width:1360px){
+  .cover-story{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+  .cover-headline{font-size:clamp(3.1rem,4.05vw,4.5rem)}
+  .cover-dek{font-size:1.2rem;line-height:1.44;max-width:42ch}
+}
+
+/* Caption must belong to its picture. Explicit placement puts art in rows 1-3
+   and its caption in row 4, directly beneath, instead of letting auto-flow
+   strand it 85px lower. */
+@media(min-width:1081px){
+  .cover-art{grid-column:2;grid-row:1/span 3}
+  .cover-story .credit{grid-column:2;grid-row:4;align-self:start}
+  .cover-label{grid-column:1;grid-row:1}
+  .cover-headline{grid-column:1;grid-row:2}
+  .cover-dek{grid-column:1;grid-row:3}
+  .cover-byline{grid-column:1;grid-row:4;align-self:start}
+}
+
+/* ================================================================
+   ITERATION 4 — the first scroll.
+   The cover package left a tall empty band before the next section,
+   right where a reader decides whether to keep going. Close the gap and
+   make the transition read as a deliberate editorial statement line
+   rather than floating text.
+   ================================================================ */
+@media(min-width:1081px){
+  #front-page{padding-bottom:0}
+  .frontpage{align-items:start}
+  /* The rail is the tallest element; let it set the height, not empty space. */
+  .cover-secondaries{padding-bottom:clamp(18px,1.8vw,26px)}
+  .cover-story{padding-bottom:clamp(18px,1.8vw,26px)}
+
+  #brand-statement{padding-top:0}
+  #brand-statement > .container{border-top:1px solid var(--navy);
+    padding-top:clamp(16px,1.6vw,22px);padding-bottom:clamp(20px,2vw,28px);
+    max-width:1340px}
+  /* Only the statement itself, never the small-caps imprint line beneath it. */
+  #brand-statement p:first-of-type{font-family:var(--serif);
+    font-size:clamp(1.12rem,1.35vw,1.44rem);line-height:1.42;max-width:56ch;
+    color:var(--navy)}
+}
+
+/* ================================================================
+   ITERATION 5 — mobile masthead.
+   The plate was eating 600px of an 812px screen before the cover story
+   appeared: folio set at content size, nameplate on two lines, tagline
+   wrapping to three. Compress the apparatus so the story arrives fast,
+   while keeping the identity, the folio and the cover hierarchy intact.
+   ================================================================ */
+@media(max-width:640px){
+  /* Folio is apparatus: small, quiet, on one or two tight lines. */
+  /* The folio wrapper is .issue-strip, not .issue-folio — that is the mount id. */
+  .issue-strip{padding:6px 0}
+  .issue-strip-inner{gap:1px 12px!important;row-gap:1px!important}
+  .issue-strip *{font-size:.54rem!important;letter-spacing:.1em!important;
+    line-height:1.7!important}
+
+  .nameplate{padding:8px 0 0}
+  .nameplate .container{border-top-width:2px;padding-top:9px;padding-bottom:8px}
+  .nameplate-title{font-size:clamp(1.72rem,8.6vw,2.35rem);line-height:.95;
+    letter-spacing:-.035em}
+  .nameplate-tag{font-size:.5rem;letter-spacing:.13em;line-height:1.5}
+  .nameplate-rule{margin-top:7px}
+  .nameplate-rule:before,.nameplate-rule:after{display:none}
+
+  /* Cover package: art, then type, tight. */
+  #front-page{padding-top:16px}
+  .cover-story{padding:0 0 18px}
+  .cover-art{margin-bottom:10px}
+  .cover-flag,.cover-story .cover-flag{font-size:.56rem;letter-spacing:.14em;
+    padding:6px 10px}
+  .cover-headline{font-size:clamp(1.85rem,8.4vw,2.4rem);line-height:1.03;
+    letter-spacing:-.03em;margin:.16em 0 .28em}
+  .cover-dek{font-size:1rem;line-height:1.46}
+  .cover-story .credit{margin-top:8px}
+  .cover-story .credit .credit-caption{font-size:.8rem;line-height:1.4}
+  .cover-byline{font-size:.62rem;letter-spacing:.1em;margin-top:12px;
+    padding-top:10px;border-top:1px solid var(--hairline)}
+  #brand-statement p:first-of-type{font-size:1.02rem}
+}

@@ -61,3 +61,40 @@ These are fine and were deliberately positioned where the assets are strongest:
 - Preserve `photoCredit` / `heroAlt` on every record.
 - Illustrated SVG scenes remain legitimate for conceptual/nature pieces; they are
   credited as illustration, never as photographs.
+
+---
+
+## Blocking asset need — homepage cover (recorded 2026-08-14)
+
+`assets/images/scenes/cape-henlopen-aerial-1.jpg` is **387 × 258**. It is the
+image for the current cover story (`towers-on-the-dunes`), and it is the only
+low-resolution raster in the library — every other asset is 1200–3024px wide:
+
+| Asset | Pixels |
+| --- | --- |
+| rehoboth-boardwalk-day-1.jpg | 3024 × 2268 |
+| paddleboard-sunrise-1.jpg | 2640 × 1980 |
+| dune-fence-sunset-2.jpg | 2048 × 1315 |
+| boardwalk-dusk-rehoboth-1.jpg | 2048 × 1366 |
+| dune-fence-sunset-1.jpg | 1600 × 1100 |
+| coastal-sunset-aerial-1.jpg | 1200 × 674 |
+| **cape-henlopen-aerial-1.jpg** | **387 × 258** |
+
+Because of this the homepage cover is deliberately **type-led**: the headline
+carries the page and the picture is capped at 387px so it is never upscaled.
+This is a graceful treatment, not the intended design.
+
+**Replace with:** a Cape Henlopen / fire-control-tower image, **minimum
+2000px wide**, landscape, shot at or after golden hour, showing either the
+tower itself against the dune line or the coastline with a tower visible.
+
+**On replacement:** drop the file into `assets/images/scenes/`, set
+`heroImage` on `towers-on-the-dunes` in `data/stories.json`, run
+`python3 scripts/render_story.py`, then delete the `max-width:387px` cap in the
+ITERATION 3 block of `assets/css/styles.css`. The cover scales up with no other
+change.
+
+**Also wanted, in priority order:** a vertical (4:5) coastal portrait for
+cover-package variety; a detail/texture frame (dune fence, marsh grass, boardwalk
+plank) for quieter transitions; one interior/architectural frame for
+Homes & Design.
