@@ -1,6 +1,6 @@
 # Delaware Beach Finds — Handoff / Savepoint
 
-**Last updated:** 2026-08-14
+**Last updated:** 2026-08-14 (operationalization sprint)
 
 ## State
 
@@ -22,6 +22,68 @@ Live content confirmed: DBF Weekend franchise present; nav reads
 Homes & Design / Delaware Stories / Field Notes / This Week / Explore / About;
 Advertise link in footer; Etsy storefront intact; `dbf-weekend` renders above
 `the-edit`; GA id `G-XR94ZKCF9J` served from `config.js`; all 4 new events live.
+
+## !! UNPUSHED WORK ON LOCAL main !!
+
+The git credential on this Mac **expired during the final sprint**. Local `main`
+is one commit ahead of production:
+
+| | |
+| --- | --- |
+| Local `main` | `a0ffdc5` — "Verified audience metrics layer" |
+| Remote `main` (live) | `a44ab77` |
+
+Everything from the earlier sprints **is live**. Only the audience-metrics layer
+is waiting. Working tree is clean; nothing is lost.
+
+**First thing Monday:** re-authenticate, then `git push origin main`.
+
+```
+gh auth login          # or refresh the PAT in the macOS keychain
+git push origin main
+```
+
+## Scheduled publisher — STATUS: MANUAL GITHUB PASTE STILL REQUIRED
+
+One install attempt was made this sprint and rejected; the local commit was
+backed out so `main` has no divergence from that attempt. `.github/` on the
+remote still contains only `freshness-check.yml`.
+
+Everything the workflow needs is already on remote `main` (`validate_editorial.py`,
+`publish_due.py`, `run_tests.sh`, `editorial-calendar.json`, `authors.json`), so
+the workflow will work the moment the file exists.
+
+**Install it in 5 steps:**
+
+1. Open <https://github.com/Schwandz21/delaware-beach-finds> → **Add file** → **Create new file**
+2. Filename: `.github/workflows/publish-scheduled.yml` (typing each `/` creates the folder)
+3. Paste the entire contents of `automation/publish-scheduled.WORKFLOW.yml`
+4. **Commit changes…** → commit directly to `main`
+5. **Actions** → "Publish scheduled stories" → **Run workflow** with `dry_run = true`
+
+Expected first run: nothing publishes, because nothing approved and scheduled is
+due. That is the correct result, not a failure.
+
+## Audience metrics — ready to fill
+
+`data/audience-metrics.json` is the single source. Eight slots, all currently
+`null`, so the advertise page makes **no audience claim at all** today — the
+section hides itself entirely.
+
+To go live Monday: set `value`, `verifiedAt` (the day you read it), `period` and
+`source` on each metric you have ground-truthed, then:
+
+```
+python3 scripts/validate_editorial.py
+```
+
+The validator **refuses** a value without `verifiedAt` or `source`, a
+future-dated verification, an empty metric that claims verification, and
+duplicate keys. Verified by negative test: a bare number fails with exit 1 and
+cannot reach production. A metric older than `staleAfterDays` (120) stops
+rendering until re-checked.
+
+No code or design change is needed — fill the file, validate, deploy.
 
 ## Advertise page
 
