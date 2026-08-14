@@ -609,6 +609,63 @@ if(bylineEls.length){
   });
 }
 
+// Franchise sponsor slot. Draws ONLY when data/sponsors.json holds a real,
+// currently-dated sponsor for this franchise. With no sponsor the element stays
+// empty and the franchise reads as complete on its own — there is deliberately
+// no placeholder, no "your logo here", and no fake presented-by.
+document.querySelectorAll('[data-mount="franchise-sponsor"]').forEach(slot=>{
+  const key = slot.getAttribute('data-franchise');
+  fetchJson('sponsors.json').then(list=>{
+    const today = todayEasternISO();
+    const s = (list||[]).find(x =>
+      x && x.franchise === key && x.name && x.url &&
+      (!x.startDate || x.startDate <= today) &&
+      (!x.endDate   || x.endDate   >= today));
+    if(!s) return;                       // unsponsored is the normal state
+    slot.innerHTML = `<span class="sponsor-label">Presented by</span>` +
+      `<a class="sponsor-name" href="${esc(s.url)}" target="_blank" rel="noopener sponsored"` +
+      ` data-sponsor-link data-sponsor="${esc(s.name)}" data-franchise="${esc(key)}">${esc(s.name)}</a>`;
+  }).catch(()=>{});
+});
+
+// Sponsor outbound clicks reuse the existing GA4 convention — one event name,
+// no second analytics system.
+document.addEventListener('click', function(e){
+  const a = e.target.closest('[data-sponsor-link]');
+  if(!a || !window.gtag) return;
+  gtag('event','sponsor_click',{
+    destination: a.href,
+    sponsor_name: a.dataset.sponsor || undefined,
+    franchise: a.dataset.franchise || undefined,
+    source_page: location.pathname,
+    content_category: 'sponsorship'
+  });
+});
+
+// Advertiser-journey events. Same gtag architecture as the Etsy/Instagram
+// handlers above; nothing here reports performance, it only records intent.
+if(/\/advertise\.html$/.test(location.pathname)){
+  if(window.gtag) gtag('event','advertise_page_view',{source_page:location.pathname});
+}
+document.addEventListener('click', function(e){
+  if(!window.gtag) return;
+  const c = e.target.closest('[data-advertiser-contact]');
+  if(c){
+    gtag('event','advertiser_contact_click',{
+      cta: c.dataset.advertiserContact || 'contact',
+      source_page: location.pathname, content_category: 'advertising'
+    });
+    return;
+  }
+  const p = e.target.closest('[data-ad-product]');
+  if(p){
+    gtag('event','advertising_product_interest',{
+      product: p.dataset.adProduct,
+      source_page: location.pathname, content_category: 'advertising'
+    });
+  }
+});
+
 // FRONT PAGE — cover story + secondary stack, composed from real stories.json.
 // The cover is the featured record; secondaries are the next-newest published
 // stories. Photography comes from each story's own scene, never borrowed.

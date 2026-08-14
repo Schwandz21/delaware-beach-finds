@@ -1187,3 +1187,86 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
     padding-top:10px;border-top:1px solid var(--hairline)}
   #brand-statement p:first-of-type{font-size:1.02rem}
 }
+
+/* ================================================================
+   EDITORIAL FRANCHISES
+   A franchise is a recurring media product, not a section heading. It
+   gets a nameplate of its own, a standing line, and a sponsor slot that
+   is invisible until a real sponsor exists.
+   ================================================================ */
+.franchise-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:8px 26px;border-top:2px solid var(--navy);padding-top:14px;margin-bottom:20px}
+.franchise-id{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.franchise-name{font-family:var(--serif);font-size:clamp(1.5rem,2.1vw,2.05rem);
+  font-weight:600;letter-spacing:-.025em;color:var(--navy);line-height:1}
+.franchise-line{font-size:.82rem;color:var(--muted);letter-spacing:.01em}
+.franchise-foot{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px;
+  border-top:1px solid var(--hairline);padding-top:14px}
+
+/* Sponsor slot: empty by default, and empty draws nothing at all. */
+.franchise-sponsor:empty{display:none}
+.franchise-sponsor{display:flex;align-items:baseline;gap:8px}
+.sponsor-label{font-size:var(--fs-eyebrow);letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--muted)}
+.sponsor-name{font-family:var(--serif);font-size:1.02rem;color:var(--navy);
+  border-bottom:1px solid var(--coral-deep);text-decoration:none}
+
+@media(max-width:640px){
+  .franchise-head{margin-bottom:15px}
+  .franchise-line{width:100%;font-size:.78rem}
+}
+
+/* ================================================================
+   ADVERTISE — the business side of the same magazine.
+   Ruled columns and editorial type, no pricing cards or CTA blocks.
+   ================================================================ */
+.ad-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(26px,3vw,46px)}
+.ad-cols.ad-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ad-cols > div{border-top:2px solid var(--navy);padding-top:15px}
+.section.bg-ink .ad-cols > div,.section.bg-deep .ad-cols > div{border-top-color:rgba(255,255,255,.5)}
+.ad-cols h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;letter-spacing:-.015em;
+  margin:0 0 8px;color:var(--navy)}
+.section.bg-ink .ad-cols h3{color:#fff}
+.ad-cols p{font-size:.95rem;line-height:1.62;margin:0 0 10px;color:var(--ink-soft)}
+.section.bg-ink .ad-cols p{color:rgba(255,255,255,.84)}
+
+.ad-incl{border-top:1px solid var(--hairline);margin-top:20px;padding-top:6px}
+.ad-incl ul{list-style:none;margin:0;padding:0;
+  columns:2;column-gap:clamp(26px,3vw,48px)}
+.ad-incl li{break-inside:avoid;padding:11px 0 11px 20px;position:relative;
+  border-bottom:1px solid var(--hairline);font-size:.94rem;line-height:1.5}
+.ad-incl li:before{content:"";position:absolute;left:0;top:19px;width:9px;height:1px;
+  background:var(--coral-deep)}
+
+.ad-inv{display:grid;grid-template-columns:1fr;border-top:2px solid rgba(255,255,255,.5)}
+.ad-inv > div{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);
+  gap:4px 28px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.ad-inv-k{font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:#f3d9c4}
+.ad-inv > div > span:last-child{font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.84)}
+
+.ad-cta{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:24px;
+  border-top:1px solid var(--hairline);padding-top:18px}
+.section.bg-deep .ad-cta,.section.bg-ink .ad-cta{border-top-color:rgba(255,255,255,.28)}
+
+@media(max-width:900px){
+  .ad-cols,.ad-cols.ad-cols-2{grid-template-columns:1fr;gap:22px 0}
+  .ad-incl ul{columns:1}
+  .ad-inv > div{grid-template-columns:1fr;gap:3px}
+}
+
+/* Print → PDF produces a usable leave-behind: no nav, no dark fills. */
+@media print{
+  .site-header,.footer,.issue-strip,.nameplate,.skip-link,.ad-cta{display:none!important}
+  .section,.section-tight{padding:14px 0!important;background:#fff!important;break-inside:avoid}
+  .section.bg-ink *,.section.bg-deep *{color:#111!important}
+  .ad-inv{border-top-color:#111}.ad-inv > div{border-bottom-color:#bbb}
+  .ad-inv-k{color:#7a2e1e!important}
+  a{text-decoration:none;color:#111!important}
+  .page-hero{padding-top:0!important}
+}
+/* The advertise headline must wrap on a phone; it is the longest H1 on the site. */
+@media(max-width:640px){
+  .page-hero h1{font-size:clamp(1.9rem,8.4vw,2.5rem);letter-spacing:-.03em;
+    overflow-wrap:break-word}
+}
