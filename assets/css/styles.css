@@ -26,6 +26,26 @@
   --max:1240px;
   --serif:'Fraunces',Georgia,'Times New Roman',serif;
   --sans:'Inter',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+
+  /* Editorial type scale — fluid, magazine-weighted */
+  --fs-display:clamp(3rem,7.2vw,6.4rem);
+  --fs-h1:clamp(2.4rem,5vw,4.2rem);
+  --fs-h2:clamp(1.75rem,3vw,2.6rem);
+  --fs-h3:clamp(1.2rem,1.6vw,1.5rem);
+  --fs-lede:clamp(1.08rem,1.35vw,1.3rem);
+  --fs-body:1.02rem;
+  --fs-meta:.78rem;
+  --fs-eyebrow:.7rem;
+
+  /* Vertical rhythm */
+  --space-section:clamp(64px,7vw,116px);
+  --space-tight:clamp(44px,4.5vw,72px);
+  --rule-strong:2px solid var(--navy);
+
+  /* Editorial accents */
+  --ink-deep:#0d1f26;
+  --paper-warm:#f6efe3;
+  --hairline:rgba(22,36,42,.16);
 }
 
 *{box-sizing:border-box}
@@ -38,30 +58,42 @@ button,input,textarea,select{font:inherit}
 .skip-link{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:12px 18px;z-index:1000;border-radius:0 0 8px 0}
 .skip-link:focus{left:0;top:0}
 
-.kicker{text-transform:uppercase;letter-spacing:.16em;font-weight:700;font-size:.72rem;color:var(--coral-deep)}
+.kicker{text-transform:uppercase;letter-spacing:.18em;font-weight:800;font-size:var(--fs-eyebrow);color:var(--coral-deep);display:inline-flex;align-items:center;gap:10px}
+.kicker:not(.no-rule):before{content:"";width:26px;height:2px;background:currentColor;flex:none}
+.kicker.no-rule:before{display:none}
 .kicker.on-dark{color:#f3d9c4}
 .kicker.teal{color:var(--teal-deep)}
 
-h1,h2,h3,h4{font-family:var(--serif);line-height:1.06;margin:0 0 .5em;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
-h1{font-size:clamp(2.6rem,6.4vw,5.2rem);font-weight:500}
-h2{font-size:clamp(1.9rem,3.4vw,2.9rem)}
-h3{font-size:1.4rem}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.04;margin:0 0 .5em;font-weight:600;letter-spacing:-.018em;color:var(--navy)}
+h1{font-size:var(--fs-h1);font-weight:500;letter-spacing:-.028em}
+h2{font-size:var(--fs-h2);letter-spacing:-.022em}
+h3{font-size:var(--fs-h3);letter-spacing:-.014em}
 p{margin:0 0 1.05rem}
 .muted{color:var(--muted)}
-.lede{font-size:1.18rem;color:var(--ink-soft);max-width:620px}
+.lede{font-size:var(--fs-lede);line-height:1.55;color:var(--ink-soft);max-width:64ch}
+/* Long-form measure — long-form Delaware writing should read like a magazine. */
+.article p{max-width:68ch;font-size:1.06rem;line-height:1.72}
+.article p+p{margin-top:0}
 .small{font-size:.88rem}
 .rule{border:0;border-top:1px solid var(--line);margin:0}
 
 /* ---------- header / masthead ---------- */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 0}
-.brand{display:flex;flex-direction:column;line-height:1;gap:6px}
-.brand .brand-name{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:-.01em;color:var(--navy)}
-.brand .brand-tag{font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.nav-links{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-.nav-links a{font-size:.86rem;font-weight:600;letter-spacing:.02em;color:var(--ink-soft);padding:4px 0;border-bottom:1px solid transparent}
-.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--coral-deep);border-color:var(--coral-deep)}
-.menu-toggle{display:none;border:0;background:none;font-size:1.5rem;color:var(--navy)}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(250,246,239,.94);backdrop-filter:saturate(180%) blur(14px);
+  border-bottom:1px solid var(--hairline);transition:box-shadow .25s}
+.site-header.is-stuck{box-shadow:0 8px 26px rgba(9,20,25,.09)}
+.masthead{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
+.brand{display:flex;flex-direction:column;line-height:1;gap:7px}
+.brand .brand-name{font-family:var(--serif);font-size:1.62rem;font-weight:600;letter-spacing:-.03em;color:var(--navy)}
+.brand .brand-tag{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.nav-links a{font-size:.8rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);
+  padding:6px 0;position:relative;transition:color .18s}
+.nav-links a:after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--coral-deep);
+  transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+.nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--navy)}
+.nav-links a:hover:after,.nav-links a[aria-current="page"]:after{transform:scaleX(1)}
+.menu-toggle{display:none;border:0;background:none;font-size:1.5rem;color:var(--navy);line-height:1;padding:6px 2px}
+@media(prefers-reduced-motion:reduce){.nav-links a:after{transition:none}}
 
 /* ---------- buttons / links ---------- */
 .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.92rem;padding:13px 22px;border-radius:999px;border:1px solid transparent;transition:.2s transform,.2s box-shadow,.2s background,.2s color}
@@ -75,12 +107,19 @@ p{margin:0 0 1.05rem}
 .link-arrow:hover{color:var(--coral)}
 
 /* ---------- section rhythm ---------- */
-.section{padding:96px 0}
-.section-tight{padding:64px 0}
+.section{padding:var(--space-section) 0}
+.section-tight{padding:var(--space-tight) 0}
+/* A hairline between adjacent light sections gives the page magazine structure. */
+.section + .section:not(.bg-ink):not(.bg-deep),
+.section-tight + .section:not(.bg-ink):not(.bg-deep){border-top:1px solid var(--hairline)}
 .section.bg-deep{background:var(--paper-deep)}
 .section.bg-ink{background:var(--navy);color:#fff}
 .section.bg-ink h2, .section.bg-ink h3{color:#fff}
-.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:38px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:38px;
+  padding-bottom:16px;border-bottom:var(--rule-strong)}
+.section.bg-ink .section-head{border-bottom-color:rgba(255,255,255,.34)}
+.section-head h2{margin-bottom:0}
+@media(max-width:640px){.section-head{flex-direction:column;align-items:flex-start;gap:12px}}
 .section-head .lede{margin-top:10px}
 
 /* ---------- Feature Story (hero) ---------- */
@@ -112,11 +151,23 @@ p{margin:0 0 1.05rem}
 @media(max-width:640px){.brand-hero{min-height:84vh}}
 
 /* ---------- weekend calendar ---------- */
-.calendar-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
-.calendar-day{background:var(--paper);padding:26px 20px;min-height:230px;display:flex;flex-direction:column;gap:10px}
+.calendar-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--hairline);border:1px solid var(--hairline);border-radius:var(--radius-md);overflow:hidden}
+.calendar-day{background:var(--paper);padding:26px 22px;min-height:236px;display:flex;flex-direction:column;gap:9px;
+  transition:background .25s}
+.calendar-day:hover{background:var(--paper-warm)}
 .calendar-day.is-today{background:var(--navy);color:#fff}
-.calendar-day.is-today .day-label,.calendar-day.is-today .muted{color:rgba(255,255,255,.72)}
-.calendar-day .day-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--coral-deep)}
+.calendar-day.is-today:hover{background:var(--ink-deep)}
+.calendar-day.is-today .day-label,.calendar-day.is-today .muted{color:rgba(255,255,255,.74)}
+.calendar-day .day-label{font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--coral-deep)}
+.calendar-day .day-date{font-family:var(--serif);font-size:1.02rem;letter-spacing:-.01em}
+.calendar-day h4{font-family:var(--serif);font-size:1.08rem;line-height:1.2;letter-spacing:-.015em;
+  margin:2px 0 4px;color:var(--navy);font-weight:600}
+.calendar-day.is-today h4{color:#fff}
+/* A marquee event earns a visible flag rather than just a bigger box. */
+.calendar-day.is-marquee{box-shadow:inset 0 4px 0 var(--coral)}
+.calendar-day .marquee-flag{font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep)}
+.calendar-day.is-today .marquee-flag{color:#f3d9c4}
 .event-status-badge{color:var(--muted);font-weight:700}
 .calendar-day.is-today .event-status-badge{color:rgba(255,255,255,.65)}
 
@@ -132,8 +183,14 @@ p{margin:0 0 1.05rem}
 .search-box input[type="search"]:focus{outline:2px solid var(--teal-deep);outline-offset:2px}
 .search-result-count{margin:18px 0;color:var(--muted);font-size:.9rem}
 .calendar-day.is-today .day-label{color:#f3d9c4}
-.calendar-day .day-date{font-family:var(--serif);font-size:1.3rem;margin-bottom:4px}
-.calendar-day h4{font-family:var(--sans);font-size:.98rem;font-weight:700;margin:0 0 6px;color:inherit}
+/* A listing is read title-first. The date and place are the meta line, so they
+   stay small sans; the event name carries the serif weight. */
+.calendar-day .day-date{font-family:var(--sans);font-size:.78rem;line-height:1.35;
+  letter-spacing:.02em;margin-bottom:7px;color:var(--muted)}
+.calendar-day.is-today .day-date{color:rgba(255,255,255,.74)}
+.calendar-day h4{font-family:var(--serif);font-size:1.16rem;font-weight:600;line-height:1.22;
+  letter-spacing:-.015em;margin:0 0 7px;color:var(--navy)}
+.calendar-day.is-today h4{color:#fff}
 .calendar-day p{font-size:.86rem;margin:0}
 
 /* ---------- instagram embed panel ---------- */
@@ -182,11 +239,14 @@ p{margin:0 0 1.05rem}
 /* ---------- latest stories ---------- */
 .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
 .story-card{display:block}
-.story-card .story-art{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;margin-bottom:18px}
+.story-card .story-art{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:4/3;margin-bottom:18px;background:var(--paper-deep)}
+.story-card .story-art img,.story-card .story-art svg{transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.story-card:hover .story-art img{transform:scale(1.045)}
+@media(prefers-reduced-motion:reduce){.story-card .story-art img{transition:none}}
 .story-card .story-art .scene{position:absolute;inset:0}
 .story-card svg{width:100%;height:100%;object-fit:cover}
 .story-card .kicker{margin-bottom:8px}
-.story-card h3{margin:0 0 8px;font-size:1.35rem}
+.story-card h3{margin:0 0 8px;font-size:1.32rem;line-height:1.14;letter-spacing:-.02em}
 .story-card:hover h3{color:var(--coral-deep)}
 .story-card p{font-size:.94rem;color:var(--muted);margin:0}
 
@@ -271,8 +331,13 @@ p{margin:0 0 1.05rem}
   .sunrise-grid{grid-template-columns:repeat(4,1fr)}
 }
 @media(max-width:900px){
-  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:22px 24px;gap:16px}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);
+    border-bottom:1px solid var(--hairline);box-shadow:0 18px 40px rgba(9,20,25,.14);
+    flex-direction:column;align-items:stretch;padding:8px 24px 20px;gap:0}
   .nav-links.open{display:flex}
+  .nav-links a{font-size:.95rem;letter-spacing:.05em;padding:15px 0;border-bottom:1px solid var(--hairline)}
+  .nav-links a:last-child{border-bottom:0}
+  .nav-links a:after{display:none}
   .menu-toggle{display:block}
   .insta-panel,.gem-feature,.article-wrap,.intro-grid{grid-template-columns:1fr}
   .side-note{position:static}
@@ -492,16 +557,19 @@ html.js-reveal .reveal.is-visible{opacity:1;transform:none}
 @media(max-width:640px){.guide-facts-strip{grid-template-columns:1fr}}
 
 /* ---------- flagship story (the publication's lead) ---------- */
-.flagship{display:grid;grid-template-columns:1.35fr .95fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--paper);box-shadow:var(--shadow);align-items:stretch;transition:.3s transform,.35s box-shadow}
-.flagship:hover,.flagship:focus-visible{transform:translateY(-4px);box-shadow:0 30px 60px rgba(9,20,25,.26)}
+.flagship{display:grid;grid-template-columns:1.45fr .9fr;gap:0;border-radius:var(--radius-lg);overflow:hidden;background:var(--paper);box-shadow:var(--shadow);align-items:stretch;transition:.35s transform,.4s box-shadow}
+.flagship:hover,.flagship:focus-visible{transform:translateY(-5px);box-shadow:0 36px 70px rgba(9,20,25,.28)}
 .flagship-art{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--paper-deep)}
+/* A quiet scrim so the art reads as photography, not a flat tile. */
+.flagship-art:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(105deg,rgba(9,20,25,.18),transparent 46%);pointer-events:none}
 .flagship-art img,.flagship-art svg{width:100%;height:100%;object-fit:cover;transition:.6s transform}
 .flagship:hover .flagship-art img{transform:scale(1.04)}
 .flagship-copy{padding:48px 46px;display:flex;flex-direction:column;justify-content:center;color:var(--ink)}
 .flagship-copy .kicker{margin-bottom:14px}
 /* .section.bg-ink h2,h3 forces white text sitewide — this card carries its own
    light background regardless of section, so it must re-assert dark text. */
-.flagship-copy h2{color:var(--navy);font-size:clamp(1.9rem,3.1vw,2.7rem);margin:0 0 .45em;transition:.2s color}
+.flagship-copy h2{color:var(--navy);font-size:clamp(2rem,3.4vw,3.15rem);line-height:1.02;letter-spacing:-.03em;margin:0 0 .42em;transition:.2s color}
 .flagship:hover .flagship-copy h2{color:var(--coral-deep)}
 .flagship-hook{font-size:1.06rem;color:var(--ink-soft);max-width:46ch;margin:0 0 18px}
 .flagship-meta{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted);margin-bottom:20px}
@@ -554,12 +622,651 @@ a.issue-card:hover,a.issue-card:focus-visible{border-color:transparent;transform
 .calendar-day.is-today .event-access-badge{color:#f3d9c4}
 
 /* ---------- Worth Knowing Today (current-week daily slots) ---------- */
-.daily-slots{list-style:none;padding:0;margin:0;display:grid;gap:1px;background:var(--line);
-  border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
-.daily-slot{background:var(--paper);padding:24px 26px}
-.daily-slot-kind{display:inline-block;font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;
-  font-weight:800;color:var(--coral-deep);margin-bottom:8px}
-.daily-slot h3{margin:0 0 8px;font-size:1.24rem;color:var(--navy)}
-.daily-slot p{margin:0 0 12px;color:var(--ink-soft);max-width:70ch;font-size:.95rem}
+.daily-slots{list-style:none;padding:0;margin:0;display:grid;gap:0;
+  border-top:var(--rule-strong)}
+.daily-slot{background:transparent;padding:26px 0;border-bottom:1px solid var(--hairline);
+  display:grid;grid-template-columns:150px 1fr;gap:8px 34px;align-items:start}
+.daily-slot:last-child{border-bottom:0}
+@media(max-width:760px){.daily-slot{grid-template-columns:1fr;gap:6px;padding:22px 0}}
+.daily-slot-kind{display:block;font-size:var(--fs-eyebrow);text-transform:uppercase;letter-spacing:.14em;
+  font-weight:800;color:var(--coral-deep);padding-top:5px;line-height:1.4}
+.daily-slot h3{margin:0 0 10px;font-size:1.34rem;line-height:1.18;letter-spacing:-.02em;color:var(--navy)}
+.daily-slot p{margin:0 0 12px;color:var(--ink-soft);max-width:68ch;font-size:1rem;line-height:1.62}
+.daily-slot-body{grid-column:2}
+@media(max-width:760px){.daily-slot-body{grid-column:1}}
 .daily-slot .link-arrow{font-size:.84rem}
 @media(max-width:640px){.daily-slot{padding:20px 18px}}
+
+
+/* ==========================================================================
+   Editorial primitives — 2026-08-13 publication overhaul
+   ========================================================================== */
+
+/* Masthead strip: issue + date context, like a magazine folio line. */
+.issue-strip{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;
+  padding:11px 0;border-bottom:1px solid var(--hairline);background:var(--paper-warm);
+  font-size:var(--fs-meta);letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.issue-strip .issue-strip-mark{color:var(--coral-deep)}
+.issue-strip a{color:var(--navy);border-bottom:1px solid var(--hairline)}
+.issue-strip a:hover{border-bottom-color:var(--coral-deep);color:var(--coral-deep)}
+@media(max-width:640px){.issue-strip{font-size:.66rem;gap:6px 14px}}
+
+/* Editorial metadata line used across cards and articles. */
+.ed-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;
+  font-size:var(--fs-meta);letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.ed-meta .sep{opacity:.45}
+.section.bg-ink .ed-meta{color:rgba(255,255,255,.72)}
+
+/* Standfirst — the deck beneath a major headline. */
+.standfirst{font-family:var(--serif);font-size:clamp(1.15rem,1.7vw,1.42rem);line-height:1.45;
+  color:var(--ink-soft);max-width:56ch;font-weight:400}
+
+/* Editorial pull rule for dividing major page movements. */
+.movement-rule{border:0;border-top:var(--rule-strong);margin:0;opacity:.9}
+
+/* Text link that reads as editorial, not UI. */
+.ed-link{font-weight:800;font-size:var(--fs-meta);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--coral-deep);display:inline-flex;align-items:center;gap:8px;
+  border-bottom:2px solid transparent;padding-bottom:3px;transition:border-color .2s,color .2s}
+.ed-link:hover{color:var(--coral);border-bottom-color:var(--coral)}
+.section.bg-ink .ed-link{color:#f3d9c4}
+.section.bg-ink .ed-link:hover{color:#fff;border-bottom-color:#fff}
+
+/* Consistent, visible keyboard focus across every interactive editorial surface. */
+a:focus-visible,button:focus-visible,.story-card:focus-visible,.guide-hub-card:focus-visible,
+.dept-panel:focus-visible,.edit-card:focus-visible,.flagship:focus-visible,.issue-card:focus-visible{
+  outline:3px solid var(--coral-deep);outline-offset:3px;border-radius:4px}
+.section.bg-ink a:focus-visible,.section.bg-ink button:focus-visible{outline-color:#f3d9c4}
+
+
+/* ---------- Hidden Gems: a recognisable DBF franchise ---------- */
+.gem-feature .gem-copy .kicker{color:var(--coral-deep)}
+.gem-copy h2{font-size:clamp(1.8rem,2.8vw,2.5rem);line-height:1.06;letter-spacing:-.026em}
+.gem-copy .signoff{margin-top:26px;font-family:var(--serif);font-style:italic;color:var(--ink-soft);
+  padding-top:18px;border-top:1px solid var(--hairline);max-width:52ch}
+/* Franchise mark — the same badge wherever a gem appears. */
+.gem-badge{display:inline-flex;align-items:center;gap:9px;font-size:var(--fs-eyebrow);font-weight:800;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--coral-deep);
+  padding:7px 14px;border:1.5px solid currentColor;border-radius:999px;margin-bottom:16px}
+.section.bg-ink .gem-badge{color:#f3d9c4}
+
+/* ---------- Past issues: masthead-style rows ---------- */
+.issue-card{border-radius:var(--radius-sm);border-color:var(--hairline)}
+.issue-card h3{font-size:1.2rem;letter-spacing:-.018em}
+.issue-badge{font-size:var(--fs-eyebrow);letter-spacing:.13em}
+
+/* ---------- Community: honest, structured, ready for real submissions ---------- */
+.community-cta{border-radius:var(--radius-lg)!important;border:1px dashed var(--line-strong)!important;
+  background:var(--paper-warm)}
+.community-cta .kicker{justify-content:center}
+
+/* ---------- Commerce: museum-shop restraint ---------- */
+.product-card .product-art{border-radius:var(--radius-md);overflow:hidden;background:var(--paper-deep)}
+.product-card .product-art img{transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.product-card:hover .product-art img{transform:scale(1.04)}
+.product-card h4{font-size:1.02rem;line-height:1.24;letter-spacing:-.012em;margin:0 0 5px}
+.product-card .store-tag{font-size:var(--fs-eyebrow);letter-spacing:.13em;color:var(--muted)}
+.product-card .price-line{font-size:.86rem;font-weight:700;color:var(--ink-soft)}
+@media(prefers-reduced-motion:reduce){
+  .product-card .product-art img,.story-card .story-art img{transition:none}
+}
+
+/* ---------- Footer: publication colophon ---------- */
+.footer{padding:calc(var(--space-section) * .8) 0 34px}
+.footer-col h5{font-size:var(--fs-eyebrow);letter-spacing:.18em;color:rgba(255,255,255,.6)}
+.footer-col a{font-size:.9rem;transition:color .18s}
+.footer-about p{font-size:.9rem;line-height:1.7}
+.footer-bottom{font-size:.76rem;letter-spacing:.04em}
+
+
+/* ---------- Article surfaces: worthy of saving and citing ---------- */
+.page-hero{padding:clamp(56px,6vw,92px) 0 clamp(34px,3.5vw,52px);border-bottom:var(--rule-strong)}
+.page-hero h1{max-width:20ch}
+.page-hero .lede{margin-top:6px}
+.breadcrumbs{font-size:var(--fs-meta);letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+
+.article-meta{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:var(--fs-meta);letter-spacing:.08em;
+  text-transform:uppercase;font-weight:700;color:var(--muted);
+  padding:14px 0;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);margin-bottom:34px}
+
+.article h2{margin-top:2.4rem;font-size:clamp(1.5rem,2.1vw,1.95rem);letter-spacing:-.02em}
+.article h3{margin-top:1.9rem}
+.article .pull-quote{font-family:var(--serif);font-style:italic;font-size:clamp(1.28rem,2vw,1.62rem);
+  line-height:1.34;color:var(--navy);border-left:3px solid var(--coral);padding:4px 0 4px 28px;
+  margin:2.4rem 0;max-width:44ch}
+.article .eq-media{border-radius:var(--radius-md)}
+.article figcaption,.article .img-caption{font-size:.84rem;color:var(--muted);margin-top:10px;
+  padding-left:14px;border-left:2px solid var(--hairline);line-height:1.5}
+
+.side-note{border-radius:var(--radius-md);background:var(--paper-warm);border-color:var(--hairline)}
+.side-note h4{font-size:var(--fs-eyebrow);letter-spacing:.16em;text-transform:uppercase;color:var(--coral-deep)}
+.side-note li{font-size:.9rem;line-height:1.5}
+
+/* Source/provenance notes must read as citations, not fine print. */
+.guide-source-list{padding-left:0;list-style:none}
+.guide-source-list li{padding:9px 0;border-top:1px solid var(--hairline);font-size:.9rem}
+.guide-source-list li:first-child{border-top:0}
+.guide-source-list a{border-bottom:1px solid var(--hairline)}
+.guide-source-list a:hover{border-bottom-color:var(--coral-deep);color:var(--coral-deep)}
+
+/* Archive filter pills */
+.archive-filter{font-size:var(--fs-meta);letter-spacing:.08em;text-transform:uppercase;
+  border-color:var(--hairline);transition:.18s background,.18s border-color,.18s color}
+.archive-filter:hover{border-color:var(--navy);color:var(--navy)}
+
+/* ==========================================================================
+   PHASE 2 — Front-page art direction
+   A composed magazine front page, not a website hero.
+   ========================================================================== */
+
+/* ---- Publication nameplate (homepage only; sticky nav stays separate) ---- */
+.nameplate{background:var(--paper);border-bottom:1px solid var(--hairline);
+  padding:clamp(26px,3.4vw,46px) 0 clamp(18px,2vw,26px);text-align:center}
+.nameplate-title{font-family:var(--serif);font-weight:600;color:var(--navy);
+  font-size:clamp(2.5rem,7.4vw,5.6rem);line-height:.9;letter-spacing:-.045em;margin:0;
+  text-transform:none}
+.nameplate-rule{display:flex;align-items:center;gap:18px;margin:clamp(14px,1.6vw,20px) 0 0}
+.nameplate-rule:before,.nameplate-rule:after{content:"";flex:1;min-width:14px;height:2px;
+  background:var(--navy);opacity:.85}
+/* Must be allowed to shrink and wrap — nowrap pushed this past the viewport at
+   tablet width and produced horizontal overflow. */
+.nameplate-tag{font-size:var(--fs-eyebrow);letter-spacing:.34em;text-transform:uppercase;
+  font-weight:700;color:var(--muted);min-width:0;text-align:center}
+@media(max-width:1080px){.nameplate-tag{letter-spacing:.22em}}
+@media(max-width:760px){
+  .nameplate-rule{gap:12px}
+  .nameplate-tag{letter-spacing:.14em;font-size:.58rem;line-height:1.5}
+}
+
+/* ---- Front page: asymmetric cover + secondary stack ---- */
+.frontpage{display:grid;grid-template-columns:1.62fr 1fr;gap:0;align-items:stretch}
+.frontpage > * + *{border-left:1px solid var(--hairline)}
+
+/* Cover story */
+.cover-story{display:block;padding:clamp(26px,2.6vw,40px) clamp(28px,3vw,46px) clamp(30px,3vw,44px) 0}
+.cover-art{position:relative;overflow:hidden;border-radius:var(--radius-sm);
+  aspect-ratio:16/10;background:var(--paper-deep);margin-bottom:clamp(20px,2vw,28px)}
+.cover-art img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.6,.2,1)}
+.cover-story:hover .cover-art img{transform:scale(1.03)}
+.cover-art:after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(9,20,25,.1),transparent 34%);pointer-events:none}
+.cover-flag{position:absolute;top:16px;left:16px;z-index:2;background:var(--coral);color:#fff;
+  font-size:var(--fs-eyebrow);font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  padding:8px 15px;border-radius:2px}
+.cover-label{font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);display:block;margin-bottom:14px}
+.cover-headline{font-family:var(--serif);font-weight:500;color:var(--navy);
+  font-size:clamp(2.3rem,4.6vw,4.1rem);line-height:.98;letter-spacing:-.035em;margin:0 0 .38em;
+  max-width:17ch;transition:color .2s}
+.cover-story:hover .cover-headline{color:var(--coral-deep)}
+.cover-dek{font-family:var(--serif);font-size:clamp(1.1rem,1.5vw,1.34rem);line-height:1.44;
+  color:var(--ink-soft);max-width:46ch;margin:0 0 20px;font-weight:400}
+.cover-byline{font-size:var(--fs-meta);letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center}
+.cover-byline .sep{opacity:.4}
+
+/* Secondary stack */
+.cover-secondaries{padding:clamp(26px,2.6vw,40px) 0 clamp(30px,3vw,44px) clamp(28px,3vw,46px);
+  display:flex;flex-direction:column}
+.stack-head{font-size:var(--fs-eyebrow);letter-spacing:.2em;text-transform:uppercase;font-weight:800;
+  color:var(--navy);padding-bottom:12px;border-bottom:var(--rule-strong);margin-bottom:4px}
+.stack-item{display:grid;grid-template-columns:1fr 92px;gap:18px;align-items:start;
+  padding:20px 0;border-bottom:1px solid var(--hairline)}
+.stack-item:last-of-type{border-bottom:0}
+.stack-item .stack-copy{min-width:0}
+.stack-item .stack-label{font-size:var(--fs-eyebrow);letter-spacing:.15em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);display:block;margin-bottom:7px}
+.stack-item h3{font-family:var(--serif);font-size:clamp(1.06rem,1.35vw,1.24rem);line-height:1.16;
+  letter-spacing:-.018em;margin:0 0 6px;color:var(--navy);transition:color .18s}
+.stack-item:hover h3{color:var(--coral-deep)}
+.stack-item p{font-size:.88rem;line-height:1.5;color:var(--muted);margin:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.stack-thumb{width:92px;height:92px;border-radius:2px;overflow:hidden;background:var(--paper-deep)}
+.stack-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.stack-item:hover .stack-thumb img{transform:scale(1.06)}
+.stack-more{margin-top:auto;padding-top:22px}
+
+@media(max-width:980px){
+  .frontpage{grid-template-columns:1fr}
+  .frontpage > * + *{border-left:0;border-top:1px solid var(--hairline)}
+  .cover-story{padding:clamp(22px,3vw,32px) 0}
+  .cover-secondaries{padding:clamp(22px,3vw,32px) 0}
+  .cover-headline{max-width:20ch}
+}
+@media(max-width:520px){
+  .stack-item{grid-template-columns:1fr 72px;gap:14px}
+  .stack-thumb{width:72px;height:72px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cover-art img,.stack-thumb img{transition:none}
+}
+
+/* ==========================================================================
+   PHASE 2B — PUBLICATION LEGITIMACY
+   Strips the "polished component" layer: rounded cards, floating panels,
+   pill buttons, decorative shadows, hover lifts. Structure now comes from
+   rules, columns, alignment, scale and whitespace — the way an edited page
+   is built rather than an assembled one.
+   ========================================================================== */
+
+/* ---- 1. De-round. Print has corners, not capsules. ---- */
+:root{ --radius-lg:0px; --radius-md:0px; --radius-sm:0px; }
+.guide-hub-card,.edit-card,.dept-panel,.flagship,.issue-card,.homes-panel,
+.gem-feature,.product-art,.story-art,.cover-art,.stack-thumb,.guide-facts-strip,
+.calendar-strip,.watch-media,.insta-embed-frame,.eq-media,.side-note,
+.community-card,.town-tile,.daily-slots,.community-cta,.guide-tool,.guide-callout{
+  border-radius:0!important}
+
+/* ---- 2. De-float. Remove decorative elevation and hover lift. ---- */
+.guide-hub-card,.edit-card,.dept-panel,.flagship,.issue-card,.homes-panel,
+.gem-feature,.watch-media,.insta-embed-frame{box-shadow:none!important}
+.guide-hub-card:hover,.edit-card:hover,.dept-panel:hover,.flagship:hover,
+a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
+.dept-panel:focus-visible,.flagship:focus-visible{
+  transform:none!important;box-shadow:none!important}
+
+/* ---- 3. Cards become ruled editorial units, not containers. ---- */
+.guide-hub-card,.edit-card{border:0;border-top:2px solid var(--navy);background:transparent;
+  padding-top:16px;transition:none}
+.guide-hub-card .guide-hub-body,.edit-card .edit-body{padding:16px 0 0}
+.guide-hub-card:hover h3,.edit-card:hover h3{color:var(--coral-deep)}
+.guide-hub-grid,.edit-grid{gap:34px}
+
+/* ---- 4. Pills → editorial labels. ---- */
+.gem-badge,.issue-badge,.archive-filter,.guide-hub-badge{border-radius:0!important}
+.gem-badge{border:0;border-left:3px solid currentColor;padding:2px 0 2px 12px;
+  letter-spacing:.2em;margin-bottom:18px}
+.guide-hub-badge{background:transparent;color:var(--paper);position:static;padding:0;
+  font-size:var(--fs-eyebrow);letter-spacing:.18em;display:none}
+.guide-hub-card .guide-hub-body .kicker{display:inline-flex}
+.archive-filter{border:0;border-bottom:2px solid transparent;background:transparent;
+  padding:6px 0;margin-right:26px;color:var(--muted)}
+.archive-filter:hover{border-bottom-color:var(--hairline);background:transparent}
+.archive-filter.is-active{background:transparent;color:var(--navy);border-bottom-color:var(--coral-deep)}
+.issue-badge{background:transparent!important;border:0!important;padding:0;
+  color:var(--coral-deep);letter-spacing:.18em}
+/* Dropping the badge background left `.issue-badge.is-current`'s white text
+   (two classes, so it outranks the rule above) invisible on paper. */
+.issue-badge.is-current{color:var(--coral-deep)}
+.issue-badge.is-archived{color:var(--muted)}
+
+/* ---- 5. Buttons only for real actions. Reading uses text links. ---- */
+.btn{border-radius:0;padding:14px 26px;letter-spacing:.1em;text-transform:uppercase;
+  font-size:var(--fs-meta);font-weight:800}
+.btn:hover{transform:none}
+.btn-coral:hover{box-shadow:none}
+.btn-line{border-width:1.5px}
+
+/* ---- 6. Issue cards → archive ledger rows. ---- */
+.issue-card{border:0;border-bottom:1px solid var(--hairline);padding:20px 0;
+  grid-template-columns:130px 1fr auto;gap:26px}
+.issue-list{gap:0;margin-bottom:38px}
+
+/* ---- 7. Section surfaces: fewer tinted blocks, more page. ---- */
+.section.bg-deep{background:transparent;border-top:1px solid var(--hairline)}
+.section + .section:not(.bg-ink){border-top:1px solid var(--hairline)}
+
+/* ---- 8. Editorial credit line — publications say who made the picture. ---- */
+.credit{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  color:var(--muted);margin-top:9px;display:block}
+.credit .credit-caption{text-transform:none;letter-spacing:0;font-weight:400;
+  font-size:.84rem;color:var(--ink-soft);display:block;margin-bottom:4px;line-height:1.45}
+
+/* ---- 9. Editorial index — dense list, minimal imagery. ---- */
+/* The column track lives on the list, not the row, so every title starts at the
+   same x-position the way a printed index does. Rows opt into the parent's
+   tracks via subgrid while staying their own box for rules and hover. */
+.ed-index{border-top:2px solid var(--navy);display:grid;
+  grid-template-columns:max-content 1fr;column-gap:26px}
+.ed-index a{display:grid;grid-column:1/-1;grid-template-columns:subgrid;
+  align-items:baseline;padding:15px 0;border-bottom:1px solid var(--hairline)}
+.ed-index a:last-child{border-bottom:0}
+.ed-index .idx-label{font-size:var(--fs-eyebrow);letter-spacing:.15em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);white-space:nowrap}
+.ed-index h4{font-family:var(--serif);font-size:1.08rem;font-weight:600;letter-spacing:-.015em;
+  line-height:1.24;margin:0;color:var(--navy)}
+.ed-index a:hover h4{color:var(--coral-deep)}
+@media(max-width:640px){
+  .ed-index{grid-template-columns:1fr}
+  .ed-index a{grid-template-columns:1fr;gap:5px}
+}
+
+/* ---- 10. Two-column editorial split for asymmetric sections. ---- */
+.ed-split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,4vw,60px);align-items:start}
+.ed-split-wide{grid-template-columns:1.55fr 1fr}
+@media(max-width:900px){.ed-split,.ed-split-wide{grid-template-columns:1fr;gap:34px}}
+
+/* ---- Masthead: publication identity separated from navigation ---- */
+.nameplate{border-bottom:0;padding:clamp(30px,3.6vw,52px) 0 0}
+.nameplate-title{font-size:clamp(2.6rem,8.6vw,6.6rem);letter-spacing:-.05em;font-weight:600}
+/* Rules above and below the nameplate frame it as a masthead plate. */
+.nameplate .container{border-top:3px solid var(--navy);border-bottom:1px solid var(--navy);
+  padding-top:clamp(16px,1.8vw,24px);padding-bottom:clamp(12px,1.4vw,18px)}
+.nameplate-rule{margin-top:clamp(10px,1.2vw,16px)}
+.nameplate-rule:before,.nameplate-rule:after{background:var(--hairline);height:1px}
+
+/* Folio bar sits tight under the plate as issue apparatus, not a banner. */
+.issue-strip{background:transparent;border-bottom:0;padding:12px 0 0;font-size:.7rem;letter-spacing:.16em}
+.issue-strip a{border-bottom:0;text-decoration:underline;text-underline-offset:3px;
+  text-decoration-thickness:1px;text-decoration-color:var(--hairline)}
+
+/* Navigation reads as apparatus beneath the plate, not as a site chrome bar. */
+.site-header{border-bottom:1px solid var(--navy)}
+.masthead{padding:13px 0}
+.brand .brand-name{font-size:1.32rem;letter-spacing:-.025em}
+.brand .brand-tag{font-size:.55rem;letter-spacing:.26em}
+.nav-links a{font-size:.72rem;letter-spacing:.12em}
+
+/* ---- Cover package: art-directed, with credit apparatus ---- */
+.cover-art{border-radius:0}
+.cover-flag{border-radius:0;top:0;left:0;padding:9px 16px;letter-spacing:.2em}
+.cover-headline{font-size:clamp(2.5rem,5.2vw,4.6rem);letter-spacing:-.042em;max-width:15ch}
+/* Below ~900px the font-size clamp bottoms out, so a 15ch measure collapses to
+   roughly half the column and strands the headline against dead space. Let it
+   use the full column once the type stops scaling. */
+@media(max-width:900px){ .cover-headline{max-width:none} }
+.cover-label{letter-spacing:.22em}
+/* An asset that needs better photography is flagged in the DOM for editors,
+   never visually degraded or hidden behind a gradient. */
+.cover-art[data-asset-upgrade]{outline:0}
+
+/* Secondary stack: clear tiering — secondary, supporting, brief. */
+.stack-item:first-of-type{grid-template-columns:1fr;gap:12px;padding-top:18px}
+.stack-item:first-of-type .stack-thumb{width:100%;height:auto;aspect-ratio:16/10;order:-1}
+.stack-item:first-of-type h3{font-size:clamp(1.24rem,1.7vw,1.5rem)}
+.stack-item:first-of-type p{-webkit-line-clamp:3}
+.stack-item:nth-of-type(n+3){grid-template-columns:1fr;gap:5px}
+.stack-item:nth-of-type(n+3) .stack-thumb{display:none}
+.stack-item:nth-of-type(n+3) p{display:none}
+.stack-item:nth-of-type(n+3) h3{font-size:1.02rem}
+
+/* Footer now carries 5 columns — let it breathe and wrap sensibly. */
+.footer-grid{grid-template-columns:1.4fr repeat(4,1fr);gap:34px}
+@media(max-width:1080px){.footer-grid{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:760px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+.footer-col a{margin:8px 0}
+
+/* ---- 10. Long-form is set like a magazine, not a blog post. ----
+   Serif body at a 62ch measure. `ch` on Inter runs wide (its zero is ~0.6em),
+   so the old 68ch resolved to ~694px — about 95 characters a line, well past
+   comfortable reading. Serif also separates reported long-form from the sans
+   used for listings, decks and meta. */
+.article p,.article li{font-family:var(--serif);font-size:1.12rem;line-height:1.66;
+  max-width:62ch;color:var(--ink)}
+.article p+p{margin-top:1.15rem}
+/* The opening paragraph carries a little extra weight, as a lede should. */
+.article > p:first-of-type{font-size:1.24rem;line-height:1.56}
+/* Section heads stay sans so they read as structure against the serif body. */
+.article h2,.article h3{font-family:var(--sans);font-weight:800;letter-spacing:-.01em}
+.article h2{font-size:1.32rem;text-transform:uppercase;letter-spacing:.06em;
+  padding-bottom:9px;border-bottom:1px solid var(--hairline);max-width:62ch}
+.article h3{font-size:1.06rem}
+
+/* ================================================================
+   ITERATION 1 — the first desktop viewport.
+   The cover headline was landing 76px BELOW a 900px fold: readers saw
+   a photograph but not the story. Tighten the masthead plate and build
+   the lead as a real two-column cover package (art | type) so the
+   headline, dek and byline all sit above the fold.
+   ================================================================ */
+
+/* --- Masthead plate: identity, compressed. --- */
+.nameplate{padding:clamp(14px,1.4vw,20px) 0 0}
+.nameplate .container{padding-top:clamp(10px,1vw,14px);padding-bottom:clamp(8px,.9vw,12px)}
+.nameplate-title{font-size:clamp(2.2rem,5.4vw,4.05rem);letter-spacing:-.045em;line-height:.92}
+.nameplate-rule{margin-top:clamp(6px,.7vw,9px)}
+/* The small header wordmark is redundant while the plate is on screen. */
+.site-header .brand-tag{display:none}
+@media(min-width:1081px){ .site-header .brand-name{font-size:1rem} }
+
+/* --- Lead package: art and type share the fold. --- */
+@media(min-width:1081px){
+  .frontpage{grid-template-columns:minmax(0,2.05fr) minmax(0,.95fr)}
+  .cover-story{
+    display:grid;
+    grid-template-columns:minmax(0,1.22fr) minmax(0,.78fr);
+    column-gap:clamp(26px,2.6vw,42px);
+    align-content:start;
+    grid-auto-rows:min-content;
+    padding:clamp(18px,1.8vw,26px) clamp(24px,2.6vw,40px) clamp(24px,2.4vw,36px) 0;
+  }
+  /* The lead asset is a wide aerial. Cropping it tall threw away its strongest
+     quality, so it stays landscape and carries the left column. */
+  .cover-art{aspect-ratio:3/2;margin-bottom:0;grid-row:1/span 12;grid-column:1}
+  .cover-story > :not(.cover-art){grid-column:2}
+  .cover-headline{font-size:clamp(2.05rem,2.72vw,3.05rem);max-width:none;margin:.1em 0 .26em;line-height:1.02}
+  .cover-dek{font-size:clamp(.99rem,1.04vw,1.11rem);line-height:1.48;max-width:34ch;margin:0}
+  .cover-label{margin-top:2px}
+  /* Credit belongs to the picture, so it sits under the picture. */
+  .cover-story .credit{grid-column:1;grid-row:13;margin-top:11px}
+  .cover-byline{margin-top:clamp(14px,1.5vw,20px);padding-top:12px;
+    border-top:1px solid var(--hairline)}
+}
+
+/* --- Secondary rail: tiered, not a stack of equals. --- */
+@media(min-width:1081px){
+  .cover-secondaries{padding:clamp(20px,2vw,30px) 0 clamp(24px,2.4vw,36px) clamp(24px,2.6vw,40px)}
+  .stack-head{margin-bottom:10px}
+  .stack-item:first-of-type .stack-thumb{aspect-ratio:3/2}
+  .stack-item{padding-top:13px}
+  .stack-item h3,.stack-item h4{font-size:1.02rem;line-height:1.24}
+  .stack-item:first-of-type h3,.stack-item:first-of-type h4{font-size:1.2rem}
+}
+
+/* ================================================================
+   ITERATION 2 — give the cover package authority.
+   The lead sat inside the standard 1240 text container and stopped
+   163px short of the fold. A cover should command more width than
+   body copy, so the masthead plate and lead package widen on large
+   screens and the headline scales with them.
+   ================================================================ */
+@media(min-width:1360px){
+  .nameplate .container,
+  #front-page > .container{max-width:1340px}
+  .frontpage{grid-template-columns:minmax(0,2.28fr) minmax(0,.78fr)}
+  .cover-story{grid-template-columns:minmax(0,1.28fr) minmax(0,.88fr)}
+  .cover-headline{font-size:clamp(2.6rem,3.3vw,3.5rem)}
+  .cover-dek{font-size:1.13rem;max-width:33ch}
+  .nameplate-title{font-size:clamp(3rem,5.1vw,4.35rem)}
+}
+/* Folio reads as issue apparatus: quiet, wide-tracked, hairline-ruled. */
+.issue-folio{font-size:.68rem}
+.nameplate-tag{font-size:.6rem;letter-spacing:.28em;color:var(--muted)}
+
+/* The cover label is a section flag, not a UI chip. */
+.cover-art .cover-flag,.cover-story .cover-flag{letter-spacing:.2em}
+
+/* ================================================================
+   ITERATION 3 — a type-led cover, because of the asset, not despite it.
+   The current cover story's only image is 387x258. Filling a 500px+
+   column with it upscaled ~1.3x and looked soft. A magazine solves this
+   by leading with type: the headline carries the page and the picture
+   becomes a supporting plate at honest size. Replace the asset (see
+   automation/PHOTOGRAPHY_REQUIREMENTS.md) and this scales straight up.
+   ================================================================ */
+@media(min-width:1081px){
+  .cover-story{
+    grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+    column-gap:clamp(30px,3vw,48px);
+  }
+  /* Type takes the left column and leads. */
+  .cover-story > :not(.cover-art){grid-column:1}
+  .cover-art{
+    grid-column:2;grid-row:1/span 12;
+    aspect-ratio:auto;height:auto;
+    align-self:start;
+  }
+  .cover-art img{height:auto;aspect-ratio:3/2}
+  /* Never displayed larger than it really is. */
+  .cover-story .cover-art{max-width:387px;margin-left:auto}
+  .cover-story .credit{grid-column:2;grid-row:13;max-width:387px;margin-left:auto;
+    margin-top:10px;text-align:left}
+  .cover-label{margin-top:4px}
+  .cover-headline{margin:.06em 0 .3em;line-height:.99;letter-spacing:-.032em}
+  .cover-dek{max-width:40ch}
+  .cover-byline{margin-top:clamp(16px,1.7vw,22px)}
+}
+@media(min-width:1360px){
+  .cover-story{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)}
+  .cover-headline{font-size:clamp(3.1rem,4.05vw,4.5rem)}
+  .cover-dek{font-size:1.2rem;line-height:1.44;max-width:42ch}
+}
+
+/* Caption must belong to its picture. Explicit placement puts art in rows 1-3
+   and its caption in row 4, directly beneath, instead of letting auto-flow
+   strand it 85px lower. */
+@media(min-width:1081px){
+  .cover-art{grid-column:2;grid-row:1/span 3}
+  .cover-story .credit{grid-column:2;grid-row:4;align-self:start}
+  .cover-label{grid-column:1;grid-row:1}
+  .cover-headline{grid-column:1;grid-row:2}
+  .cover-dek{grid-column:1;grid-row:3}
+  .cover-byline{grid-column:1;grid-row:4;align-self:start}
+}
+
+/* ================================================================
+   ITERATION 4 — the first scroll.
+   The cover package left a tall empty band before the next section,
+   right where a reader decides whether to keep going. Close the gap and
+   make the transition read as a deliberate editorial statement line
+   rather than floating text.
+   ================================================================ */
+@media(min-width:1081px){
+  #front-page{padding-bottom:0}
+  .frontpage{align-items:start}
+  /* The rail is the tallest element; let it set the height, not empty space. */
+  .cover-secondaries{padding-bottom:clamp(18px,1.8vw,26px)}
+  .cover-story{padding-bottom:clamp(18px,1.8vw,26px)}
+
+  #brand-statement{padding-top:0}
+  #brand-statement > .container{border-top:1px solid var(--navy);
+    padding-top:clamp(16px,1.6vw,22px);padding-bottom:clamp(20px,2vw,28px);
+    max-width:1340px}
+  /* Only the statement itself, never the small-caps imprint line beneath it. */
+  #brand-statement p:first-of-type{font-family:var(--serif);
+    font-size:clamp(1.12rem,1.35vw,1.44rem);line-height:1.42;max-width:56ch;
+    color:var(--navy)}
+}
+
+/* ================================================================
+   ITERATION 5 — mobile masthead.
+   The plate was eating 600px of an 812px screen before the cover story
+   appeared: folio set at content size, nameplate on two lines, tagline
+   wrapping to three. Compress the apparatus so the story arrives fast,
+   while keeping the identity, the folio and the cover hierarchy intact.
+   ================================================================ */
+@media(max-width:640px){
+  /* Folio is apparatus: small, quiet, on one or two tight lines. */
+  /* The folio wrapper is .issue-strip, not .issue-folio — that is the mount id. */
+  .issue-strip{padding:6px 0}
+  .issue-strip-inner{gap:1px 12px!important;row-gap:1px!important}
+  .issue-strip *{font-size:.54rem!important;letter-spacing:.1em!important;
+    line-height:1.7!important}
+
+  .nameplate{padding:8px 0 0}
+  .nameplate .container{border-top-width:2px;padding-top:9px;padding-bottom:8px}
+  .nameplate-title{font-size:clamp(1.72rem,8.6vw,2.35rem);line-height:.95;
+    letter-spacing:-.035em}
+  .nameplate-tag{font-size:.5rem;letter-spacing:.13em;line-height:1.5}
+  .nameplate-rule{margin-top:7px}
+  .nameplate-rule:before,.nameplate-rule:after{display:none}
+
+  /* Cover package: art, then type, tight. */
+  #front-page{padding-top:16px}
+  .cover-story{padding:0 0 18px}
+  .cover-art{margin-bottom:10px}
+  .cover-flag,.cover-story .cover-flag{font-size:.56rem;letter-spacing:.14em;
+    padding:6px 10px}
+  .cover-headline{font-size:clamp(1.85rem,8.4vw,2.4rem);line-height:1.03;
+    letter-spacing:-.03em;margin:.16em 0 .28em}
+  .cover-dek{font-size:1rem;line-height:1.46}
+  .cover-story .credit{margin-top:8px}
+  .cover-story .credit .credit-caption{font-size:.8rem;line-height:1.4}
+  .cover-byline{font-size:.62rem;letter-spacing:.1em;margin-top:12px;
+    padding-top:10px;border-top:1px solid var(--hairline)}
+  #brand-statement p:first-of-type{font-size:1.02rem}
+}
+
+/* ================================================================
+   EDITORIAL FRANCHISES
+   A franchise is a recurring media product, not a section heading. It
+   gets a nameplate of its own, a standing line, and a sponsor slot that
+   is invisible until a real sponsor exists.
+   ================================================================ */
+.franchise-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;
+  gap:8px 26px;border-top:2px solid var(--navy);padding-top:14px;margin-bottom:20px}
+.franchise-id{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.franchise-name{font-family:var(--serif);font-size:clamp(1.5rem,2.1vw,2.05rem);
+  font-weight:600;letter-spacing:-.025em;color:var(--navy);line-height:1}
+.franchise-line{font-size:.82rem;color:var(--muted);letter-spacing:.01em}
+.franchise-foot{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:20px;
+  border-top:1px solid var(--hairline);padding-top:14px}
+
+/* Sponsor slot: empty by default, and empty draws nothing at all. */
+.franchise-sponsor:empty{display:none}
+.franchise-sponsor{display:flex;align-items:baseline;gap:8px}
+.sponsor-label{font-size:var(--fs-eyebrow);letter-spacing:.16em;text-transform:uppercase;
+  font-weight:700;color:var(--muted)}
+.sponsor-name{font-family:var(--serif);font-size:1.02rem;color:var(--navy);
+  border-bottom:1px solid var(--coral-deep);text-decoration:none}
+
+@media(max-width:640px){
+  .franchise-head{margin-bottom:15px}
+  .franchise-line{width:100%;font-size:.78rem}
+}
+
+/* ================================================================
+   ADVERTISE — the business side of the same magazine.
+   Ruled columns and editorial type, no pricing cards or CTA blocks.
+   ================================================================ */
+.ad-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(26px,3vw,46px)}
+.ad-cols.ad-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ad-cols > div{border-top:2px solid var(--navy);padding-top:15px}
+.section.bg-ink .ad-cols > div,.section.bg-deep .ad-cols > div{border-top-color:rgba(255,255,255,.5)}
+.ad-cols h3{font-family:var(--serif);font-size:1.2rem;font-weight:600;letter-spacing:-.015em;
+  margin:0 0 8px;color:var(--navy)}
+.section.bg-ink .ad-cols h3{color:#fff}
+.ad-cols p{font-size:.95rem;line-height:1.62;margin:0 0 10px;color:var(--ink-soft)}
+.section.bg-ink .ad-cols p{color:rgba(255,255,255,.84)}
+
+.ad-incl{border-top:1px solid var(--hairline);margin-top:20px;padding-top:6px}
+.ad-incl ul{list-style:none;margin:0;padding:0;
+  columns:2;column-gap:clamp(26px,3vw,48px)}
+.ad-incl li{break-inside:avoid;padding:11px 0 11px 20px;position:relative;
+  border-bottom:1px solid var(--hairline);font-size:.94rem;line-height:1.5}
+.ad-incl li:before{content:"";position:absolute;left:0;top:19px;width:9px;height:1px;
+  background:var(--coral-deep)}
+
+.ad-inv{display:grid;grid-template-columns:1fr;border-top:2px solid rgba(255,255,255,.5)}
+.ad-inv > div{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);
+  gap:4px 28px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.ad-inv-k{font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:#f3d9c4}
+.ad-inv > div > span:last-child{font-size:.95rem;line-height:1.55;color:rgba(255,255,255,.84)}
+
+.ad-cta{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:24px;
+  border-top:1px solid var(--hairline);padding-top:18px}
+.section.bg-deep .ad-cta,.section.bg-ink .ad-cta{border-top-color:rgba(255,255,255,.28)}
+
+@media(max-width:900px){
+  .ad-cols,.ad-cols.ad-cols-2{grid-template-columns:1fr;gap:22px 0}
+  .ad-incl ul{columns:1}
+  .ad-inv > div{grid-template-columns:1fr;gap:3px}
+}
+
+/* Print → PDF produces a usable leave-behind: no nav, no dark fills. */
+@media print{
+  .site-header,.footer,.issue-strip,.nameplate,.skip-link,.ad-cta{display:none!important}
+  .section,.section-tight{padding:14px 0!important;background:#fff!important;break-inside:avoid}
+  .section.bg-ink *,.section.bg-deep *{color:#111!important}
+  .ad-inv{border-top-color:#111}.ad-inv > div{border-bottom-color:#bbb}
+  .ad-inv-k{color:#7a2e1e!important}
+  a{text-decoration:none;color:#111!important}
+  .page-hero{padding-top:0!important}
+}
+/* The advertise headline must wrap on a phone; it is the longest H1 on the site. */
+@media(max-width:640px){
+  .page-hero h1{font-size:clamp(1.9rem,8.4vw,2.5rem);letter-spacing:-.03em;
+    overflow-wrap:break-word}
+}

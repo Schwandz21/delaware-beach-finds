@@ -1,0 +1,51 @@
+{
+  "_note": "DBF house editorial desks. These are transparent institutional bylines, not individual people. No desk here represents a named human reporter, and none may be presented as one. The About page discloses this. `type` must stay `house_desk` for every entry.",
+  "default": "dbf-editorial",
+  "desks": [
+    {
+      "id": "coast-nature",
+      "name": "DBF Coast & Nature Desk",
+      "type": "house_desk",
+      "beat": "Wildlife, ecology, marshes, dunes, weather, coastal systems, migration and conservation.",
+      "description": "Reporting on the Delaware coast as a living system — what moves through it, what shapes it, and what is changing.",
+      "categories": ["coast"],
+      "url": "stories/desk-coast-nature.html"
+    },
+    {
+      "id": "first-state-history",
+      "name": "First State History Desk",
+      "type": "house_desk",
+      "beat": "Delaware history: Lenape homeland and Native history, colonial settlement, the Revolution, surveying and boundaries, political history, the Underground Railroad and war history.",
+      "description": "Long-form Delaware history, checked against primary and institutional sources.",
+      "categories": ["history"],
+      "url": "stories/desk-first-state-history.html"
+    },
+    {
+      "id": "delaware-life",
+      "name": "Delaware Life Desk",
+      "type": "house_desk",
+      "beat": "Homes, architecture, objects, traditions, culture, beach-house life and design.",
+      "description": "How Delaware actually lives — the houses, the objects, and the habits that come with them.",
+      "categories": ["people"],
+      "url": "stories/desk-delaware-life.html"
+    },
+    {
+      "id": "field-notes",
+      "name": "Field Notes",
+      "type": "house_desk",
+      "beat": "Shorter observational and local pieces, practical local knowledge, scene-setting and walks.",
+      "description": "The things we would actually tell a friend before they go.",
+      "categories": ["field-guide"],
+      "url": "stories/desk-field-notes.html"
+    },
+    {
+      "id": "dbf-editorial",
+      "name": "Delaware Beach Finds Editorial",
+      "type": "house_desk",
+      "beat": "Institutional stories, explainers, corrections, editor's notes and publication-wide material.",
+      "description": "The publication speaking as itself.",
+      "categories": ["community"],
+      "url": "stories/desk-dbf-editorial.html"
+    }
+  ]
+}

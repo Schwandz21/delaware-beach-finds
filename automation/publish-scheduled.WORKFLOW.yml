@@ -1,0 +1,96 @@
+# Delaware Beach Finds — scheduled publisher
+#
+# PASTE-READY. Destination: .github/workflows/publish-scheduled.yml
+#
+# This file cannot be written from the build machine because the configured
+# token lacks the `workflow` OAuth scope. Create it through the GitHub web UI.
+#
+# WHAT THIS DOES:    publishes stories a human already approved and scheduled.
+# WHAT IT CANNOT DO: approve, write, or invent anything.
+#
+# The gate lives in scripts/editorial_lib.py:is_due — status must be exactly
+# `scheduled`, `approvedAt` must exist, and `publishAt` must have arrived.
+# draft / review / approved-but-unscheduled / held / retired can never publish.
+# Tests cover every one of those cases, plus idempotence.
+
+name: Publish scheduled stories
+
+on:
+  schedule:
+    # Every hour on the hour. Cron is UTC; the publisher converts to
+    # America/New_York itself, so this stays correct across DST.
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report what would publish without writing anything'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  # Never let two publish runs race each other into the same commit.
+  group: dbf-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Validation first. If the editorial data is invalid, nothing publishes.
+      - name: Validate editorial data
+        run: python3 scripts/validate_editorial.py
+
+      - name: Report what is due
+        run: python3 scripts/publish_due.py --dry-run
+
+      # `id` matters: later steps read steps.publish.outputs.count to tell an
+      # idle hour from a real publication. Without that signal the test step
+      # regenerates data/content-index.json's `generatedAt` and the commit step
+      # pushes a timestamp-only commit EVERY HOUR, forever.
+      - name: Publish due stories
+        id: publish
+        if: ${{ inputs.dry_run != true }}
+        run: python3 scripts/publish_due.py
+
+      # Only runs when something actually published. Runs AFTER publication but
+      # BEFORE the commit, so a bad publication is never committed.
+      - name: Run full test suite
+        if: ${{ inputs.dry_run != true && steps.publish.outputs.count != '0' }}
+        run: bash scripts/run_tests.sh
+
+      - name: Commit publication output
+        if: ${{ inputs.dry_run != true && steps.publish.outputs.count != '0' }}
+        run: |
+          set -euo pipefail
+          echo "Published: ${{ steps.publish.outputs.published }}"
+          git config user.name  "dbf-publisher[bot]"
+          git config user.email "dbf-publisher[bot]@users.noreply.github.com"
+          # Deliberate staging: only the surfaces publication is allowed to touch.
+          git add data/stories.json data/issues data/content-index.json stories
+          if [ -z "$(git diff --cached --name-only)" ]; then
+            echo "No publication surfaces changed — nothing to commit."
+            exit 0
+          fi
+          git diff --cached --name-only
+          git commit -m "Publish scheduled stories: ${{ steps.publish.outputs.published }}"
+          # An editor may have pushed between checkout and now. Rebase rather
+          # than fail the run; the publisher is idempotent so a replay is safe.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Summary
+        if: ${{ always() }}
+        run: |
+          echo "### Delaware Beach Finds publisher" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "- published count: ${{ steps.publish.outputs.count || '0' }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- slugs: ${{ steps.publish.outputs.published || '(none)' }}" >> "$GITHUB_STEP_SUMMARY"
