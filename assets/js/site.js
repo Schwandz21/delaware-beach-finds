@@ -594,6 +594,12 @@ if(bylineEls.length){
     window.DBF_HOUSE_BYLINE = house;
     bylineEls.forEach(el=>{
       const explicit = el.getAttribute('data-byline');
+      // 'house'  -> swap in the configured house byline (one field, every page).
+      // 'desk'   -> the renderer already wrote the desk name from
+      //             data/authors.json; leave it alone. Overwriting it here
+      //             printed the literal word "desk" as the byline.
+      // anything else -> a legacy explicit name, used verbatim.
+      if(explicit === 'desk') return;
       el.textContent = explicit && explicit !== 'house' ? explicit : house;
     });
   }).catch(()=>{

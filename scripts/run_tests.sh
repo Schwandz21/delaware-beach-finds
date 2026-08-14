@@ -160,6 +160,12 @@ sys.exit(1 if bad else 0)
 PYEOF
 
 echo ""
+echo "=== Editorial operating system ==="
+check "editorial data validates (registry, calendar, desks)" python3 scripts/validate_editorial.py
+check "story lifecycle, scheduling, issues and idempotence" python3 scripts/test_editorial_os.py
+check "every published page matches its editorial source" python3 scripts/render_story.py --check
+
+echo ""
 echo "================================"
 echo "Passed: $PASS   Failed: $FAIL"
 [ "$FAIL" -eq 0 ] && exit 0 || exit 1

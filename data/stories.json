@@ -25,7 +25,32 @@
       "Conservation of Mispillion Harbor and tighter harvest limits have helped both species begin to recover after a steep decline."
     ],
     "access_level": "public",
-    "heroAlt": "Illustration of Delaware Bay at first light"
+    "heroAlt": "Delaware Bay at dawn",
+    "publishedAt": "2026-07-26",
+    "publishAt": "2026-07-26",
+    "approvedAt": "2026-07-26",
+    "issueId": "2026-W30",
+    "author": "coast-nature",
+    "coverStory": false,
+    "placement": "standard",
+    "seriesInstallment": null,
+    "relatedStories": [
+      {
+        "href": "category-coast.html",
+        "label": "More Delaware Coast stories"
+      }
+    ],
+    "seoTitle": "The Oldest Migration on the Bay | Delaware Beach Finds",
+    "seoDescription": "On a handful of nights each spring, timed to the moon, Delaware Bay hosts what wildlife agencies call the largest horseshoe crab spawning event on Earth — feeding a shorebird that flies here from the bottom of South America and cannot finish the trip without it.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/oldest-migration-on-the-bay.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "On a handful of nights each spring, timed to the moon, Delaware Bay hosts what wildlife agencies call the largest horseshoe crab spawning event on Earth — feeding a shorebird that flies here from the bottom of South America and cannot finish the trip without it.",
+    "seriesPage": false,
+    "heroImage": "bay-morning-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/bay-morning-1.svg",
+    "shopTheStory": false,
+    "metaTag": null
   },
   {
     "slug": "the-galloping-dune",
@@ -51,7 +76,32 @@
       "The Army added sand to hide a WWII bunker, raising the dune to its current height and stabilizing it; nearby, the Walking Dunes Trail is still actively migrating today."
     ],
     "access_level": "public",
-    "heroAlt": "Dune fence and beach grass at sunset near Cape Henlopen"
+    "heroAlt": "Dune fence and sand at sunset, Delaware coast",
+    "publishedAt": "2026-07-26",
+    "publishAt": "2026-07-26",
+    "approvedAt": "2026-07-26",
+    "issueId": "2026-W30",
+    "author": "coast-nature",
+    "coverStory": false,
+    "placement": "standard",
+    "seriesInstallment": null,
+    "relatedStories": [
+      {
+        "href": "category-coast.html",
+        "label": "More Delaware Coast stories"
+      }
+    ],
+    "seoTitle": "The Galloping Dune | Delaware Beach Finds",
+    "seoDescription": "Delaware's tallest sand dune buried a WWII bunker, swallowed a pine forest, and earned its nickname because it used to move. Nearby, part of the park still does.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-galloping-dune.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Delaware's tallest sand dune buried a WWII bunker, swallowed a pine forest, and earned its nickname because it used to move. Nearby, part of the park still does.",
+    "seriesPage": false,
+    "heroImage": "dune-fence-sunset-2.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-fence-sunset-2.jpg",
+    "shopTheStory": false,
+    "metaTag": null
   },
   {
     "slug": "where-the-marsh-is-going",
@@ -79,7 +129,32 @@
       "Rather than fighting the water, Delaware's Prime Hook restoration and DNREC's marsh migration program aim to let marshes move inland as seas rise."
     ],
     "access_level": "public",
-    "heroAlt": "Illustration of Delaware tidal wetlands at golden hour"
+    "heroAlt": "Salt marsh at golden hour",
+    "publishedAt": "2026-07-26",
+    "publishAt": "2026-07-26",
+    "approvedAt": "2026-07-26",
+    "issueId": "2026-W30",
+    "author": "coast-nature",
+    "coverStory": false,
+    "placement": "standard",
+    "seriesInstallment": null,
+    "relatedStories": [
+      {
+        "href": "category-coast.html",
+        "label": "More Delaware Coast stories"
+      }
+    ],
+    "seoTitle": "Where the Marsh Is Going | Delaware Beach Finds",
+    "seoDescription": "Nearly half of Delaware's wetlands lie between the tides, quietly filtering water, buffering storms, and raising nearly every fish on your plate. As seas rise, the state's plan isn't to hold the line — it's to let the marsh move.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/where-the-marsh-is-going.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Nearly half of Delaware's wetlands lie between the tides, quietly filtering water, buffering storms, and raising nearly every fish on your plate. As seas rise, the state's plan isn't to hold the line — it's to let the marsh move.",
+    "seriesPage": false,
+    "heroImage": "marsh-gold-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/marsh-gold-1.svg",
+    "shopTheStory": false,
+    "metaTag": null
   },
   {
     "slug": "towers-on-the-dunes",
@@ -92,7 +167,7 @@
     "featured": true,
     "category": "coast",
     "series": "delaware-at-war",
-    "seriesInstallment": 7,
+    "seriesInstallment": null,
     "seriesTotal": 8,
     "status": "published",
     "photoCredit": "@delawarebeachfinds",
@@ -108,11 +183,35 @@
       "Eleven of these towers still stand in Delaware, across Cape Henlopen, Delaware Seashore, and Fenwick Island state parks. Tower 3, at Delaware Seashore State Park, reopened to the public in 2023 with a rebuilt staircase. This publication does not repeat the widely circulated claim that Delaware is the only state with all of its original towers — the state's own published material doesn't make that claim, and we couldn't verify it independently."
     ],
     "access_level": "public",
-    "heroAlt": "Aerial view of the Cape Henlopen coastline where the fire-control towers stand"
+    "heroAlt": "Cape Henlopen, Delaware, seen from the air",
+    "publishedAt": "2026-07-25",
+    "publishAt": "2026-07-25",
+    "approvedAt": "2026-07-25",
+    "issueId": "2026-W30",
+    "author": "coast-nature",
+    "coverStory": true,
+    "placement": "cover",
+    "relatedStories": [
+      {
+        "href": "category-coast.html",
+        "label": "More Delaware Coast stories"
+      }
+    ],
+    "seoTitle": "The Towers on the Dunes | Delaware Beach Finds",
+    "seoDescription": "The concrete towers along Delaware's coast were WWII optical instruments for aiming coastal guns. How they worked, why eleven survive, and which one you can climb.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/towers-on-the-dunes.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Every summer thousands of people photograph the concrete towers along the Delaware coast without knowing what they are. They were optical instruments, they worked in pairs, and they were built to last about ten years.",
+    "seriesPage": false,
+    "heroImage": "cape-henlopen-aerial-1.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/cape-henlopen-aerial-1.jpg",
+    "shopTheStory": false,
+    "metaTag": "Delaware at War"
   },
   {
     "slug": "why-delaware-looks-like-that",
-    "kicker": "How Delaware Became Delaware",
+    "kicker": "How Delaware Became Delaware · Installment 6 of 9",
     "headline": "Why Delaware Looks Like That",
     "hook": "Delaware's northern boundary is a circular arc, unlike any other state line in the country. It exists because of a property dispute and a survey nobody could execute cleanly.",
     "scene": "dune-sunrise-1.svg",
@@ -136,11 +235,36 @@
       "In 1763 Charles Mason and Jeremiah Dixon surveyed the boundary with far better precision, but found the tangent point didn't match earlier surveys — so the North Line cut through the Circle instead of running clear of it. Their fix, the short Arc Line, added a reported thirteen acres to Delaware and left behind a second problem: a leftover triangular parcel called the Wedge.",
       "The Wedge sat in jurisdictional limbo for most of the nineteenth century. A joint commission awarded it to Delaware in 1889; Pennsylvania ratified in 1897; Delaware ratified in 1921; and Congress approved it the same year. Two hundred and forty years after the original 1681 grant, the shape of the state was finally settled — and many of Mason and Dixon's original boundary stones, including ornately carved crownstones, still stand where they were placed."
     ],
-    "access_level": "public"
+    "access_level": "public",
+    "publishedAt": "2026-07-25",
+    "publishAt": "2026-07-25",
+    "approvedAt": "2026-07-25",
+    "issueId": "2026-W30",
+    "author": "first-state-history",
+    "coverStory": false,
+    "placement": "standard",
+    "relatedStories": [
+      {
+        "href": "series-how-delaware-became-delaware.html",
+        "label": "The full series"
+      }
+    ],
+    "seoTitle": "Why Delaware Looks Like That | Delaware Beach Finds",
+    "seoDescription": "Delaware's northern border is a circular arc, unlike any other state line in the country. The story of the Twelve-Mile Circle, Mason and Dixon, and the Wedge that took until 1921 to settle.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/why-delaware-looks-like-that.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Delaware's northern boundary is a circular arc — unlike any other state line in the country. It exists because of a property dispute, a survey nobody could execute cleanly, and a case that took two hundred and forty years to finish.",
+    "heroAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series",
+    "seriesPage": true,
+    "heroImage": "dune-sunrise-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "shopTheStory": false,
+    "metaTag": "How Delaware Became Delaware"
   },
   {
     "slug": "three-counties-become-the-first-state",
-    "kicker": "How Delaware Became Delaware",
+    "kicker": "How Delaware Became Delaware · Installment 7 of 9",
     "headline": "Three Counties Become the First State",
     "hook": "Delaware declared independence from Britain and Pennsylvania in the same week of 1776 — and eleven years later became the first state to ratify the Constitution, in a rented tavern, unanimously, in five days.",
     "scene": "dune-sunrise-2.svg",
@@ -164,7 +288,32 @@
       "Delaware separated from both Britain and Pennsylvania in the same June 1776 session, an event now called the Act of Separation. Caesar Rodney's famous ride to Philadelphia that July, breaking a tied delegation vote on independence, really happened — though the dramatic details usually attached to it go beyond what the documentary record supports.",
       "Delaware's rapid, unanimous ratification in 1787 wasn't primarily patriotic zeal — it was arithmetic. The new Constitution's compromise gave every state equal representation in the Senate, which mattered enormously to one of the smallest states in the union. Being first was a consequence of moving quickly, and moving quickly was a consequence of having already gotten what they needed."
     ],
-    "access_level": "public"
+    "access_level": "public",
+    "publishedAt": "2026-07-25",
+    "publishAt": "2026-07-25",
+    "approvedAt": "2026-07-25",
+    "issueId": "2026-W30",
+    "author": "first-state-history",
+    "coverStory": false,
+    "placement": "standard",
+    "relatedStories": [
+      {
+        "href": "series-how-delaware-became-delaware.html",
+        "label": "The full series"
+      }
+    ],
+    "seoTitle": "Three Counties Become the First State | Delaware Beach Finds",
+    "seoDescription": "Thirty delegates, a rented Dover tavern, five days, and a unanimous vote on December 7, 1787. How three counties attached to Pennsylvania became the First State.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/three-counties-become-the-first-state.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Delaware declared independence from Britain and from Pennsylvania in the same week of 1776 — and eleven years later became the first state to ratify the Constitution, in a rented tavern, unanimously, in five days.",
+    "heroAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series",
+    "seriesPage": true,
+    "heroImage": "dune-sunrise-2.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-2.svg",
+    "shopTheStory": false,
+    "metaTag": "How Delaware Became Delaware"
   },
   {
     "slug": "six-oclock-shift-indian-river-inlet",
@@ -191,7 +340,40 @@
       "For about ten minutes, though, both crowds are out there together — lines still in the water, boards drifting past the jetty rocks, everybody polite about staying out of each other's space. Nobody photographs it because it doesn't look like much. But it's one of the only times all day that the inlet holds two completely different versions of a Delaware beach morning at once, and neither one seems to mind sharing.",
       "By 8 AM it's a normal beach day again — families setting up chairs, the bait shop finally open, the bridge humming with cars. The six o'clock shift is over until tomorrow, when it starts all over again, the same quiet handoff, mostly unwatched."
     ],
-    "access_level": "public"
+    "access_level": "public",
+    "publishedAt": "2026-07-15",
+    "publishAt": "2026-07-15",
+    "approvedAt": "2026-07-15",
+    "issueId": "2026-W29",
+    "author": "coast-nature",
+    "coverStory": false,
+    "placement": "standard",
+    "relatedStories": [
+      {
+        "href": "what-the-boardwalk-smells-like-in-july.html",
+        "label": "What the Boardwalk Smells Like in July"
+      },
+      {
+        "href": "bethany-bandstand-nights.html",
+        "label": "A Field Guide to Bethany's Bandstand Nights"
+      },
+      {
+        "href": "unmarked-trail-behind-gordons-pond.html",
+        "label": "The Unmarked Trail Behind Gordons Pond"
+      }
+    ],
+    "seoTitle": "The Six O'Clock Shift at Indian River Inlet | Delaware Beach Finds",
+    "seoDescription": "Every morning the surfcasters pack up right as the paddleboarders wade in — a ten-minute handoff between two different Delawares.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/six-oclock-shift-indian-river-inlet.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Every morning the surfcasters pack up right as the paddleboarders wade in — a ten-minute handoff between two different Delawares.",
+    "heroAlt": "The Six O'Clock Shift at Indian River Inlet",
+    "seriesPage": false,
+    "heroImage": "paddleboard-sunrise-1.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "shopTheStory": false,
+    "metaTag": "Dawn Patrol"
   },
   {
     "slug": "what-the-boardwalk-smells-like-in-july",
@@ -217,7 +399,40 @@
       "Locals stop noticing it by June. Visitors notice it every single year, usually saying some version of the same thing: it smells like summer. Not summer in general — this one, specifically, the Rehoboth one, the one that's been more or less the same smell since Dolle's started making taffy on the boardwalk in 1926.",
       "It's worth a slow walk sometime, phone away, just to notice the handoff — pizza to taffy to salt — the whole thing over in about four blocks."
     ],
-    "access_level": "public"
+    "access_level": "public",
+    "publishedAt": "2026-07-08",
+    "publishAt": "2026-07-08",
+    "approvedAt": "2026-07-08",
+    "issueId": "2026-W28",
+    "author": "coast-nature",
+    "coverStory": false,
+    "placement": "standard",
+    "relatedStories": [
+      {
+        "href": "six-oclock-shift-indian-river-inlet.html",
+        "label": "The Six O'Clock Shift at Indian River Inlet"
+      },
+      {
+        "href": "bethany-bandstand-nights.html",
+        "label": "A Field Guide to Bethany's Bandstand Nights"
+      },
+      {
+        "href": "unmarked-trail-behind-gordons-pond.html",
+        "label": "The Unmarked Trail Behind Gordons Pond"
+      }
+    ],
+    "seoTitle": "What the Boardwalk Smells Like in July | Delaware Beach Finds",
+    "seoDescription": "Grotto pizza, salt water taffy and sunscreen, in that order, from the top of Rehoboth Avenue to the water.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/what-the-boardwalk-smells-like-in-july.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Grotto pizza, salt water taffy and sunscreen, in that order, from the top of Rehoboth Avenue to the water.",
+    "heroAlt": "What the Boardwalk Smells Like in July",
+    "seriesPage": false,
+    "heroImage": "rehoboth-boardwalk-day-1.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "shopTheStory": false,
+    "metaTag": "Field Notes"
   },
   {
     "slug": "bethany-bandstand-nights",
@@ -243,7 +458,40 @@
       "What's notable is what doesn't happen. Nobody's rushing off to the next thing. There's no line to get in, no ticket, no VIP section. By 9:30, when the last song wraps up, half the crowd is still sitting there finishing a conversation, in no particular hurry to fold the chairs back up.",
       "If Rehoboth is the Delaware beach for a big night out, Bethany's bandstand is the answer for people who want the whole evening to feel like a long exhale instead."
     ],
-    "access_level": "public"
+    "access_level": "public",
+    "publishedAt": "2026-06-30",
+    "publishAt": "2026-06-30",
+    "approvedAt": "2026-06-30",
+    "issueId": "2026-W27",
+    "author": "field-notes",
+    "coverStory": false,
+    "placement": "standard",
+    "relatedStories": [
+      {
+        "href": "six-oclock-shift-indian-river-inlet.html",
+        "label": "The Six O'Clock Shift at Indian River Inlet"
+      },
+      {
+        "href": "what-the-boardwalk-smells-like-in-july.html",
+        "label": "What the Boardwalk Smells Like in July"
+      },
+      {
+        "href": "unmarked-trail-behind-gordons-pond.html",
+        "label": "The Unmarked Trail Behind Gordons Pond"
+      }
+    ],
+    "seoTitle": "A Field Guide to Bethany's Bandstand Nights | Delaware Beach Finds",
+    "seoDescription": "Beach chairs go down by 7, the band starts by 8, and nobody in Bethany seems to be in a hurry to leave once it's over.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/bethany-bandstand-nights.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Beach chairs go down by 7, the band starts by 8, and nobody in Bethany seems to be in a hurry to leave once it's over.",
+    "heroAlt": "A Field Guide to Bethany's Bandstand Nights",
+    "seriesPage": false,
+    "heroImage": "dune-fence-sunset-1.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "shopTheStory": false,
+    "metaTag": "Field Notes"
   },
   {
     "slug": "unmarked-trail-behind-gordons-pond",
@@ -272,7 +520,44 @@
       "The path winds through loblolly pine and holly thickets, opens briefly onto marsh views facing the bay, and stays noticeably cooler than the open dune trail in July. It adds maybe forty minutes to the walk, and for most of it, the loudest sound is wind moving through pine needles instead of the ocean.",
       "It loops back to the main lot eventually, no navigation required, no risk of getting lost. But for a park that gets genuinely crowded on summer weekends, it's the closest thing to solitude Cape Henlopen offers — and it's sitting in plain sight the whole time, mostly unbothered."
     ],
-    "access_level": "public"
+    "access_level": "public",
+    "publishedAt": "2026-06-18",
+    "publishAt": "2026-06-18",
+    "approvedAt": "2026-06-18",
+    "issueId": "2026-W25",
+    "author": "field-notes",
+    "coverStory": false,
+    "placement": "standard",
+    "relatedStories": [
+      {
+        "href": "../gordons-pond-walking-guide.html",
+        "label": "Gordon's Pond to the Water: The Walking Guide"
+      },
+      {
+        "href": "six-oclock-shift-indian-river-inlet.html",
+        "label": "The Six O'Clock Shift at Indian River Inlet"
+      },
+      {
+        "href": "what-the-boardwalk-smells-like-in-july.html",
+        "label": "What the Boardwalk Smells Like in July"
+      },
+      {
+        "href": "bethany-bandstand-nights.html",
+        "label": "A Field Guide to Bethany's Bandstand Nights"
+      }
+    ],
+    "seoTitle": "The Unmarked Trail Behind Gordons Pond | Delaware Beach Finds",
+    "seoDescription": "Most people park at Gordons Pond, walk the boardwalk to the beach, and turn around. The trail that keeps going is where the park gets quiet.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/unmarked-trail-behind-gordons-pond.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "Most people park at Gordons Pond, walk the boardwalk to the beach, and turn around. The trail that keeps going is where the park gets quiet.",
+    "heroAlt": "The Unmarked Trail Behind Gordons Pond",
+    "seriesPage": false,
+    "heroImage": "marsh-green-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "shopTheStory": true,
+    "metaTag": "Trail Notes"
   },
   {
     "slug": "low-tide-assateague-different-island",
@@ -298,6 +583,39 @@
       "It lasts a few hours, tide-dependent, and then it's gone — water creeps back in, the horses drift back to higher ground, and the island returns to its regular, more distant version of itself. Checking the tide chart before a visit is worth the extra two minutes; showing up at the wrong tide means missing the whole show entirely.",
       "It's a reminder that Assateague was never really built for a schedule. The island runs on its own clock, and the best visits are the ones that show up to match it instead of the other way around."
     ],
-    "access_level": "public"
+    "access_level": "public",
+    "publishedAt": "2026-06-05",
+    "publishAt": "2026-06-05",
+    "approvedAt": "2026-06-05",
+    "issueId": "2026-W23",
+    "author": "coast-nature",
+    "coverStory": false,
+    "placement": "standard",
+    "relatedStories": [
+      {
+        "href": "six-oclock-shift-indian-river-inlet.html",
+        "label": "The Six O'Clock Shift at Indian River Inlet"
+      },
+      {
+        "href": "what-the-boardwalk-smells-like-in-july.html",
+        "label": "What the Boardwalk Smells Like in July"
+      },
+      {
+        "href": "bethany-bandstand-nights.html",
+        "label": "A Field Guide to Bethany's Bandstand Nights"
+      }
+    ],
+    "seoTitle": "Low Tide at Assateague Is a Different Island | Delaware Beach Finds",
+    "seoDescription": "When the water pulls back, the horses come down off the dunes to graze flats that don't exist three hours later.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/low-tide-assateague-different-island.html",
+    "renderMode": "generated",
+    "heldReason": null,
+    "lede": "When the water pulls back, the horses come down off the dunes to graze flats that don't exist three hours later.",
+    "heroAlt": "Low Tide at Assateague Is a Different Island",
+    "seriesPage": false,
+    "heroImage": "marsh-dawn-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "shopTheStory": false,
+    "metaTag": "Field Notes"
   }
 ]

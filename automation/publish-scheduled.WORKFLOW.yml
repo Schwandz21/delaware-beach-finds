@@ -1,0 +1,81 @@
+# Delaware Beach Finds — scheduled publisher
+#
+# PASTE-READY. This file cannot be written to .github/workflows/ from this
+# machine because the configured token lacks the `workflow` OAuth scope. To
+# enable it, copy this file's contents into a new file at:
+#
+#     .github/workflows/publish-scheduled.yml
+#
+# via the GitHub web UI (Add file -> Create new file).
+#
+# WHAT THIS DOES: publishes stories that a human already approved and scheduled.
+# WHAT THIS CANNOT DO: approve anything, write anything, or invent anything.
+# The gate lives in scripts/editorial_lib.py:is_due and is covered by tests.
+
+name: Publish scheduled stories
+
+on:
+  schedule:
+    # Every hour on the hour. Cron is UTC; the publisher converts to
+    # America/New_York itself, so this stays correct across DST.
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report what would publish without writing anything'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  # Never let two publish runs race each other into the same commit.
+  group: dbf-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Validation first. If the editorial data is invalid, nothing publishes.
+      - name: Validate editorial data
+        run: python3 scripts/validate_editorial.py
+
+      - name: Report what is due
+        run: python3 scripts/publish_due.py --dry-run
+
+      - name: Publish due stories
+        if: ${{ inputs.dry_run != true }}
+        run: python3 scripts/publish_due.py
+
+      # The full suite runs AFTER publication but BEFORE the commit, so a bad
+      # publication is never committed.
+      - name: Run full test suite
+        if: ${{ inputs.dry_run != true }}
+        run: bash scripts/run_tests.sh
+
+      - name: Commit publication output
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing published this run — no commit."
+            exit 0
+          fi
+          git config user.name  "dbf-publisher[bot]"
+          git config user.email "dbf-publisher[bot]@users.noreply.github.com"
+          # Deliberate staging: only the surfaces publication is allowed to touch.
+          git add data/stories.json data/issues data/content-index.json stories
+          if [ -z "$(git diff --cached --name-only)" ]; then
+            echo "No publication surfaces changed — no commit."
+            exit 0
+          fi
+          git diff --cached --name-only
+          git commit -m "Publish scheduled stories ($(date -u +%Y-%m-%dT%H:%MZ))"
+          git push

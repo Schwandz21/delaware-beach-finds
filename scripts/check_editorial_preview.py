@@ -107,7 +107,11 @@ check("no house-byline page still declares a Person author in structured data", 
 # Real-entity disclosure must survive the byline change.
 about = open(os.path.join(ROOT, "about.html")).read()
 check("About still discloses the real responsible entity", "rentdelawarebeaches" in about or "Schwander" in about)
-check("About explains the house byline", "house editorial byline" in about)
+check("About explains the desk byline system", "editorial desk bylines" in about)
+# The disclosure has to do more than name the desks: it must say plainly that
+# they are not individual people, which is the whole point of the guard.
+check("About states desks are not individual reporters",
+      "not pen names" in about and "does not exist" in about)
 
 # Navigation must not be Shop-first and must stay simplified.
 nav = re.search(r'<nav class="nav-links".*?</nav>', index_html, re.S)

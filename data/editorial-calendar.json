@@ -1,0 +1,71 @@
+{
+  "_note": "THE control file for Delaware Beach Finds publication behaviour. Editing this changes what the publication does. No application code should need to change to alter cadence, timing, pauses or blackouts. See EDITORIAL_OPERATIONS.md.",
+
+  "timezone": "America/New_York",
+
+  "paused": false,
+  "_paused_note": "Set true to stop ALL automatic publication. Scheduled stories stay scheduled and publish once this returns to false.",
+
+  "currentIssueId": "2026-W33",
+  "_currentIssueId_note": "Mirrors data/issues/index.json. The issue index remains the source of truth for issue records; this is the calendar's view of which issue new work lands in.",
+
+  "issue": {
+    "cadence": "weekly",
+    "startsOn": 0,
+    "_startsOn_note": "Weekday the issue turns over. 0=Monday .. 6=Sunday.",
+    "idFormat": "isoweek",
+    "_idFormat_note": "isoweek produces ids like 2026-W33, matching existing records."
+  },
+
+  "cadence": [
+    {
+      "placement": "cover",
+      "label": "Cover story",
+      "weekday": 0,
+      "time": "06:00",
+      "_note": "Monday 6:00 AM Eastern. Change weekday/time here to move cover day."
+    },
+    {
+      "placement": "feature",
+      "label": "Secondary feature",
+      "weekday": 2,
+      "time": "06:00",
+      "_note": "Wednesday."
+    },
+    {
+      "placement": "secondary",
+      "label": "Field Note / weekend piece",
+      "weekday": 4,
+      "time": "06:00",
+      "_note": "Friday."
+    }
+  ],
+  "_cadence_note": "These are the DEFAULT slots the planner suggests. A story's own publishAt always wins — cadence never overrides an explicit publishAt, and never moves a story on its own.",
+
+  "series": [
+    {
+      "slug": "how-delaware-became-delaware",
+      "weekday": 3,
+      "time": "06:00",
+      "_note": "Example of a series on its own day (Thursday). Add entries here to give a special series its own cadence."
+    }
+  ],
+
+  "blackouts": [],
+  "_blackouts_note": "Dates on which nothing publishes automatically. Format: {\"start\":\"2026-12-21\",\"end\":\"2026-12-27\",\"reason\":\"Christmas week\"}. A story whose publishAt falls in a blackout is skipped and reported, never silently dropped.",
+
+  "events": {
+    "researchCadence": "weekly",
+    "researchDay": 0,
+    "freshnessPolicyDays": 7,
+    "_note": "Event research runs weekly and produces CANDIDATES only. Candidates are never published by automation — see EDITORIAL_OPERATIONS.md, 'How the event schedule works'."
+  },
+
+  "instagram": {
+    "cadence": "manual",
+    "_note": "No Instagram API access. The featured permalink in data/instagram.json is updated by hand. This is stated plainly rather than automated with fabricated data."
+  },
+
+  "overrides": [],
+  "_overrides_note": "Per-story scheduling overrides, applied by slug. Format: {\"slug\":\"some-story\",\"publishAt\":\"2026-09-07T06:00\",\"placement\":\"cover\",\"reason\":\"moved for Labor Day\"}. An override wins over the story record."
+}
