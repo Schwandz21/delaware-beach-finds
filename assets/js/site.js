@@ -609,6 +609,42 @@ if(bylineEls.length){
   });
 }
 
+// PICTURE FEATURE — the page's one big photograph.
+// The publication owns several 2000-3000px Delaware photographs that were only
+// ever rendered as rail thumbnails, while the cover story owns the single weak
+// 387px file. This gives the strongest real asset a full-width editorial frame.
+// Rasters are the photographs in this repo; SVGs are illustrations — so the
+// selector is honest rather than a hand-maintained list.
+const pictureMount = document.querySelector('[data-mount="picture-feature"]');
+if(pictureMount){
+  fetchJson('stories.json').then(list=>{
+    const pub = (list||[]).filter(s=>s.status==='published')
+      .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+    const cover = pub.find(s=>s.coverStory||s.featured);
+    const photo = pub.find(s =>
+      s !== cover &&
+      /\.(jpe?g|png|webp)$/i.test(String(s.scene||'')));
+    if(!photo){ gateHide(pictureMount); return; }
+    const cat = CAT_LABELS[photo.category] || photo.category || '';
+    pictureMount.innerHTML = `
+      <figure class="picture-feature">
+        <div class="picture-frame">${sceneImg(photo.scene, photo.heroImageAlt || photo.heroAlt || photo.headline)}</div>
+        <figcaption class="picture-caption">
+          <div class="picture-copy">
+            <span class="picture-kicker">${esc(photo.kicker || cat)}</span>
+            <h2 class="picture-headline"><a href="stories/${esc(photo.slug)}.html">${esc(photo.headline)}</a></h2>
+            <p class="picture-dek">${esc(photo.hook || '')}</p>
+            <a class="ed-link" href="stories/${esc(photo.slug)}.html">Read the story &rarr;</a>
+          </div>
+          <div class="picture-credit">
+            ${photo.heroAlt ? `<span class="picture-alt">${esc(photo.heroAlt)}</span>` : ''}
+            ${photo.photoCredit ? `<span class="picture-photog">Photo: ${esc(photo.photoCredit)}</span>` : ''}
+          </div>
+        </figcaption>
+      </figure>`;
+  }).catch(()=>{ gateHide(pictureMount); });
+}
+
 // AUDIENCE METRICS — renders only what has been verified.
 // A metric appears if and only if it has a real value AND a verifiedAt date
 // that is not in the future and not older than staleAfterDays. With nothing

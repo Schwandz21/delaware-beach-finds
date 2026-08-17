@@ -1284,3 +1284,109 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
 .metric-prov{display:block;margin-top:4px;font-size:var(--fs-eyebrow);letter-spacing:.12em;
   text-transform:uppercase;font-weight:700;color:var(--muted)}
 .audience-metrics:empty{display:none}
+
+/* ================================================================
+   PICTURE FEATURE — the one big photograph on the page.
+   Full-bleed, dark, type overlaid at the foot. This is the moment the
+   homepage stops looking like a column of modules and behaves like a
+   magazine spread. Uses the largest genuine asset the repo owns.
+   ================================================================ */
+.section-flush{padding:0;margin:clamp(34px,4.5vw,64px) 0}
+.picture-feature{margin:0;position:relative;background:var(--ink)}
+.picture-frame{position:relative;aspect-ratio:21/9;overflow:hidden}
+.picture-frame img{width:100%;height:100%;object-fit:cover;display:block}
+/* Scrim only where type sits, so the photograph stays a photograph. */
+.picture-frame:after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(10,26,32,.88) 0%,rgba(10,26,32,.55) 26%,
+    rgba(10,26,32,.06) 55%,rgba(10,26,32,0) 78%)}
+.picture-caption{position:absolute;left:0;right:0;bottom:0;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,300px);
+  gap:18px clamp(28px,3.4vw,58px);align-items:end;
+  padding:clamp(24px,3vw,46px) clamp(20px,4vw,72px) clamp(22px,2.6vw,40px)}
+.picture-kicker{display:block;font-size:var(--fs-eyebrow);letter-spacing:.2em;
+  text-transform:uppercase;font-weight:800;color:#f0c9ac;margin-bottom:9px}
+.picture-headline{font-family:var(--serif);font-weight:600;letter-spacing:-.035em;
+  font-size:clamp(1.9rem,3.5vw,3.35rem);line-height:1.02;margin:0 0 .28em;color:#fff;
+  max-width:19ch}
+.picture-headline a{color:inherit;text-decoration:none}
+.picture-headline a:hover{text-decoration:underline;text-underline-offset:5px}
+.picture-dek{color:rgba(255,255,255,.9);font-size:clamp(.98rem,1.05vw,1.13rem);
+  line-height:1.5;max-width:46ch;margin:0 0 14px}
+.picture-caption .ed-link{color:#f0c9ac}
+.picture-credit{display:flex;flex-direction:column;gap:5px;padding-bottom:4px}
+.picture-alt{font-size:.84rem;line-height:1.42;color:rgba(255,255,255,.76)}
+.picture-photog{font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:700;color:rgba(255,255,255,.6)}
+
+@media(max-width:900px){
+  .picture-frame{aspect-ratio:4/3}
+  .picture-caption{grid-template-columns:1fr;gap:12px;
+    padding:20px clamp(16px,5vw,28px) 22px}
+  .picture-credit{border-top:1px solid rgba(255,255,255,.2);padding-top:11px}
+  .picture-headline{max-width:none}
+}
+
+/* ================================================================
+   DEPARTMENTS — a typographic index, not four photo tiles.
+   Following the full-bleed photograph with four more dark image cards
+   repeated the same treatment twice and reused the same dune photograph
+   the picture feature had just used at full width. A magazine's
+   departments page is a contents list: names, one line each, set in type.
+   The photographs are suppressed rather than removed, so the markup and
+   the gating logic are untouched.
+   ================================================================ */
+.dept-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0 clamp(30px,4vw,72px);border-top:2px solid var(--navy)}
+.dept-stack{display:contents}
+.dept-art{display:none}
+.dept-panel{display:block;padding:20px 0 22px;border-bottom:1px solid var(--hairline);
+  background:transparent!important;color:inherit;text-decoration:none;
+  min-height:0;position:static}
+.dept-panel.dept-lead{grid-column:1;grid-row:1}
+.dept-copy{position:static;padding:0;background:none;color:inherit}
+.dept-panel .kicker{margin-bottom:7px}
+.dept-panel h3{font-family:var(--serif);font-weight:600;letter-spacing:-.022em;
+  font-size:clamp(1.15rem,1.42vw,1.44rem);line-height:1.16;margin:0 0 7px;
+  color:var(--navy)!important;max-width:26ch}
+.dept-panel p{font-size:.93rem;line-height:1.58;color:var(--ink-soft)!important;
+  margin:0 0 9px;max-width:44ch}
+.dept-cta{font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep)!important}
+.dept-panel:hover h3{text-decoration:underline;text-underline-offset:4px}
+/* The lead department earns slightly more type, not a photograph. */
+.dept-panel.dept-lead h3{font-size:clamp(1.35rem,1.85vw,1.85rem);max-width:22ch}
+
+@media(max-width:760px){
+  .dept-grid{grid-template-columns:1fr}
+  .dept-panel.dept-lead{grid-column:1;grid-row:auto}
+  .dept-panel{padding:16px 0 18px}
+}
+/* The tile design painted a dark scrim via ::before and reserved 460px of
+   height for the photograph. Both must go with the photograph. */
+.dept-panel:before{content:none!important;display:none!important}
+.dept-panel,.dept-panel.dept-lead{min-height:0!important;height:auto!important}
+/* Kickers were white for the dark tiles and are invisible on paper. */
+.dept-panel .kicker{color:var(--coral-deep)!important;opacity:1}
+/* The section head already rules; the grid must not rule again. */
+.dept-grid{border-top:0}
+.dept-panel{border-top:2px solid var(--navy);border-bottom:0;padding-top:16px}
+.dept-panel.dept-lead{border-top-width:2px}
+
+/* On a phone the overlay fought the photograph: the headline landed on bright
+   sky and the dek ran across the frame. Below 760px the picture keeps its full
+   frame and the type sits underneath it, on paper, where it can be read. */
+@media(max-width:760px){
+  .picture-feature{background:var(--ink)}
+  .picture-frame{aspect-ratio:5/4}
+  .picture-frame:after{display:none}
+  .picture-caption{position:static;display:block;
+    padding:18px clamp(16px,5vw,26px) 22px}
+  .picture-kicker{color:#f0c9ac}
+  .picture-headline{font-size:clamp(1.75rem,7.6vw,2.3rem);max-width:none;margin-bottom:.3em}
+  .picture-dek{max-width:none;margin-bottom:13px}
+  .picture-credit{margin-top:15px;padding-top:12px;
+    border-top:1px solid rgba(255,255,255,.22)}
+}
+/* One rule under the departments head, not two. */
+.dept-panel:first-child,.dept-grid > .dept-panel:first-of-type{border-top:2px solid var(--navy)}
+@media(max-width:760px){ .dept-grid{margin-top:-2px} }
