@@ -39,7 +39,9 @@ def main():
                 href = m.group(1)
                 if href.startswith(("http://", "https://", "mailto:", "#", "tel:")):
                     continue
-                href_path = href.split("#")[0]
+                # Strip both fragment and query string. Cache-busted asset
+                # references like favicon.svg?v=2 resolve to the file itself.
+                href_path = href.split("#")[0].split("?")[0]
                 if not href_path:
                     continue
                 checked += 1

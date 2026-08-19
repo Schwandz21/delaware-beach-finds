@@ -650,6 +650,202 @@ if(pictureMount){
   }).catch(()=>{ gateHide(pictureMount); });
 }
 
+// TODAY AT THE COAST
+// Reads the existing verified events file. Nothing new is ingested here and
+// nothing is invented.
+//
+// NO-FREE-ADS RULE. Inclusion in the Delaware Beach Finds events calendar does
+// not confer promotional treatment upon an organiser, host venue, sponsor,
+// participating business or commercial partner. This renderer therefore emits
+// only factual fields — title, date, time, venue, town — plus a link to the
+// official source. It deliberately does NOT emit venue logos, hero imagery,
+// marketing copy, booking or retail calls to action, or an outbound link to a
+// commercial host's own site. Paid promotion, if it ever exists, must arrive
+// through `sponsored`/`sponsorId` and be labelled where the reader can see it.
+function eventsList(raw){ return Array.isArray(raw) ? raw : (raw.events || []); }
+
+const todayMount = document.querySelector('[data-mount="today-coast"]');
+if(todayMount){
+  fetchJson('events.json').then(raw=>{
+    const all = eventsList(raw), today = todayEasternISO();
+
+    // A recurring market carries a multi-week range but only runs on one
+    // weekday, and its displayDate says which ("Saturdays 8 AM-noon, through
+    // Sept. 26"). Treating the whole range as "on today" told readers a
+    // Saturday market was running on a Wednesday — the worst failure a daily
+    // planner can have. So a multi-day event only counts as on-now when its
+    // named weekday matches today.
+    const DAYS = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+    const todayDow = DAYS[new Date(today + 'T12:00:00').getDay()];
+    const spansDays = e => {
+      const s = e.startDate || '', x = e.endDate || s;
+      return s && x && (Date.parse(x) - Date.parse(s)) > 2 * 86400000;
+    };
+    const recurringDows = e => {
+      const d = String(e.displayDate || '').toLowerCase();
+      return DAYS.filter(day => d.includes(day));
+    };
+    const onNow = e => {
+      const s = e.startDate || '', x = e.endDate || s;
+      if(!(s <= today && x >= today)) return false;
+      if(spansDays(e)){
+        const dows = recurringDows(e);
+        if(dows.length) return dows.includes(todayDow);
+      }
+      return true;
+    };
+    const upcoming = e => (e.startDate||'') > today;
+    const ok = e => !e.status || ['confirmed','tentative'].includes(e.status);
+
+    let items = all.filter(e=>ok(e) && onNow(e));
+    let label = 'Today at the coast';
+    if(items.length < 2){
+      // Nothing much on today — look ahead rather than render a thin module.
+      const soon = all.filter(e=>ok(e) && upcoming(e))
+        .sort((a,b)=>(a.startDate||'').localeCompare(b.startDate||''));
+      items = items.concat(soon).slice(0,4);
+      if(!items.filter(onNow).length) label = 'Coming up on the coast';
+    }
+    items = items.slice(0,4);
+    if(!items.length){ gateHide(todayMount); return; }
+
+    const head = todayMount.closest('section').querySelector('[data-today-label]');
+    if(head) head.textContent = label;
+
+    todayMount.innerHTML = items.map(e=>{
+      const when = onNow(e)
+        ? (e.startTime ? esc(e.startTime) : 'Today')
+        : esc(e.displayDate || e.startDate || '');
+      const where = [e.venue, e.town].filter(Boolean).map(esc).join(' &middot; ');
+      return `<a class="today-row" href="events.html" data-event-click data-event-id="${esc(e.id||'')}"
+                 data-town="${esc(e.town||'')}" data-category="${esc(e.category||'')}">
+        <span class="today-when">${when}</span>
+        <span class="today-what">
+          <span class="today-title">${esc(e.title)}</span>
+          ${where?`<span class="today-where">${where}</span>`:''}
+        </span>
+      </a>`;
+    }).join('');
+    if(window.gtag) gtag('event','events_hub_view',{placement:'homepage',shown:items.length,source_page:location.pathname});
+  }).catch(()=>{ gateHide(todayMount); });
+}
+
+document.addEventListener('click', function(e){
+  if(!window.gtag) return;
+  const t=e.target.closest('[data-event-click]');
+  if(t) gtag('event','event_detail_click',{event_id:t.dataset.eventId,town:t.dataset.town,category:t.dataset.category,source_page:location.pathname});
+});
+
+// DELAWARE COAST LIVE
+// Renders data/live-feeds.json. The permission gate is the whole point: only
+// 'platform-embed', 'approved' and 'public-upstream' feeds ever produce an
+// iframe. Everything else renders as a card linking to the operator's own page.
+// A feed is never embedded merely because the data file contains a URL.
+const EMBEDDABLE = new Set(['platform-embed','approved','public-upstream']);
+const LIVE_GROUPS = [
+  {key:'featured', title:'Live from the coast',  test:f=>f.featured},
+  {key:'wildlife', title:'Wildlife live',        test:f=>f.category==='wildlife'},
+  {key:'beach',    title:'Beach & boardwalk',    test:f=>['beach','boardwalk','inlet','harbor'].includes(f.category) && f.state==='DE'},
+  {key:'traffic',  title:'Before you go',        test:f=>['traffic','weather'].includes(f.category)},
+  {key:'down',     title:'Down the coast',       test:f=>f.state!=='DE'},
+];
+
+function liveCard(f, opts){
+  opts = opts || {};
+  const embeddable = EMBEDDABLE.has(f.permissionStatus) && f.embedUrl;
+  const related = (f.relatedStorySlugs||[]).length;
+  // Iframes are lazy and never autoplay: a hub of live players that all start
+  // at once is unusable and wrecks the page.
+  const player = embeddable
+    ? `<div class="live-frame" data-feed="${esc(f.id)}">
+         <iframe src="${esc(f.embedUrl)}" title="${esc(f.title)}" loading="lazy"
+           referrerpolicy="strict-origin-when-cross-origin"
+           allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+       </div>`
+    : `<a class="live-frame live-frame-ext" href="${esc(f.externalUrl||f.sourcePage)}"
+         target="_blank" rel="noopener" data-live-external data-feed="${esc(f.id)}"
+         data-provider="${esc(f.owner||'')}" data-town="${esc(f.town||'')}">
+         <span class="live-ext-mark">Watch at ${esc(f.provider||'the source')}</span>
+       </a>`;
+  return `
+  <article class="live-card${opts.lead?' live-card-lead':''}">
+    ${player}
+    <div class="live-copy">
+      <span class="live-where">${esc(f.location||'')}${f.town?' &middot; '+esc(f.town)+', '+esc(f.state):''}</span>
+      <h3 class="live-title">${esc(f.title)}</h3>
+      <p class="live-desc">${esc(f.description||'')}</p>
+      <div class="live-meta">
+        <span class="live-credit">${esc(f.attribution||'')}</span>
+        <a class="ed-link" href="${esc(f.sourcePage||f.externalUrl)}" target="_blank" rel="noopener"
+           data-live-source data-feed="${esc(f.id)}">Official source &rarr;</a>
+        ${f.supportUrl?`<a class="ed-link" href="${esc(f.supportUrl)}" target="_blank" rel="noopener">Support them &rarr;</a>`:''}
+      </div>
+      ${related?`<div class="live-related"><span class="live-related-h">Read next</span>${
+        (f.relatedStorySlugs||[]).map(s=>`<a href="stories/${esc(s)}.html" data-live-story data-feed="${esc(f.id)}">${esc(LIVE_TITLES[s]||s.replace(/-/g,' '))}</a>`).join('')
+      }</div>`:''}
+    </div>
+  </article>`;
+}
+
+let LIVE_TITLES = {};
+const liveMount = document.querySelector('[data-mount="live-hub"]');
+if(liveMount){
+  Promise.all([fetchJson('live-feeds.json'), fetchJson('stories.json')]).then(([cfg, stories])=>{
+    (stories||[]).forEach(s=>{ LIVE_TITLES[s.slug]=s.headline; });
+    const feeds=(cfg.feeds||[]).filter(f=>f.active && f.permissionStatus!=='disabled');
+    if(!feeds.length){ gateHide(liveMount); return; }
+    const used=new Set();
+    let html='';
+    LIVE_GROUPS.forEach(g=>{
+      const items=feeds.filter(f=>!used.has(f.id) && g.test(f));
+      if(!items.length) return;              // never render an empty group
+      items.forEach(f=>used.add(f.id));
+      html+=`<section class="live-group"><h2 class="live-group-h">${esc(g.title)}</h2>
+        <div class="live-grid${g.key==='featured'?' live-grid-lead':''}">
+        ${items.map((f,i)=>liveCard(f,{lead:g.key==='featured'&&i===0})).join('')}
+        </div></section>`;
+    });
+    liveMount.innerHTML=html;
+    if(window.gtag) gtag('event','live_hub_view',{feed_count:feeds.length,source_page:location.pathname});
+  }).catch(()=>{ gateHide(liveMount); });
+}
+
+// Homepage teaser: the featured embeddable feed, or the featured feed's card.
+const liveTeaseMount = document.querySelector('[data-mount="live-teaser"]');
+if(liveTeaseMount){
+  fetchJson('live-feeds.json').then(cfg=>{
+    const feeds=(cfg.feeds||[]).filter(f=>f.active && f.permissionStatus!=='disabled');
+    const f=feeds.find(x=>x.featured && EMBEDDABLE.has(x.permissionStatus)) || feeds.find(x=>x.featured);
+    if(!f){ gateHide(liveTeaseMount); return; }
+    const embeddable = EMBEDDABLE.has(f.permissionStatus) && f.embedUrl;
+    liveTeaseMount.innerHTML=`
+      <div class="live-tease">
+        ${embeddable?`<div class="live-frame"><iframe src="${esc(f.embedUrl)}" title="${esc(f.title)}"
+            loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+            allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+          :`<a class="live-frame live-frame-ext" href="${esc(f.externalUrl)}" target="_blank" rel="noopener"><span class="live-ext-mark">Watch at ${esc(f.provider)}</span></a>`}
+        <div class="live-tease-copy">
+          <span class="live-where">${esc(f.location)}${f.town?' &middot; '+esc(f.town)+', '+esc(f.state):''}</span>
+          <h3 class="live-title">${esc(f.title)}</h3>
+          <p class="live-desc">${esc(f.description||'')}</p>
+          <span class="live-credit">${esc(f.attribution||'')}</span>
+          <a class="ed-link" href="live.html">All live cameras &rarr;</a>
+        </div>
+      </div>`;
+  }).catch(()=>{ gateHide(liveTeaseMount); });
+}
+
+// Live analytics — one handler, existing gtag convention.
+document.addEventListener('click', function(e){
+  if(!window.gtag) return;
+  const ext=e.target.closest('[data-live-external]');
+  if(ext){ gtag('event','live_feed_external_click',{feed_id:ext.dataset.feed,provider:ext.dataset.provider,town:ext.dataset.town,source_page:location.pathname}); return; }
+  const src=e.target.closest('[data-live-source]');
+  if(src){ gtag('event','live_source_click',{feed_id:src.dataset.feed,source_page:location.pathname}); return; }
+  const st=e.target.closest('[data-live-story]');
+  if(st){ gtag('event','live_related_story_click',{feed_id:st.dataset.feed,source_page:location.pathname}); }
+});
+
 // AUDIENCE METRICS — renders only what has been verified.
 // A metric appears if and only if it has a real value AND a verifiedAt date
 // that is not in the future and not older than staleAfterDays. With nothing
