@@ -899,5 +899,184 @@
     "shopTheStory": false,
     "metaTag": "Delaware Coast",
     "heldReason": null
+  },
+  {
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "status": "published",
+    "series": null,
+    "seriesInstallment": null,
+    "photoCredit": "Delaware Beach Finds",
+    "etsyProductIds": [],
+    "access_level": "public",
+    "issueId": null,
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "heldReason": null,
+    "slug": "the-attic-in-dover",
+    "kicker": "Annie Jump Cannon",
+    "headline": "The Attic in Dover",
+    "hook": "Every astronomer alive sorts stars using a system worked out by a shipbuilder's daughter from Dover. Annie Jump Cannon classified roughly 350,000 stars by eye — more than any human being who has ever lived.",
+    "lede": "Every astronomer alive sorts stars using a system worked out by a shipbuilder's daughter from Dover.",
+    "scene": "night-pier-1.svg",
+    "heroImage": "night-pier-1.svg",
+    "heroAlt": "A Delaware pier at night",
+    "heroImageAlt": "Illustration of a Delaware pier under a night sky",
+    "readTime": "9 min read",
+    "category": "people",
+    "author": "delaware-life",
+    "metaTag": "People of Delaware",
+    "places": [],
+    "sources": [
+      "Harvard College Observatory and Wolbach Library materials on Annie Jump Cannon and the Harvard Computers",
+      "Encyclopaedia Britannica, Annie Jump Cannon",
+      "National Women's History Museum biography",
+      "Reference accounts of the Henry Draper Catalogue and the 1922 IAU adoption of the Harvard spectral classification"
+    ],
+    "relatedStories": [
+      {
+        "href": "category-people.html",
+        "label": "More People of Delaware"
+      },
+      {
+        "href": "index.html",
+        "label": "All Delaware stories"
+      }
+    ],
+    "body": [
+      "Annie Jump Cannon, born in Dover in 1863 to a shipbuilder and state senator, learned the constellations from her mother in the family attic.",
+      "Hired at Harvard College Observatory in 1896, she reconciled two competing classification schemes into the O B A F G K M sequence, ordered by Balmer absorption line strength — which turned out to order stars by temperature.",
+      "She classified roughly 350,000 stars by eye, at times three a minute, and the IAU adopted her system in 1922. It has not been replaced."
+    ],
+    "seoTitle": "The Attic in Dover: Annie Jump Cannon, Delaware's Astronomer",
+    "seoDescription": "Annie Jump Cannon of Dover, Delaware classified roughly 350,000 stars by eye and created the O B A F G K M system every astronomer still uses. How a shipbuilder's daughter reorganised the sky.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-attic-in-dover.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png"
+  },
+  {
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "status": "published",
+    "series": null,
+    "seriesInstallment": null,
+    "photoCredit": "Delaware Beach Finds",
+    "etsyProductIds": [],
+    "access_level": "public",
+    "issueId": null,
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "heldReason": null,
+    "slug": "the-standing-dead",
+    "kicker": "Delaware Bay's Ghost Forests",
+    "headline": "The Standing Dead",
+    "hook": "Bare trunks standing in open marsh along Delaware Bay look like an ending. They are the opposite: they mark the line where the marsh is climbing inland — which is the only escape route it has.",
+    "lede": "Bare trunks standing in open marsh along Delaware Bay look like an ending. They are the leading edge of something moving.",
+    "scene": "marsh-ghost-forest-dusk.jpg",
+    "heroImage": "marsh-ghost-forest-dusk.jpg",
+    "heroAlt": "Standing dead trees in a Delaware marsh at dusk",
+    "heroImageAlt": "Bare trunks of a ghost forest standing in marsh at dusk",
+    "readTime": "8 min read",
+    "category": "coast",
+    "author": "coast-nature",
+    "metaTag": "Delaware Coast",
+    "places": [
+      "lewes"
+    ],
+    "sources": [
+      "Delaware DNREC, Wetland Monitoring and Assessment Program, on saltwater intrusion and marsh migration",
+      "Peer-reviewed lidar and imagery analysis of coastal forest loss around Delaware Bay",
+      "Scientific literature on ghost forest formation along the US Atlantic coast"
+    ],
+    "relatedStories": [
+      {
+        "href": "where-the-marsh-is-going.html",
+        "label": "Where the Marsh Is Going"
+      },
+      {
+        "href": "category-coast.html",
+        "label": "More Delaware Coast stories"
+      }
+    ],
+    "body": [
+      "Repeated saltwater flooding changes coastal forest soil chemistry until sensitive trees die, leaving standing dead trunks along the marsh edge.",
+      "DNREC describes marsh migration upslope into forest as the last hope for much of Delaware's tidal marsh as sea level rises.",
+      "Where a marsh is backed by a bulkhead, road or hard shoreline it cannot migrate, and is squeezed against the barrier instead."
+    ],
+    "seoTitle": "The Standing Dead: Delaware Bay's Ghost Forests",
+    "seoDescription": "Why bare trees stand in the marsh along Delaware Bay, how saltwater intrusion kills a coastal forest, and why the ghost forest is the marsh escaping inland rather than the marsh dying.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-standing-dead.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/marsh-ghost-forest-dusk.jpg"
+  },
+  {
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "status": "published",
+    "series": null,
+    "seriesInstallment": null,
+    "photoCredit": "Delaware Beach Finds",
+    "etsyProductIds": [],
+    "access_level": "public",
+    "issueId": null,
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "heldReason": null,
+    "slug": "read-the-apron",
+    "kicker": "Delaware Field Guide",
+    "headline": "Read the Apron",
+    "hook": "The most useful thing to know about crabbing in Delaware is how to turn a crab over. The shape on its belly tells you what you are holding, whether you can keep it, and whether you should.",
+    "lede": "The most useful thing to know about crabbing in Delaware is how to turn a crab over.",
+    "scene": "delaware-blue-crabs.jpg",
+    "heroImage": "delaware-blue-crabs.jpg",
+    "heroAlt": "A basket of Delaware blue crabs",
+    "heroImageAlt": "Blue crabs in a basket",
+    "readTime": "7 min read",
+    "category": "field-guide",
+    "author": "field-notes",
+    "metaTag": "Delaware Field Guide",
+    "places": [
+      "lewes",
+      "rehoboth-beach"
+    ],
+    "sources": [
+      "Delaware DNREC recreational fishing and shellfishing regulations for blue crabs",
+      "DNREC Delaware Fish Facts, blue crab"
+    ],
+    "relatedStories": [
+      {
+        "href": "category-field-guide.html",
+        "label": "More Delaware Field Guide"
+      },
+      {
+        "href": "the-standing-dead.html",
+        "label": "The Standing Dead"
+      }
+    ],
+    "body": [
+      "A blue crab's apron identifies it: narrow and tapered is a male, triangular is an immature female, broad and rounded is a mature female.",
+      "Delaware requires a recreational fishing licence for crabbing, sets a five-inch hard-shell minimum, allows mature females at any size, and prohibits taking egg-bearing sponge crabs.",
+      "Regulations change; DNREC publishes the current rules and should be checked before a trip."
+    ],
+    "seoTitle": "Read the Apron: A Delaware Blue Crab Field Guide",
+    "seoDescription": "How to tell a jimmy from a sook from a sponge crab, what Delaware's crabbing rules actually require, and why throwing back egg-bearing females is the whole game.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/read-the-apron.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-blue-crabs.jpg"
   }
 ]
