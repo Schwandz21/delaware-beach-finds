@@ -1078,5 +1078,184 @@
     "seoDescription": "How to tell a jimmy from a sook from a sponge crab, what Delaware's crabbing rules actually require, and why throwing back egg-bearing females is the whole game.",
     "canonicalUrl": "https://delawarebeachfinds.com/stories/read-the-apron.html",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-blue-crabs.jpg"
+  },
+  {
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "status": "published",
+    "series": null,
+    "seriesInstallment": null,
+    "photoCredit": "Delaware Beach Finds",
+    "etsyProductIds": [],
+    "access_level": "public",
+    "issueId": null,
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "heldReason": null,
+    "slug": "three-hundred-dollars",
+    "kicker": "Emily Bissell",
+    "headline": "Three Hundred Dollars",
+    "hook": "In 1907 a doctor outside Wilmington needed $300 to keep a tuberculosis sanatorium open through the winter. His cousin raised ten times that by selling penny stamps that carried no mail — and accidentally founded a national institution.",
+    "lede": "In the autumn of 1907 a doctor outside Wilmington needed three hundred dollars, and wrote to his cousin about it.",
+    "scene": "night-holiday-1.svg",
+    "heroImage": "night-holiday-1.svg",
+    "heroAlt": "A Delaware winter evening",
+    "heroImageAlt": "Illustration of a Delaware winter evening",
+    "readTime": "8 min read",
+    "category": "people",
+    "author": "delaware-life",
+    "metaTag": "People of Delaware",
+    "places": [],
+    "sources": [
+      "Smithsonian National Postal Museum, Emily Bissell",
+      "American Lung Association, history of Christmas Seals",
+      "University of Virginia Historical Collections, Christmas Seals and the anti-tuberculosis movement",
+      "The Lancet Respiratory Medicine, profile of Emily Perkins Bissell"
+    ],
+    "relatedStories": [
+      {
+        "href": "the-attic-in-dover.html",
+        "label": "The Attic in Dover"
+      },
+      {
+        "href": "category-people.html",
+        "label": "More People of Delaware"
+      }
+    ],
+    "body": [
+      "Emily Perkins Bissell of Wilmington was asked in 1907 to raise $300 to keep the Brandywine Sanatorium open through the winter.",
+      "Borrowing an idea from a Jacob Riis article about a Danish scheme, she designed and sold penny Christmas Seals through the Delaware Red Cross, raising roughly $3,000.",
+      "The campaign went national in 1908 and ran for the better part of a century; the sanatorium was renamed the Emily P. Bissell Hospital in 1957."
+    ],
+    "seoTitle": "Three Hundred Dollars: Emily Bissell and the First Christmas Seals",
+    "seoDescription": "How Emily Bissell of Wilmington raised ten times her target in 1907 by selling penny stamps that carried no mail, saved the Brandywine Sanatorium, and started a national fundraising institution.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/three-hundred-dollars.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png"
+  },
+  {
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "status": "published",
+    "series": null,
+    "seriesInstallment": null,
+    "photoCredit": "Delaware Beach Finds",
+    "etsyProductIds": [],
+    "access_level": "public",
+    "issueId": null,
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "heldReason": null,
+    "slug": "the-patience-of-herons",
+    "kicker": "Delaware's Wading Birds",
+    "headline": "The Patience of Herons",
+    "hook": "A great blue heron stands four feet tall, spans six feet, and weighs about as much as a housecat. Almost everything it does is waiting — and the strike, when it comes, is one of the fastest things a large animal does.",
+    "lede": "A great blue heron hunting looks, for long stretches, like a bird that has forgotten what it was doing.",
+    "scene": "great-blue-heron-landing.jpg",
+    "heroImage": "great-blue-heron-landing.jpg",
+    "heroAlt": "A great blue heron landing on Delaware marsh water",
+    "heroImageAlt": "A great blue heron landing with wings spread over shallow water",
+    "readTime": "7 min read",
+    "category": "coast",
+    "author": "coast-nature",
+    "metaTag": "Delaware Coast",
+    "places": [
+      "lewes"
+    ],
+    "sources": [
+      "Audubon field guide, great blue heron",
+      "Delaware DNREC, Outdoor Delaware, on Delaware's heron species",
+      "Standard reference accounts of great blue heron size and weight"
+    ],
+    "relatedStories": [
+      {
+        "href": "the-refuge-loop.html",
+        "label": "The Refuge Loop"
+      },
+      {
+        "href": "the-standing-dead.html",
+        "label": "The Standing Dead"
+      }
+    ],
+    "body": [
+      "The great blue heron is North America's largest heron, about four feet tall with a six-foot wingspan, weighing only five or six pounds.",
+      "It hunts by standing still or moving very slowly, then striking with a rapid thrust of the bill; the stillness is the technique, not rest.",
+      "The widely repeated claim that Delaware hosts the largest heron gathering north of Florida could not be verified and is not asserted here."
+    ],
+    "seoTitle": "The Patience of Herons: Delaware's Great Blue Herons",
+    "seoDescription": "How a great blue heron actually hunts, why a four-foot bird weighs six pounds, where to find them in Delaware, and the Pea Patch Island claim this publication will not repeat unverified.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-patience-of-herons.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/great-blue-heron-landing.jpg"
+  },
+  {
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "status": "published",
+    "series": null,
+    "seriesInstallment": null,
+    "photoCredit": "Delaware Beach Finds",
+    "etsyProductIds": [],
+    "access_level": "public",
+    "issueId": null,
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "heldReason": null,
+    "slug": "the-refuge-loop",
+    "kicker": "Delaware Field Guide",
+    "headline": "The Refuge Loop",
+    "hook": "Delaware's two national wildlife refuges are best watched from inside a car, on a falling tide, with the engine off. Everything else about Bombay Hook and Prime Hook follows from getting that right.",
+    "lede": "Delaware has two national wildlife refuges on its bay shore, and the useful thing to understand about both is that you watch them from your car.",
+    "scene": "great-blue-heron-marsh-flight.jpg",
+    "heroImage": "great-blue-heron-marsh-flight.jpg",
+    "heroAlt": "A great blue heron in low flight over Delaware marsh",
+    "heroImageAlt": "A great blue heron flying low over marsh water with its reflection beneath",
+    "readTime": "7 min read",
+    "category": "field-guide",
+    "author": "field-notes",
+    "metaTag": "Delaware Field Guide",
+    "places": [
+      "lewes"
+    ],
+    "sources": [
+      "U.S. Fish and Wildlife Service, Bombay Hook National Wildlife Refuge",
+      "U.S. Fish and Wildlife Service, Prime Hook National Wildlife Refuge",
+      "Audubon guidance on wading bird observation"
+    ],
+    "relatedStories": [
+      {
+        "href": "the-patience-of-herons.html",
+        "label": "The Patience of Herons"
+      },
+      {
+        "href": "category-field-guide.html",
+        "label": "More Delaware Field Guide"
+      }
+    ],
+    "body": [
+      "Bombay Hook and Prime Hook are best birded from a stopped vehicle; the car functions as a hide.",
+      "A falling tide concentrates prey and pulls wading birds in to feed, making it the most productive time to visit.",
+      "Refuge hours, access and closures are set by the refuges and should be checked before travelling."
+    ],
+    "seoTitle": "The Refuge Loop: Birding Bombay Hook and Prime Hook",
+    "seoDescription": "How to actually watch Delaware's national wildlife refuges: why the car is the hide, why a falling tide beats a clock, what to bring, and how to look at a marsh without missing what is standing in it.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-refuge-loop.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/great-blue-heron-marsh-flight.jpg"
   }
 ]
