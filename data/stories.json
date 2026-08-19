@@ -781,5 +781,123 @@
     "shopTheStory": false,
     "metaTag": "Delaware History",
     "heldReason": null
+  },
+  {
+    "slug": "the-colony-that-failed-and-stayed",
+    "kicker": "New Sweden, 1638",
+    "headline": "The Colony That Failed and Stayed",
+    "hook": "New Sweden lasted seventeen years and surrendered without a shot. Almost everybody who lived there stayed for good — and by staying, made the lower Delaware a different place from the province upriver.",
+    "lede": "New Sweden lasted seventeen years and surrendered without a shot. Almost everybody who lived there stayed for good.",
+    "scene": "bay-morning-1.svg",
+    "heroImage": "bay-morning-1.svg",
+    "heroAlt": "Delaware Bay at first light",
+    "heroImageAlt": "Illustration of Delaware Bay at first light",
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "readTime": "9 min read",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "category": "history",
+    "series": "how-delaware-became-delaware",
+    "seriesInstallment": 2,
+    "status": "published",
+    "author": "first-state-history",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "Delaware Public Archives, historical markers: Landing of the Swedes; Fort Christina",
+      "Kalmar Nyckel Foundation, history of the original Kalmar Nyckel and the 1638 expedition",
+      "Swedish Colonial Society, Chronology of Colonial Swedes on the Delaware, 1638-1713",
+      "National Park Service, First State National Historical Park materials on Fort Christina"
+    ],
+    "etsyProductIds": [],
+    "relatedStories": [
+      {
+        "href": "series-how-delaware-became-delaware.html",
+        "label": "The full series"
+      },
+      {
+        "href": "category-history.html",
+        "label": "More Delaware history"
+      }
+    ],
+    "body": [
+      "Two ships under Peter Minuit reached the Christina River in March 1638 and built Fort Christina, the first permanent European settlement in the Delaware Valley.",
+      "New Sweden surrendered to Peter Stuyvesant in 1655 without a fight, but most Swedish and Finnish settlers stayed and kept a measure of self-government under Dutch and then English rule.",
+      "That persistence is why the Three Lower Counties were culturally distinct from Quaker Pennsylvania when the two later separated."
+    ],
+    "access_level": "public",
+    "issueId": null,
+    "places": [],
+    "seoTitle": "New Sweden: The Colony That Failed and Stayed",
+    "seoDescription": "New Sweden lasted seventeen years on the Delaware River and surrendered without a shot in 1655. Why the settlers stayed, what the 1638 land transaction did and did not settle, and how a failed colony shaped the Three Lower Counties.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-colony-that-failed-and-stayed.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "metaTag": "Delaware History",
+    "heldReason": null
+  },
+  {
+    "slug": "the-ladder-off-cape-henlopen",
+    "kicker": "Delaware Bay Pilots",
+    "headline": "The Ladder off Cape Henlopen",
+    "hook": "Most days and nights of the year, someone climbs a rope ladder up the side of a moving ship east of Cape Henlopen. It is how every large vessel enters Delaware Bay, and it has been happening here since 1650.",
+    "lede": "Most days and nights of the year, someone climbs a rope ladder up the side of a moving ship east of Cape Henlopen.",
+    "scene": "fenwick-island-lighthouse.jpg",
+    "heroImage": "fenwick-island-lighthouse.jpg",
+    "heroAlt": "Fenwick Island Lighthouse, one of Delaware's coastal navigation landmarks",
+    "heroImageAlt": "The Fenwick Island Lighthouse tower against a clear sky",
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "readTime": "8 min read",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "category": "coast",
+    "series": null,
+    "seriesInstallment": null,
+    "status": "published",
+    "author": "coast-nature",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "The Pilots' Association for the Bay and River Delaware",
+      "Reference accounts of the association's founding at Lewes, 28 November 1896",
+      "Act of the first United States Congress, 1789, leaving pilotage regulation to the states",
+      "Delaware pilotage legislation of 1881 establishing a board of commissioners"
+    ],
+    "etsyProductIds": [],
+    "relatedStories": [
+      {
+        "href": "category-coast.html",
+        "label": "More Delaware Coast stories"
+      }
+    ],
+    "body": [
+      "Every large vessel entering Delaware Bay takes aboard a state-licensed pilot, who boards by climbing a ladder onto a moving ship east of Cape Henlopen.",
+      "The Pilots' Association for the Bay and River Delaware organised at Lewes on 28 November 1896, ending a competitive era in which pilot schooners raced seaward for work.",
+      "Pilotage on the Delaware is traditionally dated to 1650 — when the colony on this river was New Sweden and Delaware did not yet exist."
+    ],
+    "access_level": "public",
+    "issueId": null,
+    "places": [
+      "lewes",
+      "cape-henlopen",
+      "fenwick-island"
+    ],
+    "seoTitle": "The Ladder off Cape Henlopen: The Delaware Bay Pilots",
+    "seoDescription": "How every large ship enters Delaware Bay: the state-licensed pilots who board from a launch east of Cape Henlopen, the association founded at Lewes in 1896, and a job older than the state itself.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-ladder-off-cape-henlopen.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/fenwick-island-lighthouse.jpg",
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "metaTag": "Delaware Coast",
+    "heldReason": null
   }
 ]
