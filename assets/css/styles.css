@@ -1390,3 +1390,24 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
 /* One rule under the departments head, not two. */
 .dept-panel:first-child,.dept-grid > .dept-panel:first-of-type{border-top:2px solid var(--navy)}
 @media(max-width:760px){ .dept-grid{margin-top:-2px} }
+
+/* ================================================================
+   REAL PHOTOGRAPHY PASS
+   The cover art cap existed only because the old cover story's single
+   asset was 387px. Covers now carry 2400px DBF photography, so the
+   picture can take its proper share of the lead package again.
+   ================================================================ */
+@media(min-width:1081px){
+  .cover-story{grid-template-columns:minmax(0,1fr) minmax(0,1.02fr)}
+  .cover-story .cover-art{max-width:none;margin-left:0}
+  .cover-art{aspect-ratio:4/3}
+  .cover-art img{aspect-ratio:4/3;object-fit:cover;height:100%}
+  .cover-story .credit{max-width:none;margin-left:0}
+  .cover-headline{font-size:clamp(2.5rem,3.35vw,3.7rem)}
+}
+@media(min-width:1360px){
+  .cover-story{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr)}
+  .cover-headline{font-size:clamp(2.8rem,3.6vw,4rem)}
+}
+/* Rail thumbnails are photographs now — give them a consistent frame. */
+.stack-thumb img{aspect-ratio:3/2;object-fit:cover;width:100%;height:100%}

@@ -621,8 +621,13 @@ if(pictureMount){
     const pub = (list||[]).filter(s=>s.status==='published')
       .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
     const cover = pub.find(s=>s.coverStory||s.featured);
+    // The front-page rail already shows the next four stories. Picking from
+    // those would print the same photograph twice on one page, so the picture
+    // feature draws from what the lead package has NOT already used.
+    const shown = new Set([cover && cover.slug].concat(
+      pub.filter(s=>!cover || s.slug!==cover.slug).slice(0,4).map(s=>s.slug)));
     const photo = pub.find(s =>
-      s !== cover &&
+      !shown.has(s.slug) &&
       /\.(jpe?g|png|webp)$/i.test(String(s.scene||'')));
     if(!photo){ gateHide(pictureMount); return; }
     const cat = CAT_LABELS[photo.category] || photo.category || '';

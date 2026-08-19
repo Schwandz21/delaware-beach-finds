@@ -4,7 +4,7 @@
     "kicker": "Delaware Bay Wildlife",
     "headline": "The Oldest Migration on the Bay",
     "hook": "On a handful of nights each spring, timed to the moon, Delaware Bay hosts what wildlife agencies call the largest horseshoe crab spawning event on Earth — feeding a shorebird that flies here from the bottom of South America and cannot finish the trip without it.",
-    "scene": "bay-morning-1.svg",
+    "scene": "delaware-bay-shoreline-sunset.jpg",
     "date": "2026-07-26",
     "readTime": "7 min read",
     "featured": false,
@@ -25,7 +25,7 @@
       "Conservation of Mispillion Harbor and tighter harvest limits have helped both species begin to recover after a steep decline."
     ],
     "access_level": "public",
-    "heroAlt": "Illustration of Delaware Bay at first light",
+    "heroAlt": "The Delaware Bay shoreline at sunset",
     "publishedAt": "2026-07-26",
     "publishAt": "2026-07-26",
     "approvedAt": "2026-07-26",
@@ -47,11 +47,11 @@
     "heldReason": null,
     "lede": "On a handful of nights each spring, timed to the moon, Delaware Bay hosts what wildlife agencies call the largest horseshoe crab spawning event on Earth — feeding a shorebird that flies here from the bottom of South America and cannot finish the trip without it.",
     "seriesPage": false,
-    "heroImage": "bay-morning-1.svg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/bay-morning-1.svg",
+    "heroImage": "delaware-bay-shoreline-sunset.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-bay-shoreline-sunset.jpg",
     "shopTheStory": false,
     "metaTag": null,
-    "heroImageAlt": "Delaware Bay at dawn"
+    "heroImageAlt": "Delaware Bay shoreline at sunset"
   },
   {
     "slug": "the-galloping-dune",
@@ -110,10 +110,10 @@
     "kicker": "Delaware's Wetlands",
     "headline": "Where the Marsh Is Going",
     "hook": "Nearly half of Delaware's wetlands lie between the tides, quietly filtering water, buffering storms, and raising nearly every fish on your plate. As seas rise, the state's plan isn't to hold the line — it's to let the marsh move.",
-    "scene": "marsh-gold-1.svg",
+    "scene": "delaware-marsh-channel-sunset.jpg",
     "date": "2026-07-26",
     "readTime": "7 min read",
-    "featured": false,
+    "featured": true,
     "category": "coast",
     "series": null,
     "status": "published",
@@ -131,14 +131,14 @@
       "Rather than fighting the water, Delaware's Prime Hook restoration and DNREC's marsh migration program aim to let marshes move inland as seas rise."
     ],
     "access_level": "public",
-    "heroAlt": "Illustration of Delaware tidal wetlands at golden hour",
+    "heroAlt": "A tidal channel winding through Delaware marsh at sunset",
     "publishedAt": "2026-07-26",
     "publishAt": "2026-07-26",
     "approvedAt": "2026-07-26",
     "issueId": "2026-W30",
     "author": "coast-nature",
-    "coverStory": false,
-    "placement": "standard",
+    "coverStory": true,
+    "placement": "cover",
     "seriesInstallment": null,
     "relatedStories": [
       {
@@ -153,11 +153,11 @@
     "heldReason": null,
     "lede": "Nearly half of Delaware's wetlands lie between the tides, quietly filtering water, buffering storms, and raising nearly every fish on your plate. As seas rise, the state's plan isn't to hold the line — it's to let the marsh move.",
     "seriesPage": false,
-    "heroImage": "marsh-gold-1.svg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/marsh-gold-1.svg",
+    "heroImage": "delaware-marsh-channel-sunset.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-marsh-channel-sunset.jpg",
     "shopTheStory": false,
     "metaTag": null,
-    "heroImageAlt": "Salt marsh at golden hour"
+    "heroImageAlt": "Tidal channel through coastal marsh at sunset"
   },
   {
     "slug": "towers-on-the-dunes",
@@ -167,7 +167,7 @@
     "scene": "cape-henlopen-aerial-1.jpg",
     "date": "2026-07-25",
     "readTime": "9 min read",
-    "featured": true,
+    "featured": false,
     "category": "coast",
     "series": "delaware-at-war",
     "seriesInstallment": null,
@@ -192,8 +192,8 @@
     "approvedAt": "2026-07-25",
     "issueId": "2026-W30",
     "author": "coast-nature",
-    "coverStory": true,
-    "placement": "cover",
+    "coverStory": false,
+    "placement": "feature",
     "relatedStories": [
       {
         "href": "category-coast.html",
@@ -262,7 +262,7 @@
     "heroAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series",
     "seriesPage": true,
     "heroImage": "dune-sunrise-1.svg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
     "shopTheStory": false,
     "metaTag": "How Delaware Became Delaware",
     "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series"
@@ -316,7 +316,7 @@
     "heroAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series",
     "seriesPage": true,
     "heroImage": "dune-sunrise-2.svg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-2.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
     "shopTheStory": false,
     "metaTag": "How Delaware Became Delaware",
     "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series"
@@ -326,7 +326,7 @@
     "kicker": "Indian River Inlet",
     "headline": "The Six O'Clock Shift at Indian River Inlet",
     "hook": "Every morning the surfcasters pack up right as the paddleboarders wade in — a ten-minute handoff between two different Delawares.",
-    "scene": "paddleboard-sunrise-1.jpg",
+    "scene": "indian-river-inlet-bridge-beach-evening.jpg",
     "tag": "Dawn Patrol",
     "date": "2026-07-15",
     "readTime": "5 min read",
@@ -374,13 +374,13 @@
     "renderMode": "generated",
     "heldReason": null,
     "lede": "Every morning the surfcasters pack up right as the paddleboarders wade in — a ten-minute handoff between two different Delawares.",
-    "heroAlt": "The Six O'Clock Shift at Indian River Inlet",
+    "heroAlt": "The Indian River Inlet bridge from the beach on a summer evening",
     "seriesPage": false,
-    "heroImage": "paddleboard-sunrise-1.jpg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "heroImage": "indian-river-inlet-bridge-beach-evening.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/indian-river-inlet-bridge-beach-evening.jpg",
     "shopTheStory": false,
     "metaTag": "Dawn Patrol",
-    "heroImageAlt": "The Six O'Clock Shift at Indian River Inlet"
+    "heroImageAlt": "Beach at Indian River Inlet with the bridge beyond"
   },
   {
     "slug": "what-the-boardwalk-smells-like-in-july",
@@ -437,7 +437,7 @@
     "heroAlt": "What the Boardwalk Smells Like in July",
     "seriesPage": false,
     "heroImage": "rehoboth-boardwalk-day-1.jpg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/rehoboth-boardwalk-day-1.jpg",
     "shopTheStory": false,
     "metaTag": "Field Notes",
     "heroImageAlt": "What the Boardwalk Smells Like in July"
@@ -497,7 +497,7 @@
     "heroAlt": "A Field Guide to Bethany's Bandstand Nights",
     "seriesPage": false,
     "heroImage": "dune-fence-sunset-1.jpg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-fence-sunset-1.jpg",
     "shopTheStory": false,
     "metaTag": "Field Notes",
     "heroImageAlt": "A Field Guide to Bethany's Bandstand Nights"
@@ -507,7 +507,7 @@
     "kicker": "Cape Henlopen",
     "headline": "The Unmarked Trail Behind Gordons Pond",
     "hook": "Most people park at Gordons Pond, walk the boardwalk to the beach, and turn around. The trail that keeps going is where the park gets quiet.",
-    "scene": "marsh-green-1",
+    "scene": "delaware-beach-dune-fence-summer.jpg",
     "tag": "Trail Notes",
     "date": "2026-06-18",
     "readTime": "5 min read",
@@ -561,13 +561,13 @@
     "renderMode": "generated",
     "heldReason": null,
     "lede": "Most people park at Gordons Pond, walk the boardwalk to the beach, and turn around. The trail that keeps going is where the park gets quiet.",
-    "heroAlt": "The Unmarked Trail Behind Gordons Pond",
+    "heroAlt": "Dune fencing and beach grass along the Delaware shore in summer",
     "seriesPage": false,
-    "heroImage": "marsh-green-1.svg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "heroImage": "delaware-beach-dune-fence-summer.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-beach-dune-fence-summer.jpg",
     "shopTheStory": true,
     "metaTag": "Trail Notes",
-    "heroImageAlt": "The Unmarked Trail Behind Gordons Pond"
+    "heroImageAlt": "Dune fencing and beach grass along the Delaware shore"
   },
   {
     "slug": "low-tide-assateague-different-island",
@@ -624,7 +624,7 @@
     "heroAlt": "Low Tide at Assateague Is a Different Island",
     "seriesPage": false,
     "heroImage": "marsh-dawn-1.svg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
     "shopTheStory": false,
     "metaTag": "Field Notes",
     "heroImageAlt": "Low Tide at Assateague Is a Different Island"
