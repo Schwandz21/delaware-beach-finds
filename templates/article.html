@@ -2,6 +2,7 @@
 <section class="page-hero">
 <div class="container">
 <div class="breadcrumbs"><a href="../index.html">Home</a> / <a href="index.html">Stories</a> / <a href="{{CRUMB_HREF}}">{{CRUMB_LABEL}}</a> / {{HEADLINE}}</div>
+<div data-mount="series-badge" data-story="{{SLUG}}"></div>
 <div class="kicker">{{KICKER}}</div>
 <h1>{{HEADLINE}}</h1>
 <p class="lede">{{HOOK}}</p>
@@ -23,6 +24,11 @@
 </div>
 </section>
 {{SHOP_THE_STORY}}
+<section class="section story-foot-section">
+<div class="container">
+<div data-mount="story-foot" data-story="{{SLUG}}" data-gate-hide></div>
+</div>
+</section>
 {{SERIES_NAV}}
 </main><footer class="footer"><div class="container"><div class="footer-grid">
 <div class="footer-about"><a class="brand" href="../index.html"><span class="brand-name">Delaware Beach Finds</span></a><p>A weekly look at the Delaware coast &mdash; the towns, the tides, the people who never leave the beach parking lot without talking to a stranger first.</p></div>

@@ -6,5 +6,13 @@
     "heroImage": "dune-sunrise-1.svg",
     "totalInstallments": 9,
     "status": "in-progress"
+  },
+  {
+    "slug": "delaware-at-war",
+    "title": "Delaware at War",
+    "description": "How war reshaped the Delaware coast — the guns, the towers, the men who watched an empty ocean, and what they left behind in the dunes.",
+    "heroImage": "cape-henlopen-aerial-1.jpg",
+    "totalInstallments": null,
+    "status": "in-progress"
   }
 ]

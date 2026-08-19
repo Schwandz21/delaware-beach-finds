@@ -26,9 +26,9 @@ REPO = os.path.dirname(HERE)
 OUT = os.path.join(REPO, 'data', 'events-generated.json')
 
 from events.dedupe import dedupe                        # noqa: E402
-from events.sources import bethany, rehoboth            # noqa: E402
+from events.sources import bethany, historic_lewes, rehoboth   # noqa: E402
 
-SOURCES = [rehoboth, bethany]
+SOURCES = [rehoboth, historic_lewes, bethany]
 # Keep a short tail of finished events so a page loaded near midnight does not
 # lose its context; current-facing filtering happens at render time.
 KEEP_PAST_DAYS = 2

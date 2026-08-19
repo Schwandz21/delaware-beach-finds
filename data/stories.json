@@ -51,7 +51,10 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-bay-shoreline-sunset.jpg",
     "shopTheStory": false,
     "metaTag": null,
-    "heroImageAlt": "Delaware Bay shoreline at sunset"
+    "heroImageAlt": "Delaware Bay shoreline at sunset",
+    "places": [
+      "lewes"
+    ]
   },
   {
     "slug": "the-galloping-dune",
@@ -103,7 +106,11 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-fence-sunset-2.jpg",
     "shopTheStory": false,
     "metaTag": null,
-    "heroImageAlt": "Dune fence and sand at sunset, Delaware coast"
+    "heroImageAlt": "Dune fence and sand at sunset, Delaware coast",
+    "places": [
+      "cape-henlopen",
+      "lewes"
+    ]
   },
   {
     "slug": "where-the-marsh-is-going",
@@ -157,7 +164,10 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-marsh-channel-sunset.jpg",
     "shopTheStory": false,
     "metaTag": null,
-    "heroImageAlt": "Tidal channel through coastal marsh at sunset"
+    "heroImageAlt": "Tidal channel through coastal marsh at sunset",
+    "places": [
+      "lewes"
+    ]
   },
   {
     "slug": "towers-on-the-dunes",
@@ -211,7 +221,12 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/cape-henlopen-aerial-1.jpg",
     "shopTheStory": false,
     "metaTag": "Delaware at War",
-    "heroImageAlt": "Cape Henlopen, Delaware, seen from the air"
+    "heroImageAlt": "Cape Henlopen, Delaware, seen from the air",
+    "places": [
+      "cape-henlopen",
+      "lewes",
+      "bethany-beach"
+    ]
   },
   {
     "slug": "why-delaware-looks-like-that",
@@ -265,7 +280,8 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
     "shopTheStory": false,
     "metaTag": "How Delaware Became Delaware",
-    "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series"
+    "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series",
+    "places": []
   },
   {
     "slug": "three-counties-become-the-first-state",
@@ -319,7 +335,8 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
     "shopTheStory": false,
     "metaTag": "How Delaware Became Delaware",
-    "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series"
+    "heroImageAlt": "Illustration accompanying Delaware Beach Finds' How Delaware Became Delaware series",
+    "places": []
   },
   {
     "slug": "six-oclock-shift-indian-river-inlet",
@@ -380,7 +397,11 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/indian-river-inlet-bridge-beach-evening.jpg",
     "shopTheStory": false,
     "metaTag": "Dawn Patrol",
-    "heroImageAlt": "Beach at Indian River Inlet with the bridge beyond"
+    "heroImageAlt": "Beach at Indian River Inlet with the bridge beyond",
+    "places": [
+      "dewey-beach",
+      "bethany-beach"
+    ]
   },
   {
     "slug": "what-the-boardwalk-smells-like-in-july",
@@ -440,7 +461,10 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/rehoboth-boardwalk-day-1.jpg",
     "shopTheStory": false,
     "metaTag": "Field Notes",
-    "heroImageAlt": "What the Boardwalk Smells Like in July"
+    "heroImageAlt": "What the Boardwalk Smells Like in July",
+    "places": [
+      "rehoboth-beach"
+    ]
   },
   {
     "slug": "bethany-bandstand-nights",
@@ -500,7 +524,10 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-fence-sunset-1.jpg",
     "shopTheStory": false,
     "metaTag": "Field Notes",
-    "heroImageAlt": "A Field Guide to Bethany's Bandstand Nights"
+    "heroImageAlt": "A Field Guide to Bethany's Bandstand Nights",
+    "places": [
+      "bethany-beach"
+    ]
   },
   {
     "slug": "unmarked-trail-behind-gordons-pond",
@@ -567,7 +594,11 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/delaware-beach-dune-fence-summer.jpg",
     "shopTheStory": true,
     "metaTag": "Trail Notes",
-    "heroImageAlt": "Dune fencing and beach grass along the Delaware shore"
+    "heroImageAlt": "Dune fencing and beach grass along the Delaware shore",
+    "places": [
+      "cape-henlopen",
+      "rehoboth-beach"
+    ]
   },
   {
     "slug": "low-tide-assateague-different-island",
@@ -627,6 +658,9 @@
     "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
     "shopTheStory": false,
     "metaTag": "Field Notes",
-    "heroImageAlt": "Low Tide at Assateague Is a Different Island"
+    "heroImageAlt": "Low Tide at Assateague Is a Different Island",
+    "places": [
+      "assateague"
+    ]
   }
 ]

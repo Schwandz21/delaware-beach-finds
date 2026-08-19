@@ -650,6 +650,146 @@ if(pictureMount){
   }).catch(()=>{ gateHide(pictureMount); });
 }
 
+// STORY FOOT — the onward journey.
+// A 5,800px feature previously ended with a one-link sidebar box. This builds a
+// real continuation: the series it belongs to, stories about the same place,
+// what is on at that place today, and a live window if one exists there. Every
+// connection is drawn from existing metadata — nothing is invented, and a
+// section with nothing real to show is not rendered.
+const TOWN_LABEL = {
+  'cape-henlopen':'Cape Henlopen','lewes':'Lewes','rehoboth-beach':'Rehoboth Beach',
+  'dewey-beach':'Dewey Beach','bethany-beach':'Bethany Beach',
+  'fenwick-island':'Fenwick Island','ocean-city':'Ocean City','assateague':'Assateague'
+};
+const TOWN_EVENT_NAME = {
+  'lewes':'Lewes','rehoboth-beach':'Rehoboth Beach','dewey-beach':'Dewey Beach',
+  'bethany-beach':'Bethany Beach','fenwick-island':'Fenwick Island','ocean-city':'Ocean City',
+  'cape-henlopen':'Lewes'
+};
+
+const footMount = document.querySelector('[data-mount="story-foot"]');
+if(footMount){
+  const slug = footMount.getAttribute('data-story');
+  Promise.all([
+    fetchJson('stories.json'),
+    fetchJson('series.json').catch(()=>[]),
+    loadEvents().catch(()=>[]),
+    fetchJson('live-feeds.json').catch(()=>({feeds:[]}))
+  ]).then(([stories, series, events, live])=>{
+    const pub = (stories||[]).filter(s=>s.status==='published');
+    const me = pub.find(s=>s.slug===slug);
+    if(!me){ gateHide(footMount); return; }
+    const card = s => `
+      <a class="foot-card" href="${esc(s.slug)}.html" data-foot-story data-from="${esc(slug)}">
+        <span class="foot-art">${sceneImg(s.scene, s.heroImageAlt||s.heroAlt||s.headline)}</span>
+        <span class="foot-kicker">${esc(s.kicker||CAT_LABELS[s.category]||'')}</span>
+        <span class="foot-head">${esc(s.headline)}</span>
+        <span class="foot-hook">${esc((s.hook||'').slice(0,110))}${(s.hook||'').length>110?'…':''}</span>
+      </a>`;
+    let html = '';
+
+    // 1. The series this belongs to.
+    if(me.series){
+      const meta = (series||[]).find(x=>x.slug===me.series);
+      const sibs = pub.filter(s=>s.series===me.series && s.slug!==slug)
+        .sort((a,b)=>(a.seriesInstallment||0)-(b.seriesInstallment||0));
+      if(sibs.length){
+        html += `<section class="foot-block">
+          <div class="foot-head-row">
+            <h2 class="foot-title">${esc(meta?meta.title:'From this series')}</h2>
+            ${meta?`<a class="ed-link" href="series-${esc(me.series)}.html">The whole series &rarr;</a>`:''}
+          </div>
+          ${meta&&meta.description?`<p class="foot-lede">${esc(meta.description)}</p>`:''}
+          <div class="foot-grid">${sibs.slice(0,3).map(card).join('')}</div>
+        </section>`;
+      }
+    }
+
+    // 2. Stories about the same stretch of coast.
+    const places = me.places||[];
+    if(places.length){
+      const near = pub.filter(s=>s.slug!==slug && (s.places||[]).some(p=>places.includes(p)));
+      if(near.length){
+        html += `<section class="foot-block">
+          <div class="foot-head-row"><h2 class="foot-title">More from ${esc(TOWN_LABEL[places[0]]||'the coast')}</h2></div>
+          <div class="foot-grid">${near.slice(0,3).map(card).join('')}</div>
+        </section>`;
+      }
+    }
+
+    // 3. What is actually on there today, and a live window if one exists.
+    const today = todayEasternISO();
+    const wanted = places.map(p=>TOWN_EVENT_NAME[p]).filter(Boolean);
+    const soon = (events||[])
+      .filter(e=>e.town && wanted.includes(e.town) && (e.endDate||e.startDate) >= today)
+      .sort((a,b)=>(a.startDate||'').localeCompare(b.startDate||''))
+      .slice(0,3);
+    const feed = ((live&&live.feeds)||[]).find(f=>f.active &&
+      places.some(p=>(f.town||'').toLowerCase().includes((TOWN_LABEL[p]||'').toLowerCase())));
+    if(soon.length || feed){
+      html += `<section class="foot-block foot-now">
+        <div class="foot-head-row"><h2 class="foot-title">While you are out there</h2>
+          <a class="ed-link" href="../today.html">Delaware Coast Today &rarr;</a></div>
+        <div class="foot-now-grid">
+          ${soon.length?`<div><span class="foot-sub">Coming up nearby</span>
+            ${soon.map(e=>`<a class="foot-ev" href="../events.html">
+              <span class="foot-ev-when">${esc(e.displayDate||e.startDate)}</span>
+              <span class="foot-ev-what">${esc(e.title)}</span></a>`).join('')}</div>`:''}
+          ${feed?`<div><span class="foot-sub">Live from here</span>
+            <a class="foot-ev" href="../live.html"><span class="foot-ev-what">${esc(feed.title)}</span>
+            <span class="foot-ev-when">${esc(feed.attribution||'')}</span></a></div>`:''}
+        </div>
+      </section>`;
+    }
+
+    // 4. Top up from the archive. A series with two installments published, or
+    //    a story with no place tags, would otherwise leave a thin grid and a
+    //    dead end — the reader should always have somewhere good to go next.
+    const usedSlugs = new Set([slug].concat(
+      (html.match(/href="([a-z0-9-]+)\.html"/g)||[])
+        .map(h=>h.replace(/href="|\.html"/g,''))));
+    const shown = (html.match(/class="foot-card"/g)||[]).length;
+    if(shown < 3){
+      const more = pub.filter(s=>!usedSlugs.has(s.slug)).slice(0, 3 - shown);
+      if(more.length){
+        html += `<section class="foot-block">
+          <div class="foot-head-row"><h2 class="foot-title">From the archive</h2>
+            <a class="ed-link" href="index.html">All Delaware stories &rarr;</a></div>
+          <div class="foot-grid">${more.map(card).join('')}</div></section>`;
+      }
+    }
+    if(!html){ gateHide(footMount); return; }
+    footMount.innerHTML = html;
+  }).catch(()=>{ gateHide(footMount); });
+}
+
+// Series masthead at the head of a series article.
+const seriesBadge = document.querySelector('[data-mount="series-badge"]');
+if(seriesBadge){
+  const slug = seriesBadge.getAttribute('data-story');
+  Promise.all([fetchJson('stories.json'), fetchJson('series.json').catch(()=>[])])
+    .then(([stories, series])=>{
+      const me = (stories||[]).find(s=>s.slug===slug);
+      if(!me||!me.series){ gateHide(seriesBadge); return; }
+      const meta=(series||[]).find(x=>x.slug===me.series);
+      if(!meta){ gateHide(seriesBadge); return; }
+      const n = me.seriesInstallment, total = meta.totalInstallments;
+      const pos = n ? (total?`Installment ${n} of ${total}`:`Installment ${n}`) : '';
+      seriesBadge.innerHTML = `
+        <a class="series-badge" href="series-${esc(meta.slug)}.html">
+          <span class="series-badge-k">A Delaware Beach Finds series</span>
+          <span class="series-badge-t">${esc(meta.title)}</span>
+          ${pos?`<span class="series-badge-n">${esc(pos)}</span>`:''}
+        </a>`;
+    }).catch(()=>{ gateHide(seriesBadge); });
+}
+
+document.addEventListener('click',function(e){
+  if(!window.gtag) return;
+  const f=e.target.closest('[data-foot-story]');
+  if(f) gtag('event','related_story_click',{from_story:f.dataset.from,placement:'story_foot',source_page:location.pathname});
+});
+
 // DELAWARE COAST TODAY — official conditions.
 // Reads data/coast-now.json, produced by scripts/fetch_coast_now.py from NWS,
 // NOAA CO-OPS and DNREC. Renders only what the file actually contains: a
