@@ -1,143 +1,90 @@
-# Delaware Beach Finds — Handoff / Savepoint
+# Delaware Beach Finds — Checkpoint
 
-**Last updated:** 2026-08-14 (operationalization sprint)
+**Last verified in production:** 2026-08-19
+**Purpose:** resume the next session without rediscovering the project.
 
-## State
+---
+
+## LIVE STATE
 
 | | |
 | --- | --- |
-| Final branch | `feature/dbf-editorial-ui-overhaul-2026-08-13` (preserved, not deleted) |
-| Final commit on branch | `c6ec545` |
-| Merge commit on `main` | `9b78189` |
-| Merged | **Yes** — `--no-ff` into `main` |
-| Pushed | **Yes** — `ef147ad..9b78189` |
-| Production verified | **Yes** — see below |
-| Deploy mechanism | GitHub Pages from `main`, CNAME `delawarebeachfinds.com` |
+| Published stories | **22** |
+| Departments | Coast 10 · History 6 · Field Guide 4 · People 2 |
+| Real photography | **14 of 22** heroes are photographs; the rest use the house illustrated treatment |
+| Cover story | `where-the-marsh-is-going` — 2400px marsh photograph, deliberately preserved |
+| Latest published | `what-the-dunes-were-for` (Fort Miles), `three-hundred-dollars`, `the-patience-of-herons`, `the-refuge-loop` |
+| Today | Live at `/today.html` — NWS forecast + alerts, NOAA tides + water temp, DNREC link-out, 5 towns |
+| Live | Live at `/live.html` — 2 embedded YouTube feeds (Cape Henlopen osprey + nature centre), 3 link-out cards |
+| Events | **102** ingested from 3 first-party sources (Rehoboth, Lewes Historical Society, Bethany) |
+| Automation | **Healthy.** `refresh-coast.yml` ran unattended 4× on 2026-08-19 (09:52, 14:00, 17:44, 21:43 UTC) |
+| Tests | **25/25 suites** |
+| Links | **2,380 internal, 0 dead** |
+| Etsy | DelawareBeachFinds only; no Blue Hen Basement references anywhere |
+| Sponsored | **0** — and the renderer forces `sponsored:false` even if an override tries to set it |
+| Audience metrics | **0 published** — `data/audience-metrics.json` is filled but every value is null by design |
 
-### Production checks (all 200)
-`/` · `/advertise.html` · `/this-week.html` · `/archive.html` ·
-`/stories/towers-on-the-dunes.html` · `/shop.html`
+### Deploy
+GitHub Pages from `main`, CNAME `delawarebeachfinds.com`. Remote is **SSH**
+(`git@github.com:Schwandz21/...`) because the HTTPS keychain token expired.
+Push may need `git pull --rebase` first — the refresh workflow commits on its own.
 
-Live content confirmed: DBF Weekend franchise present; nav reads
-Homes & Design / Delaware Stories / Field Notes / This Week / Explore / About;
-Advertise link in footer; Etsy storefront intact; `dbf-weekend` renders above
-`the-edit`; GA id `G-XR94ZKCF9J` served from `config.js`; all 4 new events live.
+---
 
-## Git remote switched to SSH
+## EDITORIAL STATE
 
-The HTTPS credential in the macOS keychain **expired mid-session** and could no
-longer push. Your existing SSH key (`~/.ssh/id_ed25519`) authenticates fine, so
-the remote was switched to the standard SSH transport:
+### Just published
+**What the Dunes Were For** — Fort Miles and Delaware's WWII coast. Why the bay
+mouth was worth closing, the fort that closed it, the U-boat war that actually
+arrived, and the surrender of *U-858* at Lewes on 14 May 1945. Joins
+`delaware-at-war` alongside *The Towers on the Dunes* and resolves the
+tower-count ambiguity that piece flagged (15 concrete towers system-wide: 11 in
+Delaware, 4 in New Jersey).
 
-```
-git@github.com:Schwandz21/delaware-beach-finds.git
-```
+### Strongest remaining backlog candidates
+`editorial/STORY-BACKLOG.md` holds 30 pitches with sources and visual notes.
+The three best right now:
+1. **The Wedge** — the sliver Delaware and Pennsylvania both claimed until 1921.
+2. **Thomas Garrett** — the Wilmington merchant fined into bankruptcy for helping
+   freedom seekers. Would also open the proposed **Freedom Routes** series.
+3. **The Delaware Bay pilots follow-up / lifesaving service** — maritime is proven
+   territory and under-served.
 
-Same repo, same GitHub Pages deploy. Reversible at any time with
-`git remote set-url origin https://github.com/Schwandz21/delaware-beach-finds.git`
-once the keychain token is refreshed. SSH keys are not OAuth-scope-limited,
-which is also why the scheduled workflow could finally be installed.
+### Deliberately deferred — do not publish without better grounding
+**The Indigenous history feature** (backlog pitch 8, and installment 1 of
+*How Delaware Became Delaware*). Every research pass so far has been
+colonial-side. It must not be drafted from secondary material alone. Route:
+Nanticoke Indian Association, Delaware Tribe of Indians, Smithsonian NMAI.
 
-## Scheduled publisher — STATUS: INSTALLED, AWAITING FIRST REAL RUN
+### How Delaware Became Delaware — incomplete, honestly
+Published: **2, 6, 7, 8, 9**. Missing: **1, 3, 4, 5**.
+The series page states this itself: *"5 of 9 installments published · still to
+come: 1, 3, 4, 5"*, and the renderer refuses to say "complete" while any
+numbered installment is missing. Installment 2 ends exactly where 3 must begin.
 
-`.github/workflows/publish-scheduled.yml` is **on the true remote `main`**.
-Hourly cron plus manual dispatch. No manual paste is required any more.
+### Known visual gaps (real, not cosmetic)
+- **No Cape Henlopen / Fort Miles photograph above 387px.** The Fort Miles
+  flagship runs a 1200px coastal aerial, honestly captioned, because nothing
+  better exists in the library.
+- **No verified Lewes frame** — the pilots story, tide station, osprey cam and
+  marsh cover all point at Lewes.
+- **No archival/historical imagery pipeline.** Every history piece uses the house
+  illustration. Library of Congress, NARA and Delaware Public Archives hold
+  public-domain material but rights need checking item by item.
+- **No Homes & Design photography** — that department has no stories and cannot
+  be illustrated today.
 
-Nothing is currently scheduled, so the correct behaviour right now is that every
-hourly run publishes nothing and makes no commit.
+---
 
-**Confirm it whenever you like:** GitHub → **Actions** → "Publish scheduled
-stories" → **Run workflow** → `dry_run = true`. Expect "nothing due".
+## NEXT SESSION — three editorial moves
 
-## Audience metrics — ready to fill
+1. **Publish The Wedge.** Genuinely strange, well documented, works standalone,
+   and strengthens the borders material without needing new photography.
+2. **Publish Thomas Garrett and open Freedom Routes.** Grows People to three,
+   opens a serious series, and is the most consequential Delaware story still
+   unwritten.
+3. **Get one Cape Henlopen and one Lewes photograph.** A single afternoon with a
+   camera unblocks the Fort Miles hero, the pilots piece and the towers story —
+   the largest visible constraint on the archive right now.
 
-`data/audience-metrics.json` is the single source. Eight slots, all currently
-`null`, so the advertise page makes **no audience claim at all** today — the
-section hides itself entirely.
-
-To go live Monday: set `value`, `verifiedAt` (the day you read it), `period` and
-`source` on each metric you have ground-truthed, then:
-
-```
-python3 scripts/validate_editorial.py
-```
-
-The validator **refuses** a value without `verifiedAt` or `source`, a
-future-dated verification, an empty metric that claims verification, and
-duplicate keys. Verified by negative test: a bare number fails with exit 1 and
-cannot reach production. A metric older than `staleAfterDays` (120) stops
-rendering until re-checked.
-
-No code or design change is needed — fill the file, validate, deploy.
-
-## Advertise page
-
-**Path:** `/advertise.html` — <https://delawarebeachfinds.com/advertise.html>
-
-Flagship product **DBF Weekend Partner** (four-week integrated sponsorship),
-with **DBF Feature Partner** and **DBF Seasonal Partner** beneath it. Founding
-Partner section with no invented count and no published pricing. Contact routes
-to `contact.html` and `michael@rentdelawarebeaches.com` (existing address; none
-invented). Prints to PDF cleanly as an interim leave-behind.
-
-**No** metrics, clients, testimonials, campaign results, prices, or guarantees.
-
-## DBF Weekend — implementation state
-
-Live as a named franchise on the homepage (`#dbf-weekend`): own nameplate,
-standing line, real event data from `data/events.json`, links to This Week and
-Events. **Not yet** a distinct page or archive of its own.
-
-**Sponsor slot:** `data-mount="franchise-sponsor"` reads `data/sponsors.json`
-(currently `[]`). Renders only for a record with `franchise`, `name`, `url` and
-a current date window. With no sponsor it draws nothing — `:empty` hides it.
-To sell it: add one record, no code change.
-
-## Analytics added
-
-`sponsor_click` · `advertise_page_view` · `advertiser_contact_click` ·
-`advertising_product_interest` — all on the existing `gtag` convention in
-`assets/js/site.js`. No second analytics system. Sponsor outbound links use
-`data-sponsor-link`.
-
-## Scheduled GitHub workflow — NOT INSTALLED
-
-`automation/publish-scheduled.WORKFLOW.yml` is paste-ready. `.github/` is
-untouched because the token lacks the `workflow` scope. Nothing publishes
-automatically until it is created at `.github/workflows/publish-scheduled.yml`
-via the GitHub web UI. With nothing scheduled it is safe to install any time.
-
-## Known limitations
-
-- Scheduled publishing is manual (`python3 scripts/publish_due.py`) until the
-  workflow is installed.
-- No newsletter, TikTok or app. The advertise page describes these as in
-  development and never as existing reach.
-- Instagram has no API: featured permalink in `data/instagram.json` is manual.
-- `admin/editorial-planner.html` exports JSON; it cannot save to the repo.
-- No audience metrics anywhere on the site. Deliberate — nothing unverified.
-
-## Photography needs (blocking, see `automation/PHOTOGRAPHY_REQUIREMENTS.md`)
-
-1. **Cape Henlopen / fire-control tower, min 2000px wide, landscape, golden
-   hour.** `cape-henlopen-aerial-1.jpg` is 387×258 — the only low-res raster in
-   the library and it belongs to the current cover story. The homepage cover is
-   deliberately type-led because of it. On replacement: drop the file in, set
-   `heroImage`, run `render_story.py`, delete the `max-width:387px` cap in the
-   ITERATION 3 block of `styles.css`.
-2. Vertical (4:5) coastal portrait for cover variety.
-3. Detail/texture frames (dune fence, marsh grass, boardwalk plank).
-4. Homes & Design interior/architectural frame.
-
-## Monday
-
-1. Ground-truth current audience metrics (IG, GA4) — nothing goes on the site unverified.
-2. Formal DBF Media Network inventory.
-3. Finalise DBF Weekend v1 (consider its own page + archive).
-4. Advertiser tracking/reporting from real GA4 data.
-5. Formal media kit.
-6. Founding campaign pricing.
-7. Prospect pipeline.
-8. Launch-quality content bank.
-9. Photography library integration.
-10. Install the scheduled workflow.
+Everything else is working. Leave the automation alone.
