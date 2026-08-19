@@ -1609,3 +1609,7 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
   .foot-now-grid{grid-template-columns:1fr}
   .foot-card{padding-top:16px}
 }
+/* A finished series should say so. */
+.series-progress{display:inline-block;margin-top:6px;font-size:var(--fs-eyebrow);
+  letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--coral-deep);
+  border-top:2px solid var(--navy);padding-top:9px}

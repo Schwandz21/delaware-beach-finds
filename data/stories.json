@@ -722,5 +722,64 @@
     "shopTheStory": false,
     "metaTag": "Delaware History",
     "heldReason": null
+  },
+  {
+    "slug": "in-his-boots-and-spurs",
+    "kicker": "Caesar Rodney, Myth and Record",
+    "headline": "In His Boots and Spurs",
+    "hook": "The most famous sentence about Caesar Rodney's ride was written thirty-seven years later, by a man correcting somebody else's version of events. What the record actually supports — and why Delaware needed the story.",
+    "lede": "The most famous sentence about Caesar Rodney's ride was written thirty-seven years later, by a man correcting somebody else's version of events.",
+    "scene": "dune-sunrise-2.svg",
+    "heroImage": "dune-sunrise-2.svg",
+    "heroAlt": "Delaware dunes at sunrise",
+    "heroImageAlt": "Illustration of Delaware dunes at sunrise",
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "readTime": "9 min read",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "category": "history",
+    "series": "how-delaware-became-delaware",
+    "seriesInstallment": 9,
+    "status": "published",
+    "author": "first-state-history",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "Thomas McKean to Caesar A. Rodney, 22 September 1813, Papers of Thomas Jefferson, Founders Online, U.S. National Archives",
+      "National Park Service, Caesar Rodney Statue and Rodney's ride materials",
+      "U.S. Mint, 1999 Delaware state quarter",
+      "Standard reference accounts of the ride giving the distance as 70 miles"
+    ],
+    "etsyProductIds": [],
+    "relatedStories": [
+      {
+        "href": "series-how-delaware-became-delaware.html",
+        "label": "The full series"
+      },
+      {
+        "href": "category-history.html",
+        "label": "More Delaware history"
+      }
+    ],
+    "body": [
+      "The 'boots and spurs' detail comes from Thomas McKean's letter of 22 September 1813, written 37 years after the event to correct a relative's mistaken account.",
+      "Authorities disagree on the distance: the National Park Service says nearly 80 miles, standard accounts say 70, and no contemporaneous figure is known.",
+      "The modern image of the ride derives largely from James Edward Kelly's 1923 statue, the musical 1776, and the 1999 Delaware quarter."
+    ],
+    "access_level": "public",
+    "issueId": null,
+    "places": [],
+    "seoTitle": "In His Boots and Spurs: Caesar Rodney's Ride, Myth and Record",
+    "seoDescription": "What the documentary record actually supports about Caesar Rodney's July 1776 ride — the 1813 letter behind the famous detail, the ten-mile disagreement over distance, and why Delaware needed the story.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/in-his-boots-and-spurs.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "metaTag": "Delaware History",
+    "heldReason": null
   }
 ]

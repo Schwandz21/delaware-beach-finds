@@ -92,6 +92,29 @@ Timing key: **E** evergreen · **S** seasonal · **T** timely.
 
 30. **The Bandstand Summer** — A season of free concerts in Rehoboth, and how the programme is put together. · Culture · — · Connects directly to the events calendar · City of Rehoboth Beach · Concert photography · S
 
+
+---
+
+## PRIORITY: HOW DELAWARE BECAME DELAWARE, INSTALLMENTS 1–5
+
+The series advertises nine parts. Published installments are **6, 7, 8 and 9**.
+Installments 1–5 have never been written, so a reader who arrives at installment 6
+has nothing to go back to. Numbering the existing pieces 6–9 was a promise about
+material that does not exist yet.
+
+Finishing this series does not mean writing a finale — that is done. It means
+writing the opening five. Provisional arc, to be confirmed against the pieces
+already published:
+
+1. **Before the Name** — the Lenape homeland along the river and bay. *See pitch 8; the same tribal-source standard applies and this must not be drafted from secondary material alone.*
+2. **New Sweden** — Fort Christina, 1638, and the colony that failed. · Delaware Historical Society; NPS First State NHP
+3. **Dutch, Then English** — the transfers of control to 1664. · Delaware Public Archives; colonial records
+4. **Penn Needs the River** — why the Duke of York conveyed the Lower Counties in 1682, and what Penn actually wanted. · Penn papers; NPS
+5. **The Assembly of 1704** — legislative separation while still sharing a governor. · Delaware Public Archives; Charter of Privileges
+
+Installment 6 opens on the boundary arc and installment 7 on the Act of
+Separation, so 1–5 must land the reader at the point where those begin.
+
 ---
 
 ## Known asset gaps blocking specific pitches

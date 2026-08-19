@@ -421,10 +421,29 @@ if(guidesMount){
 document.querySelectorAll('[data-mount="series-hero"]').forEach(mount=>{
 const seriesSlug = mount.getAttribute('data-series');
 if(!seriesSlug) return;
-fetchJson('series.json').then(list=>{
+Promise.all([fetchJson('series.json'), fetchJson('stories.json').catch(()=>[])])
+  .then(([list, stories])=>{
 const s = list.find(x=>x.slug===seriesSlug);
 if(!s) return;
-mount.innerHTML = `<div class="kicker">A Delaware Beach Finds Series</div><h1>${esc(s.title)}</h1><p class="lede">${esc(s.description)}</p>`;
+// Say how far along the series is. A finished series is an achievement worth
+// stating; an unfinished one should be honest that more is coming.
+const parts = (stories||[]).filter(x=>x.series===seriesSlug && x.status==='published');
+const published = parts.length;
+const total = s.totalInstallments || published;
+// Only "complete" when every numbered installment actually exists — a series
+// can hold its final part and still be missing the middle.
+const nums = parts.map(x=>x.seriesInstallment).filter(Boolean);
+const missing = total ? Array.from({length:total},(_,i)=>i+1).filter(n=>!nums.includes(n)) : [];
+const done = s.status === 'complete' && !missing.length;
+const badge = published
+  ? `<p class="series-progress">${done
+      ? `Complete &middot; ${published} of ${total} installments`
+      : `${published} of ${total} installments published${
+          missing.length && missing.length <= 6
+            ? ` &middot; still to come: ${missing.join(', ')}`
+            : ''}`}</p>`
+  : '';
+mount.innerHTML = `<div class="kicker">A Delaware Beach Finds Series</div><h1>${esc(s.title)}</h1><p class="lede">${esc(s.description)}</p>${badge}`;
 }).catch(()=>{});
 });
 
