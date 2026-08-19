@@ -1257,5 +1257,67 @@
     "seoDescription": "How to actually watch Delaware's national wildlife refuges: why the car is the hide, why a falling tide beats a clock, what to bring, and how to look at a marsh without missing what is standing in it.",
     "canonicalUrl": "https://delawarebeachfinds.com/stories/the-refuge-loop.html",
     "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/great-blue-heron-marsh-flight.jpg"
+  },
+  {
+    "slug": "what-the-dunes-were-for",
+    "kicker": "Fort Miles",
+    "headline": "What the Dunes Were For",
+    "hook": "The parking lot at Cape Henlopen sits on top of a gun battery. Delaware's most-visited state park is laid over a coastal fortress built to close the mouth of Delaware Bay — and the only enemy warship that ever arrived came in flying a surrender signal.",
+    "lede": "The parking lot at Cape Henlopen sits on top of a gun battery. Not near one. On one.",
+    "scene": "coastal-sunset-aerial-1.jpg",
+    "heroImage": "coastal-sunset-aerial-1.jpg",
+    "heroAlt": "The Delaware coast from the air, where the Atlantic meets Delaware Bay",
+    "heroImageAlt": "Aerial view of the Delaware coastline at sunset",
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "readTime": "10 min read",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "category": "history",
+    "series": "delaware-at-war",
+    "seriesInstallment": null,
+    "status": "published",
+    "author": "first-state-history",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "Fort Miles Museum / Fort Miles Historical Association, history of Fort Miles",
+      "Delaware State Parks, Fort Miles Museum and Historical Area at Cape Henlopen State Park",
+      "U.S. Naval History and Heritage Command, surrender of German submarine U-858, 14 May 1945",
+      "Reference accounts of Battery 519 construction and the 1964 establishment of Cape Henlopen State Park"
+    ],
+    "etsyProductIds": [],
+    "relatedStories": [
+      {
+        "href": "towers-on-the-dunes.html",
+        "label": "The Towers on the Dunes"
+      },
+      {
+        "href": "category-history.html",
+        "label": "More Delaware history"
+      }
+    ],
+    "body": [
+      "Fort Miles was built on Cape Henlopen between 1941 and 1944 to close the entrance to Delaware Bay and protect the Delaware River industrial corridor, including the Philadelphia Naval Shipyard.",
+      "At its peak it held roughly 2,500 soldiers and civilian personnel and around a dozen batteries, from 155mm mobile guns up to the 16-inch guns of Battery Smith.",
+      "The guns never fired on an enemy ship. The only enemy warship to arrive was U-858, which surrendered at Lewes on 14 May 1945 — the first enemy warship to surrender in US waters since the War of 1812."
+    ],
+    "access_level": "public",
+    "issueId": null,
+    "places": [
+      "cape-henlopen",
+      "lewes"
+    ],
+    "seoTitle": "What the Dunes Were For: Fort Miles and Delaware's WWII Coast",
+    "seoDescription": "Cape Henlopen State Park is built over Fort Miles, the fortress that closed the mouth of Delaware Bay in the Second World War. Why the bay mattered, what the guns were for, and the U-boat that surrendered at Lewes in 1945.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/what-the-dunes-were-for.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/coastal-sunset-aerial-1.jpg",
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "metaTag": "Delaware at War",
+    "heldReason": null
   }
 ]
