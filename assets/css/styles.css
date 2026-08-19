@@ -1486,3 +1486,60 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
 .today-row:hover .today-title{text-decoration:underline;text-underline-offset:3px}
 
 @media(max-width:900px){ .daily-grid{grid-template-columns:1fr;gap:30px} }
+
+/* ================================================================
+   DELAWARE COAST TODAY — official conditions as editorial apparatus.
+   Figures set like a masthead folio, not dashboard tiles.
+   ================================================================ */
+.coast-switch{display:flex;flex-wrap:wrap;gap:0 4px;border-bottom:1px solid var(--hairline);
+  margin-bottom:18px}
+.coast-tab{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  font:inherit;font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--muted);padding:9px 12px;cursor:pointer}
+.coast-tab.is-on{color:var(--navy);border-bottom-color:var(--coral-deep)}
+.coast-tab:hover{color:var(--navy)}
+
+.coast-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));
+  gap:0 clamp(20px,2.6vw,40px);border-top:2px solid var(--navy)}
+.coast-cell{padding:15px 0 17px}
+.coast-k{display:block;font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);margin-bottom:8px}
+.coast-v{display:block;font-family:var(--serif);font-weight:600;letter-spacing:-.035em;
+  line-height:1;font-size:clamp(1.9rem,2.9vw,2.6rem);color:var(--navy)}
+.coast-v-sm{font-size:clamp(1.3rem,1.9vw,1.7rem)}
+.coast-sub{display:block;margin-top:6px;font-size:.9rem;color:var(--ink-soft)}
+.coast-src{display:block;margin-top:5px;font-size:var(--fs-eyebrow);letter-spacing:.1em;
+  text-transform:uppercase;font-weight:700;color:var(--muted)}
+.coast-note{margin-top:14px;font-size:.86rem;color:var(--muted);max-width:70ch}
+
+/* Alerts are quiet until they are not. */
+.coast-alerts{display:grid;gap:8px;margin-bottom:16px}
+.coast-alert{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:baseline;
+  text-decoration:none;background:#7a2e1e;color:#fff;padding:12px 16px}
+.coast-alert-tag{font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:#f7d9c6}
+.coast-alert-body{font-size:.94rem;line-height:1.45}
+
+.coast-official-wrap{margin-top:22px}
+.coast-official{border-top:2px solid var(--navy);padding-top:14px}
+.coast-official p{font-size:.93rem;line-height:1.6;color:var(--ink-soft);margin:0 0 10px;max-width:52ch}
+
+/* Homepage one-liner */
+.coast-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;text-decoration:none;
+  border-top:2px solid var(--navy);border-bottom:1px solid var(--hairline);padding:12px 0}
+.coast-line-where{font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep)}
+.coast-line-bits{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;
+  font-size:.95rem;color:var(--ink-soft)}
+.coast-line-bits b{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:1.06rem}
+.coast-dot{color:var(--muted)}
+.coast-line-alert{font-size:var(--fs-eyebrow);letter-spacing:.12em;text-transform:uppercase;
+  font-weight:800;background:#7a2e1e;color:#fff;padding:3px 9px}
+.coast-line-cta{margin-left:auto;font-size:var(--fs-eyebrow);letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;color:var(--coral-deep)}
+.coast-line:hover .coast-line-cta{text-decoration:underline;text-underline-offset:3px}
+
+@media(max-width:640px){
+  .coast-line-cta{margin-left:0;width:100%}
+  .coast-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

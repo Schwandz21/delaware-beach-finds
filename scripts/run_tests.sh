@@ -166,6 +166,10 @@ check "story lifecycle, scheduling, issues and idempotence" python3 scripts/test
 check "every published page matches its editorial source" python3 scripts/render_story.py --check
 
 echo ""
+echo "=== Daily coast desk ==="
+check "coast conditions, recurrence and staleness handling" python3 scripts/test_coast_today.py
+
+echo ""
 echo "================================"
 echo "Passed: $PASS   Failed: $FAIL"
 [ "$FAIL" -eq 0 ] && exit 0 || exit 1

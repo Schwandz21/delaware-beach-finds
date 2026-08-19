@@ -650,6 +650,155 @@ if(pictureMount){
   }).catch(()=>{ gateHide(pictureMount); });
 }
 
+// DELAWARE COAST TODAY — official conditions.
+// Reads data/coast-now.json, produced by scripts/fetch_coast_now.py from NWS,
+// NOAA CO-OPS and DNREC. Renders only what the file actually contains: a
+// missing measurement is omitted, never estimated, and every reading names the
+// station or agency behind it. Stale blocks are labelled, not hidden.
+function ageLabel(iso){
+  if(!iso) return '';
+  const then = Date.parse(iso.replace(' ','T'));
+  if(isNaN(then)) return '';
+  const mins = Math.round((Date.now()-then)/60000);
+  if(mins < 2) return 'just now';
+  if(mins < 90) return mins+' minutes ago';
+  const h = Math.round(mins/60);
+  if(h < 36) return h+' hour'+(h===1?'':'s')+' ago';
+  return Math.round(h/24)+' days ago';
+}
+function nextTide(tides){
+  if(!tides || !tides.predictions) return null;
+  const now = new Date();
+  for(const p of tides.predictions){
+    const t = new Date(p.time.replace(' ','T'));
+    if(t > now) return Object.assign({}, p, {at:t});
+  }
+  return null;
+}
+function fmtClock(d){
+  return d.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+}
+
+function pickLocation(cfg, wanted){
+  const locs = cfg.locations||[];
+  return locs.find(l=>l.id===wanted) || locs.find(l=>l.id==='rehoboth') || locs[0];
+}
+
+// Full daily page.
+const coastMount = document.querySelector('[data-mount="coast-today"]');
+if(coastMount){
+  fetchJson('coast-now.json').then(cfg=>{
+    const locs = cfg.locations||[];
+    if(!locs.length){ gateHide(coastMount); return; }
+    let current = (location.hash||'').replace('#','') || 'rehoboth';
+
+    const render = ()=>{
+      const l = pickLocation(cfg, current);
+      const w=l.weather, t=l.tides, wa=l.water, al=l.alerts;
+      const nt = nextTide(t);
+      const alerts = (al&&al.items)||[];
+
+      // Alerts only appear when something is actually in effect.
+      const alertHtml = alerts.length ? `
+        <div class="coast-alerts">
+          ${alerts.map(a=>`<a class="coast-alert" href="${esc(a.url||'https://www.weather.gov/')}"
+             target="_blank" rel="noopener" data-coast-alert data-town="${esc(l.id)}">
+             <span class="coast-alert-tag">${esc(a.event||'Advisory')}</span>
+             <span class="coast-alert-body">${esc(a.headline||'')}</span>
+           </a>`).join('')}
+        </div>` : '';
+
+      const cells = [];
+      if(w) cells.push(`<div class="coast-cell">
+        <span class="coast-k">Weather</span>
+        <span class="coast-v">${w.temperature!=null?esc(String(w.temperature))+'&deg;'+esc(w.temperatureUnit||''):'&mdash;'}</span>
+        <span class="coast-sub">${esc(w.shortForecast||'')}</span>
+        <span class="coast-src">${esc(w.source)}${w.stale?' &middot; last good, '+esc(ageLabel(w.fetchedAt)):''}</span></div>`);
+      if(nt) cells.push(`<div class="coast-cell">
+        <span class="coast-k">Next ${esc(nt.type)} tide</span>
+        <span class="coast-v">${esc(fmtClock(nt.at))}</span>
+        <span class="coast-sub">${esc(String(nt.heightFt))} ft &middot; ${esc(t.stationName)} station</span>
+        <span class="coast-src">${esc(t.source)}</span></div>`);
+      if(wa) cells.push(`<div class="coast-cell">
+        <span class="coast-k">Water temperature</span>
+        <span class="coast-v">${esc(String(wa.temperatureF))}&deg;F</span>
+        <span class="coast-sub">${esc(wa.stationName)} station</span>
+        <span class="coast-src">${esc(wa.source)}${wa.stale?' &middot; last good':''}</span></div>`);
+      // Calm with no named direction reads as broken; omit it instead.
+      if(w&&w.windSpeed&&w.windDirection) cells.push(`<div class="coast-cell">
+        <span class="coast-k">Wind</span>
+        <span class="coast-v coast-v-sm">${esc(w.windSpeed)}</span>
+        <span class="coast-sub">${esc(w.windDirection||'')}</span>
+        <span class="coast-src">${esc(w.source)}</span></div>`);
+
+      coastMount.innerHTML = `
+        <div class="coast-switch">
+          ${locs.map(x=>`<button type="button" class="coast-tab${x.id===l.id?' is-on':''}"
+             data-coast-town="${esc(x.id)}">${esc(x.name)}</button>`).join('')}
+        </div>
+        ${alertHtml}
+        <div class="coast-strip">${cells.join('')}</div>
+        <p class="coast-note">${alerts.length?'':'No active National Weather Service alerts for this zone right now. '}Conditions updated ${esc(ageLabel(cfg.generatedAt))}.</p>`;
+    };
+    render();
+
+    coastMount.addEventListener('click', e=>{
+      const b=e.target.closest('[data-coast-town]');
+      if(!b) return;
+      current=b.getAttribute('data-coast-town');
+      render();
+      if(window.gtag) gtag('event','coast_location_change',{town:current,source_page:location.pathname});
+    });
+    if(window.gtag) gtag('event','coast_today_view',{locations:locs.length,source_page:location.pathname});
+  }).catch(()=>{ gateHide(coastMount); });
+}
+
+// DNREC card — an honest official-source link, never a swim-safety verdict.
+const dnrecMount = document.querySelector('[data-mount="dnrec-card"]');
+if(dnrecMount){
+  fetchJson('coast-now.json').then(cfg=>{
+    const d=cfg.dnrec;
+    if(!d){ gateHide(dnrecMount); return; }
+    dnrecMount.innerHTML=`
+      <div class="coast-official">
+        <span class="coast-k">${esc(d.label)}</span>
+        <p>${esc(d.body)}</p>
+        <a class="ed-link" href="${esc(d.sourceUrl)}" target="_blank" rel="noopener"
+           data-water-advisory>Check DNREC&rsquo;s current guidance &rarr;</a>
+      </div>`;
+  }).catch(()=>{ gateHide(dnrecMount); });
+}
+
+// Homepage one-line snapshot.
+const coastLineMount = document.querySelector('[data-mount="coast-line"]');
+if(coastLineMount){
+  fetchJson('coast-now.json').then(cfg=>{
+    const l=pickLocation(cfg,'rehoboth');
+    if(!l){ gateHide(coastLineMount); return; }
+    const w=l.weather, nt=nextTide(l.tides), wa=l.water;
+    const al=((l.alerts&&l.alerts.items)||[]);
+    const bits=[];
+    if(w) bits.push(`<span><b>${esc(String(w.temperature))}&deg;${esc(w.temperatureUnit||'')}</b> ${esc(w.shortForecast||'')}</span>`);
+    if(nt) bits.push(`<span>Next ${esc(nt.type)} tide <b>${esc(fmtClock(nt.at))}</b></span>`);
+    if(wa) bits.push(`<span>Water <b>${esc(String(wa.temperatureF))}&deg;F</b></span>`);
+    if(!bits.length){ gateHide(coastLineMount); return; }
+    coastLineMount.innerHTML=`
+      <a class="coast-line" href="today.html" data-coast-line>
+        <span class="coast-line-where">${esc(l.name)}</span>
+        <span class="coast-line-bits">${bits.join('<span class="coast-dot">&middot;</span>')}</span>
+        ${al.length?`<span class="coast-line-alert">${esc(al[0].event)}</span>`:''}
+        <span class="coast-line-cta">Delaware Coast Today &rarr;</span>
+      </a>`;
+  }).catch(()=>{ gateHide(coastLineMount); });
+}
+
+document.addEventListener('click',function(e){
+  if(!window.gtag) return;
+  if(e.target.closest('[data-coast-alert]')) gtag('event','coastal_alert_click',{source_page:location.pathname});
+  if(e.target.closest('[data-water-advisory]')) gtag('event','water_advisory_click',{source_page:location.pathname});
+  if(e.target.closest('[data-coast-line]')) gtag('event','coast_today_view',{placement:'homepage_line',source_page:location.pathname});
+});
+
 // TODAY AT THE COAST
 // Reads the existing verified events file. Nothing new is ingested here and
 // nothing is invented.

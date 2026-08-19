@@ -1,0 +1,410 @@
+{
+  "generatedAt": "2026-08-19T07:28:57Z",
+  "timezone": "America/New_York",
+  "locations": [
+    {
+      "id": "lewes",
+      "name": "Lewes",
+      "lat": 38.7746,
+      "lon": -75.1393,
+      "weather": {
+        "period": "Overnight",
+        "temperature": 70,
+        "temperatureUnit": "F",
+        "shortForecast": "Patchy Fog",
+        "windSpeed": "0 mph",
+        "windDirection": "",
+        "isDaytime": false,
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false,
+        "precipProbability": 3
+      },
+      "alerts": {
+        "items": [],
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "zone": "DEZ004",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "tides": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "predictions": [
+          {
+            "time": "2026-08-19 01:57",
+            "type": "high",
+            "heightFt": 3.7
+          },
+          {
+            "time": "2026-08-19 08:00",
+            "type": "low",
+            "heightFt": 0.8
+          },
+          {
+            "time": "2026-08-19 14:32",
+            "type": "high",
+            "heightFt": 4.4
+          },
+          {
+            "time": "2026-08-19 20:55",
+            "type": "low",
+            "heightFt": 1.1
+          }
+        ],
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "water": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "temperatureF": 76.8,
+        "observedAt": "2026-08-19 03:18",
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      }
+    },
+    {
+      "id": "rehoboth",
+      "name": "Rehoboth Beach",
+      "lat": 38.7168,
+      "lon": -75.076,
+      "weather": {
+        "period": "Overnight",
+        "temperature": 72,
+        "temperatureUnit": "F",
+        "shortForecast": "Partly Cloudy",
+        "windSpeed": "0 to 5 mph",
+        "windDirection": "W",
+        "isDaytime": false,
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false,
+        "precipProbability": 3
+      },
+      "alerts": {
+        "items": [],
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "zone": "DEZ004",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "tides": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "predictions": [
+          {
+            "time": "2026-08-19 01:57",
+            "type": "high",
+            "heightFt": 3.7
+          },
+          {
+            "time": "2026-08-19 08:00",
+            "type": "low",
+            "heightFt": 0.8
+          },
+          {
+            "time": "2026-08-19 14:32",
+            "type": "high",
+            "heightFt": 4.4
+          },
+          {
+            "time": "2026-08-19 20:55",
+            "type": "low",
+            "heightFt": 1.1
+          }
+        ],
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "water": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "temperatureF": 76.8,
+        "observedAt": "2026-08-19 03:18",
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      }
+    },
+    {
+      "id": "dewey",
+      "name": "Dewey Beach",
+      "lat": 38.6884,
+      "lon": -75.0755,
+      "weather": {
+        "period": "Overnight",
+        "temperature": 71,
+        "temperatureUnit": "F",
+        "shortForecast": "Partly Cloudy",
+        "windSpeed": "0 mph",
+        "windDirection": "",
+        "isDaytime": false,
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false,
+        "precipProbability": 3
+      },
+      "alerts": {
+        "items": [],
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "zone": "DEZ004",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "tides": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "predictions": [
+          {
+            "time": "2026-08-19 01:57",
+            "type": "high",
+            "heightFt": 3.7
+          },
+          {
+            "time": "2026-08-19 08:00",
+            "type": "low",
+            "heightFt": 0.8
+          },
+          {
+            "time": "2026-08-19 14:32",
+            "type": "high",
+            "heightFt": 4.4
+          },
+          {
+            "time": "2026-08-19 20:55",
+            "type": "low",
+            "heightFt": 1.1
+          }
+        ],
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "water": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "temperatureF": 76.8,
+        "observedAt": "2026-08-19 03:18",
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      }
+    },
+    {
+      "id": "bethany",
+      "name": "Bethany Beach",
+      "lat": 38.5385,
+      "lon": -75.0552,
+      "weather": {
+        "period": "Overnight",
+        "temperature": 72,
+        "temperatureUnit": "F",
+        "shortForecast": "Partly Cloudy",
+        "windSpeed": "0 mph",
+        "windDirection": "",
+        "isDaytime": false,
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false,
+        "precipProbability": 4
+      },
+      "alerts": {
+        "items": [],
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "zone": "DEZ004",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "tides": {
+        "station": "8570283",
+        "stationName": "Ocean City Inlet",
+        "predictions": [
+          {
+            "time": "2026-08-19 01:00",
+            "type": "high",
+            "heightFt": 2.1
+          },
+          {
+            "time": "2026-08-19 07:14",
+            "type": "low",
+            "heightFt": 0.5
+          },
+          {
+            "time": "2026-08-19 13:54",
+            "type": "high",
+            "heightFt": 2.4
+          },
+          {
+            "time": "2026-08-19 20:20",
+            "type": "low",
+            "heightFt": 0.8
+          }
+        ],
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "water": {
+        "station": "8570283",
+        "stationName": "Ocean City Inlet",
+        "temperatureF": 74.8,
+        "observedAt": "2026-08-19 03:18",
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      }
+    },
+    {
+      "id": "fenwick",
+      "name": "Fenwick Island",
+      "lat": 38.461,
+      "lon": -75.051,
+      "weather": {
+        "period": "Overnight",
+        "temperature": 72,
+        "temperatureUnit": "F",
+        "shortForecast": "Patchy Fog",
+        "windSpeed": "0 mph",
+        "windDirection": "",
+        "isDaytime": false,
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false,
+        "precipProbability": 5
+      },
+      "alerts": {
+        "items": [],
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "zone": "DEZ004",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "tides": {
+        "station": "8570283",
+        "stationName": "Ocean City Inlet",
+        "predictions": [
+          {
+            "time": "2026-08-19 01:00",
+            "type": "high",
+            "heightFt": 2.1
+          },
+          {
+            "time": "2026-08-19 07:14",
+            "type": "low",
+            "heightFt": 0.5
+          },
+          {
+            "time": "2026-08-19 13:54",
+            "type": "high",
+            "heightFt": 2.4
+          },
+          {
+            "time": "2026-08-19 20:20",
+            "type": "low",
+            "heightFt": 0.8
+          }
+        ],
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      },
+      "water": {
+        "station": "8570283",
+        "stationName": "Ocean City Inlet",
+        "temperatureF": 74.8,
+        "observedAt": "2026-08-19 03:18",
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
+        "fetchedAt": "2026-08-19T07:28:57Z",
+        "stale": false
+      }
+    }
+  ],
+  "dnrec": {
+    "label": "Recreational water monitoring",
+    "body": "DNREC samples Delaware swimming areas on a schedule through the season. It is periodic monitoring, not a live safe-to-swim reading, so check their current guidance before you rely on it.",
+    "source": "Delaware DNREC",
+    "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
+    "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
+    "mode": "official-link",
+    "fetchedAt": "2026-08-19T07:28:57Z"
+  },
+  "sources": [
+    {
+      "name": "National Weather Service",
+      "url": "https://www.weather.gov/",
+      "used": "forecast, active alerts"
+    },
+    {
+      "name": "NOAA Tides & Currents",
+      "url": "https://tidesandcurrents.noaa.gov/",
+      "used": "tide predictions, water temperature"
+    },
+    {
+      "name": "Delaware DNREC",
+      "url": "https://recwaters.dnrec.delaware.gov/",
+      "used": "recreational water monitoring (link-out)"
+    }
+  ],
+  "_grids": {
+    "lewes": {
+      "gridId": "PHI",
+      "gridX": 58,
+      "gridY": 26,
+      "forecast": "https://api.weather.gov/gridpoints/PHI/58,26/forecast",
+      "zone": "DEZ004"
+    },
+    "rehoboth": {
+      "gridId": "PHI",
+      "gridX": 61,
+      "gridY": 24,
+      "forecast": "https://api.weather.gov/gridpoints/PHI/61,24/forecast",
+      "zone": "DEZ004"
+    },
+    "dewey": {
+      "gridId": "PHI",
+      "gridX": 61,
+      "gridY": 23,
+      "forecast": "https://api.weather.gov/gridpoints/PHI/61,23/forecast",
+      "zone": "DEZ004"
+    },
+    "bethany": {
+      "gridId": "PHI",
+      "gridX": 63,
+      "gridY": 16,
+      "forecast": "https://api.weather.gov/gridpoints/PHI/63,16/forecast",
+      "zone": "DEZ004"
+    },
+    "fenwick": {
+      "gridId": "PHI",
+      "gridX": 64,
+      "gridY": 13,
+      "forecast": "https://api.weather.gov/gridpoints/PHI/64,13/forecast",
+      "zone": "DEZ004"
+    }
+  },
+  "_failures": []
+}
