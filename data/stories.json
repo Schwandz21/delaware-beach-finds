@@ -662,5 +662,65 @@
     "places": [
       "assateague"
     ]
+  },
+  {
+    "slug": "the-last-seventeen-hundred",
+    "kicker": "Delaware and the Thirteenth Amendment",
+    "headline": "The Last Seventeen Hundred",
+    "hook": "Delaware refused to abolish slavery in February 1865 — for fewer than 1,800 people, in a state where nine in ten Black Delawareans were already free. The Emancipation Proclamation never applied here, and the legislature did not ratify the Thirteenth Amendment until 1901.",
+    "lede": "Delaware refused to abolish slavery in February 1865 — for fewer than 1,800 people, in a state where nine in ten Black Delawareans were already free.",
+    "scene": "marsh-dawn-1.svg",
+    "heroImage": "marsh-dawn-1.svg",
+    "heroAlt": "Delaware marsh at first light",
+    "heroImageAlt": "Illustration of a Delaware marsh at dawn",
+    "date": "2026-08-19",
+    "publishedAt": "2026-08-19",
+    "publishAt": null,
+    "approvedAt": "2026-08-19",
+    "readTime": "8 min read",
+    "featured": false,
+    "coverStory": false,
+    "placement": "feature",
+    "category": "history",
+    "series": "how-delaware-became-delaware",
+    "seriesInstallment": 8,
+    "status": "published",
+    "author": "first-state-history",
+    "photoCredit": "Delaware Beach Finds",
+    "sources": [
+      "U.S. Census of 1860, Delaware enslaved and free Black population counts",
+      "University of Delaware, Black History in Delaware: the antebellum free African American community",
+      "National Archives, Milestone Documents: 13th Amendment",
+      "WHYY reporting on emancipation and Delaware's enslaved population",
+      "Contemporary accounts of the Delaware General Assembly resolution of February 8, 1865"
+    ],
+    "etsyProductIds": [],
+    "relatedStories": [
+      {
+        "href": "series-how-delaware-became-delaware.html",
+        "label": "The full series"
+      },
+      {
+        "href": "category-history.html",
+        "label": "More Delaware history"
+      }
+    ],
+    "body": [
+      "Delaware's legislature declared its 'unqualified disapproval' of the Thirteenth Amendment on February 8, 1865, and refused to ratify it.",
+      "By the 1860 census Delaware held 1,798 people in slavery while roughly 92 percent of Black Delawareans were already free — the highest proportion in any slave state.",
+      "The Emancipation Proclamation did not apply to Delaware, which had not seceded. Slavery ended there only when the amendment was ratified nationally in December 1865. Delaware ratified it in 1901."
+    ],
+    "access_level": "public",
+    "issueId": null,
+    "places": [],
+    "seoTitle": "The Last Seventeen Hundred: Delaware and the Thirteenth Amendment",
+    "seoDescription": "Delaware rejected the Thirteenth Amendment in February 1865 and did not ratify it until 1901. Why a state that had already freed nine in ten Black Delawareans held on to slavery to the last legal day.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/the-last-seventeen-hundred.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/og-image.png",
+    "renderMode": "generated",
+    "seriesPage": false,
+    "shopTheStory": false,
+    "metaTag": "Delaware History",
+    "heldReason": null
   }
 ]
