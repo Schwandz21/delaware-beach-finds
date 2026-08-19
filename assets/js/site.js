@@ -667,6 +667,15 @@ const TOWN_EVENT_NAME = {
   'cape-henlopen':'Lewes'
 };
 
+// Ingested events have no human displayDate, so format the ISO date rather
+// than printing "2026-08-19" at a reader.
+function humanDate(iso){
+  if(!iso) return '';
+  const d = new Date(String(iso).slice(0,10) + 'T12:00:00');
+  if(isNaN(d)) return String(iso);
+  return d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
+}
+
 const footMount = document.querySelector('[data-mount="story-foot"]');
 if(footMount){
   const slug = footMount.getAttribute('data-story');
@@ -733,7 +742,7 @@ if(footMount){
         <div class="foot-now-grid">
           ${soon.length?`<div><span class="foot-sub">Coming up nearby</span>
             ${soon.map(e=>`<a class="foot-ev" href="../events.html">
-              <span class="foot-ev-when">${esc(e.displayDate||e.startDate)}</span>
+              <span class="foot-ev-when">${esc(e.displayDate||humanDate(e.startDate))}</span>
               <span class="foot-ev-what">${esc(e.title)}</span></a>`).join('')}</div>`:''}
           ${feed?`<div><span class="foot-sub">Live from here</span>
             <a class="foot-ev" href="../live.html"><span class="foot-ev-what">${esc(feed.title)}</span>
@@ -1048,7 +1057,7 @@ if(todayMount){
     todayMount.innerHTML = items.map(e=>{
       const when = onNow(e)
         ? (e.startTime ? esc(e.startTime) : 'Today')
-        : esc(e.displayDate || e.startDate || '');
+        : esc(e.displayDate || humanDate(e.startDate));
       const where = [e.venue, e.town].filter(Boolean).map(esc).join(' &middot; ');
       return `<a class="today-row" href="events.html" data-event-click data-event-id="${esc(e.id||'')}"
                  data-town="${esc(e.town||'')}" data-category="${esc(e.category||'')}">
