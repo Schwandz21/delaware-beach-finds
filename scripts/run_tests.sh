@@ -168,6 +168,7 @@ check "every published page matches its editorial source" python3 scripts/render
 echo ""
 echo "=== Daily coast desk ==="
 check "coast conditions, recurrence and staleness handling" python3 scripts/test_coast_today.py
+check "event ingestion, dedupe, precedence and no-free-ads" python3 scripts/test_event_engine.py
 
 echo ""
 echo "================================"

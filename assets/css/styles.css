@@ -1543,3 +1543,11 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
   .coast-line-cta{margin-left:0;width:100%}
   .coast-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+/* Editorial marks on ingested listings. `featured` comes only from the
+   editorial overlay, never from a source adapter. */
+.today-pick{display:inline-block;font-family:var(--sans);font-size:var(--fs-eyebrow);
+  letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--coral-deep);
+  margin-right:8px}
+.today-note{display:block;margin-top:5px;font-size:.85rem;line-height:1.5;color:var(--ink-soft);
+  border-left:2px solid var(--coral-deep);padding-left:9px}
+.today-empty{font-size:.94rem;line-height:1.6;color:var(--ink-soft);padding:16px 0;margin:0}

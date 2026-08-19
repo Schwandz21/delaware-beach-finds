@@ -1,0 +1,18 @@
+{
+  "_note": "Delaware Beach Finds editorial control over the ingested calendar. This is the ONLY events file a human should edit. data/events-generated.json is machine-produced and is overwritten on every ingest run. Everything here is keyed by the generated event id, which you can find in data/events-generated.json or in the data-event-id attribute on the rendered card.",
+  "_howTo": {
+    "feature": "Add { \"id\": \"rehoboth-52687\", \"featured\": true } to overrides. Featured events lead the Today and Weekend blocks and carry an Editor's Pick flag. Machine ingestion NEVER sets this — an editor does.",
+    "suppress": "Add { \"id\": \"...\", \"suppress\": true }. The event disappears from every surface without touching the generated file.",
+    "note": "Add { \"id\": \"...\", \"note\": \"Parking fills by ten; the Grove lot is closed this month.\" } to attach a short DBF line under the listing.",
+    "retitle": "Add { \"id\": \"...\", \"title\": \"Rehoboth Farmers' Market\" } when the source title is ugly or truncated.",
+    "recategorise": "Add { \"id\": \"...\", \"category\": \"Music\" }.",
+    "priority": "Add { \"id\": \"...\", \"priority\": 10 }. Higher sorts earlier within its block.",
+    "correct": "Add { \"id\": \"...\", \"startTime\": \"18:30\", \"provenance\": \"Confirmed by phone with the venue 2026-08-19\" } to correct a factual field. Always record provenance for a factual override."
+  },
+  "_rules": [
+    "Machine ingestion answers what exists. This file answers what is worth highlighting.",
+    "Never set sponsored here. Paid placement belongs to the sponsor system, not editorial.",
+    "A factual override without provenance is a guess — record where the correction came from."
+  ],
+  "overrides": []
+}

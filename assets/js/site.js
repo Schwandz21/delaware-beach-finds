@@ -813,10 +813,43 @@ document.addEventListener('click',function(e){
 // through `sponsored`/`sponsorId` and be labelled where the reader can see it.
 function eventsList(raw){ return Array.isArray(raw) ? raw : (raw.events || []); }
 
+// Ingested events + editorial overlay. The generated file is machine truth;
+// the editorial file is the only place a human edits. Suppression, featuring,
+// notes, retitling and provenance-backed factual corrections all apply here so
+// that re-ingesting never destroys an editor's decision.
+function loadEvents(){
+  return Promise.all([
+    fetchJson('events-generated.json').catch(()=>null),
+    fetchJson('events-editorial.json').catch(()=>({overrides:[]})),
+    fetchJson('events.json').catch(()=>null)
+  ]).then(([gen, ed, legacy])=>{
+    let list = gen ? eventsList(gen) : [];
+    // Curated legacy records stay until every town has an adapter; ingested
+    // records win on id collision.
+    if(legacy){
+      const seen = new Set(list.map(e=>e.id));
+      eventsList(legacy).forEach(e=>{ if(!seen.has(e.id)) list.push(e); });
+    }
+    const ov = {};
+    ((ed&&ed.overrides)||[]).forEach(o=>{ if(o && o.id) ov[o.id]=o; });
+    return list
+      .map(e=>{
+        const o = ov[e.id];
+        if(!o) return e;
+        if(o.suppress) return null;
+        const merged = Object.assign({}, e, o);
+        delete merged.suppress;
+        merged.sponsored = e.sponsored || false;   // editorial never sells
+        return merged;
+      })
+      .filter(Boolean);
+  });
+}
+
 const todayMount = document.querySelector('[data-mount="today-coast"]');
 if(todayMount){
-  fetchJson('events.json').then(raw=>{
-    const all = eventsList(raw), today = todayEasternISO();
+  loadEvents().then(list=>{
+    const all = list, today = todayEasternISO();
 
     // A recurring market carries a multi-week range but only runs on one
     // weekday, and its displayDate says which ("Saturdays 8 AM-noon, through
@@ -855,8 +888,19 @@ if(todayMount){
       items = items.concat(soon).slice(0,4);
       if(!items.filter(onNow).length) label = 'Coming up on the coast';
     }
+    // Editor's picks lead. `featured` only ever arrives from the editorial
+    // overlay, never from a source adapter.
+    items.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0)
+                     || (b.priority||0)-(a.priority||0)
+                     || String(a.startTime||'').localeCompare(String(b.startTime||'')));
     items = items.slice(0,4);
-    if(!items.length){ gateHide(todayMount); return; }
+    if(!items.length){
+      // Honest empty state rather than a broken-looking module.
+      todayMount.innerHTML = '<p class="today-empty">Nothing we can verify for '
+        + 'today yet. Calendars update through the week &mdash; check back, or '
+        + '<a href="events.html">browse everything upcoming</a>.</p>';
+      return;
+    }
 
     const head = todayMount.closest('section').querySelector('[data-today-label]');
     if(head) head.textContent = label;
@@ -870,8 +914,9 @@ if(todayMount){
                  data-town="${esc(e.town||'')}" data-category="${esc(e.category||'')}">
         <span class="today-when">${when}</span>
         <span class="today-what">
-          <span class="today-title">${esc(e.title)}</span>
+          <span class="today-title">${e.featured?'<span class="today-pick">Editor&rsquo;s pick</span> ':''}${esc(e.title)}</span>
           ${where?`<span class="today-where">${where}</span>`:''}
+          ${e.note?`<span class="today-note">${esc(e.note)}</span>`:''}
         </span>
       </a>`;
     }).join('');
