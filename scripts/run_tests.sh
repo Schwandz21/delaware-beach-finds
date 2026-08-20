@@ -169,6 +169,7 @@ echo ""
 echo "=== Daily coast desk ==="
 check "coast conditions, recurrence and staleness handling" python3 scripts/test_coast_today.py
 check "event ingestion, dedupe, precedence and no-free-ads" python3 scripts/test_event_engine.py
+check "sitemap stays in sync with published stories" python3 scripts/test_sitemap.py
 
 echo ""
 echo "================================"

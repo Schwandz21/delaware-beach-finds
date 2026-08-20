@@ -56,6 +56,14 @@ jobs:
         if: ${{ inputs.dry_run != true }}
         run: python3 scripts/publish_due.py
 
+      # A newly published story is a dead end for search engines until the
+      # sitemap lists it. Regenerate here so run_tests.sh's sitemap check
+      # (below) passes and the commit carries a sitemap that matches reality —
+      # the same class of drift that left 17 stories undiscoverable before.
+      - name: Regenerate sitemap
+        if: ${{ inputs.dry_run != true && steps.publish.outputs.count != '0' }}
+        run: python3 scripts/build_sitemap.py
+
       # Only runs when something actually published. Runs AFTER publication but
       # BEFORE the commit, so a bad publication is never committed.
       - name: Run full test suite
@@ -70,7 +78,7 @@ jobs:
           git config user.name  "dbf-publisher[bot]"
           git config user.email "dbf-publisher[bot]@users.noreply.github.com"
           # Deliberate staging: only the surfaces publication is allowed to touch.
-          git add data/stories.json data/issues data/content-index.json stories
+          git add data/stories.json data/issues data/content-index.json stories sitemap.xml
           if [ -z "$(git diff --cached --name-only)" ]; then
             echo "No publication surfaces changed — nothing to commit."
             exit 0
