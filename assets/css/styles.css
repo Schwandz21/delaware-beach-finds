@@ -1613,3 +1613,25 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
 .series-progress{display:inline-block;margin-top:6px;font-size:var(--fs-eyebrow);
   letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--coral-deep);
   border-top:2px solid var(--navy);padding-top:9px}
+
+/* ================================================================
+   DBF WEEKEND — mobile rhythm.
+   The strip was two columns at 390px, leaving ~135px of usable width
+   per card: event titles overflowed their cards and a 236px min-height
+   left large empty wells under short entries. One column, sized to its
+   content, reads as a list a thumb can move through.
+   ================================================================ */
+@media(max-width:640px){
+  .calendar-strip{grid-template-columns:1fr}
+  .calendar-day{min-height:0;padding:18px 18px 20px;gap:6px}
+  .calendar-day h4{font-size:1.06rem;line-height:1.25;margin:2px 0 0;
+    overflow-wrap:break-word}
+  .calendar-day .day-date{font-size:.82rem;line-height:1.4}
+  .calendar-day p{font-size:.9rem;line-height:1.5;margin:4px 0 0}
+  /* Keep the marquee lead distinct without letting it dominate the fold. */
+  .calendar-day.is-marquee{padding-top:22px}
+}
+/* A public meeting is a real event and stays in the full calendar — labelled,
+   so a reader can tell it apart from a concert at a glance. */
+.event-civic-badge{font-size:var(--fs-eyebrow);letter-spacing:.1em;text-transform:uppercase;
+  font-weight:800;color:var(--muted)}

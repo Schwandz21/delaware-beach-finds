@@ -88,6 +88,37 @@ if os.path.exists(p):
     check('town names are canonical (no "DE" suffixes)',
           not any(t.endswith(' DE') for t in towns), towns)
 
+print('\n=== reader relevance (audience classification) ===')
+from events.model import audience_of
+check('variance hearing classified civic',
+      audience_of('Board of Adjustment Variance Hearing for 1 Rehoboth Avenue') == 'civic')
+check('commission meeting classified civic',
+      audience_of('Parks & Shade Tree Commission Meeting') == 'civic')
+check('private rental classified private',
+      audience_of('Stockley Park Pavilion - Private Rental') == 'private')
+check('farmers market stays public', audience_of('Rehoboth Beach Farmers Market') == 'public')
+check('concert stays public', audience_of('Summer Concert Series: Earth Jam') == 'public')
+check('swim stays public', audience_of('Boardwalk Mile Swim') == 'public')
+
+gp = os.path.join(ROOT, 'data', 'events-generated.json')
+if os.path.exists(gp):
+    gen = json.load(open(gp, encoding='utf-8'))
+    evs = gen.get('events') or []
+    check('every ingested event carries an audience',
+          all(e.get('audience') in ('public', 'civic', 'private') for e in evs))
+    pub = [e for e in evs if e.get('audience') == 'public']
+    check('the public feed is not empty', len(pub) > 0, len(pub))
+    # The franchise went dark for 12 days because a stale legacy file gated it.
+    check('reader-facing events exist for the homepage franchise',
+          len(pub) >= 5, '%d public events' % len(pub))
+
+js = open(os.path.join(ROOT, 'assets', 'js', 'site.js'), encoding='utf-8').read()
+check('DBF Weekend reads the ingested pipeline, not the stale legacy file',
+      "Promise.all([loadEvents(), fetchJson('events-generated.json')" in js)
+check('full-calendar pages can opt out of the reader filter',
+      "data-audience" in js and "showAll" in js)
+check('civic entries are labelled where shown', 'event-civic-badge' in js)
+
 print('\n=== editorial overlay contract ===')
 ep = os.path.join(ROOT, 'data', 'events-editorial.json')
 check('events-editorial.json exists', os.path.exists(ep))

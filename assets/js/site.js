@@ -106,14 +106,26 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
  if(weekendMount){
    const limit = parseInt(weekendMount.getAttribute('data-limit')||'6',10);
    const minEntries = parseInt(weekendMount.getAttribute('data-min')||'0',10);
-   fetchJson('events.json').then(d=>{
+   // Reads the ingested pipeline, not the legacy curated file. That file's
+   // verifiedAt went stale and its 7-day freshness gate silently hid this whole
+   // franchise from the homepage while ~85 automatically ingested events were
+   // sitting current and unused. Freshness is now judged on the ingest run.
+   Promise.all([loadEvents(), fetchJson('events-generated.json').catch(()=>null)])
+     .then(([list, gen])=>{
      const today = todayEasternISO();
-     const verifiedAt = d.verifiedAt || null;
-     const policyDays = d.freshnessPolicyDays || 7;
-     const staleDays = verifiedAt ? Math.floor((Date.now() - new Date(verifiedAt+'T00:00:00').getTime()) / 86400000) : null;
-     const staleDataset = verifiedAt===null || staleDays > policyDays;
-     const upcoming = (d.events||[])
-       .filter(e => e.endDate && e.endDate >= today)
+     const genAt = gen && gen.generatedAt ? gen.generatedAt.slice(0,10) : null;
+     const staleDays = genAt ? Math.floor((Date.now() - new Date(genAt+'T00:00:00').getTime()) / 86400000) : null;
+     // The ingest workflow runs 4x daily; a week without a successful run means
+     // something is genuinely broken and we should stop asserting currency.
+     const staleDataset = genAt === null || staleDays > 7;
+     // Lead with reader-facing events. Civic meetings and private rentals are
+     // real and stay in the full calendar, but a franchise called "What matters
+     // at the Delaware coast right now" should not open with a variance hearing.
+     // Pages that ARE the full calendar opt in with data-audience="all".
+     const showAll = weekendMount.getAttribute('data-audience') === 'all';
+     const upcoming = (list||[])
+       .filter(e => (e.endDate || e.startDate) >= today)
+       .filter(e => showAll || (e.audience || 'public') === 'public')
        .sort((a,b) => (a.startDate||'').localeCompare(b.startDate||''));
      if(staleDataset || upcoming.length < minEntries){
        if(gateHide(weekendMount)) return;
@@ -140,8 +152,8 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
        return `
        <div class="calendar-day${i===0?' is-today':''}${e.featured?' is-marquee':''}">
          ${e.featured?'<span class="marquee-flag">Marquee</span>':''}
-         <div class="day-label">${esc(weekday)}${badge?` &middot; <span class="event-status-badge">${esc(badge)}</span>`:''}${accessNotice?` &middot; <span class="event-access-badge">${esc(accessNotice)}</span>`:''}</div>
-         <div class="day-date muted">${esc(e.displayDate||e.startDate||'')}${e.town?` &middot; ${esc(e.town)}`:''}</div>
+         <div class="day-label">${esc(weekday)}${badge?` &middot; <span class="event-status-badge">${esc(badge)}</span>`:''}${accessNotice?` &middot; <span class="event-access-badge">${esc(accessNotice)}</span>`:''}${e.audience==='civic'?` &middot; <span class="event-civic-badge">Public meeting</span>`:''}${e.audience==='private'?` &middot; <span class="event-access-badge">Private booking</span>`:''}</div>
+         <div class="day-date muted">${esc(e.displayDate||humanDate(e.startDate))}${e.startTime?` &middot; ${esc(shortTime(e.startTime))}`:''}${e.town?` &middot; ${esc(e.town)}`:''}</div>
          <h4>${esc(e.title)}</h4>
          <p class="muted">${esc(e.description||'')}</p>
        </div>`;
@@ -688,6 +700,17 @@ const TOWN_EVENT_NAME = {
 
 // Ingested events have no human displayDate, so format the ISO date rather
 // than printing "2026-08-19" at a reader.
+// "18:00" -> "6 PM". Ingested events carry 24h times; readers do not read them.
+function shortTime(t){
+  if(!t) return '';
+  const m = String(t).match(/^(\d{1,2}):(\d{2})/);
+  if(!m) return String(t);
+  let h = parseInt(m[1],10); const mins = m[2];
+  const ap = h >= 12 ? 'PM' : 'AM';
+  h = h % 12 || 12;
+  return mins === '00' ? `${h} ${ap}` : `${h}:${mins} ${ap}`;
+}
+
 function humanDate(iso){
   if(!iso) return '';
   const d = new Date(String(iso).slice(0,10) + 'T12:00:00');
@@ -1017,6 +1040,9 @@ function loadEvents(){
 const todayMount = document.querySelector('[data-mount="today-coast"]');
 if(todayMount){
   loadEvents().then(list=>{
+    // Same editorial filter as DBF Weekend: civic business stays in the
+    // full calendar, not in a reader's "today at the coast" snapshot.
+    list = (list||[]).filter(e => (e.audience || 'public') === 'public');
     const all = list, today = todayEasternISO();
 
     // A recurring market carries a multi-week range but only runs on one

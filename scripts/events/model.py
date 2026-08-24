@@ -65,6 +65,43 @@ def safe_description(raw, limit=220):
     return out
 
 
+# ---------------------------------------------------------- READER RELEVANCE
+#
+# Municipal calendars are the most reliable event source we have, and they are
+# also full of things no one at the beach is looking for: variance hearings,
+# commission meetings, budget workshops. Ingesting them is correct — they are
+# real public events and belong in the full calendar — but leading a franchise
+# called "What matters at the Delaware coast right now" with a Board of
+# Adjustment hearing fails the reader.
+#
+# So every event is classified, never dropped:
+#   public  the default; things a local friend would actually point out
+#   civic   real public meetings, correct to list, wrong to lead with
+#   private closed/rental bookings that appear on public calendars
+#
+# Reader-facing surfaces lead with `public`. The events page still shows
+# everything, grouped honestly.
+CIVIC = re.compile(
+    r'\b(commission|committee|council|board of adjustment|board meeting|'
+    r'variance|public hearing|hearing for|workshop session|budget (?:hearing|workshop)|'
+    r'zoning|planning (?:commission|board)|minutes|agenda|special meeting|'
+    r'regular meeting|task force|subcommittee|caucus|executive session|'
+    r'city council|town council|board of directors)\b', re.I)
+
+PRIVATE = re.compile(r'\b(private (?:rental|event|party|function)|closed to the public|'
+                     r'rental\s*[-–—]\s*private|reserved)\b', re.I)
+
+
+def audience_of(title, description=''):
+    """Classify an event for reader-facing prominence. Never drops anything."""
+    blob = '%s %s' % (title or '', description or '')
+    if PRIVATE.search(blob):
+        return 'private'
+    if CIVIC.search(blob):
+        return 'civic'
+    return 'public'
+
+
 def norm_title(t):
     """Aggressively normalized title used only for duplicate matching."""
     t = clean_text(t).lower()
@@ -124,6 +161,7 @@ def make_event(**kw):
         'sourceName': kw['sourceName'],
         'sourceUrl': kw['sourceUrl'],
         'sourceEventId': str(kw.get('sourceEventId') or ''),
+        'audience': audience_of(kw.get('title'), kw.get('description')),
         'sourceType': kw.get('sourceType') or 'municipal',
         'firstParty': bool(kw.get('firstParty', True)),
         'fetchedAt': kw['fetchedAt'],
