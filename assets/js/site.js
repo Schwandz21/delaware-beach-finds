@@ -746,6 +746,80 @@ if(pictureMount){
   }).catch(()=>{ gateHide(pictureMount); });
 }
 
+// SHARE — one frictionless action, not a wall of network logos.
+// Uses the Web Share API where the device has it (which is where sharing
+// actually happens: phones), and falls back to clipboard with a visible
+// confirmation everywhere else. Acquisition depends on readers passing
+// stories along, and there was previously no way to do it.
+(function(){
+  const host = document.querySelector('[data-share]');
+  if(!host) return;
+  const url = (document.querySelector('link[rel="canonical"]') || {}).href || location.href;
+  const title = (document.querySelector('meta[property="og:title"]') || {}).content || document.title;
+  const id = host.getAttribute('data-share') || '';
+  const type = host.getAttribute('data-share-type') || 'story';
+
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'share-btn';
+  btn.setAttribute('aria-live', 'polite');
+  const label = ()=>{ btn.innerHTML = '<span class="share-ico" aria-hidden="true"></span>Share this story'; };
+  label();
+
+  const done = (msg)=>{
+    btn.classList.add('is-done');
+    btn.innerHTML = '<span class="share-ico share-ico-ok" aria-hidden="true"></span>' + msg;
+    setTimeout(()=>{ btn.classList.remove('is-done'); label(); }, 2600);
+  };
+  const track = (method)=>{
+    if(window.gtag) gtag('event','content_share',
+      {content_id:id, content_type:type, method:method, source_page:location.pathname});
+  };
+
+  btn.addEventListener('click', async ()=>{
+    if(navigator.share){
+      try{
+        await navigator.share({title, url});
+        track('web_share');            // fires on success, not on dismissal
+      }catch(err){ /* user cancelled — not an error, and not an event */ }
+      return;
+    }
+    // navigator.clipboard needs a focused document and a secure context, and
+    // rejects in several ordinary situations. Fall back to a selection copy,
+    // then to simply showing the URL — never to a blocking prompt() modal.
+    try{
+      await navigator.clipboard.writeText(url);
+      track('clipboard');
+      done('Link copied');
+      return;
+    }catch(err){ /* fall through */ }
+
+    try{
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      ta.setAttribute('readonly','');
+      ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand && document.execCommand('copy');
+      document.body.removeChild(ta);
+      if(ok){ track('exec_copy'); done('Link copied'); return; }
+    }catch(err){ /* fall through */ }
+
+    // Last resort: reveal the URL inline so it can be copied by hand.
+    host.querySelector('.share-url')?.remove();
+    const out = document.createElement('input');
+    out.className = 'share-url';
+    out.readOnly = true;
+    out.value = url;
+    host.appendChild(out);
+    out.focus(); out.select();
+    track('manual');
+    done('Copy the link below');
+  });
+  host.appendChild(btn);
+})();
+
 // STORY FOOT — the onward journey.
 // A 5,800px feature previously ended with a one-link sidebar box. This builds a
 // real continuation: the series it belongs to, stories about the same place,

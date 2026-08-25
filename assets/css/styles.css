@@ -1661,3 +1661,89 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
 /* Lead camera gets the room it deserves. */
 .live-card-lead .live-frame{aspect-ratio:16/9}
 @media(min-width:1024px){ .live-card-lead .live-frame{aspect-ratio:2/1} }
+
+/* ================================================================
+   MOBILE SWIPE RAILS — value per screen, not screens per value.
+   The mobile homepage ran 25,284px / 30 screens because every grid
+   collapsed to one column: eight towns became eight full screens, the
+   long-form grid another four, commerce another five. Browsing sideways
+   is how phones actually work, so the browse-y grids become rails and
+   the vertical axis is spent on editorial instead of repetition.
+   Desktop keeps its grids untouched.
+   ================================================================ */
+@media(max-width:640px){
+  .town-grid, .story-grid, .shop-grid, .edit-grid, .guide-hub-grid{
+    display:grid;
+    grid-auto-flow:column;
+    grid-auto-columns:78%;          /* the next card peeks — the affordance */
+    grid-template-columns:none !important;
+    /* Without an explicit single row, auto-flow:column still creates implicit
+       rows and the rail wraps into a second line mid-swipe. */
+    grid-template-rows:auto !important;
+    gap:14px;
+    overflow-x:auto;
+    overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    /* Bleed to the screen edges so the rail reads as swipeable. */
+    margin-left:calc(var(--pad, 20px) * -1);
+    margin-right:calc(var(--pad, 20px) * -1);
+    padding:2px var(--pad, 20px) 14px;
+    scrollbar-width:none;
+  }
+  .town-grid::-webkit-scrollbar, .story-grid::-webkit-scrollbar,
+  .shop-grid::-webkit-scrollbar, .edit-grid::-webkit-scrollbar,
+  .guide-hub-grid::-webkit-scrollbar{display:none}
+
+  .town-grid > *, .story-grid > *, .shop-grid > *,
+  .edit-grid > *, .guide-hub-grid > *{
+    scroll-snap-align:start;
+    min-width:0;
+    /* Desktop gives the first tile `grid-row: span 2` as a feature treatment.
+       Inside a single-row rail that silently forces a second row and the
+       swipe wraps, so spans are reset here. */
+    grid-row:auto !important;
+    grid-column:auto !important;
+  }
+  /* Product cards are smaller objects; show more of the shelf at once. */
+  .shop-grid, .edit-grid{grid-auto-columns:62%}
+  /* Rail images need a fixed ratio or the row height wobbles per card. */
+  .town-grid .scene, .story-grid .scene{aspect-ratio:4/3;overflow:hidden}
+  /* Town tiles are full-bleed link cards; give them a phone-sized frame
+     instead of the desktop portrait proportion. */
+  .town-grid > *{aspect-ratio:3/4;min-height:0;height:auto}
+  .town-grid .scene img, .story-grid .scene img{
+    width:100%;height:100%;object-fit:cover;display:block}
+
+  /* A rail is a horizontal object: it should not also be a tall one. */
+  .story-grid p, .town-grid p{
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
+    overflow:hidden}
+
+  /* Quiet hint that the row moves sideways. */
+  .rail-hint{display:block;font-size:var(--fs-eyebrow);letter-spacing:.12em;
+    text-transform:uppercase;font-weight:700;color:var(--muted);margin-top:-2px}
+}
+@media(min-width:641px){ .rail-hint{display:none} }
+
+/* Share — a single quiet control, sized for a thumb. */
+.share-row{margin:18px 0 4px}
+.share-btn{display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--sans);font-size:var(--fs-eyebrow);letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;color:var(--coral-deep);
+  background:transparent;border:0;border-top:1px solid var(--hairline);
+  border-bottom:1px solid var(--hairline);padding:13px 0;width:100%;
+  cursor:pointer;text-align:left;min-height:44px}
+.share-btn:hover{color:var(--navy)}
+.share-btn:focus-visible{outline:2px solid var(--coral-deep);outline-offset:3px}
+.share-btn.is-done{color:var(--navy)}
+.share-ico{width:15px;height:15px;flex:none;
+  background:currentColor;
+  -webkit-mask:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3l4 4h-3v9h-2V7H8l4-4zM5 19v-8h2v6h10v-6h2v8H5z'/%3E%3C/svg%3E");
+  mask:center/contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3l4 4h-3v9h-2V7H8l4-4zM5 19v-8h2v6h10v-6h2v8H5z'/%3E%3C/svg%3E")}
+.share-ico-ok{
+  -webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E");
+  mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E")}
+.share-url{display:block;width:100%;margin-top:9px;padding:10px 12px;
+  font-family:var(--sans);font-size:.85rem;color:var(--ink);
+  background:var(--paper-deep);border:1px solid var(--hairline)}
