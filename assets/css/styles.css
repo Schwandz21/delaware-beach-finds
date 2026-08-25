@@ -1635,3 +1635,29 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
    so a reader can tell it apart from a concert at a glance. */
 .event-civic-badge{font-size:var(--fs-eyebrow);letter-spacing:.1em;text-transform:uppercase;
   font-weight:800;color:var(--muted)}
+
+/* ================================================================
+   LIVE — make it look live.
+   A camera behind a play button reads as a screenshot. Embeddable feeds
+   now attach a muted autoplaying stream as they come into view, with a
+   standing LIVE mark so the state is legible before the stream paints.
+   ================================================================ */
+.live-frame{position:relative;background:var(--ink);overflow:hidden;aspect-ratio:16/9}
+.live-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.live-badge{position:absolute;top:12px;left:12px;z-index:2;display:inline-flex;align-items:center;
+  gap:7px;background:rgba(10,26,32,.82);color:#fff;font-family:var(--sans);
+  font-size:var(--fs-eyebrow);letter-spacing:.14em;text-transform:uppercase;font-weight:800;
+  padding:6px 11px;pointer-events:none}
+.live-dot{width:7px;height:7px;border-radius:50%;background:#e0503a;
+  box-shadow:0 0 0 0 rgba(224,80,58,.7);animation:live-pulse 2.2s infinite}
+@keyframes live-pulse{
+  0%{box-shadow:0 0 0 0 rgba(224,80,58,.65)}
+  70%{box-shadow:0 0 0 9px rgba(224,80,58,0)}
+  100%{box-shadow:0 0 0 0 rgba(224,80,58,0)}
+}
+/* Respect reduced motion: keep the mark, drop the pulse. */
+@media(prefers-reduced-motion:reduce){ .live-dot{animation:none} }
+
+/* Lead camera gets the room it deserves. */
+.live-card-lead .live-frame{aspect-ratio:16/9}
+@media(min-width:1024px){ .live-card-lead .live-frame{aspect-ratio:2/1} }

@@ -35,6 +35,71 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
    return prefix + 'data/' + name;
  }
  function esc(s){return (s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+
+// Live embeds: play, don't ask.
+//
+// A camera behind a play button is a screenshot with extra steps. YouTube
+// permits muted inline autoplay, so a legitimately embeddable feed should be
+// moving by the time the reader reaches it — that is the whole promise of
+// "Delaware Coast Live".
+//
+// Cost control: the iframe src is only attached when the module is about to
+// enter the viewport, so an unwatched camera never downloads a stream.
+function liveEmbedUrl(base, {autoplay=true}={}){
+  if(!base) return '';
+  const u = base.split('#')[0];
+  const sep = u.includes('?') ? '&' : '?';
+  // mute=1 is required for autoplay under browser policy; playsinline keeps it
+  // in the page on iOS instead of hijacking the screen into fullscreen.
+  return u + sep + [
+    autoplay ? 'autoplay=1' : 'autoplay=0',
+    'mute=1', 'playsinline=1', 'rel=0', 'modestbranding=1'
+  ].join('&');
+}
+
+// Attach the stream only when the frame is close to being seen.
+function lazyLiveFrame(frameEl, url, {autoplay=true}={}){
+  if(!frameEl || !url) return;
+  const attach = ()=>{
+    if(frameEl.dataset.live === 'on') return;
+    frameEl.dataset.live = 'on';
+    const ifr = document.createElement('iframe');
+    ifr.src = liveEmbedUrl(url, {autoplay});
+    ifr.title = frameEl.getAttribute('data-title') || 'Live camera';
+    ifr.loading = 'lazy';
+    ifr.referrerPolicy = 'strict-origin-when-cross-origin';
+    ifr.setAttribute('allow','autoplay; encrypted-media; picture-in-picture');
+    ifr.setAttribute('allowfullscreen','');
+    frameEl.appendChild(ifr);
+  };
+  // The lead camera attaches immediately: it is the point of the page, and
+  // making it wait on an observer means arriving to a dead rectangle.
+  if(autoplay){ attach(); return; }
+  if(!('IntersectionObserver' in window)){ attach(); return; }
+
+  const near = ()=> {
+    const r = frameEl.getBoundingClientRect();
+    return r.top < (window.innerHeight + 400) && r.bottom > -400;
+  };
+  if(near()){ attach(); return; }
+
+  let done = false;
+  const fire = ()=>{ if(done) return; if(near()){ done = true; cleanup(); attach(); } };
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{ if(en.isIntersecting && !done){ done = true; cleanup(); attach(); } });
+  }, {rootMargin:'400px 0px'});
+  // Observers can be throttled or skipped in some embedded/background views, so
+  // a passive scroll check backs it up. Whichever fires first wins; both clean up.
+  function cleanup(){
+    io.disconnect();
+    window.removeEventListener('scroll', fire);
+    window.removeEventListener('resize', fire);
+  }
+  io.observe(frameEl);
+  window.addEventListener('scroll', fire, {passive:true});
+  window.addEventListener('resize', fire, {passive:true});
+}
+
  function sceneImg(scene, alt){
    const depth = document.body.getAttribute('data-depth') || '0';
    const prefix = depth === '1' ? '../' : '';
@@ -1144,11 +1209,14 @@ function liveCard(f, opts){
   const related = (f.relatedStorySlugs||[]).length;
   // Iframes are lazy and never autoplay: a hub of live players that all start
   // at once is unusable and wrecks the page.
+  // The lead camera plays on arrival; the rest attach their stream when the
+  // reader scrolls to them. Every embeddable feed still ends up live — we just
+  // never start five streams at once.
   const player = embeddable
-    ? `<div class="live-frame" data-feed="${esc(f.id)}">
-         <iframe src="${esc(f.embedUrl)}" title="${esc(f.title)}" loading="lazy"
-           referrerpolicy="strict-origin-when-cross-origin"
-           allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+    ? `<div class="live-frame is-live" data-live-frame data-feed="${esc(f.id)}"
+          data-embed="${esc(f.embedUrl)}" data-title="${esc(f.title)}"
+          data-autoplay="${opts.lead ? '1' : '0'}">
+         <span class="live-badge"><span class="live-dot"></span>Live</span>
        </div>`
     : `<a class="live-frame live-frame-ext" href="${esc(f.externalUrl||f.sourcePage)}"
          target="_blank" rel="noopener" data-live-external data-feed="${esc(f.id)}"
@@ -1194,6 +1262,10 @@ if(liveMount){
         </div></section>`;
     });
     liveMount.innerHTML=html;
+    liveMount.querySelectorAll('[data-live-frame]').forEach(fr=>{
+      lazyLiveFrame(fr, fr.getAttribute('data-embed'),
+                    {autoplay: fr.getAttribute('data-autoplay') === '1'});
+    });
     if(window.gtag) gtag('event','live_hub_view',{feed_count:feeds.length,source_page:location.pathname});
   }).catch(()=>{ gateHide(liveMount); });
 }
@@ -1208,9 +1280,7 @@ if(liveTeaseMount){
     const embeddable = EMBEDDABLE.has(f.permissionStatus) && f.embedUrl;
     liveTeaseMount.innerHTML=`
       <div class="live-tease">
-        ${embeddable?`<div class="live-frame"><iframe src="${esc(f.embedUrl)}" title="${esc(f.title)}"
-            loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-            allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`
+        ${embeddable?`<div class="live-frame is-live" data-live-frame data-title="${esc(f.title)}"><span class="live-badge"><span class="live-dot"></span>Live</span></div>`
           :`<a class="live-frame live-frame-ext" href="${esc(f.externalUrl)}" target="_blank" rel="noopener"><span class="live-ext-mark">Watch at ${esc(f.provider)}</span></a>`}
         <div class="live-tease-copy">
           <span class="live-where">${esc(f.location)}${f.town?' &middot; '+esc(f.town)+', '+esc(f.state):''}</span>
@@ -1220,6 +1290,11 @@ if(liveTeaseMount){
           <a class="ed-link" href="live.html">All live cameras &rarr;</a>
         </div>
       </div>`;
+    if(embeddable){
+      lazyLiveFrame(liveTeaseMount.querySelector('[data-live-frame]'), f.embedUrl, {autoplay:true});
+      if(window.gtag) gtag('event','live_feed_view',{feed_id:f.id, feed_type:f.category,
+        location:f.location, operator:f.provider, placement:'homepage'});
+    }
   }).catch(()=>{ gateHide(liveTeaseMount); });
 }
 
