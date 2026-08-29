@@ -5,8 +5,8 @@
     "state": "Delaware",
     "kicker": "The Town Before the Beach Town",
     "dek": "Delaware's oldest town has a beach almost as an afterthought — everything else came first.",
-    "heroScene": "lighthouse-dusk-1",
-    "tileScene": "lighthouse-day-1",
+    "heroScene": "lewes-canal-waterfront.jpg",
+    "tileScene": "lewes-beach-patrol-station.jpg",
     "intro": [
       "Lewes doesn't try very hard to be a beach town, which is exactly why people who've done the other Delaware beaches end up loving it most. The historic district runs on foot traffic and porch light, not boardwalk noise. The beach itself — calm, bay-facing, more Sound than Atlantic — is almost beside the point.",
       "What Lewes actually offers is a whole day that doesn't require sand at all: a bike ride down to Cape Henlopen, a wander through Zwaanendael's brick streets, an afternoon watching the ferry come in from Cape May loaded with cars and bikes and sunburned families. It's the only Delaware beach town where the ferry terminal counts as a legitimate afternoon activity."
@@ -46,7 +46,7 @@
     "kicker": "The Narrow Strip Between Two Waters",
     "dek": "Ocean on one side, bay on the other, and about four blocks of sand between them.",
     "heroScene": "indian-river-inlet-bridge-beach-evening.jpg",
-    "tileScene": "indian-river-inlet-bridge-beach-evening.jpg",
+    "tileScene": "drive-on-beach-surf-fishing.jpg",
     "intro": [
       "Dewey is Delaware's smallest big idea: a sliver of land narrow enough that you can watch the sun rise over the Atlantic and set over Rehoboth Bay without moving your car. That geography does something to the town's whole personality — loud and social after dark, but genuinely serene at low tide on the bay side before anyone else is up.",
       "It's known as the party cousin of the Delaware beaches, and some of that reputation is earned after 9 PM in July. But arrive early, or come in shoulder season, and Dewey is one of the best-kept sunrise-to-noon towns on the whole coast."
@@ -85,7 +85,7 @@
     "state": "Delaware",
     "kicker": "The Last Mile Before Maryland",
     "dek": "A quiet lighthouse town at Delaware's southern edge, close enough to Ocean City to borrow its energy without keeping it.",
-    "heroScene": "fenwick-island-lighthouse.jpg",
+    "heroScene": "fenwick-island-lighthouse-tower.jpg",
     "tileScene": "fenwick-island-lighthouse.jpg",
     "intro": [
       "Fenwick sits right on the Delaware-Maryland line, and it uses that position well: a calm, residential beach town during the day, with Ocean City's boardwalk and bigger-city energy fifteen minutes south whenever you want it.",

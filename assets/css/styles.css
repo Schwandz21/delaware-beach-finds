@@ -1792,3 +1792,43 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
 
 /* Reduced motion: never autoplay-feel; the play control is explicit anyway. */
 @media(prefers-reduced-motion:reduce){ .watch-frame video{transition:none} }
+
+/* Inline story photography — a reported story should breathe. */
+.story-figure{margin:34px 0}
+.story-figure img{width:100%;height:auto;display:block}
+.story-figure figcaption{margin-top:9px;font-size:.88rem;line-height:1.5;color:var(--ink-soft)}
+.story-figure figcaption b{color:var(--navy);font-weight:600}
+/* A full-bleed break on phones, where the measure is the whole screen. */
+@media(max-width:760px){
+  .story-figure.is-wide{margin-left:calc(var(--pad,20px)*-1);margin-right:calc(var(--pad,20px)*-1)}
+  .story-figure.is-wide figcaption{padding:0 var(--pad,20px)}
+}
+.story-watch{margin:34px 0;padding:18px 0;border-top:2px solid var(--navy);
+  border-bottom:1px solid var(--hairline)}
+.story-watch .kicker{margin-bottom:6px}
+.story-watch h4{font-family:var(--serif);font-weight:600;font-size:1.1rem;
+  margin:0 0 6px;color:var(--navy)}
+.story-watch p{font-size:.93rem;line-height:1.6;color:var(--ink-soft);margin:0 0 10px;max-width:56ch}
+
+/* AROUND DELAWARE — the publication's world past the beach towns. */
+.around-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:0 clamp(22px,2.6vw,40px)}
+.around-card{display:block;text-decoration:none;color:inherit;
+  border-top:2px solid var(--navy);padding-top:14px}
+.around-art{display:block;aspect-ratio:3/2;overflow:hidden;background:var(--paper-deep);
+  margin-bottom:11px}
+.around-art img{width:100%;height:100%;object-fit:cover;display:block}
+.around-where{display:block;font-size:var(--fs-eyebrow);letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;color:var(--coral-deep);margin-bottom:6px}
+.around-head{display:block;font-family:var(--serif);font-weight:600;letter-spacing:-.02em;
+  font-size:1.12rem;line-height:1.2;color:var(--navy);margin-bottom:6px}
+.around-note{display:block;font-size:.9rem;line-height:1.55;color:var(--ink-soft)}
+.around-card:hover .around-head{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:640px){
+  .around-grid{grid-auto-flow:column;grid-auto-columns:78%;grid-template-columns:none;
+    grid-template-rows:auto;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    overscroll-behavior-x:contain;margin:0 calc(var(--pad,20px)*-1);
+    padding:2px var(--pad,20px) 14px;scrollbar-width:none}
+  .around-grid::-webkit-scrollbar{display:none}
+  .around-grid > *{scroll-snap-align:start;min-width:0}
+}

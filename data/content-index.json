@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-12T19:39:53Z",
-  "recordCount": 23,
+  "generatedAt": "2026-08-29T06:46:53Z",
+  "recordCount": 34,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -17,7 +17,7 @@
       "updatedDate": "2026-07-26",
       "status": "current",
       "access_level": "public",
-      "scene": "bay-morning-1.svg"
+      "scene": "delaware-bay-shoreline-sunset.jpg"
     },
     {
       "id": "story-the-galloping-dune",
@@ -51,7 +51,7 @@
       "updatedDate": "2026-07-26",
       "status": "current",
       "access_level": "public",
-      "scene": "marsh-gold-1.svg"
+      "scene": "delaware-marsh-channel-sunset.jpg"
     },
     {
       "id": "story-towers-on-the-dunes",
@@ -77,7 +77,7 @@
       "title": "Why Delaware Looks Like That",
       "excerpt": "Delaware's northern boundary is a circular arc, unlike any other state line in the country. It exists because of a property dispute and a survey nobody could execute cleanly.",
       "url": "stories/why-delaware-looks-like-that.html",
-      "town": "How Delaware Became Delaware",
+      "town": "How Delaware Became Delaware · Installment 6 of 9",
       "category": "history",
       "tags": [
         "history",
@@ -95,7 +95,7 @@
       "title": "Three Counties Become the First State",
       "excerpt": "Delaware declared independence from Britain and Pennsylvania in the same week of 1776 — and eleven years later became the first state to ratify the Constitution, in a rented tavern, unanimously, in five days.",
       "url": "stories/three-counties-become-the-first-state.html",
-      "town": "How Delaware Became Delaware",
+      "town": "How Delaware Became Delaware · Installment 7 of 9",
       "category": "history",
       "tags": [
         "history",
@@ -122,7 +122,7 @@
       "updatedDate": "2026-07-15",
       "status": "current",
       "access_level": "public",
-      "scene": "paddleboard-sunrise-1.jpg"
+      "scene": "indian-river-inlet-bridge-beach-evening.jpg"
     },
     {
       "id": "story-what-the-boardwalk-smells-like-in-july",
@@ -173,7 +173,7 @@
       "updatedDate": "2026-06-18",
       "status": "current",
       "access_level": "public",
-      "scene": "marsh-green-1"
+      "scene": "delaware-beach-dune-fence-summer.jpg"
     },
     {
       "id": "story-low-tide-assateague-different-island",
@@ -191,6 +191,197 @@
       "status": "current",
       "access_level": "public",
       "scene": "marsh-dawn-1"
+    },
+    {
+      "id": "story-the-last-seventeen-hundred",
+      "type": "story",
+      "title": "The Last Seventeen Hundred",
+      "excerpt": "Delaware refused to abolish slavery in February 1865 — for fewer than 1,800 people, in a state where nine in ten Black Delawareans were already free. The Emancipation Proclamation never applied here, and the legislature did not ratify the Thirteenth Amendment until 1901.",
+      "url": "stories/the-last-seventeen-hundred.html",
+      "town": "Delaware and the Thirteenth Amendment",
+      "category": "history",
+      "tags": [
+        "history",
+        "how-delaware-became-delaware"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-dawn-1.svg"
+    },
+    {
+      "id": "story-in-his-boots-and-spurs",
+      "type": "story",
+      "title": "In His Boots and Spurs",
+      "excerpt": "The most famous sentence about Caesar Rodney's ride was written thirty-seven years later, by a man correcting somebody else's version of events. What the record actually supports — and why Delaware needed the story.",
+      "url": "stories/in-his-boots-and-spurs.html",
+      "town": "Caesar Rodney, Myth and Record",
+      "category": "history",
+      "tags": [
+        "history",
+        "how-delaware-became-delaware"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-sunrise-2.svg"
+    },
+    {
+      "id": "story-the-colony-that-failed-and-stayed",
+      "type": "story",
+      "title": "The Colony That Failed and Stayed",
+      "excerpt": "New Sweden lasted seventeen years and surrendered without a shot. Almost everybody who lived there stayed for good — and by staying, made the lower Delaware a different place from the province upriver.",
+      "url": "stories/the-colony-that-failed-and-stayed.html",
+      "town": "New Sweden, 1638",
+      "category": "history",
+      "tags": [
+        "history",
+        "how-delaware-became-delaware"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "bay-morning-1.svg"
+    },
+    {
+      "id": "story-the-ladder-off-cape-henlopen",
+      "type": "story",
+      "title": "The Ladder off Cape Henlopen",
+      "excerpt": "Most days and nights of the year, someone climbs a rope ladder up the side of a moving ship east of Cape Henlopen. It is how every large vessel enters Delaware Bay, and it has been happening here since 1650.",
+      "url": "stories/the-ladder-off-cape-henlopen.html",
+      "town": "Delaware Bay Pilots",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "lewes-canal-waterfront.jpg"
+    },
+    {
+      "id": "story-the-attic-in-dover",
+      "type": "story",
+      "title": "The Attic in Dover",
+      "excerpt": "Every astronomer alive sorts stars using a system worked out by a shipbuilder's daughter from Dover. Annie Jump Cannon classified roughly 350,000 stars by eye — more than any human being who has ever lived.",
+      "url": "stories/the-attic-in-dover.html",
+      "town": "Annie Jump Cannon",
+      "category": "people",
+      "tags": [
+        "people"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "night-pier-1.svg"
+    },
+    {
+      "id": "story-the-standing-dead",
+      "type": "story",
+      "title": "The Standing Dead",
+      "excerpt": "Bare trunks standing in open marsh along Delaware Bay look like an ending. They are the opposite: they mark the line where the marsh is climbing inland — which is the only escape route it has.",
+      "url": "stories/the-standing-dead.html",
+      "town": "Delaware Bay's Ghost Forests",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-ghost-forest-dusk.jpg"
+    },
+    {
+      "id": "story-read-the-apron",
+      "type": "story",
+      "title": "Read the Apron",
+      "excerpt": "The most useful thing to know about crabbing in Delaware is how to turn a crab over. The shape on its belly tells you what you are holding, whether you can keep it, and whether you should.",
+      "url": "stories/read-the-apron.html",
+      "town": "Delaware Field Guide",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "delaware-blue-crabs.jpg"
+    },
+    {
+      "id": "story-three-hundred-dollars",
+      "type": "story",
+      "title": "Three Hundred Dollars",
+      "excerpt": "In 1907 a doctor outside Wilmington needed $300 to keep a tuberculosis sanatorium open through the winter. His cousin raised ten times that by selling penny stamps that carried no mail — and accidentally founded a national institution.",
+      "url": "stories/three-hundred-dollars.html",
+      "town": "Emily Bissell",
+      "category": "people",
+      "tags": [
+        "people"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "night-holiday-1.svg"
+    },
+    {
+      "id": "story-the-patience-of-herons",
+      "type": "story",
+      "title": "The Patience of Herons",
+      "excerpt": "A great blue heron stands four feet tall, spans six feet, and weighs about as much as a housecat. Almost everything it does is waiting — and the strike, when it comes, is one of the fastest things a large animal does.",
+      "url": "stories/the-patience-of-herons.html",
+      "town": "Delaware's Wading Birds",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "great-blue-heron-standing.jpg"
+    },
+    {
+      "id": "story-the-refuge-loop",
+      "type": "story",
+      "title": "The Refuge Loop",
+      "excerpt": "Delaware's two national wildlife refuges are best watched from inside a car, on a falling tide, with the engine off. Everything else about Bombay Hook and Prime Hook follows from getting that right.",
+      "url": "stories/the-refuge-loop.html",
+      "town": "Delaware Field Guide",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "great-blue-heron-marsh-flight.jpg"
+    },
+    {
+      "id": "story-what-the-dunes-were-for",
+      "type": "story",
+      "title": "What the Dunes Were For",
+      "excerpt": "The parking lot at Cape Henlopen sits on top of a gun battery. Delaware's most-visited state park is laid over a coastal fortress built to close the mouth of Delaware Bay — and the only enemy warship that ever arrived came in flying a surrender signal.",
+      "url": "stories/what-the-dunes-were-for.html",
+      "town": "Fort Miles",
+      "category": "history",
+      "tags": [
+        "history",
+        "delaware-at-war"
+      ],
+      "publishedDate": "2026-08-19",
+      "updatedDate": "2026-08-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "drive-on-beach-surf-fishing.jpg"
     },
     {
       "id": "guide-gordons-pond-walking-guide",
@@ -276,7 +467,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "lighthouse-day-1"
+      "scene": "lewes-beach-patrol-station.jpg"
     },
     {
       "id": "town-rehoboth-beach",
@@ -312,7 +503,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "wave-teal-1"
+      "scene": "drive-on-beach-surf-fishing.jpg"
     },
     {
       "id": "town-bethany-beach",
@@ -330,7 +521,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "dune-fence-sunset-2.jpg"
+      "scene": "dune-fence-sunset-1.jpg"
     },
     {
       "id": "town-fenwick-island",
@@ -348,7 +539,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "lighthouse-dusk-1"
+      "scene": "fenwick-island-lighthouse.jpg"
     },
     {
       "id": "town-cape-henlopen",
@@ -366,7 +557,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "marsh-green-1"
+      "scene": "cape-henlopen-aerial-1.jpg"
     },
     {
       "id": "town-assateague",
