@@ -2050,3 +2050,8 @@ html.js-reveal .reveal{
    sat at x=0 while every other element on the page started at 24px. */
 .around-grid,.watch-rail,.calendar-strip,.town-grid,.story-grid,.edit-grid,.shop-grid,
 .guide-hub-grid,.dept-grid,.ed-index{scroll-padding-left:var(--pad);scroll-padding-right:var(--pad)}
+
+/* The freshness tag belongs above the department name, not beside it — inline
+   it pushed the heading off the left margin and broke the column. */
+.franchise-id:has(> .now-tag){display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.franchise-id > .now-tag{order:-1}
