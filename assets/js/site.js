@@ -628,58 +628,10 @@ if(flagshipMount){
   }).catch(()=>{ gateHide(flagshipMount); });
 }
 
-// Watch DBF — native video feature. Stays hidden unless an entry is published
-// AND has a local rights-cleared source plus a poster. Never renders a
-// placeholder player. See automation/VIDEO_ASSET_REQUIREMENTS.md.
-const watchMount = document.querySelector('[data-mount="watch-dbf"]');
-if(watchMount){
-  fetchJson('watch-dbf.json').then(d=>{
-    const ready = (d.entries||[]).filter(e =>
-      e.published && e.src && e.poster && e.posterAlt && e.textAlternative);
-    if(!ready.length){ gateHide(watchMount, 'watch-dbf'); return; }
-    const v = ready[0];
-    const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const webm = v.srcWebm ? `<source src="${esc(v.srcWebm)}" type="video/webm">` : '';
-    watchMount.innerHTML = `
-      <div class="watch-panel">
-        <figure class="watch-media">
-          <video class="watch-video" poster="${esc(v.poster)}" preload="none" playsinline muted controls
-                 aria-label="${esc(v.title)}"${reduced?'':' data-autoloop="1"'}>
-            ${webm}<source src="${esc(v.src)}" type="video/mp4">
-          </video>
-          <figcaption class="watch-alt">${esc(v.textAlternative)}</figcaption>
-        </figure>
-        <div class="watch-copy">
-          <div class="kicker">Watch DBF</div>
-          <h3>${esc(v.title)}</h3>
-          <p>${esc(v.context||'')}</p>
-          ${v.relatedUrl?`<a class="link-arrow" href="${esc(v.relatedUrl)}">${esc(v.relatedLabel||'Read the story')} &rarr;</a>`:''}
-          ${v.instagramUrl?`<a class="link-arrow watch-ig" href="${esc(v.instagramUrl)}" target="_blank" rel="noopener noreferrer">Watch on Instagram (opens Instagram) &rarr;</a>`:''}
-          <p class="watch-credit small muted">${esc(v.credit||'Delaware Beach Finds')}${v.audio==='muted'?' &middot; silent clip':''}</p>
-        </div>
-      </div>`;
-    gateShow('watch-dbf');
-    const videoEl = watchMount.querySelector('.watch-video');
-    if(videoEl && 'IntersectionObserver' in window){
-      // Load only when near the viewport, and stop playback once well out of it.
-      const vo = new IntersectionObserver(entries=>{
-        entries.forEach(en=>{
-          if(en.isIntersecting){
-            if(videoEl.preload === 'none') videoEl.preload = 'metadata';
-            if(videoEl.dataset.autoloop && videoEl.paused){
-              videoEl.loop = true;
-              const p = videoEl.play();
-              if(p && p.catch) p.catch(()=>{});
-            }
-          } else if(!videoEl.paused){
-            videoEl.pause();
-          }
-        });
-      }, {threshold:0.25});
-      vo.observe(videoEl);
-    }
-  }).catch(()=>{ gateHide(watchMount, 'watch-dbf'); });
-}
+// (The original single-entry Watch DBF renderer was removed here. It required a
+// `textAlternative` field, found no qualifying entry, and called gateHide on the
+// section — which silently hid the module even after real clips existed. The
+// multi-item renderer further down replaces it.)
 
 // Editorial byline — one config field drives every article using the house
 // byline. Presentation only; legal/business identity is unchanged elsewhere.
@@ -819,6 +771,116 @@ if(pictureMount){
   });
   host.appendChild(btn);
 })();
+
+// WATCH DBF — original first-party video.
+// Posters render immediately; the <video> element only gets a src when the
+// card is near the viewport, so a rail of eight clips costs one poster image
+// each until the reader actually engages. Only one clip plays at a time.
+function watchCard(v, opts){
+  opts = opts || {};
+  const dur = v.durationSeconds ? `<span class="watch-dur">0:${String(v.durationSeconds).padStart(2,'0')}</span>` : '';
+  return `
+  <article class="watch-card${opts.lead?' watch-card-lead':''}" data-watch="${esc(v.id)}"
+           data-src="${esc(v.src)}" data-loc="${esc(v.location||'')}">
+    <div class="watch-frame">
+      <img class="watch-poster" src="${esc(v.poster)}" alt="${esc(v.posterAlt||v.title)}"
+           loading="lazy" decoding="async">
+      <button class="watch-play" type="button" aria-label="Play: ${esc(v.title)}"></button>
+      ${dur}
+    </div>
+    <div class="watch-copy">
+      ${v.location?`<span class="watch-where">${esc(v.location)}</span>`:''}
+      <h3 class="watch-title">${esc(v.title)}</h3>
+      ${opts.lead && v.context?`<p class="watch-context">${esc(v.context)}</p>`:''}
+      <div class="watch-links">
+        ${v.relatedUrl?`<a class="ed-link" href="${esc(v.relatedUrl)}"
+            data-watch-related data-media="${esc(v.id)}">${esc(v.relatedLabel||'Read more')} &rarr;</a>`:''}
+        ${v.instagramPermalink?`<a class="ed-link watch-ig" href="${esc(v.instagramPermalink)}"
+            target="_blank" rel="noopener" data-ig-outbound data-media="${esc(v.id)}"
+            >See the Reel on Instagram &rarr;</a>`:''}
+      </div>
+    </div>
+  </article>`;
+}
+
+// One player at a time: starting a clip pauses whatever else is running.
+let watchCurrent = null;
+function watchActivate(card){
+  const frame = card.querySelector('.watch-frame');
+  let vid = frame.querySelector('video');
+  if(!vid){
+    vid = document.createElement('video');
+    vid.src = card.getAttribute('data-src');
+    vid.muted = true; vid.playsInline = true; vid.loop = true;
+    vid.setAttribute('playsinline',''); vid.setAttribute('muted','');
+    vid.preload = 'metadata';
+    vid.poster = card.querySelector('.watch-poster')?.getAttribute('src') || '';
+    frame.appendChild(vid);
+  }
+  if(watchCurrent && watchCurrent !== vid){ try{ watchCurrent.pause(); }catch(e){} }
+  watchCurrent = vid;
+  card.classList.add('is-playing');
+  const p = vid.play();
+  if(p && p.catch) p.catch(()=>{ card.classList.remove('is-playing'); });
+  if(window.gtag) gtag('event','watch_video_play',
+    {media_id:card.getAttribute('data-watch'), media_type:'video',
+     location:card.getAttribute('data-loc'), placement:'watch'});
+}
+
+function wireWatch(root){
+  root.querySelectorAll('.watch-card').forEach(card=>{
+    card.querySelector('.watch-play')?.addEventListener('click', ()=>watchActivate(card));
+    card.querySelector('.watch-frame')?.addEventListener('click', e=>{
+      if(e.target.closest('.watch-play')) return;
+      const v = card.querySelector('video');
+      if(!v){ watchActivate(card); return; }
+      if(v.paused) watchActivate(card); else { v.pause(); card.classList.remove('is-playing'); }
+    });
+  });
+  // Pause anything scrolled well out of view so audio-less playback still
+  // stops costing battery on a phone.
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(en=>{
+        if(!en.isIntersecting){
+          const v = en.target.querySelector('video');
+          if(v && !v.paused){ v.pause(); en.target.classList.remove('is-playing'); }
+        }
+      });
+    }, {threshold:0.15});
+    root.querySelectorAll('.watch-card').forEach(c=>io.observe(c));
+  }
+}
+
+document.querySelectorAll('[data-mount="watch-dbf"]').forEach(mount=>{
+  const limit = parseInt(mount.getAttribute('data-limit') || '0', 10);
+  const full  = mount.hasAttribute('data-full');
+  fetchJson('watch-dbf.json').then(cfg=>{
+    let items = (cfg.entries||[]).filter(v=>v.published && v.src && v.poster);
+    if(!items.length){ gateHide(mount, 'watch-dbf'); return; }
+    items.sort((a,b)=>(b.featured?1:0)-(a.featured?1:0)
+                     || String(b.publishedAt||'').localeCompare(String(a.publishedAt||'')));
+    if(limit) items = items.slice(0, limit);
+    const [lead, ...rest] = items;
+    mount.innerHTML =
+      `<div class="watch-lead-wrap">${watchCard(lead,{lead:true})}</div>` +
+      (rest.length ? `<div class="watch-rail">${rest.map(v=>watchCard(v)).join('')}</div>` : '');
+    wireWatch(mount);
+    gateShow('watch-dbf');
+    if(window.gtag) gtag('event','watch_video_view',
+      {media_count:items.length, placement: full ? 'watch_page' : 'homepage'});
+  }).catch(()=>{ gateHide(mount, 'watch-dbf'); });
+});
+
+document.addEventListener('click', function(e){
+  if(!window.gtag) return;
+  const r = e.target.closest('[data-watch-related]');
+  if(r) gtag('event','visual_story_select',
+    {media_id:r.getAttribute('data-media'), destination:r.getAttribute('href'), placement:'watch'});
+  const ig = e.target.closest('[data-ig-outbound]');
+  if(ig) gtag('event','instagram_outbound',
+    {media_id:ig.getAttribute('data-media'), destination:ig.getAttribute('href'), placement:'watch'});
+});
 
 // STORY FOOT — the onward journey.
 // A 5,800px feature previously ended with a one-link sidebar box. This builds a

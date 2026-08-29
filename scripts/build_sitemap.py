@@ -24,6 +24,7 @@ STATIC_PAGES = [
     ('today.html', 'daily', '0.9'),
     ('this-week.html', 'weekly', '0.9'),
     ('live.html', 'weekly', '0.8'),
+    ('watch.html', 'weekly', '0.8'),
     ('stories/index.html', 'weekly', '0.8'),
     ('archive.html', 'weekly', '0.8'),
     ('hidden-gems.html', 'weekly', '0.8'),

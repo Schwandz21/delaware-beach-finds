@@ -1,0 +1,11 @@
+{
+  "_note": "Cumulative DBF Instagram archive, synced from the official Instagram Graph API by scripts/sync_instagram_archive.py. Posts are keyed by immutable media id and are NEVER removed when they fall out of the API's recent window. Editor-owned fields (localVideo, relatedUrl, relatedLabel, location, region, featured, note) survive every sync — the API only owns permalink, caption, mediaType, timestamp and thumbnail.",
+  "_editorGuide": {
+    "localVideo": "Path to the first-party DBF clip that IS this Reel, when we shot and own it. When present the site plays our own file and offers the Reel as a secondary link, so the page does not depend on Instagram for media we own.",
+    "relatedUrl": "A DBF story/town/guide this post should lead into.",
+    "featured": "Surface this post on the homepage.",
+    "published": "Set false to hide a post from the site without deleting the archive record."
+  },
+  "syncedAt": null,
+  "posts": []
+}

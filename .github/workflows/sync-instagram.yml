@@ -1,0 +1,78 @@
+# Delaware Beach Finds — Instagram archive sync
+#
+# Pulls recent media from the DBF professional account via the OFFICIAL
+# Instagram Graph API and merges it into data/instagram-archive.json.
+#
+# The archive is cumulative: posts that fall out of the API's recent window are
+# never deleted, and editor-curated fields are never overwritten by a sync.
+#
+# Requires two repository secrets:
+#   IG_USER_ID        the professional account's Instagram user id
+#   IG_ACCESS_TOKEN   a long-lived access token
+# Without them the job runs, reports that it fetched nothing, leaves the
+# archive untouched, and exits cleanly — it never publishes an empty archive.
+
+name: Sync Instagram archive
+
+on:
+  schedule:
+    - cron: '25 11,23 * * *'      # twice daily, UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Fetch and report without writing'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dbf-instagram-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Sync Instagram archive
+        id: sync
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: |
+          if [ -z "${IG_USER_ID}" ] || [ -z "${IG_ACCESS_TOKEN}" ]; then
+            echo "IG credentials not configured — skipping fetch, archive untouched."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            python3 scripts/sync_instagram_archive.py --dry-run
+          else
+            python3 scripts/sync_instagram_archive.py
+          fi
+
+      - name: Validate archive
+        run: python3 scripts/sync_instagram_archive.py --check
+
+      - name: Commit archive changes
+        if: ${{ steps.sync.outputs.configured == 'true' && inputs.dry_run != true }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain data/instagram-archive.json)" ]; then
+            echo "No archive changes — nothing to commit."
+            exit 0
+          fi
+          git config user.name  "dbf-instagram[bot]"
+          git config user.email "dbf-instagram[bot]@users.noreply.github.com"
+          git add data/instagram-archive.json
+          git commit -m "Sync Instagram archive ($(date -u +%Y-%m-%dT%H:%MZ))"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
