@@ -1772,4 +1772,48 @@ if(revealEls.length && !prefersReducedMotion && 'IntersectionObserver' in window
   revealEls.forEach(el=>el.classList.add('is-visible'));
 }
 
+
+/* ---------------------------------------------------------------------------
+   MOBILE TAB BAR — product chrome, phones only.
+   Five destinations, chosen for what a phone reader actually reaches for:
+   the front page, what is happening today, the video, the cameras, the towns.
+   Search stays in the header menu; on a discovery-feed homepage a way *back*
+   to the front page earns the slot more than a search field does.
+   Built here rather than in 30 HTML files so every page gets it at once.
+--------------------------------------------------------------------------- */
+(function buildTabBar(){
+  if (document.querySelector('.tabbar')) return;
+  const d = document.body.getAttribute('data-depth') || '0';
+  const up = d === '1' ? '../' : '';
+  const I = {
+    home:   '<path d="M3 10.5 12 3l9 7.5"/><path d="M5.5 9.5V21h13V9.5"/>',
+    today:  '<rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/>',
+    watch:  '<rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M10.5 9.2v5.6l4.6-2.8z"/>',
+    live:   '<circle cx="12" cy="12" r="3.1"/><path d="M5.8 5.8a8.7 8.7 0 0 0 0 12.4M18.2 5.8a8.7 8.7 0 0 1 0 12.4"/>',
+    explore:'<circle cx="12" cy="12" r="9"/><path d="m14.9 9.1-1.7 4.1-4.1 1.7 1.7-4.1z"/>'
+  };
+  const items = [
+    ['Home',    up + 'index.html', I.home,    ['index.html','']],
+    ['Today',   up + 'today.html', I.today,   ['today.html']],
+    ['Watch',   up + 'watch.html', I.watch,   ['watch.html']],
+    ['Live',    up + 'live.html',  I.live,    ['live.html']],
+    ['Explore', up + 'explore.html', I.explore, ['explore.html','towns']]
+  ];
+  const here = location.pathname.replace(/\/+$/, '/').split('/').filter(Boolean).pop() || '';
+  const inTowns = /\/towns\//.test(location.pathname);
+  const nav = document.createElement('nav');
+  nav.className = 'tabbar';
+  nav.setAttribute('aria-label', 'Sections');
+  nav.innerHTML = items.map(([label, href, icon, match]) => {
+    const active = match.includes(here) || (match.includes('towns') && inTowns);
+    return '<a class="tabbar-item' + (active ? ' is-active' : '') + '" href="' + href + '"' +
+           (active ? ' aria-current="page"' : '') + '>' +
+           '<span class="tabbar-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" ' +
+           'stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">' +
+           icon + '</svg></span><span class="tabbar-label">' + label + '</span></a>';
+  }).join('');
+  document.body.appendChild(nav);
+  document.body.classList.add('has-tabbar');
+})();
+
 })();

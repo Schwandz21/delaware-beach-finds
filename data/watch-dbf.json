@@ -20,9 +20,10 @@
       "relatedUrl": "stories/what-the-dunes-were-for.html",
       "relatedLabel": "Read: What the Dunes Were For",
       "instagramPermalink": "",
-      "featured": true,
+      "featured": false,
       "published": true,
-      "access_level": "public"
+      "access_level": "public",
+      "_note": "Preserved and published. Demoted from the homepage feature: camera execution is unsteady (measured frame-to-frame variability 0.55, the highest of the eight). Return to feature after the Video Desk recuts it."
     },
     {
       "id": "watch-rehoboth-boardwalk-dusk",
@@ -42,7 +43,7 @@
       "relatedUrl": "towns/rehoboth-beach.html",
       "relatedLabel": "Explore Rehoboth Beach",
       "instagramPermalink": "",
-      "featured": false,
+      "featured": true,
       "published": true,
       "access_level": "public"
     },

@@ -46,6 +46,7 @@
   --ink-deep:#0d1f26;
   --paper-warm:#f6efe3;
   --hairline:rgba(22,36,42,.16);
+  --pad:24px;
 }
 
 *{box-sizing:border-box}
@@ -1832,3 +1833,220 @@ a.issue-card:hover,.guide-hub-card:focus-visible,.edit-card:focus-visible,
   .around-grid::-webkit-scrollbar{display:none}
   .around-grid > *{scroll-snap-align:start;min-width:0}
 }
+
+/* ===========================================================================
+   PRODUCT CHROME — the phone experience
+   =========================================================================== */
+
+/* MOBILE TAB BAR. Phones only. Deliberately quiet: hairline top, paper
+   background, no pills, no filled icons. It should read as part of the device,
+   not as a widget bolted onto a website. */
+.tabbar{display:none}
+@media(max-width:700px){
+  .tabbar{
+    display:grid;grid-template-columns:repeat(5,1fr);
+    position:fixed;left:0;right:0;bottom:0;z-index:900;
+    background:color-mix(in srgb,var(--paper) 88%,transparent);
+    -webkit-backdrop-filter:saturate(1.6) blur(14px);
+    backdrop-filter:saturate(1.6) blur(14px);
+    border-top:1px solid var(--line-strong);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  .tabbar-item{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;min-height:50px;padding:8px 2px 7px;text-decoration:none;
+    color:var(--muted);-webkit-tap-highlight-color:transparent;
+    transition:color .18s ease;
+  }
+  .tabbar-icon{display:block;width:23px;height:23px}
+  .tabbar-icon svg{width:100%;height:100%;display:block}
+  .tabbar-label{
+    font-family:var(--sans);font-size:.62rem;font-weight:700;
+    letter-spacing:.07em;text-transform:uppercase;line-height:1;
+  }
+  /* Active state: colour plus a short rule at the top edge of the tab —
+     the same navy rule the section heads use, so it reads as DBF. */
+  .tabbar-item.is-active{color:var(--navy);position:relative}
+  .tabbar-item.is-active::before{
+    content:"";position:absolute;top:-1px;left:50%;width:26px;height:2px;
+    background:var(--coral-deep);transform:translateX(-50%);
+  }
+  .tabbar-item.is-active .tabbar-icon svg{stroke-width:1.9}
+  .tabbar-item:active{color:var(--navy)}
+  .tabbar-item:focus-visible{outline:2px solid var(--coral-deep);outline-offset:-3px}
+  /* Never let the bar sit on top of the last of the content. */
+  body.has-tabbar{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
+  body.has-tabbar .footer{margin-bottom:0}
+}
+
+/* ===========================================================================
+   CURRENT-INFORMATION FAMILY — Today / Live / This Weekend share one language
+   so that "this is fresh" is legible at a glance instead of being asserted.
+   =========================================================================== */
+.now-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:var(--sans);font-size:.66rem;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--coral-deep);
+  line-height:1;white-space:nowrap;
+}
+.now-tag::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--coral-deep);flex:none;
+}
+/* Only the genuinely live thing pulses. Today and Weekend are steady dots. */
+.now-tag.is-live::before{animation:nowPulse 2.4s ease-in-out infinite}
+@keyframes nowPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.78)}}
+@media(prefers-reduced-motion:reduce){ .now-tag.is-live::before{animation:none} }
+#daily-coast .franchise-name,#dbf-weekend .franchise-name{letter-spacing:-.01em}
+
+/* ===========================================================================
+   EDITORIAL RHYTHM — stop every module looking like the last one
+   =========================================================================== */
+
+/* Field Notes: a notebook, not another dark slab. Ruled top, paper ground. */
+.ed-notebook{background:var(--paper-warm);border-top:1px solid var(--line-strong)}
+.ed-notebook .section-head{border-bottom:1px solid var(--line);padding-bottom:14px}
+
+/* A series that publishes on verification is a promise, not a TODO list. */
+.series-note{
+  margin:4px 0 0;padding:16px 0 0;border-top:1px solid var(--line);
+  font-size:.94rem;line-height:1.6;color:var(--ink-soft);max-width:62ch;
+}
+.series-note b{color:var(--navy);font-weight:600}
+
+/* Closing colophon — the brand line belongs at the end, not between the
+   cover story and the first thing that moves. */
+.colophon{border-top:1px solid var(--line-strong);padding-top:clamp(26px,3vw,40px)}
+.colophon .standfirst{font-size:1.02rem;color:var(--ink-soft)}
+
+/* ===========================================================================
+   AROUND DELAWARE — a flagship promise, not three equal cards
+   =========================================================================== */
+@media(min-width:641px){
+  .around-grid{
+    grid-template-columns:1.45fr 1fr 1fr;
+    align-items:start;
+  }
+  /* The lead card carries a taller frame and a larger head, so the module
+     has an argument rather than a row. */
+  .around-card:first-child .around-art{aspect-ratio:4/5}
+  .around-card:first-child .around-head{font-size:1.44rem}
+  .around-card:first-child .around-note{font-size:.96rem}
+  .around-card:nth-child(n+2) .around-art{aspect-ratio:3/2}
+}
+.around-card{border-top-width:2px;transition:opacity .2s ease}
+.around-art{position:relative}
+.around-art::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(13,31,38,0) 62%,rgba(13,31,38,.30) 100%);
+  opacity:0;transition:opacity .35s ease;
+}
+.around-card:hover .around-art::after{opacity:1}
+.around-art img{transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.around-card:hover .around-art img{transform:scale(1.035)}
+@media(prefers-reduced-motion:reduce){
+  .around-art img,.around-card:hover .around-art img{transition:none;transform:none}
+}
+
+/* ===========================================================================
+   MEDIA — let the photography carry the page
+   =========================================================================== */
+
+/* THE COVER. On a phone the cover art was locked to 16/10, which centre-cropped
+   the library's portrait frames and threw away the sky — the reason those
+   photographs work at all. A 4:5 frame holds both orientations, and going
+   edge-to-edge makes the cover the first thing the eye lands on. */
+@media(max-width:700px){
+  .cover-art{
+    aspect-ratio:4/5;
+    margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);
+  }
+  .cover-art img{height:100%;aspect-ratio:auto}
+  .cover-flag{left:var(--pad)}
+  /* Caption and credit sit under the picture, indented back to the measure. */
+  .cover-story .cover-caption,.cover-story .cover-credit{padding:0 0}
+}
+
+/* EDGE-TO-EDGE AS PUNCTUATION — used three times on a phone, not everywhere:
+   the cover, the picture feature, and the featured film. */
+@media(max-width:700px){
+  #picture-feature .pf-art,#picture-feature figure,#picture-feature img{
+    margin-left:0;margin-right:0;width:100%;
+  }
+  .watch-card-lead .watch-frame{
+    margin-left:calc(var(--pad)*-1);margin-right:calc(var(--pad)*-1);
+    aspect-ratio:4/5;
+  }
+  .watch-card-lead .watch-dur{right:calc(var(--pad) + 10px)}
+}
+
+/* THE FEATURED FILM. Native controls read as a browser demo; this is a single
+   quiet affordance that grows slightly on press, with the duration set as
+   editorial metadata rather than a UI chip. */
+.watch-card-lead .watch-play{
+  width:74px;height:74px;
+  background:rgba(10,26,32,.42);
+  border:1.5px solid rgba(255,255,255,.9);
+  /* The base control blurs its backdrop; on the large lead button that blur
+     renders as a visible square patch behind the glyph instead of clipping to
+     the circle. The ring + scrim already give the triangle its contrast. */
+  -webkit-backdrop-filter:none;backdrop-filter:none;
+  box-shadow:0 2px 18px rgba(10,26,32,.28);
+  transition:background .25s ease,transform .25s cubic-bezier(.2,.6,.2,1);
+}
+.watch-card-lead .watch-play:hover{background:rgba(10,26,32,.68);transform:translate(-50%,-50%) scale(1.06)}
+.watch-card-lead .watch-play:active{transform:translate(-50%,-50%) scale(.96)}
+.watch-card-lead .watch-play:after{border-left-width:19px;border-top-width:12px;border-bottom-width:12px}
+@media(prefers-reduced-motion:reduce){
+  .watch-card-lead .watch-play,.watch-card-lead .watch-play:hover{transition:none;transform:translate(-50%,-50%)}
+}
+/* A film should not look like a thumbnail with a button on it. */
+.watch-card-lead .watch-frame::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
+  background:linear-gradient(180deg,rgba(13,31,38,.16) 0%,rgba(13,31,38,0) 34%,rgba(13,31,38,0) 58%,rgba(13,31,38,.42) 100%);
+  transition:opacity .3s ease;
+}
+.watch-card.is-playing .watch-frame::after{opacity:0}
+
+/* ===========================================================================
+   TYPOGRAPHY — make the big things big and the utilities quiet
+   =========================================================================== */
+@media(max-width:700px){
+  /* The nameplate is the publication's signature; it should not compete with
+     the cover headline directly beneath it. */
+  .nameplate-title{font-size:clamp(2rem,8.2vw,2.9rem);line-height:.94}
+  .nameplate-tag{font-size:.58rem;letter-spacing:.15em}
+  /* Section titles were nearly the size of feature headlines. Utilities get
+     a smaller, tighter setting so hierarchy is visible at a glance. */
+  .section-head h2{font-size:clamp(1.45rem,5.6vw,1.9rem);line-height:1.08;letter-spacing:-.025em}
+  .section-head .kicker{font-size:.63rem;letter-spacing:.16em}
+  /* Card titles: denser, so a rail reads as an index not as five headlines. */
+  .watch-title,.around-head{font-size:1.06rem;line-height:1.24}
+  .around-card:first-child .around-head{font-size:1.24rem}
+  /* Decks were running to the full width at body size; shorten the measure. */
+  .lede,.standfirst{font-size:1.04rem;line-height:1.58}
+  /* Captions should whisper. */
+  .story-figure figcaption,.cover-caption{font-size:.82rem;line-height:1.5}
+}
+
+/* ===========================================================================
+   MOTION — presence, not animation
+   =========================================================================== */
+/* NOTE: the opacity:0 that drives the reveal is deliberately scoped to
+   html.js-reveal (line ~553) so that content is never hidden when JS fails.
+   Do not restate it unscoped here. Only the easing and the reduced-motion
+   hardening belong at this layer. */
+html.js-reveal .reveal{
+  transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1)}
+@media(prefers-reduced-motion:reduce){
+  html.js-reveal .reveal,html.js-reveal .reveal.is-visible{
+    opacity:1!important;transform:none!important;transition:none!important}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+/* Scroll-snap rails: without scroll-padding the browser snaps the first card
+   flush to the scrollport edge, silently eating the container inset — the card
+   sat at x=0 while every other element on the page started at 24px. */
+.around-grid,.watch-rail,.calendar-strip,.town-grid,.story-grid,.edit-grid,.shop-grid,
+.guide-hub-grid,.dept-grid,.ed-index{scroll-padding-left:var(--pad);scroll-padding-right:var(--pad)}

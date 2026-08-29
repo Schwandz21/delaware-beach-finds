@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-29T06:46:53Z",
+  "generatedAt": "2026-08-29T07:16:33Z",
   "recordCount": 34,
   "records": [
     {
@@ -87,7 +87,7 @@
       "updatedDate": "2026-07-25",
       "status": "current",
       "access_level": "public",
-      "scene": "dune-sunrise-1.svg"
+      "scene": "delaware-waterfront-sunset.jpg"
     },
     {
       "id": "story-three-counties-become-the-first-state",
@@ -105,7 +105,7 @@
       "updatedDate": "2026-07-25",
       "status": "current",
       "access_level": "public",
-      "scene": "dune-sunrise-2.svg"
+      "scene": "delaware-bay-sunset-calm-water.jpg"
     },
     {
       "id": "story-six-oclock-shift-indian-river-inlet",
@@ -190,7 +190,7 @@
       "updatedDate": "2026-06-05",
       "status": "current",
       "access_level": "public",
-      "scene": "marsh-dawn-1"
+      "scene": "atlantic-surf-close.jpg"
     },
     {
       "id": "story-the-last-seventeen-hundred",
@@ -208,7 +208,7 @@
       "updatedDate": "2026-08-19",
       "status": "current",
       "access_level": "public",
-      "scene": "marsh-dawn-1.svg"
+      "scene": "coastal-sunset-aerial-1.jpg"
     },
     {
       "id": "story-in-his-boots-and-spurs",
@@ -226,7 +226,7 @@
       "updatedDate": "2026-08-19",
       "status": "current",
       "access_level": "public",
-      "scene": "dune-sunrise-2.svg"
+      "scene": "lewes-street-under-trees.jpg"
     },
     {
       "id": "story-the-colony-that-failed-and-stayed",
@@ -244,7 +244,7 @@
       "updatedDate": "2026-08-19",
       "status": "current",
       "access_level": "public",
-      "scene": "bay-morning-1.svg"
+      "scene": "lewes-canal-morning.jpg"
     },
     {
       "id": "story-the-ladder-off-cape-henlopen",
@@ -278,7 +278,7 @@
       "updatedDate": "2026-08-19",
       "status": "current",
       "access_level": "public",
-      "scene": "night-pier-1.svg"
+      "scene": "moonlight-over-the-water.jpg"
     },
     {
       "id": "story-the-standing-dead",
