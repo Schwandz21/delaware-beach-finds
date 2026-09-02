@@ -174,7 +174,7 @@
     "kicker": "Delaware at War",
     "headline": "The Towers on the Dunes",
     "hook": "Every summer thousands of people photograph the concrete towers along the Delaware coast without knowing what they are. They were optical instruments, built to last about ten years.",
-    "scene": "cape-henlopen-aerial-1.jpg",
+    "scene": "fire-control-tower-delaware-seashore.jpg",
     "date": "2026-07-25",
     "readTime": "9 min read",
     "featured": false,
@@ -183,7 +183,7 @@
     "seriesInstallment": null,
     "seriesTotal": 8,
     "status": "published",
-    "photoCredit": "@delawarebeachfinds",
+    "photoCredit": "Delaware Beach Finds",
     "sources": [
       "Delaware Division of Historical and Cultural Affairs, \"Fire Control Towers\" (history.delaware.gov/preservation/firetowers)",
       "Delaware State Parks and Cape Gazette/WGMD reporting on the 2023 reopening of Tower 3"
@@ -196,7 +196,7 @@
       "Eleven of these towers still stand in Delaware, across Cape Henlopen, Delaware Seashore, and Fenwick Island state parks. Tower 3, at Delaware Seashore State Park, reopened to the public in 2023 with a rebuilt staircase. This publication does not repeat the widely circulated claim that Delaware is the only state with all of its original towers — the state's own published material doesn't make that claim, and we couldn't verify it independently."
     ],
     "access_level": "public",
-    "heroAlt": "Aerial view of the Cape Henlopen coastline where the fire-control towers stand",
+    "heroAlt": "The tower system that watched the Delaware coast",
     "publishedAt": "2026-07-25",
     "publishAt": "2026-07-25",
     "approvedAt": "2026-07-25",
@@ -217,11 +217,11 @@
     "heldReason": null,
     "lede": "Every summer thousands of people photograph the concrete towers along the Delaware coast without knowing what they are. They were optical instruments, they worked in pairs, and they were built to last about ten years.",
     "seriesPage": false,
-    "heroImage": "moonlit-beach-access-path.jpg",
-    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/moonlit-beach-access-path.jpg",
+    "heroImage": "fire-control-tower-delaware-seashore.jpg",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/fire-control-tower-delaware-seashore.jpg",
     "shopTheStory": false,
     "metaTag": "Delaware at War",
-    "heroImageAlt": "A beach access path through the dunes at night",
+    "heroImageAlt": "A WWII concrete fire-control tower standing above the dune line on the Delaware coast",
     "places": [
       "cape-henlopen",
       "lewes",
