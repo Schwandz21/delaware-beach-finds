@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-02T06:33:23Z",
-  "recordCount": 34,
+  "generatedAt": "2026-09-02T07:23:20Z",
+  "recordCount": 36,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -69,7 +69,7 @@
       "updatedDate": "2026-07-25",
       "status": "current",
       "access_level": "public",
-      "scene": "fire-control-tower-delaware-seashore.jpg"
+      "scene": "field-cape-henlopen-tower-20260831.jpg"
     },
     {
       "id": "story-why-delaware-looks-like-that",
@@ -384,6 +384,40 @@
       "scene": "drive-on-beach-surf-fishing.jpg"
     },
     {
+      "id": "guide-silver-lake-rehoboth",
+      "type": "guide",
+      "title": "The Other Rehoboth: Silver Lake",
+      "excerpt": "The boardwalk is two minutes away. Reeds, still water and a state bird refuge tell a different Rehoboth story.",
+      "url": "silver-lake-rehoboth.html",
+      "town": "Rehoboth Beach",
+      "category": "guide",
+      "tags": [
+        "guide"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "field-silver-lake-20260830.jpg"
+    },
+    {
+      "id": "guide-parsons-farms-dagsboro",
+      "type": "guide",
+      "title": "Goat Mountain at Parsons Farms",
+      "excerpt": "A Dagsboro farm-market stop with local produce, a country store and an animal yard built around Goat Mountain.",
+      "url": "parsons-farms-dagsboro.html",
+      "town": "Dagsboro",
+      "category": "guide",
+      "tags": [
+        "guide"
+      ],
+      "publishedDate": null,
+      "updatedDate": null,
+      "status": "current",
+      "access_level": "public",
+      "scene": "field-parsons-farms-goat-20260831.jpg"
+    },
+    {
       "id": "guide-gordons-pond-walking-guide",
       "type": "guide",
       "title": "Gordon's Pond to the Water",
@@ -485,7 +519,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "rehoboth-boardwalk-day-1.jpg"
+      "scene": "field-rehoboth-bandstand-wide-20260830.jpg"
     },
     {
       "id": "town-dewey-beach",
@@ -521,7 +555,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "dune-fence-sunset-1.jpg"
+      "scene": "field-bethany-chief-little-owl-context-20260831.jpg"
     },
     {
       "id": "town-fenwick-island",
@@ -557,7 +591,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "cape-henlopen-aerial-1.jpg"
+      "scene": "field-cape-henlopen-tower-tile-20260831.jpg"
     },
     {
       "id": "town-assateague",

@@ -1,5 +1,27 @@
 [
   {
+    "slug": "silver-lake-rehoboth",
+    "href": "silver-lake-rehoboth.html",
+    "title": "The Other Rehoboth: Silver Lake",
+    "kicker": "From the Field",
+    "dek": "The boardwalk is two minutes away. Reeds, still water and a state bird refuge tell a different Rehoboth story.",
+    "scene": "field-silver-lake-20260830.jpg",
+    "meta": "Rehoboth Beach · Freshwater · Quick Stop",
+    "status": "published",
+    "access_level": "public"
+  },
+  {
+    "slug": "parsons-farms-dagsboro",
+    "href": "parsons-farms-dagsboro.html",
+    "title": "Goat Mountain at Parsons Farms",
+    "kicker": "Around Delaware",
+    "dek": "A Dagsboro farm-market stop with local produce, a country store and an animal yard built around Goat Mountain.",
+    "scene": "field-parsons-farms-goat-20260831.jpg",
+    "meta": "Dagsboro · Inland Sussex · Family-Friendly",
+    "status": "published",
+    "access_level": "public"
+  },
+  {
     "slug": "gordons-pond-walking-guide",
     "href": "gordons-pond-walking-guide.html",
     "title": "Gordon's Pond to the Water",
