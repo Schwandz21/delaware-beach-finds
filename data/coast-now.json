@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T12:54:44Z",
+  "generatedAt": "2026-09-06T19:15:08Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -8,168 +8,16 @@
       "lat": 38.7746,
       "lon": -75.1393,
       "weather": {
-        "period": "Today",
+        "period": "This Afternoon",
         "temperature": 78,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny then Chance Rain Showers",
+        "shortForecast": "Slight Chance Rain Showers",
         "windSpeed": "10 mph",
         "windDirection": "NE",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false,
-        "precipProbability": 26
-      },
-      "alerts": {
-        "items": [
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued September 6 at 2:17AM EDT until September 6 at 9:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d285d3a5a0304e4914ebd34538b3a9168af14b8d.002.1",
-            "ends": "2026-09-06T21:00:00-04:00"
-          }
-        ],
-        "source": "National Weather Service",
-        "sourceUrl": "https://www.weather.gov/",
-        "zone": "DEZ004",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false
-      },
-      "tides": {
-        "station": "8557380",
-        "stationName": "Lewes",
-        "predictions": [
-          {
-            "time": "2026-09-06 04:44",
-            "type": "high",
-            "heightFt": 3.6
-          },
-          {
-            "time": "2026-09-06 10:26",
-            "type": "low",
-            "heightFt": 0.6
-          },
-          {
-            "time": "2026-09-06 17:19",
-            "type": "high",
-            "heightFt": 5.0
-          },
-          {
-            "time": "2026-09-06 23:45",
-            "type": "low",
-            "heightFt": 0.8
-          }
-        ],
-        "source": "NOAA Tides & Currents",
-        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false
-      },
-      "water": {
-        "station": "8557380",
-        "stationName": "Lewes",
-        "temperatureF": 76.8,
-        "observedAt": "2026-09-06 08:48",
-        "source": "NOAA Tides & Currents",
-        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false
-      }
-    },
-    {
-      "id": "rehoboth",
-      "name": "Rehoboth Beach",
-      "lat": 38.7168,
-      "lon": -75.076,
-      "weather": {
-        "period": "Today",
-        "temperature": 76,
-        "temperatureUnit": "F",
-        "shortForecast": "Mostly Sunny then Slight Chance Rain Showers",
-        "windSpeed": "10 to 15 mph",
-        "windDirection": "NE",
-        "isDaytime": true,
-        "source": "National Weather Service",
-        "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false,
-        "precipProbability": 23
-      },
-      "alerts": {
-        "items": [
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued September 6 at 2:17AM EDT until September 6 at 9:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d285d3a5a0304e4914ebd34538b3a9168af14b8d.002.1",
-            "ends": "2026-09-06T21:00:00-04:00"
-          }
-        ],
-        "source": "National Weather Service",
-        "sourceUrl": "https://www.weather.gov/",
-        "zone": "DEZ004",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false
-      },
-      "tides": {
-        "station": "8557380",
-        "stationName": "Lewes",
-        "predictions": [
-          {
-            "time": "2026-09-06 04:44",
-            "type": "high",
-            "heightFt": 3.6
-          },
-          {
-            "time": "2026-09-06 10:26",
-            "type": "low",
-            "heightFt": 0.6
-          },
-          {
-            "time": "2026-09-06 17:19",
-            "type": "high",
-            "heightFt": 5.0
-          },
-          {
-            "time": "2026-09-06 23:45",
-            "type": "low",
-            "heightFt": 0.8
-          }
-        ],
-        "source": "NOAA Tides & Currents",
-        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false
-      },
-      "water": {
-        "station": "8557380",
-        "stationName": "Lewes",
-        "temperatureF": 76.8,
-        "observedAt": "2026-09-06 08:48",
-        "source": "NOAA Tides & Currents",
-        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-06T12:54:44Z",
-        "stale": false
-      }
-    },
-    {
-      "id": "dewey",
-      "name": "Dewey Beach",
-      "lat": 38.6884,
-      "lon": -75.0755,
-      "weather": {
-        "period": "Today",
-        "temperature": 77,
-        "temperatureUnit": "F",
-        "shortForecast": "Mostly Sunny then Slight Chance Rain Showers",
-        "windSpeed": "10 to 15 mph",
-        "windDirection": "NE",
-        "isDaytime": true,
-        "source": "National Weather Service",
-        "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false,
         "precipProbability": 22
       },
@@ -186,7 +34,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       },
       "tides": {
@@ -216,17 +64,169 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 76.8,
-        "observedAt": "2026-09-06 08:48",
+        "temperatureF": 79.5,
+        "observedAt": "2026-09-06 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false
+      }
+    },
+    {
+      "id": "rehoboth",
+      "name": "Rehoboth Beach",
+      "lat": 38.7168,
+      "lon": -75.076,
+      "weather": {
+        "period": "This Afternoon",
+        "temperature": 76,
+        "temperatureUnit": "F",
+        "shortForecast": "Slight Chance Rain Showers",
+        "windSpeed": "10 to 15 mph",
+        "windDirection": "NE",
+        "isDaytime": true,
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false,
+        "precipProbability": 22
+      },
+      "alerts": {
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued September 6 at 2:17AM EDT until September 6 at 9:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d285d3a5a0304e4914ebd34538b3a9168af14b8d.002.1",
+            "ends": "2026-09-06T21:00:00-04:00"
+          }
+        ],
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "zone": "DEZ004",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false
+      },
+      "tides": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "predictions": [
+          {
+            "time": "2026-09-06 04:44",
+            "type": "high",
+            "heightFt": 3.6
+          },
+          {
+            "time": "2026-09-06 10:26",
+            "type": "low",
+            "heightFt": 0.6
+          },
+          {
+            "time": "2026-09-06 17:19",
+            "type": "high",
+            "heightFt": 5.0
+          },
+          {
+            "time": "2026-09-06 23:45",
+            "type": "low",
+            "heightFt": 0.8
+          }
+        ],
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false
+      },
+      "water": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "temperatureF": 79.5,
+        "observedAt": "2026-09-06 15:06",
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false
+      }
+    },
+    {
+      "id": "dewey",
+      "name": "Dewey Beach",
+      "lat": 38.6884,
+      "lon": -75.0755,
+      "weather": {
+        "period": "This Afternoon",
+        "temperature": 77,
+        "temperatureUnit": "F",
+        "shortForecast": "Slight Chance Rain Showers",
+        "windSpeed": "10 to 15 mph",
+        "windDirection": "NE",
+        "isDaytime": true,
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false,
+        "precipProbability": 21
+      },
+      "alerts": {
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued September 6 at 2:17AM EDT until September 6 at 9:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d285d3a5a0304e4914ebd34538b3a9168af14b8d.002.1",
+            "ends": "2026-09-06T21:00:00-04:00"
+          }
+        ],
+        "source": "National Weather Service",
+        "sourceUrl": "https://www.weather.gov/",
+        "zone": "DEZ004",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false
+      },
+      "tides": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "predictions": [
+          {
+            "time": "2026-09-06 04:44",
+            "type": "high",
+            "heightFt": 3.6
+          },
+          {
+            "time": "2026-09-06 10:26",
+            "type": "low",
+            "heightFt": 0.6
+          },
+          {
+            "time": "2026-09-06 17:19",
+            "type": "high",
+            "heightFt": 5.0
+          },
+          {
+            "time": "2026-09-06 23:45",
+            "type": "low",
+            "heightFt": 0.8
+          }
+        ],
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-09-06T19:15:08Z",
+        "stale": false
+      },
+      "water": {
+        "station": "8557380",
+        "stationName": "Lewes",
+        "temperatureF": 79.5,
+        "observedAt": "2026-09-06 15:06",
+        "source": "NOAA Tides & Currents",
+        "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       }
     },
@@ -236,18 +236,18 @@
       "lat": 38.5385,
       "lon": -75.0552,
       "weather": {
-        "period": "Today",
+        "period": "This Afternoon",
         "temperature": 76,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Sunny then Slight Chance Rain Showers",
-        "windSpeed": "5 to 10 mph",
+        "shortForecast": "Mostly Sunny",
+        "windSpeed": "10 mph",
         "windDirection": "NE",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false,
-        "precipProbability": 15
+        "precipProbability": 14
       },
       "alerts": {
         "items": [
@@ -262,7 +262,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       },
       "tides": {
@@ -292,17 +292,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 78.3,
-        "observedAt": "2026-09-06 08:48",
+        "temperatureF": 79.3,
+        "observedAt": "2026-09-06 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       }
     },
@@ -312,18 +312,18 @@
       "lat": 38.461,
       "lon": -75.051,
       "weather": {
-        "period": "Today",
+        "period": "This Afternoon",
         "temperature": 75,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Sunny then Slight Chance Rain Showers",
+        "shortForecast": "Mostly Sunny",
         "windSpeed": "10 mph",
         "windDirection": "NE",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false,
-        "precipProbability": 15
+        "precipProbability": 10
       },
       "alerts": {
         "items": [
@@ -338,7 +338,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       },
       "tides": {
@@ -368,17 +368,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 78.3,
-        "observedAt": "2026-09-06 08:48",
+        "temperatureF": 79.3,
+        "observedAt": "2026-09-06 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-06T12:54:44Z",
+        "fetchedAt": "2026-09-06T19:15:08Z",
         "stale": false
       }
     }
@@ -390,7 +390,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-09-06T12:54:44Z"
+    "fetchedAt": "2026-09-06T19:15:08Z"
   },
   "sources": [
     {
