@@ -2075,3 +2075,39 @@ html.js-reveal .reveal{
 .town-hero .scene{z-index:0}
 .town-hero:before{z-index:1}
 .town-hero .container{z-index:2}
+
+/* Utility table — parking seasons by town. Scrolls inside its own box on phones. */
+.parking-table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:.92rem;min-width:520px}
+.parking-table th{text-align:left;font-size:var(--fs-eyebrow);letter-spacing:.12em;text-transform:uppercase;
+  font-weight:800;color:var(--coral-deep);padding:0 14px 9px 0;border-bottom:2px solid var(--navy)}
+.parking-table td{padding:11px 14px 11px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink-soft)}
+.parking-table td b{color:var(--navy);font-weight:600}
+
+/* ===========================================================================
+   MONTHLY EDITION PLATE — the thing that makes September read as a new issue
+   =========================================================================== */
+.edition-plate{
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  padding:clamp(14px,2vw,22px) 0 clamp(10px,1.4vw,16px);
+  border-bottom:2px solid var(--navy);text-align:center;
+}
+.edition-month{
+  font-family:var(--sans);font-size:var(--fs-eyebrow);font-weight:800;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--coral-deep);line-height:1;
+}
+.edition-theme{
+  font-family:var(--serif);font-weight:600;letter-spacing:-.03em;
+  font-size:clamp(1.75rem,6vw,3.1rem);line-height:.98;color:var(--navy);
+}
+.edition-line{
+  margin:2px 0 0;font-family:var(--serif);font-style:italic;
+  font-size:clamp(1rem,2.4vw,1.22rem);color:var(--ink-soft);letter-spacing:-.01em;
+}
+/* The folio edition mark, so the running head names the edition too. */
+.issue-strip-edition{
+  font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-deep);
+}
+@media(max-width:700px){
+  .edition-plate{padding-top:12px;gap:4px}
+  .edition-line{font-size:1rem}
+}

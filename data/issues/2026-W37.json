@@ -1,0 +1,39 @@
+{
+  "issueId": "2026-W37",
+  "weekOf": "2026-09-07",
+  "weekEnding": "2026-09-13",
+  "title": "Week of September 7, 2026",
+  "publishedAt": "2026-09-07",
+  "status": "current",
+  "byline": "Delaware Beach Finds Editorial",
+  "summary": "The September edition opens on the Monday that ends the summer calendar and starts everything else. Bethany buries the season with a jazz funeral and Rehoboth pipes it out along the Boardwalk; by Thursday the first Delaware Beaches Songwriters Festival is running writers rounds in Lewes and Milton, and Saturday puts a hundred juried artists on the Bethany boardwalk.",
+  "coverStory": "the-second-season-starts-now",
+  "hiddenGem": null,
+  "eventIds": [
+    "evt-bethany-jazz-funeral-2026-09-07",
+    "evt-rehoboth-piping-out-2026-09-07",
+    "evt-rehoboth-farmers-market-2026-09-08",
+    "evt-de-beaches-songwriters-festival-2026",
+    "evt-bethany-gallery-one-reception-2026-09-11",
+    "evt-bethany-boardwalk-arts-festival-2026-09-12",
+    "evt-nassau-valley-market-2026-09-13"
+  ],
+  "dailySlots": [],
+  "sources": [
+    "https://www.rehobothbeachmuseum.org/eb-full-calendar/event/piping-out",
+    "https://www.coastalpoint.com/lifestyle/arts_entertainment/bethany-beach-announces-founders-day-celebrations-honoring-125-years/article_24c54618-2a2a-4576-8e7d-656a8766ea5f.html",
+    "https://bethanybeachartsfestival.com/",
+    "https://wmgk.com/2026/08/27/delaware-beaches-songwriters-fest-sets-september-debut-with-nashville-talent/",
+    "https://visitsoutherndelaware.com/farmers-markets",
+    "https://www.townofbethanybeach.com/399/Public-Parking---Pay-to-Park",
+    "https://www.rehobothbeachde.gov/city-of-rehoboth-beach-changes-dates-for-seasonal-restrictions/",
+    "https://www.townofdeweybeach.gov/departments/Parking/CodeEnforcement",
+    "https://www.ci.lewes.de.us/FAQ.aspx?QID=70"
+  ],
+  "editorialNotes": "Every event in this issue was verified against an organizer or municipal source on 2026-09-07. The Songwriters Festival is listed for Lewes, Milton and Cedar Grove only; it is not a Rehoboth event.",
+  "access_level": "public",
+  "revision": 1,
+  "edition": "September 2026",
+  "editionTheme": "The Second Season",
+  "editionCoverLine": "Summer ends. The coast doesn't."
+}

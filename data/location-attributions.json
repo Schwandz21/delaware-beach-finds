@@ -1,0 +1,124 @@
+{
+  "_note": "Location provenance for first-party DBF photographs. An image may only be presented as a specific named place when it appears here with evidence. Written 2026-09-07 after a real misattribution reached production: IMG_0943/IMG_0940 were published as Cape Henlopen on the strength of a filename and a prompt, and EXIF GPS on IMG_0940 (38.678158, -75.071000) placed them on Coastal Highway about a mile south of Dewey Beach — Delaware Seashore State Park, roughly 12 km from Cape Henlopen point.",
+  "_evidence_levels": {
+    "gps": "EXIF GPS coordinates read from the master file",
+    "landmark": "an unmistakable, uniquely identifiable built landmark is in frame",
+    "sequence": "adjacent frame in a timestamped burst whose location is established by gps or landmark",
+    "owner": "Michael identified the location explicitly",
+    "none": "not established — must not carry a place claim"
+  },
+  "images": [
+    {
+      "file": "field-tower-delaware-seashore-20260831.jpg",
+      "source": "IMG_0943.JPG",
+      "place": "Delaware Seashore State Park",
+      "evidence": "sequence",
+      "detail": "Shot 58s after IMG_0940.JPG, whose EXIF GPS reads 38.678158,-75.071000 (Coastal Highway, Sussex County). Same tower, same stop.",
+      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park", "Fort Miles"]
+    },
+    {
+      "file": "field-tower-delaware-seashore-tile-20260831.jpg",
+      "source": "IMG_0943.JPG",
+      "place": "Delaware Seashore State Park",
+      "evidence": "sequence",
+      "detail": "Crop of the same master.",
+      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park", "Fort Miles"]
+    },
+    {
+      "file": "field-tower3-standing-guard-20260831.jpg",
+      "source": "IMG_0940.JPG",
+      "place": "Delaware Seashore State Park",
+      "evidence": "gps",
+      "detail": "EXIF GPS 38.678158,-75.071000.",
+      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park"]
+    },
+    {
+      "file": "field-tower3-decades-defense-20260831.jpg",
+      "source": "IMG_0939.JPG",
+      "place": "Delaware Seashore State Park",
+      "evidence": "sequence",
+      "detail": "Adjacent frame to IMG_0940 in the same interpretive-sign sequence.",
+      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park"]
+    },
+    {
+      "file": "field-tower3-ocean-view-20260831.jpg",
+      "source": "IMG_0915.JPG",
+      "place": "Delaware Seashore State Park",
+      "evidence": "owner",
+      "detail": "Attributed to Tower 3 by the editorial package that shipped it. Not independently confirmed by GPS; do not sharpen this claim without evidence.",
+      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park"]
+    },
+    {
+      "file": "field-fort-miles-artillery-20260831.jpg",
+      "source": "IMG_1031.JPG",
+      "place": "Fort Miles, Cape Henlopen State Park",
+      "evidence": "owner",
+      "detail": "Attributed to Fort Miles by the editorial package. Preserved artillery with barracks behind is consistent with Fort Miles; not GPS-confirmed.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-rehoboth-bandstand-20260830.jpg",
+      "source": "IMG_0858.JPG",
+      "place": "Rehoboth Beach",
+      "evidence": "landmark",
+      "detail": "The Rehoboth Beach Bandstand is in frame and is unmistakable.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-rehoboth-bandstand-wide-20260830.jpg",
+      "source": "IMG_0862.JPG",
+      "place": "Rehoboth Beach",
+      "evidence": "landmark",
+      "detail": "Bandstand and boardwalk entrance in frame.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-bethany-chief-little-owl-20260831.jpg",
+      "source": "IMG_0945.JPG",
+      "place": "Bethany Beach",
+      "evidence": "landmark",
+      "detail": "Chief Little Owl, the carved totem at the Bethany downtown entrance, is in frame.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-bethany-chief-little-owl-context-20260831.jpg",
+      "source": "IMG_0944.JPG",
+      "place": "Bethany Beach",
+      "evidence": "landmark",
+      "detail": "Same landmark, wider frame.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-silver-lake-20260830.jpg",
+      "source": "IMG_0884.JPG",
+      "place": "Rehoboth Beach",
+      "evidence": "owner",
+      "detail": "Identified as Silver Lake by the editorial package. A lake with houses on the far shore is not self-identifying; treat the town claim as owner-asserted, not proven.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-parsons-farms-bull-20260831.jpg",
+      "source": "IMG_0953.JPG",
+      "place": "Dagsboro",
+      "evidence": "owner",
+      "detail": "Identified as Parsons Farms by the editorial package.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-parsons-farms-goat-20260831.jpg",
+      "source": "IMG_0969.JPG",
+      "place": "Dagsboro",
+      "evidence": "owner",
+      "detail": "Identified as Parsons Farms by the editorial package.",
+      "mustNotClaim": []
+    },
+    {
+      "file": "field-parsons-farms-yard-20260831.jpg",
+      "source": "IMG_0974.JPG",
+      "place": "Dagsboro",
+      "evidence": "owner",
+      "detail": "Identified as Parsons Farms by the editorial package.",
+      "mustNotClaim": []
+    }
+  ]
+}

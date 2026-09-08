@@ -75,6 +75,18 @@ else
 fi
 
 echo ""
+echo "=== Photo location attribution ==="
+python3 scripts/test_location_attribution.py >/tmp/dbf-loc-out 2>&1
+if [ $? -eq 0 ]; then
+  echo "  ok  - no photograph is published under a place it cannot support"
+  PASS=$((PASS+1))
+else
+  echo "FAIL  - photo location attribution guard failed"
+  sed 's/^/        /' /tmp/dbf-loc-out
+  FAIL=$((FAIL+1))
+fi
+
+echo ""
 echo "=== Current-week daily slots ==="
 python3 scripts/test_daily_slots.py >/tmp/dbf-ds-out 2>&1
 if [ $? -eq 0 ]; then

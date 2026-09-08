@@ -1,15 +1,16 @@
 {
-  "currentIssueId": "2026-W33",
-  "_note": "Immutable registry of published weekly issues. A new issue becomes current; prior issues move to status 'archived' and are never deleted. No issues predate 2026-W33 because no earlier formal issue was ever persisted — see PHASE 3 finding in the handoff.",
+  "currentIssueId": "2026-W37",
+  "_note": "Immutable registry of published weekly issues. A new issue becomes current; prior issues move to 'archived' and are never deleted. Gaps are real: no issue was published for 2026-W34 through 2026-W36. Those weeks are not backfilled, because inventing them would be a lie about publication history.",
   "issues": [
     {
       "issueId": "2026-W33",
       "weekOf": "2026-08-10",
       "title": "Week of August 10, 2026",
       "publishedAt": "2026-08-11",
-      "status": "current",
+      "status": "archived",
       "file": "issues/2026-W33.json",
-      "access_level": "public"
+      "access_level": "public",
+      "supersededBy": "2026-W37"
     },
     {
       "issueId": "2026-W34",
@@ -18,7 +19,18 @@
       "publishedAt": null,
       "status": "draft",
       "file": "issues/2026-W34.json",
-      "access_level": "public"
+      "access_level": "public",
+      "note": "Staged 2026-08-12 and never published. Left in draft rather than backfilled: no issue was published for the weeks of Aug 17, Aug 24 or Aug 31."
+    },
+    {
+      "issueId": "2026-W37",
+      "weekOf": "2026-09-07",
+      "title": "Week of September 7, 2026",
+      "publishedAt": "2026-09-07",
+      "status": "current",
+      "file": "issues/2026-W37.json",
+      "access_level": "public",
+      "edition": "September 2026"
     }
   ]
 }

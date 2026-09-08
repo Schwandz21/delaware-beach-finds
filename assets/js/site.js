@@ -34,7 +34,11 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
    const prefix = depth === '1' ? '../' : '';
    return prefix + 'data/' + name;
  }
- function esc(s){return (s||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+ // Coerce before escaping. A number in a field the templates escape (readTime
+ // set to 6 rather than "6 min read") threw here, and the front-page renderer's
+ // catch then hid the section — the homepage's most important module, blanked
+ // by one field of the wrong type.
+ function esc(s){return (s===null||s===undefined?'':String(s)).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
 
 // Live embeds: play, don't ask.
 //
@@ -1632,8 +1636,12 @@ if(folioMount){
       todayLabel = new Intl.DateTimeFormat('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/New_York'})
         .format(new Date());
     }catch(e){}
+    // The folio carries the monthly edition when the issue declares one, so a
+    // reader can tell at a glance which edition of the magazine this is.
+    const ed = cur.edition ? `<span class="issue-strip-edition">${esc(cur.edition)}</span>` : '';
     folioMount.innerHTML = `
       <span class="issue-strip-mark">Delaware Beach Finds</span>
+      ${ed}
       <span>Week of ${esc(weekLabel)}</span>
       ${todayLabel?`<span>${esc(todayLabel)}</span>`:''}
       <span style="margin-left:auto"><a href="archive.html">Past issues &rarr;</a></span>`;

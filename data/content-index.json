@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-02T07:23:20Z",
-  "recordCount": 36,
+  "generatedAt": "2026-09-08T03:32:19Z",
+  "recordCount": 37,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -69,7 +69,7 @@
       "updatedDate": "2026-07-25",
       "status": "current",
       "access_level": "public",
-      "scene": "field-cape-henlopen-tower-20260831.jpg"
+      "scene": "field-tower-delaware-seashore-20260831.jpg"
     },
     {
       "id": "story-why-delaware-looks-like-that",
@@ -384,6 +384,23 @@
       "scene": "drive-on-beach-surf-fishing.jpg"
     },
     {
+      "id": "story-the-second-season-starts-now",
+      "type": "story",
+      "title": "The Second Season Starts Now",
+      "excerpt": "Labor Day ends the summer calendar. It does not end the Delaware coast.",
+      "url": "stories/the-second-season-starts-now.html",
+      "town": "September 2026 · The Second Season",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-09-07",
+      "updatedDate": "2026-09-07",
+      "status": "current",
+      "access_level": "public",
+      "scene": "field-rehoboth-bandstand-20260830.jpg"
+    },
+    {
       "id": "guide-silver-lake-rehoboth",
       "type": "guide",
       "title": "The Other Rehoboth: Silver Lake",
@@ -591,7 +608,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "field-cape-henlopen-tower-tile-20260831.jpg"
+      "scene": "cape-henlopen-aerial-1.jpg"
     },
     {
       "id": "town-assateague",
