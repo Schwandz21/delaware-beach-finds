@@ -32,7 +32,12 @@ document.addEventListener('click',function(e){var a=e.target.closest('[data-inst
    // works whether the page lives at the site root or one folder deep (towns/, stories/)
    const depth = document.body.getAttribute('data-depth') || '0';
    const prefix = depth === '1' ? '../' : '';
-   return prefix + 'data/' + name;
+   // The issue registry and daily slots decide what the page calls "current".
+   // A cached copy paired with a live clock is exactly how a crawler rendered
+   // "Week of August 10 · Wednesday, September 9". Bust them every 10 minutes.
+   const fresh = (name === 'issues/index.json' || name === 'daily-slots.json')
+     ? '?t=' + Math.floor(Date.now() / 600000) : '';
+   return prefix + 'data/' + name + fresh;
  }
  // Coerce before escaping. A number in a field the templates escape (readTime
  // set to 6 rather than "6 min read") threw here, and the front-page renderer's

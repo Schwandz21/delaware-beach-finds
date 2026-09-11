@@ -14,7 +14,11 @@
       "place": "Delaware Seashore State Park",
       "evidence": "sequence",
       "detail": "Shot 58s after IMG_0940.JPG, whose EXIF GPS reads 38.678158,-75.071000 (Coastal Highway, Sussex County). Same tower, same stop.",
-      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park", "Fort Miles"]
+      "mustNotClaim": [
+        "Cape Henlopen",
+        "Cape Henlopen State Park",
+        "Fort Miles"
+      ]
     },
     {
       "file": "field-tower-delaware-seashore-tile-20260831.jpg",
@@ -22,7 +26,11 @@
       "place": "Delaware Seashore State Park",
       "evidence": "sequence",
       "detail": "Crop of the same master.",
-      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park", "Fort Miles"]
+      "mustNotClaim": [
+        "Cape Henlopen",
+        "Cape Henlopen State Park",
+        "Fort Miles"
+      ]
     },
     {
       "file": "field-tower3-standing-guard-20260831.jpg",
@@ -30,7 +38,10 @@
       "place": "Delaware Seashore State Park",
       "evidence": "gps",
       "detail": "EXIF GPS 38.678158,-75.071000.",
-      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park"]
+      "mustNotClaim": [
+        "Cape Henlopen",
+        "Cape Henlopen State Park"
+      ]
     },
     {
       "file": "field-tower3-decades-defense-20260831.jpg",
@@ -38,7 +49,10 @@
       "place": "Delaware Seashore State Park",
       "evidence": "sequence",
       "detail": "Adjacent frame to IMG_0940 in the same interpretive-sign sequence.",
-      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park"]
+      "mustNotClaim": [
+        "Cape Henlopen",
+        "Cape Henlopen State Park"
+      ]
     },
     {
       "file": "field-tower3-ocean-view-20260831.jpg",
@@ -46,14 +60,17 @@
       "place": "Delaware Seashore State Park",
       "evidence": "owner",
       "detail": "Attributed to Tower 3 by the editorial package that shipped it. Not independently confirmed by GPS; do not sharpen this claim without evidence.",
-      "mustNotClaim": ["Cape Henlopen", "Cape Henlopen State Park"]
+      "mustNotClaim": [
+        "Cape Henlopen",
+        "Cape Henlopen State Park"
+      ]
     },
     {
       "file": "field-fort-miles-artillery-20260831.jpg",
       "source": "IMG_1031.JPG",
       "place": "Fort Miles, Cape Henlopen State Park",
       "evidence": "owner",
-      "detail": "Attributed to Fort Miles by the editorial package. Preserved artillery with barracks behind is consistent with Fort Miles; not GPS-confirmed.",
+      "detail": "Identified as Fort Miles artillery by Michael (Sept 11 brief). Preserved guns with barracks behind match the Fort Miles historic area; not GPS-confirmed.",
       "mustNotClaim": []
     },
     {
@@ -119,6 +136,189 @@
       "evidence": "owner",
       "detail": "Identified as Parsons Farms by the editorial package.",
       "mustNotClaim": []
+    },
+    {
+      "file": "fenwick-island-lighthouse-tower.jpg",
+      "source": "IMG_8907",
+      "place": "Fenwick Island",
+      "evidence": "landmark",
+      "detail": "The Fenwick Island Lighthouse — white tapered tower, black lantern, Transpeninsular marker stones at its base.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "fenwick-island-lighthouse.jpg",
+      "source": null,
+      "place": "Fenwick Island",
+      "evidence": "landmark",
+      "detail": "Same lighthouse and marker stones in frame.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "lewes-canal-waterfront.jpg",
+      "source": "IMG_9404",
+      "place": "Lewes",
+      "evidence": "landmark",
+      "detail": "Savannah Road bascule drawbridge and the red-roofed Lighthouse Restaurant at Fisherman's Wharf. 2026-07-17 11:40.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "lewes-canal-morning.jpg",
+      "source": "IMG_9405",
+      "place": "Lewes",
+      "evidence": "sequence",
+      "detail": "One second after IMG_9404, same drawbridge view.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "lewes-beach-patrol-station.jpg",
+      "source": "IMG_9398",
+      "place": "Lewes",
+      "evidence": "landmark",
+      "detail": "\"LEWES BEACH PATROL\" lettered on the building. 2026-07-17 11:34.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "lewes-in-bloom-plantings.jpg",
+      "source": "IMG_9340",
+      "place": "Lewes",
+      "evidence": "sequence",
+      "detail": "2026-07-17 11:18, sixteen minutes before the Lewes Beach Patrol frame. The sign in frame (\"Across the Bridge\") names no town, so it relies on the sequence.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "lewes-street-under-trees.jpg",
+      "source": "IMG_9358",
+      "place": "Lewes",
+      "evidence": "sequence",
+      "detail": "2026-07-17 11:22, same outing as IMG_9398/9404.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "indian-river-inlet-bridge-beach-evening.jpg",
+      "source": null,
+      "place": "Indian River Inlet, Delaware Seashore State Park",
+      "evidence": "landmark",
+      "detail": "The Indian River Inlet cable-stayed bridge is in frame and unmistakable.",
+      "mustNotClaim": [
+        "Dewey",
+        "Rehoboth",
+        "Bethany",
+        "Cape Henlopen",
+        "Fort Miles",
+        "Lewes"
+      ],
+      "neutral": false
+    },
+    {
+      "file": "drive-on-beach-surf-fishing.jpg",
+      "source": null,
+      "place": "Indian River Inlet, Delaware Seashore State Park",
+      "evidence": "landmark",
+      "detail": "Identical frame to indian-river-inlet-bridge-beach-evening.jpg: the inlet bridge is in frame.",
+      "mustNotClaim": [
+        "Dewey",
+        "Rehoboth",
+        "Bethany",
+        "Cape Henlopen",
+        "Fort Miles",
+        "Lewes"
+      ],
+      "neutral": false
+    },
+    {
+      "file": "cape-henlopen-aerial-1.jpg",
+      "source": null,
+      "place": null,
+      "evidence": "none",
+      "detail": "Beach, dunes and forest from the air. No landmark in frame; provenance unknown. Neutral only.",
+      "mustNotClaim": [],
+      "neutral": true
+    },
+    {
+      "file": "rehoboth-boardwalk-day-1.jpg",
+      "source": null,
+      "place": null,
+      "evidence": "none",
+      "detail": "A boardwalk with shops and lamp posts; nothing in frame proves which town.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "boardwalk-dusk-rehoboth-1.jpg",
+      "source": null,
+      "place": null,
+      "evidence": "none",
+      "detail": "A boardwalk at dusk; nothing in frame proves which town.",
+      "mustNotClaim": [],
+      "neutral": false
+    },
+    {
+      "file": "delaware-bay-sunset-calm-water.jpg",
+      "source": "IMG_0226",
+      "place": null,
+      "evidence": "none",
+      "detail": "Sunset over water from a railed gravel shore. Over-water sunsets here are bay-side, but nothing proves Delaware Bay rather than an inland bay.",
+      "mustNotClaim": [
+        "Delaware Bay"
+      ],
+      "neutral": true
+    },
+    {
+      "file": "delaware-bay-shoreline-sunset.jpg",
+      "source": null,
+      "place": null,
+      "evidence": "none",
+      "detail": "Near-duplicate of the same bay-side sunset scene; which bay is unproven.",
+      "mustNotClaim": [
+        "Delaware Bay"
+      ],
+      "neutral": true
+    },
+    {
+      "file": "delaware-waterfront-sunset.jpg",
+      "source": "IMG_0230",
+      "place": null,
+      "evidence": "none",
+      "detail": "Same bay-side sunset scene; which bay is unproven.",
+      "mustNotClaim": [
+        "Delaware Bay"
+      ],
+      "neutral": true
+    },
+    {
+      "file": "dune-fence-sunset-1.jpg",
+      "source": null,
+      "place": null,
+      "evidence": "none",
+      "detail": "Generic dune fence at sunset. No landmark.",
+      "mustNotClaim": [],
+      "neutral": true
+    },
+    {
+      "file": "dune-fence-sunset-2.jpg",
+      "source": null,
+      "place": null,
+      "evidence": "none",
+      "detail": "Generic dune path and fence at sunrise. No landmark.",
+      "mustNotClaim": [],
+      "neutral": true
+    },
+    {
+      "file": "atlantic-surf-close.jpg",
+      "source": "IMG_9580",
+      "place": null,
+      "evidence": "none",
+      "detail": "Surf on open sand. No landmark.",
+      "mustNotClaim": [],
+      "neutral": true
     }
-  ]
+  ],
+  "_neutral": "neutral=true: no identifiable place in frame. May illustrate a page generically but must never carry a specific place claim."
 }

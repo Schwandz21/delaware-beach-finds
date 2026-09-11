@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T03:43:22Z",
+  "generatedAt": "2026-09-11T21:11:41Z",
   "recordCount": 37,
   "records": [
     {
@@ -17,7 +17,7 @@
       "updatedDate": "2026-07-26",
       "status": "current",
       "access_level": "public",
-      "scene": "delaware-bay-shoreline-sunset.jpg"
+      "scene": "bay-morning-1.svg"
     },
     {
       "id": "story-the-galloping-dune",
@@ -139,7 +139,7 @@
       "updatedDate": "2026-07-08",
       "status": "current",
       "access_level": "public",
-      "scene": "rehoboth-boardwalk-day-1.jpg"
+      "scene": "field-rehoboth-bandstand-wide-20260830.jpg"
     },
     {
       "id": "story-bethany-bandstand-nights",
@@ -156,7 +156,7 @@
       "updatedDate": "2026-06-30",
       "status": "current",
       "access_level": "public",
-      "scene": "dune-fence-sunset-1.jpg"
+      "scene": "field-bethany-chief-little-owl-context-20260831.jpg"
     },
     {
       "id": "story-unmarked-trail-behind-gordons-pond",
@@ -244,7 +244,7 @@
       "updatedDate": "2026-08-19",
       "status": "current",
       "access_level": "public",
-      "scene": "lewes-canal-morning.jpg"
+      "scene": "marsh-dawn-1.svg"
     },
     {
       "id": "story-the-ladder-off-cape-henlopen",
@@ -381,7 +381,7 @@
       "updatedDate": "2026-08-19",
       "status": "current",
       "access_level": "public",
-      "scene": "drive-on-beach-surf-fishing.jpg"
+      "scene": "field-fort-miles-artillery-20260831.jpg"
     },
     {
       "id": "story-the-second-season-starts-now",
@@ -398,7 +398,7 @@
       "updatedDate": "2026-09-07",
       "status": "current",
       "access_level": "public",
-      "scene": "field-rehoboth-bandstand-20260830.jpg"
+      "scene": "atlantic-surf-close.jpg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
@@ -554,7 +554,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "drive-on-beach-surf-fishing.jpg"
+      "scene": "wave-teal-1"
     },
     {
       "id": "town-bethany-beach",
@@ -608,7 +608,7 @@
       "updatedDate": null,
       "status": "current",
       "access_level": "public",
-      "scene": "cape-henlopen-aerial-1.jpg"
+      "scene": "field-fort-miles-artillery-20260831.jpg"
     },
     {
       "id": "town-assateague",

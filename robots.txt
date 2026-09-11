@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /backups/
+Disallow: /automation/
+Disallow: /scripts/
 
 Sitemap: https://delawarebeachfinds.com/sitemap.xml
