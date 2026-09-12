@@ -155,6 +155,16 @@ def main():
                     why = town_ok(m.group(1), name)
                     if why:
                         bad_towns.append('towns/%s.html shows %s (%s)' % (t['slug'], m.group(1), why))
+        # The og:image is the card that gets shared as that town. Same rule.
+        if name and os.path.exists(page):
+            og = re.search(r'<meta property="og:image" content="([^"]*)"',
+                           open(page, encoding='utf-8').read())
+            if og:
+                f = og.group(1).rsplit('/', 1)[-1]
+                if raster(f) and 'og-image' not in f:
+                    why = town_ok(f, name)
+                    if why:
+                        bad_towns.append('towns/%s.html og:image %s (%s)' % (t['slug'], f, why))
     check('every town hero, tile and town-page photo is proven for that town or neutral',
           not bad_towns, '\n        '.join(bad_towns))
 
