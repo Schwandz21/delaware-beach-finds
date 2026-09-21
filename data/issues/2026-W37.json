@@ -4,7 +4,7 @@
   "weekEnding": "2026-09-13",
   "title": "Week of September 7, 2026",
   "publishedAt": "2026-09-07",
-  "status": "current",
+  "status": "archived",
   "byline": "Delaware Beach Finds Editorial",
   "summary": "The September edition opens on the Monday that ends the summer calendar and starts everything else. Bethany buries the season with a jazz funeral and Rehoboth pipes it out along the Boardwalk; by Thursday the first Delaware Beaches Songwriters Festival is running writers rounds in Lewes and Milton, and Saturday puts a hundred juried artists on the Bethany boardwalk.",
   "coverStory": "the-second-season-starts-now",
@@ -35,5 +35,7 @@
   "revision": 1,
   "edition": "September 2026",
   "editionTheme": "The Second Season",
-  "editionCoverLine": "Summer ends. The coast doesn't."
+  "editionCoverLine": "Summer ends. The coast doesn't.",
+  "supersededBy": "2026-W39",
+  "supersededAt": "2026-09-21"
 }

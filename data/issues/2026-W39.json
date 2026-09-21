@@ -1,9 +1,34 @@
 {
-  "_note": "Mutable CURRENT-WEEK editorial surface. Weekly issue files in data/issues/ are immutable publication history and are never read at render time. Candidate ingestion updates this file; it never rewrites an issue record.",
+  "issueId": "2026-W39",
   "weekOf": "2026-09-21",
-  "verifiedAt": "2026-09-20",
-  "sourceCandidate": "automation/candidates/candidate-2026-09-20.json",
-  "slots": [
+  "weekEnding": "2026-09-27",
+  "title": "Week of September 21, 2026",
+  "publishedAt": "2026-09-21",
+  "status": "current",
+  "byline": "Delaware Beach Finds Editorial",
+  "summary": "Fall arrives Tuesday night as the coast settles into shoulder season: hawks are moving over Cape Henlopen, Grove Park's market keeps going, and James Farm is this week's free Hidden Gem near Bethany. Looking ahead, The Point's bayside beach reopens Oct. 1, the Lewes market shifts to its fall home, and October's festival calendar starts filling fast.",
+  "coverStory": null,
+  "hiddenGem": {
+    "name": "James Farm Ecological Preserve",
+    "location": "Ocean View, Delaware",
+    "sourceUrl": "https://inlandbays.org/visit-the-preserve/"
+  },
+  "eventIds": [
+    "rehoboth-10001042",
+    "rehoboth-10001043",
+    "rehoboth-52105",
+    "cape-henlopen-point-bayside-reopens-2026",
+    "rehoboth-46044",
+    "rehoboth-52107",
+    "rehoboth-52903",
+    "rehoboth-52039",
+    "historic-lewes-farmers-market-fall-2026",
+    "bridgeville-apple-scrapple-2026",
+    "fochsp-october-trails-day-2026",
+    "rehoboth-52044",
+    "rehoboth-46048"
+  ],
+  "dailySlots": [
     {
       "date": "2026-09-21",
       "day": "Monday",
@@ -52,5 +77,29 @@
       "note": "DNREC says NOAA aligned federal waters with Delaware's revised 2026–27 rules before the season opened: 12.5-inch minimum, 15 fish per person, and an open season from May 1 through Dec. 31 with no Oct. 1–9 closure. Regulations can change, so check DNREC's current fishing rules before keeping fish.",
       "ref": "https://news.delaware.gov/2026/04/30/update-delawares-revised-black-sea-bass-recreational-fishing-regulations-apply-in-both-state-and-federal-waters/"
     }
-  ]
+  ],
+  "sources": [
+    "https://news.delaware.gov/2026/08/25/the-point-at-cape-henlopen-oceanside-opens-sept-1/",
+    "https://www.destateparks.com/passes-permits-and-fees/",
+    "https://www.fochsp.org/calendar",
+    "https://www.rehobothbeachde.gov/experience-rehoboth-beach/calendar/",
+    "https://www.rehobothbeachde.gov/event/sea-witch-parade-2026/",
+    "https://dnrec.delaware.gov/fish-wildlife/conservation/hawk-watch/",
+    "https://www.historiclewesfarmersmarket.org/market-hours-and-locations/",
+    "https://applescrapple.com/schedule/",
+    "https://bridgeville.delaware.gov/2026-apple-scrapple-festival-resident-updates",
+    "https://www.capegazette.com/article/rehoboth-beach-jazz-festival-return-oct-15-18/300270",
+    "https://www.rehobothjazz.com/",
+    "https://inlandbays.org/visit-the-preserve/",
+    "https://www.rehobothbeachmuseum.org/exhibitions/exhibitions",
+    "https://news.delaware.gov/2026/04/30/update-delawares-revised-black-sea-bass-recreational-fishing-regulations-apply-in-both-state-and-federal-waters/",
+    "https://fishspecies.dnrec.delaware.gov/FishSpecies.aspx?habitat=2&species=93",
+    "https://www.timeanddate.com/calendar/september-equinox.html"
+  ],
+  "editorialNotes": "W39 was approved on 2026-09-20 and published on 2026-09-21. Candidate schema was normalized before publication. First-party-ingested events were reused rather than duplicated. The black sea bass item was corrected after DNREC's April 30 federal-alignment update, and the museum exhibit was re-verified on the museum's live current-exhibitions page.",
+  "access_level": "public",
+  "revision": 1,
+  "edition": "September 2026",
+  "editionTheme": "The Second Season",
+  "editionCoverLine": "Summer ends. The coast doesn't."
 }

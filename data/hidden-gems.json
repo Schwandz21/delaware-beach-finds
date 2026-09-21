@@ -1,5 +1,25 @@
 [
   {
+    "name": "James Farm Ecological Preserve",
+    "location": "30048 Cedar Neck Road, Ocean View — a short drive from Bethany Beach",
+    "kicker": "Hidden Gem of the Week",
+    "scene": "marsh-green-1",
+    "photoCredit": "DBF editorial scene image",
+    "body": [
+      "James Farm is a 150-acre ecological preserve on Indian River Bay managed by the Delaware Center for the Inland Bays. The official preserve guide describes seven distinct habitats in one visit, from low and high salt marsh through maritime and hardwood forest to meadow and sandy beach.",
+      "For a free stop, there is a lot of trail here: more than three miles of marked hiking routes, three observation platforms and a boardwalk beach crossing. The practical rules are simple but worth knowing before you go — the preserve is open sunrise to sundown year-round, pets must stay leashed, and it is carry-in/carry-out with no public trash cans.",
+      "The detail that makes it especially useful: the Center says this is the only public water access along Cedar Neck Road. An approved seasonal concessionaire offers kayak and paddleboard rentals and programs, and a portion of proceeds goes back into the preserve's care."
+    ],
+    "signoff": "— free, close to Bethany, and a lot more landscape than one short trail stop suggests.",
+    "current": true,
+    "dateFeatured": "2026-09-21",
+    "sources": [
+      "Delaware Center for the Inland Bays — https://inlandbays.org/visit-the-preserve/"
+    ],
+    "issueId": "2026-W39",
+    "access_level": "public"
+  },
+  {
     "name": "Thompson Island Nature Preserve",
     "location": "Delaware Seashore State Park, off Route 1 just south of Dewey Beach",
     "kicker": "Hidden Gem of the Week",
@@ -11,7 +31,7 @@
       "Two other things worth knowing. Dogs are not permitted, which is unusual for a Delaware trail and catches people out. And the shoreline you are looking at is an active Living Shoreline restoration site run by the Delaware Center for the Inland Bays, so the marsh edge you see is being actively rebuilt rather than simply left alone."
     ],
     "signoff": "— fifteen minutes off Route 1, and almost nobody stops.",
-    "current": true,
+    "current": false,
     "dateFeatured": "2026-08-11",
     "sources": [
       "Delaware State Parks, Thompson Island Nature Preserve trail listing (destateparks.com)",

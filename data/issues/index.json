@@ -1,5 +1,5 @@
 {
-  "currentIssueId": "2026-W37",
+  "currentIssueId": "2026-W39",
   "_note": "Immutable registry of published weekly issues. A new issue becomes current; prior issues move to 'archived' and are never deleted. Gaps are real: no issue was published for 2026-W34 through 2026-W36. Those weeks are not backfilled, because inventing them would be a lie about publication history.",
   "issues": [
     {
@@ -27,8 +27,21 @@
       "weekOf": "2026-09-07",
       "title": "Week of September 7, 2026",
       "publishedAt": "2026-09-07",
-      "status": "current",
+      "status": "archived",
       "file": "issues/2026-W37.json",
+      "access_level": "public",
+      "edition": "September 2026",
+      "supersededAt": "2026-09-21",
+      "supersededBy": "2026-W39"
+    },
+    {
+      "issueId": "2026-W39",
+      "weekOf": "2026-09-21",
+      "title": "Week of September 21, 2026",
+      "summary": "Fall arrives Tuesday night as the coast settles into shoulder season: hawks are moving over Cape Henlopen, Grove Park's market keeps going, and James Farm is this week's free Hidden Gem near Bethany. Looking ahead, The Point's bayside beach reopens Oct. 1, the Lewes market shifts to its fall home, and October's festival calendar starts filling fast.",
+      "publishedAt": "2026-09-21",
+      "status": "current",
+      "file": "issues/2026-W39.json",
       "access_level": "public",
       "edition": "September 2026"
     }

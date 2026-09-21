@@ -14,5 +14,18 @@
     "Never set sponsored here. Paid placement belongs to the sponsor system, not editorial.",
     "A factual override without provenance is a guess — record where the correction came from."
   ],
-  "overrides": []
+  "overrides": [
+    {
+      "id": "rehoboth-52044",
+      "featured": true,
+      "priority": 10,
+      "note": "37th annual Rehoboth Beach Jazz Festival, Oct. 15–18. See rehobothjazz.com for individual shows and tickets."
+    },
+    {
+      "id": "rehoboth-46048",
+      "featured": true,
+      "priority": 10,
+      "note": "Sea Witch's signature parade runs Saturday, Oct. 24, 11 a.m.–1:30 p.m."
+    }
+  ]
 }
