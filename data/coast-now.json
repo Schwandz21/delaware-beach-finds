@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T23:36:51Z",
+  "generatedAt": "2026-09-23T14:16:05Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -8,61 +8,54 @@
       "lat": 38.7746,
       "lon": -75.1393,
       "weather": {
-        "period": "Tonight",
-        "temperature": 61,
+        "period": "Today",
+        "temperature": 69,
         "temperatureUnit": "F",
-        "shortForecast": "Rain Showers Likely",
-        "windSpeed": "25 mph",
+        "shortForecast": "Chance Rain Showers then Cloudy",
+        "windSpeed": "30 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false,
-        "precipProbability": 58
+        "precipProbability": 28
       },
       "alerts": {
         "items": [
           {
+            "event": "Wind Advisory",
+            "severity": "Moderate",
+            "headline": "Wind Advisory issued September 23 at 8:41AM EDT until September 24 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f352a10fb01539c7203bd982013448af5a2a0468.001.1",
+            "ends": "2026-09-24T20:00:00-04:00"
+          },
+          {
             "event": "Rip Current Statement",
             "severity": "Moderate",
-            "headline": "Rip Current Statement issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.5",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "Rip Current Statement issued September 23 at 4:28AM EDT until September 26 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.3",
+            "ends": "2026-09-26T20:00:00-04:00"
           },
           {
             "event": "High Surf Advisory",
             "severity": "Minor",
-            "headline": "High Surf Advisory issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.4",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "High Surf Advisory issued September 23 at 4:28AM EDT until September 26 at 6:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.2",
+            "ends": "2026-09-26T18:00:00-04:00"
           },
           {
             "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 22 at 4:14PM EDT until September 25 at 1:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.2",
-            "ends": "2026-09-25T01:00:00-04:00"
-          },
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued September 22 at 4:14PM EDT until September 22 at 10:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.3",
-            "ends": "2026-09-22T22:00:00-04:00"
-          },
-          {
-            "event": "Wind Advisory",
-            "severity": "Moderate",
-            "headline": "Wind Advisory issued September 22 at 2:22PM EDT until September 24 at 12:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b9f59e873989857ae97b0d56d355f6e2d9d574e.001.1",
-            "ends": "2026-09-24T00:00:00-04:00"
+            "headline": "Coastal Flood Warning issued September 23 at 4:28AM EDT until September 26 at 2:00AM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.1",
+            "ends": "2026-09-26T02:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "tides": {
@@ -70,39 +63,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-09-22 00:05",
+            "time": "2026-09-23 00:47",
             "type": "low",
-            "heightFt": 1.2
+            "heightFt": 1.0
           },
           {
-            "time": "2026-09-22 06:07",
+            "time": "2026-09-23 06:52",
             "type": "high",
-            "heightFt": 3.6
+            "heightFt": 3.9
           },
           {
-            "time": "2026-09-22 11:53",
+            "time": "2026-09-23 12:43",
             "type": "low",
-            "heightFt": 1.1
+            "heightFt": 0.9
           },
           {
-            "time": "2026-09-22 18:28",
+            "time": "2026-09-23 19:12",
             "type": "high",
-            "heightFt": 4.6
+            "heightFt": 4.7
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 69.6,
-        "observedAt": "2026-09-22 19:30",
+        "temperatureF": 68.5,
+        "observedAt": "2026-09-23 10:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       }
     },
@@ -112,61 +105,54 @@
       "lat": 38.7168,
       "lon": -75.076,
       "weather": {
-        "period": "Tonight",
-        "temperature": 64,
+        "period": "Today",
+        "temperature": 68,
         "temperatureUnit": "F",
-        "shortForecast": "Rain Showers Likely",
-        "windSpeed": "30 mph",
+        "shortForecast": "Chance Rain Showers then Cloudy",
+        "windSpeed": "30 to 35 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false,
-        "precipProbability": 58
+        "precipProbability": 30
       },
       "alerts": {
         "items": [
           {
+            "event": "Wind Advisory",
+            "severity": "Moderate",
+            "headline": "Wind Advisory issued September 23 at 8:41AM EDT until September 24 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f352a10fb01539c7203bd982013448af5a2a0468.001.1",
+            "ends": "2026-09-24T20:00:00-04:00"
+          },
+          {
             "event": "Rip Current Statement",
             "severity": "Moderate",
-            "headline": "Rip Current Statement issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.5",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "Rip Current Statement issued September 23 at 4:28AM EDT until September 26 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.3",
+            "ends": "2026-09-26T20:00:00-04:00"
           },
           {
             "event": "High Surf Advisory",
             "severity": "Minor",
-            "headline": "High Surf Advisory issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.4",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "High Surf Advisory issued September 23 at 4:28AM EDT until September 26 at 6:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.2",
+            "ends": "2026-09-26T18:00:00-04:00"
           },
           {
             "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 22 at 4:14PM EDT until September 25 at 1:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.2",
-            "ends": "2026-09-25T01:00:00-04:00"
-          },
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued September 22 at 4:14PM EDT until September 22 at 10:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.3",
-            "ends": "2026-09-22T22:00:00-04:00"
-          },
-          {
-            "event": "Wind Advisory",
-            "severity": "Moderate",
-            "headline": "Wind Advisory issued September 22 at 2:22PM EDT until September 24 at 12:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b9f59e873989857ae97b0d56d355f6e2d9d574e.001.1",
-            "ends": "2026-09-24T00:00:00-04:00"
+            "headline": "Coastal Flood Warning issued September 23 at 4:28AM EDT until September 26 at 2:00AM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.1",
+            "ends": "2026-09-26T02:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "tides": {
@@ -174,39 +160,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-09-22 00:05",
+            "time": "2026-09-23 00:47",
             "type": "low",
-            "heightFt": 1.2
+            "heightFt": 1.0
           },
           {
-            "time": "2026-09-22 06:07",
+            "time": "2026-09-23 06:52",
             "type": "high",
-            "heightFt": 3.6
+            "heightFt": 3.9
           },
           {
-            "time": "2026-09-22 11:53",
+            "time": "2026-09-23 12:43",
             "type": "low",
-            "heightFt": 1.1
+            "heightFt": 0.9
           },
           {
-            "time": "2026-09-22 18:28",
+            "time": "2026-09-23 19:12",
             "type": "high",
-            "heightFt": 4.6
+            "heightFt": 4.7
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 69.6,
-        "observedAt": "2026-09-22 19:30",
+        "temperatureF": 68.5,
+        "observedAt": "2026-09-23 10:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       }
     },
@@ -216,61 +202,54 @@
       "lat": 38.6884,
       "lon": -75.0755,
       "weather": {
-        "period": "Tonight",
-        "temperature": 61,
+        "period": "Today",
+        "temperature": 69,
         "temperatureUnit": "F",
-        "shortForecast": "Rain Showers Likely",
-        "windSpeed": "30 mph",
+        "shortForecast": "Chance Rain Showers then Cloudy",
+        "windSpeed": "30 to 35 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false,
-        "precipProbability": 58
+        "precipProbability": 31
       },
       "alerts": {
         "items": [
           {
+            "event": "Wind Advisory",
+            "severity": "Moderate",
+            "headline": "Wind Advisory issued September 23 at 8:41AM EDT until September 24 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f352a10fb01539c7203bd982013448af5a2a0468.001.1",
+            "ends": "2026-09-24T20:00:00-04:00"
+          },
+          {
             "event": "Rip Current Statement",
             "severity": "Moderate",
-            "headline": "Rip Current Statement issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.5",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "Rip Current Statement issued September 23 at 4:28AM EDT until September 26 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.3",
+            "ends": "2026-09-26T20:00:00-04:00"
           },
           {
             "event": "High Surf Advisory",
             "severity": "Minor",
-            "headline": "High Surf Advisory issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.4",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "High Surf Advisory issued September 23 at 4:28AM EDT until September 26 at 6:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.2",
+            "ends": "2026-09-26T18:00:00-04:00"
           },
           {
             "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 22 at 4:14PM EDT until September 25 at 1:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.2",
-            "ends": "2026-09-25T01:00:00-04:00"
-          },
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued September 22 at 4:14PM EDT until September 22 at 10:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.3",
-            "ends": "2026-09-22T22:00:00-04:00"
-          },
-          {
-            "event": "Wind Advisory",
-            "severity": "Moderate",
-            "headline": "Wind Advisory issued September 22 at 2:22PM EDT until September 24 at 12:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b9f59e873989857ae97b0d56d355f6e2d9d574e.001.1",
-            "ends": "2026-09-24T00:00:00-04:00"
+            "headline": "Coastal Flood Warning issued September 23 at 4:28AM EDT until September 26 at 2:00AM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.1",
+            "ends": "2026-09-26T02:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "tides": {
@@ -278,39 +257,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-09-22 00:05",
+            "time": "2026-09-23 00:47",
             "type": "low",
-            "heightFt": 1.2
+            "heightFt": 1.0
           },
           {
-            "time": "2026-09-22 06:07",
+            "time": "2026-09-23 06:52",
             "type": "high",
-            "heightFt": 3.6
+            "heightFt": 3.9
           },
           {
-            "time": "2026-09-22 11:53",
+            "time": "2026-09-23 12:43",
             "type": "low",
-            "heightFt": 1.1
+            "heightFt": 0.9
           },
           {
-            "time": "2026-09-22 18:28",
+            "time": "2026-09-23 19:12",
             "type": "high",
-            "heightFt": 4.6
+            "heightFt": 4.7
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 69.6,
-        "observedAt": "2026-09-22 19:30",
+        "temperatureF": 68.5,
+        "observedAt": "2026-09-23 10:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       }
     },
@@ -320,61 +299,54 @@
       "lat": 38.5385,
       "lon": -75.0552,
       "weather": {
-        "period": "Tonight",
-        "temperature": 65,
+        "period": "Today",
+        "temperature": 70,
         "temperatureUnit": "F",
         "shortForecast": "Chance Rain Showers",
-        "windSpeed": "30 mph",
+        "windSpeed": "30 to 35 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false,
-        "precipProbability": 54
+        "precipProbability": 36
       },
       "alerts": {
         "items": [
           {
+            "event": "Wind Advisory",
+            "severity": "Moderate",
+            "headline": "Wind Advisory issued September 23 at 8:41AM EDT until September 24 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f352a10fb01539c7203bd982013448af5a2a0468.001.1",
+            "ends": "2026-09-24T20:00:00-04:00"
+          },
+          {
             "event": "Rip Current Statement",
             "severity": "Moderate",
-            "headline": "Rip Current Statement issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.5",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "Rip Current Statement issued September 23 at 4:28AM EDT until September 26 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.3",
+            "ends": "2026-09-26T20:00:00-04:00"
           },
           {
             "event": "High Surf Advisory",
             "severity": "Minor",
-            "headline": "High Surf Advisory issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.4",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "High Surf Advisory issued September 23 at 4:28AM EDT until September 26 at 6:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.2",
+            "ends": "2026-09-26T18:00:00-04:00"
           },
           {
             "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 22 at 4:14PM EDT until September 25 at 1:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.2",
-            "ends": "2026-09-25T01:00:00-04:00"
-          },
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued September 22 at 4:14PM EDT until September 22 at 10:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.3",
-            "ends": "2026-09-22T22:00:00-04:00"
-          },
-          {
-            "event": "Wind Advisory",
-            "severity": "Moderate",
-            "headline": "Wind Advisory issued September 22 at 2:22PM EDT until September 24 at 12:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b9f59e873989857ae97b0d56d355f6e2d9d574e.001.1",
-            "ends": "2026-09-24T00:00:00-04:00"
+            "headline": "Coastal Flood Warning issued September 23 at 4:28AM EDT until September 26 at 2:00AM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.1",
+            "ends": "2026-09-26T02:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "tides": {
@@ -382,34 +354,39 @@
         "stationName": "Ocean City Inlet",
         "predictions": [
           {
-            "time": "2026-09-22 05:05",
-            "type": "high",
-            "heightFt": 2.0
-          },
-          {
-            "time": "2026-09-22 11:00",
+            "time": "2026-09-23 00:05",
             "type": "low",
-            "heightFt": 0.6
+            "heightFt": 0.8
           },
           {
-            "time": "2026-09-22 17:52",
+            "time": "2026-09-23 05:54",
+            "type": "high",
+            "heightFt": 2.1
+          },
+          {
+            "time": "2026-09-23 11:53",
+            "type": "low",
+            "heightFt": 0.5
+          },
+          {
+            "time": "2026-09-23 18:32",
             "type": "high",
             "heightFt": 2.5
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 72.9,
-        "observedAt": "2026-09-22 19:30",
+        "temperatureF": 70.7,
+        "observedAt": "2026-09-23 10:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       }
     },
@@ -419,61 +396,54 @@
       "lat": 38.461,
       "lon": -75.051,
       "weather": {
-        "period": "Tonight",
-        "temperature": 65,
+        "period": "Today",
+        "temperature": 69,
         "temperatureUnit": "F",
         "shortForecast": "Chance Rain Showers",
-        "windSpeed": "30 mph",
+        "windSpeed": "30 to 35 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false,
-        "precipProbability": 49
+        "precipProbability": 37
       },
       "alerts": {
         "items": [
           {
+            "event": "Wind Advisory",
+            "severity": "Moderate",
+            "headline": "Wind Advisory issued September 23 at 8:41AM EDT until September 24 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f352a10fb01539c7203bd982013448af5a2a0468.001.1",
+            "ends": "2026-09-24T20:00:00-04:00"
+          },
+          {
             "event": "Rip Current Statement",
             "severity": "Moderate",
-            "headline": "Rip Current Statement issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.5",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "Rip Current Statement issued September 23 at 4:28AM EDT until September 26 at 8:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.3",
+            "ends": "2026-09-26T20:00:00-04:00"
           },
           {
             "event": "High Surf Advisory",
             "severity": "Minor",
-            "headline": "High Surf Advisory issued September 22 at 4:14PM EDT until September 25 at 6:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.4",
-            "ends": "2026-09-25T18:00:00-04:00"
+            "headline": "High Surf Advisory issued September 23 at 4:28AM EDT until September 26 at 6:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.2",
+            "ends": "2026-09-26T18:00:00-04:00"
           },
           {
             "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 22 at 4:14PM EDT until September 25 at 1:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.2",
-            "ends": "2026-09-25T01:00:00-04:00"
-          },
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued September 22 at 4:14PM EDT until September 22 at 10:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2d2e5df12b00ebec9375ca86aa0c42d7f277bef4.001.3",
-            "ends": "2026-09-22T22:00:00-04:00"
-          },
-          {
-            "event": "Wind Advisory",
-            "severity": "Moderate",
-            "headline": "Wind Advisory issued September 22 at 2:22PM EDT until September 24 at 12:00AM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.9b9f59e873989857ae97b0d56d355f6e2d9d574e.001.1",
-            "ends": "2026-09-24T00:00:00-04:00"
+            "headline": "Coastal Flood Warning issued September 23 at 4:28AM EDT until September 26 at 2:00AM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b955111bbcc888cb5ed99a8632224b4e9638e7b5.001.1",
+            "ends": "2026-09-26T02:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "tides": {
@@ -481,34 +451,39 @@
         "stationName": "Ocean City Inlet",
         "predictions": [
           {
-            "time": "2026-09-22 05:05",
-            "type": "high",
-            "heightFt": 2.0
-          },
-          {
-            "time": "2026-09-22 11:00",
+            "time": "2026-09-23 00:05",
             "type": "low",
-            "heightFt": 0.6
+            "heightFt": 0.8
           },
           {
-            "time": "2026-09-22 17:52",
+            "time": "2026-09-23 05:54",
+            "type": "high",
+            "heightFt": 2.1
+          },
+          {
+            "time": "2026-09-23 11:53",
+            "type": "low",
+            "heightFt": 0.5
+          },
+          {
+            "time": "2026-09-23 18:32",
             "type": "high",
             "heightFt": 2.5
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 72.9,
-        "observedAt": "2026-09-22 19:30",
+        "temperatureF": 70.7,
+        "observedAt": "2026-09-23 10:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-22T23:36:51Z",
+        "fetchedAt": "2026-09-23T14:16:05Z",
         "stale": false
       }
     }
@@ -520,7 +495,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-09-22T23:36:51Z"
+    "fetchedAt": "2026-09-23T14:16:05Z"
   },
   "sources": [
     {
