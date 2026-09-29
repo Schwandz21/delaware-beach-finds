@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T17:41:30Z",
+  "generatedAt": "2026-09-29T01:01:47Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -8,28 +8,21 @@
       "lat": 38.7746,
       "lon": -75.1393,
       "weather": {
-        "period": "This Afternoon",
-        "temperature": 66,
+        "period": "Tonight",
+        "temperature": 59,
         "temperatureUnit": "F",
         "shortForecast": "Mostly Cloudy",
-        "windSpeed": "10 mph",
-        "windDirection": "NW",
-        "isDaytime": true,
+        "windSpeed": "5 mph",
+        "windDirection": "W",
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false,
-        "precipProbability": 3
+        "precipProbability": 8
       },
       "alerts": {
         "items": [
-          {
-            "event": "Coastal Flood Warning",
-            "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 28 at 1:34PM EDT until September 28 at 2:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5f8add299ccd4f592320bacfa3fceac9683321e.002.1",
-            "ends": "2026-09-28T14:00:00-04:00"
-          },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
@@ -41,7 +34,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "tides": {
@@ -71,17 +64,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 64.8,
-        "observedAt": "2026-09-28 13:36",
+        "temperatureF": 64.4,
+        "observedAt": "2026-09-28 20:54",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       }
     },
@@ -91,28 +84,21 @@
       "lat": 38.7168,
       "lon": -75.076,
       "weather": {
-        "period": "This Afternoon",
-        "temperature": 67,
+        "period": "Tonight",
+        "temperature": 62,
         "temperatureUnit": "F",
         "shortForecast": "Mostly Cloudy",
-        "windSpeed": "10 to 15 mph",
-        "windDirection": "NW",
-        "isDaytime": true,
+        "windSpeed": "5 to 10 mph",
+        "windDirection": "W",
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false,
-        "precipProbability": 3
+        "precipProbability": 9
       },
       "alerts": {
         "items": [
-          {
-            "event": "Coastal Flood Warning",
-            "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 28 at 1:34PM EDT until September 28 at 2:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5f8add299ccd4f592320bacfa3fceac9683321e.002.1",
-            "ends": "2026-09-28T14:00:00-04:00"
-          },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
@@ -124,7 +110,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "tides": {
@@ -154,17 +140,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 64.8,
-        "observedAt": "2026-09-28 13:36",
+        "temperatureF": 64.4,
+        "observedAt": "2026-09-28 20:54",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       }
     },
@@ -174,28 +160,21 @@
       "lat": 38.6884,
       "lon": -75.0755,
       "weather": {
-        "period": "This Afternoon",
-        "temperature": 66,
+        "period": "Tonight",
+        "temperature": 59,
         "temperatureUnit": "F",
         "shortForecast": "Mostly Cloudy",
-        "windSpeed": "10 mph",
-        "windDirection": "NW",
-        "isDaytime": true,
+        "windSpeed": "5 to 10 mph",
+        "windDirection": "W",
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false,
-        "precipProbability": 3
+        "precipProbability": 9
       },
       "alerts": {
         "items": [
-          {
-            "event": "Coastal Flood Warning",
-            "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 28 at 1:34PM EDT until September 28 at 2:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5f8add299ccd4f592320bacfa3fceac9683321e.002.1",
-            "ends": "2026-09-28T14:00:00-04:00"
-          },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
@@ -207,7 +186,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "tides": {
@@ -237,17 +216,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 64.8,
-        "observedAt": "2026-09-28 13:36",
+        "temperatureF": 64.4,
+        "observedAt": "2026-09-28 20:54",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       }
     },
@@ -257,28 +236,21 @@
       "lat": 38.5385,
       "lon": -75.0552,
       "weather": {
-        "period": "This Afternoon",
-        "temperature": 68,
+        "period": "Tonight",
+        "temperature": 62,
         "temperatureUnit": "F",
         "shortForecast": "Mostly Cloudy",
-        "windSpeed": "10 mph",
-        "windDirection": "NW",
-        "isDaytime": true,
+        "windSpeed": "5 mph",
+        "windDirection": "W",
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false,
-        "precipProbability": 4
+        "precipProbability": 8
       },
       "alerts": {
         "items": [
-          {
-            "event": "Coastal Flood Warning",
-            "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 28 at 1:34PM EDT until September 28 at 2:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5f8add299ccd4f592320bacfa3fceac9683321e.002.1",
-            "ends": "2026-09-28T14:00:00-04:00"
-          },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
@@ -290,7 +262,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "tides": {
@@ -320,17 +292,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 66.4,
-        "observedAt": "2026-09-28 13:36",
+        "temperatureF": 65.3,
+        "observedAt": "2026-09-28 20:54",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       }
     },
@@ -340,28 +312,21 @@
       "lat": 38.461,
       "lon": -75.051,
       "weather": {
-        "period": "This Afternoon",
-        "temperature": 69,
+        "period": "Tonight",
+        "temperature": 62,
         "temperatureUnit": "F",
         "shortForecast": "Mostly Cloudy",
-        "windSpeed": "10 mph",
-        "windDirection": "NW",
-        "isDaytime": true,
+        "windSpeed": "5 mph",
+        "windDirection": "W",
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false,
-        "precipProbability": 4
+        "precipProbability": 7
       },
       "alerts": {
         "items": [
-          {
-            "event": "Coastal Flood Warning",
-            "severity": "Severe",
-            "headline": "Coastal Flood Warning issued September 28 at 1:34PM EDT until September 28 at 2:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f5f8add299ccd4f592320bacfa3fceac9683321e.002.1",
-            "ends": "2026-09-28T14:00:00-04:00"
-          },
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
@@ -373,7 +338,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "tides": {
@@ -403,17 +368,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 66.4,
-        "observedAt": "2026-09-28 13:36",
+        "temperatureF": 65.3,
+        "observedAt": "2026-09-28 20:54",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-09-28T17:41:30Z",
+        "fetchedAt": "2026-09-29T01:01:47Z",
         "stale": false
       }
     }
@@ -425,7 +390,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-09-28T17:41:30Z"
+    "fetchedAt": "2026-09-29T01:01:47Z"
   },
   "sources": [
     {
