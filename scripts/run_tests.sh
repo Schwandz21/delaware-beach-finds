@@ -87,6 +87,18 @@ else
 fi
 
 echo ""
+echo "=== Homepage lead ==="
+python3 scripts/test_front_page_lead.py >/tmp/dbf-lead-out 2>&1
+if [ $? -eq 0 ]; then
+  echo "  ok  - homepage lead comes from the current issue, never an old cover"
+  PASS=$((PASS+1))
+else
+  echo "FAIL  - homepage lead regression test failed"
+  sed 's/^/        /' /tmp/dbf-lead-out
+  FAIL=$((FAIL+1))
+fi
+
+echo ""
 echo "=== Photo location attribution ==="
 python3 scripts/test_location_attribution.py >/tmp/dbf-loc-out 2>&1
 if [ $? -eq 0 ]; then

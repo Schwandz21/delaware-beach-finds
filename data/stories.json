@@ -1328,7 +1328,7 @@
     "scene": "atlantic-surf-close.jpg",
     "date": "2026-09-07",
     "readTime": "6 min read",
-    "featured": true,
+    "featured": false,
     "category": "coast",
     "series": null,
     "seriesInstallment": null,
@@ -1356,8 +1356,8 @@
     "approvedAt": "2026-09-07",
     "issueId": "2026-W37",
     "author": "coast-nature",
-    "coverStory": true,
-    "placement": "cover",
+    "coverStory": false,
+    "placement": "feature",
     "relatedStories": [],
     "seoTitle": "The Second Season Starts Now | Delaware Beach Finds",
     "seoDescription": "Labor Day ends the summer calendar at the Delaware beaches, not the coast. What actually changes in September — markets, festivals, surf fishing, parking and the water.",
@@ -1372,5 +1372,127 @@
     "metaTag": "Delaware Coast",
     "heroImageAlt": "Surf running up an empty stretch of Delaware beach",
     "places": []
+  },
+  {
+    "featured": true,
+    "coverStory": true,
+    "status": "published",
+    "approvedAt": "2026-10-02",
+    "publishedAt": "2026-10-02",
+    "date": "2026-10-02",
+    "issueId": "2026-W40",
+    "series": null,
+    "seriesInstallment": null,
+    "seriesTotal": null,
+    "seriesPage": false,
+    "etsyProductIds": [],
+    "shopTheStory": false,
+    "access_level": "public",
+    "renderMode": "generated",
+    "heldReason": null,
+    "slug": "lewes-maritime-weekend-2026",
+    "kicker": "This Weekend in Lewes",
+    "headline": "Lewes Has a Maritime Weekend",
+    "hook": "Saturday belongs to the canal. Sunday belongs to Coast Day. Here’s how to do both without spending half the weekend figuring out where to go.",
+    "lede": "For one weekend this October, Lewes has organized its waterfront into two days: Boast the Coast on Saturday and Coast Day, in its 50th year, on Sunday.",
+    "scene": "lewes-canal-waterfront.jpg",
+    "heroImage": "lewes-canal-waterfront.jpg",
+    "heroAlt": "The Lewes canal waterfront",
+    "heroImageAlt": "The Lewes canal waterfront",
+    "photoCredit": "Delaware Beach Finds",
+    "readTime": "5 min read",
+    "category": "field-guide",
+    "author": "field-notes",
+    "metaTag": "This Weekend in Lewes",
+    "placement": "cover",
+    "publishAt": "2026-10-02T16:44",
+    "places": [
+      "lewes"
+    ],
+    "sources": [
+      "https://www.lewes250.com/event-list/boast-the-coast-maritime-festival",
+      "https://events.udel.edu/event/coast-day-2026",
+      "https://www.udel.edu/udaily/2026/september/coast-day-2026-events-lewes-sharp-campus/"
+    ],
+    "relatedStories": [
+      {
+        "href": "../this-week.html",
+        "label": "This Week at the Delaware Coast"
+      },
+      {
+        "href": "the-ladder-off-cape-henlopen.html",
+        "label": "The Ladder off Cape Henlopen"
+      },
+      {
+        "href": "category-field-guide.html",
+        "label": "More Delaware Field Guide"
+      }
+    ],
+    "body": [],
+    "seoTitle": "Lewes Maritime Weekend 2026: Boast the Coast and Coast Day | Delaware Beach Finds",
+    "seoDescription": "A field guide to Lewes Maritime Weekend, Oct. 3–4, 2026: Boast the Coast at 1812 Memorial Park and the City Dock on Saturday, UD's free 50th Coast Day on Sunday, with parking, food and free-vs-paid notes.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/lewes-maritime-weekend-2026.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/lewes-canal-waterfront.jpg"
+  },
+  {
+    "featured": false,
+    "coverStory": false,
+    "status": "published",
+    "approvedAt": "2026-10-02",
+    "publishedAt": "2026-10-02",
+    "date": "2026-10-02",
+    "issueId": "2026-W40",
+    "series": null,
+    "seriesInstallment": null,
+    "seriesTotal": null,
+    "seriesPage": false,
+    "etsyProductIds": [],
+    "shopTheStory": false,
+    "access_level": "public",
+    "renderMode": "generated",
+    "heldReason": null,
+    "slug": "cape-henlopen-hawk-watch-fall-2026",
+    "kicker": "Fall Migration",
+    "headline": "Look Up at Cape Henlopen",
+    "hook": "From September through November, Cape Henlopen becomes one of Delaware’s two fall raptor-counting stations — and the public can simply stop and watch.",
+    "lede": "Every fall, migrating birds of prey pass over Cape Henlopen, and every fall since 1995 someone has been there counting them.",
+    "scene": "dune-sunrise-1.svg",
+    "heroImage": "dune-sunrise-1.svg",
+    "heroAlt": "Dunes at sunrise (illustration)",
+    "heroImageAlt": "An illustration of coastal dunes at sunrise",
+    "photoCredit": "Illustration: Delaware Beach Finds",
+    "readTime": "3 min read",
+    "category": "coast",
+    "author": "coast-nature",
+    "metaTag": "Fall Migration",
+    "placement": "secondary",
+    "publishAt": "2026-10-02T16:45",
+    "places": [
+      "cape-henlopen",
+      "lewes"
+    ],
+    "sources": [
+      "https://dnrec.delaware.gov/fish-wildlife/conservation/hawk-watch/",
+      "https://www.fochsp.org/hawk-watch"
+    ],
+    "relatedStories": [
+      {
+        "href": "what-the-dunes-were-for.html",
+        "label": "What the Dunes Were For"
+      },
+      {
+        "href": "the-patience-of-herons.html",
+        "label": "The Patience of Herons"
+      },
+      {
+        "href": "category-coast.html",
+        "label": "More from the Coast"
+      }
+    ],
+    "body": [],
+    "seoTitle": "Cape Henlopen Hawk Watch, Fall 2026 | Delaware Beach Finds",
+    "seoDescription": "The Cape Henlopen Hawk Watch counts fall raptor migration from a platform atop a WWII bunker, Sept. 1 – Nov. 30. A professional counter is there most days, and no experience is needed to watch.",
+    "canonicalUrl": "https://delawarebeachfinds.com/stories/cape-henlopen-hawk-watch-fall-2026.html",
+    "ogImage": "https://delawarebeachfinds.com/assets/images/scenes/dune-sunrise-1.svg"
   }
 ]

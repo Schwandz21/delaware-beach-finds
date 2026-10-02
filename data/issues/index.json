@@ -3,36 +3,15 @@
   "_note": "Immutable registry of published weekly issues. A new issue becomes current; prior issues move to 'archived' and are never deleted. Gaps are real: no issue was published for 2026-W34 through 2026-W36. Those weeks are not backfilled, because inventing them would be a lie about publication history.",
   "issues": [
     {
-      "issueId": "2026-W33",
-      "weekOf": "2026-08-10",
-      "title": "Week of August 10, 2026",
-      "publishedAt": "2026-08-11",
-      "status": "archived",
-      "file": "issues/2026-W33.json",
-      "access_level": "public",
-      "supersededBy": "2026-W37"
-    },
-    {
-      "issueId": "2026-W34",
-      "weekOf": "2026-08-17",
-      "title": "Week of August 17, 2026",
-      "publishedAt": null,
-      "status": "draft",
-      "file": "issues/2026-W34.json",
-      "access_level": "public",
-      "note": "Staged 2026-08-12 and never published. Left in draft rather than backfilled: no issue was published for the weeks of Aug 17, Aug 24 or Aug 31."
-    },
-    {
-      "issueId": "2026-W37",
-      "weekOf": "2026-09-07",
-      "title": "Week of September 7, 2026",
-      "publishedAt": "2026-09-07",
-      "status": "archived",
-      "file": "issues/2026-W37.json",
+      "issueId": "2026-W40",
+      "weekOf": "2026-09-28",
+      "title": "Week of September 28, 2026",
+      "summary": "A late-week edition for the Oct. 2–4 weekend, built around Lewes Maritime Weekend: Boast the Coast fills the canalfront Saturday, 11 a.m.–2 p.m., and UD's free Coast Day marks its 50th year Sunday, 10 a.m.–3 p.m., at the Hugh R. Sharp Campus. Sidewalk sales run through Sunday in Lewes and Rehoboth, the Cape Henlopen hawk watch continues through November, and October brings Apple-Scrapple, True Blue Jazz and Sea Witch's Community Fair and costume parade on Oct. 23–24.",
+      "status": "current",
+      "file": "issues/2026-W40.json",
       "access_level": "public",
       "edition": "September 2026",
-      "supersededAt": "2026-09-21",
-      "supersededBy": "2026-W39"
+      "publishedAt": "2026-10-02"
     },
     {
       "issueId": "2026-W39",
@@ -48,15 +27,36 @@
       "supersededBy": "2026-W40"
     },
     {
-      "issueId": "2026-W40",
-      "weekOf": "2026-09-28",
-      "title": "Week of September 28, 2026",
-      "summary": "A late-week edition for the Oct. 2–4 weekend, built around Lewes Maritime Weekend: Boast the Coast fills the canalfront Saturday, 11 a.m.–2 p.m., and UD's free Coast Day marks its 50th year Sunday, 10 a.m.–3 p.m., at the Hugh R. Sharp Campus. Sidewalk sales run through Sunday in Lewes and Rehoboth, the Cape Henlopen hawk watch continues through November, and October brings Apple-Scrapple, True Blue Jazz and Sea Witch's Community Fair and costume parade on Oct. 23–24.",
-      "status": "current",
-      "file": "issues/2026-W40.json",
+      "issueId": "2026-W37",
+      "weekOf": "2026-09-07",
+      "title": "Week of September 7, 2026",
+      "publishedAt": "2026-09-07",
+      "status": "archived",
+      "file": "issues/2026-W37.json",
       "access_level": "public",
       "edition": "September 2026",
-      "publishedAt": "2026-10-02"
+      "supersededAt": "2026-09-21",
+      "supersededBy": "2026-W39"
+    },
+    {
+      "issueId": "2026-W34",
+      "weekOf": "2026-08-17",
+      "title": "Week of August 17, 2026",
+      "publishedAt": null,
+      "status": "draft",
+      "file": "issues/2026-W34.json",
+      "access_level": "public",
+      "note": "Staged 2026-08-12 and never published. Left in draft rather than backfilled: no issue was published for the weeks of Aug 17, Aug 24 or Aug 31."
+    },
+    {
+      "issueId": "2026-W33",
+      "weekOf": "2026-08-10",
+      "title": "Week of August 10, 2026",
+      "publishedAt": "2026-08-11",
+      "status": "archived",
+      "file": "issues/2026-W33.json",
+      "access_level": "public",
+      "supersededBy": "2026-W37"
     }
   ]
 }

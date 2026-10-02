@@ -3,7 +3,7 @@
   "timezone": "America/New_York",
   "paused": false,
   "_paused_note": "Set true to stop ALL automatic publication. Scheduled stories stay scheduled and publish once this returns to false.",
-  "currentIssueId": "2026-W37",
+  "currentIssueId": "2026-W40",
   "_currentIssueId_note": "Mirrors data/issues/index.json. The issue index remains the source of truth for issue records; this is the calendar's view of which issue new work lands in.",
   "issue": {
     "cadence": "weekly",

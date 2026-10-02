@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-02T20:26:28Z",
-  "recordCount": 37,
+  "generatedAt": "2026-10-02T20:49:15Z",
+  "recordCount": 39,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -399,6 +399,40 @@
       "status": "current",
       "access_level": "public",
       "scene": "atlantic-surf-close.jpg"
+    },
+    {
+      "id": "story-lewes-maritime-weekend-2026",
+      "type": "story",
+      "title": "Lewes Has a Maritime Weekend",
+      "excerpt": "Saturday belongs to the canal. Sunday belongs to Coast Day. Here’s how to do both without spending half the weekend figuring out where to go.",
+      "url": "stories/lewes-maritime-weekend-2026.html",
+      "town": "This Weekend in Lewes",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-10-02",
+      "updatedDate": "2026-10-02",
+      "status": "current",
+      "access_level": "public",
+      "scene": "lewes-canal-waterfront.jpg"
+    },
+    {
+      "id": "story-cape-henlopen-hawk-watch-fall-2026",
+      "type": "story",
+      "title": "Look Up at Cape Henlopen",
+      "excerpt": "From September through November, Cape Henlopen becomes one of Delaware’s two fall raptor-counting stations — and the public can simply stop and watch.",
+      "url": "stories/cape-henlopen-hawk-watch-fall-2026.html",
+      "town": "Fall Migration",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-10-02",
+      "updatedDate": "2026-10-02",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-sunrise-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",

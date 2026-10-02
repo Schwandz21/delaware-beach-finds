@@ -116,6 +116,33 @@ function lazyLiveFrame(frameEl, url, {autoplay=true}={}){
   const file = /\.(svg|jpe?g|png|webp)$/i.test(scene) ? scene : scene + '.svg';
   return `<img src="${prefix}assets/images/scenes/${esc(file)}" alt="${esc(alt||'')}" loading="lazy" decoding="async">`;
  }
+ // <front-page-select> — exercised directly by scripts/test_front_page_lead.py.
+ // The homepage lead belongs to the CURRENT issue (data/issues/index.json).
+ // `featured` alone is not enough: the Sept. 7 cover kept featured=true for a
+ // month and led the homepage under W39 and W40. A story from an archived issue
+ // can never be this week's cover, whatever flags it still carries.
+ //   mode 'story'  current issue has a published story: its cover, else its newest
+ //   mode 'issue'  current issue has no published story: lead with the issue itself
+ //   mode 'none'   registry unavailable: newest story, labelled as latest, not cover
+ function selectFrontPage(stories, registry){
+   const pub = (stories||[]).filter(s=>s && s.status==='published')
+     .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+   const curId = registry && registry.currentIssueId;
+   const issue = curId ? ((registry.issues||[]).find(i=>i.issueId===curId && i.status==='current') || null) : null;
+   if(!issue){
+     return {mode: pub.length ? 'none' : 'empty', issue: null, cover: pub[0] || null,
+             thisWeek: [], archive: pub.slice(1, 5)};
+   }
+   const current = pub.filter(s=>s.issueId===issue.issueId);
+   const cover = current.find(s=>s.coverStory) || current.find(s=>s.featured) || current[0] || null;
+   if(!cover){
+     return {mode: 'issue', issue: issue, cover: null, thisWeek: [], archive: pub.slice(0, 4)};
+   }
+   const thisWeek = current.filter(s=>s.slug!==cover.slug).slice(0, 4);
+   const archive = pub.filter(s=>s.issueId!==issue.issueId).slice(0, 4 - thisWeek.length);
+   return {mode: 'story', issue: issue, cover: cover, thisWeek: thisWeek, archive: archive};
+ }
+ // </front-page-select>
  const CAT_LABELS={coast:'Delaware Coast',history:'The First State Story',people:'People of Delaware','field-guide':'Delaware Field Guide',community:'Through the Local Lens'};
  function fetchJson(name){
    return fetch(dataUrl(name)).then(r=>{ if(!r.ok) throw new Error('missing '+name); return r.json(); });
@@ -674,15 +701,15 @@ if(bylineEls.length){
 // selector is honest rather than a hand-maintained list.
 const pictureMount = document.querySelector('[data-mount="picture-feature"]');
 if(pictureMount){
-  fetchJson('stories.json').then(list=>{
+  Promise.all([fetchJson('stories.json'), fetchJson('issues/index.json').catch(()=>null)]).then(([list, registry])=>{
     const pub = (list||[]).filter(s=>s.status==='published')
       .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-    const cover = pub.find(s=>s.coverStory||s.featured);
-    // The front-page rail already shows the next four stories. Picking from
-    // those would print the same photograph twice on one page, so the picture
+    // The front-page lead package already shows these stories. Picking from
+    // them would print the same photograph twice on one page, so the picture
     // feature draws from what the lead package has NOT already used.
-    const shown = new Set([cover && cover.slug].concat(
-      pub.filter(s=>!cover || s.slug!==cover.slug).slice(0,4).map(s=>s.slug)));
+    const pick = selectFrontPage(list, registry);
+    const shown = new Set([pick.cover && pick.cover.slug]
+      .concat(pick.thisWeek.map(s=>s.slug), pick.archive.map(s=>s.slug)));
     const photo = pub.find(s =>
       !shown.has(s.slug) &&
       /\.(jpe?g|png|webp)$/i.test(String(s.scene||'')));
@@ -1544,32 +1571,64 @@ document.addEventListener('click', function(e){
   }
 });
 
-// FRONT PAGE — cover story + secondary stack, composed from real stories.json.
-// The cover is the featured record; secondaries are the next-newest published
-// stories. Photography comes from each story's own scene, never borrowed.
+// FRONT PAGE — the current issue's lead package, composed from real data.
+// The lead is chosen by selectFrontPage against data/issues/index.json, so an
+// old cover can never stand in as this week's. Photography comes from each
+// story's own scene, never borrowed.
 const frontMount = document.querySelector('[data-mount="front-page"]');
 if(frontMount){
-  Promise.all([fetchJson('stories.json'), fetchJson('authors.json')]).then(([list, authors])=>{
+  Promise.all([
+    fetchJson('stories.json'),
+    fetchJson('authors.json').catch(()=>null),
+    fetchJson('issues/index.json').catch(()=>null)
+  ]).then(([list, authors, registry])=>{
     // The cover byline must match the article page's byline. Both come from the
     // story's own desk in data/authors.json; falling back to the house byline
     // here made the homepage and the article disagree about who wrote it.
     const deskName = {};
     ((authors&&authors.desks)||[]).forEach(d=>{ deskName[d.id] = d.name; });
-    const pub = (list||[]).filter(s=>s.status==='published')
-      .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-    if(!pub.length){ if(gateHide(frontMount)) return; return; }
-    const cover = pub.find(s=>s.featured) || pub[0];
-    const rest  = pub.filter(s=>s.slug!==cover.slug).slice(0,4);
+    const pick = selectFrontPage(list, registry);
+    if(pick.mode==='empty'){ if(gateHide(frontMount)) return; return; }
     const fmt = d => { try{ return new Intl.DateTimeFormat('en-US',
       {month:'long',day:'numeric',year:'numeric',timeZone:'America/New_York'})
       .format(new Date(d+'T12:00:00Z')); }catch(e){ return d||''; } };
-    const meta = [CAT_LABELS[cover.category]||cover.category, fmt(cover.date), cover.readTime]
-      .filter(Boolean).map(esc);
+    const stackItem = s => `
+          <a class="stack-item" href="stories/${esc(s.slug)}.html">
+            <div class="stack-copy">
+              <span class="stack-label">${esc(CAT_LABELS[s.category]||s.category||'')}</span>
+              <h3>${esc(s.headline)}</h3>
+              <p>${esc(s.hook||'')}</p>
+            </div>
+            <div class="stack-thumb">${sceneImg(s.scene, s.heroAlt || s.headline)}</div>
+          </a>`;
+    // "Also This Week" only ever heads stories from the current issue; anything
+    // older is labelled as the archive it is.
+    const stack = (pick.thisWeek.length ? `<div class="stack-head">Also This Week</div>${pick.thisWeek.map(stackItem).join('')}` : '')
+      + (pick.archive.length ? `<div class="stack-head">${pick.mode==='none'?'More Stories':'From the Archive'}</div>${pick.archive.map(stackItem).join('')}` : '');
 
-    frontMount.innerHTML = `
+    let lead;
+    if(pick.mode==='issue'){
+      // No published story belongs to this issue: lead with the issue itself.
+      const i = pick.issue;
+      lead = `
+      <a class="cover-story is-issue-lead" href="this-week.html">
+        <div class="cover-art">
+          <span class="cover-flag">This Week</span>
+          ${sceneImg('ocean-blue-1.svg', '')}
+        </div>
+        <span class="cover-label">Week of ${esc(fmt(i.weekOf))}</span>
+        <h2 class="cover-headline">${esc(i.title || ('Week of ' + fmt(i.weekOf)))}</h2>
+        ${i.summary?`<p class="cover-dek">${esc(i.summary)}</p>`:''}
+        <div class="cover-byline"><span>This week at the Delaware coast &rarr;</span></div>
+      </a>`;
+    } else {
+      const cover = pick.cover;
+      const meta = [CAT_LABELS[cover.category]||cover.category, fmt(cover.date), cover.readTime]
+        .filter(Boolean).map(esc);
+      lead = `
       <a class="cover-story" href="stories/${esc(cover.slug)}.html">
         <div class="cover-art"${(cover.assetUpgrade?' data-asset-upgrade="1"':'')}>
-          <span class="cover-flag">Cover Story</span>
+          <span class="cover-flag">${pick.mode==='story'?'Cover Story':'Latest Story'}</span>
           ${sceneImg(cover.scene, cover.heroAlt || cover.headline)}
         </div>
         ${cover.heroAlt||cover.photoCredit?`<span class="credit">
@@ -1583,18 +1642,11 @@ if(frontMount){
           <span>By ${esc(deskName[cover.author] || window.DBF_HOUSE_BYLINE || 'Delaware Beach Finds Editorial')}</span>
           ${meta.map(m=>`<span class="sep">&middot;</span><span>${m}</span>`).join('')}
         </div>
-      </a>
+      </a>`;
+    }
+    frontMount.innerHTML = `${lead}
       <div class="cover-secondaries">
-        <div class="stack-head">Also This Week</div>
-        ${rest.map(s=>`
-          <a class="stack-item" href="stories/${esc(s.slug)}.html">
-            <div class="stack-copy">
-              <span class="stack-label">${esc(CAT_LABELS[s.category]||s.category||'')}</span>
-              <h3>${esc(s.headline)}</h3>
-              <p>${esc(s.hook||'')}</p>
-            </div>
-            <div class="stack-thumb">${sceneImg(s.scene, s.heroAlt || s.headline)}</div>
-          </a>`).join('')}
+        ${stack}
         <div class="stack-more"><a class="ed-link" href="stories/index.html">All Delaware Stories &rarr;</a></div>
       </div>`;
   }).catch(()=>{ gateHide(frontMount); });

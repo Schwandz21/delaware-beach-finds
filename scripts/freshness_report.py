@@ -36,6 +36,39 @@ def parse_date(s):
         return None
 
 
+def check_current_cover(stories, registry):
+    """Warn when the homepage lead is not this week's.
+
+    The homepage leads with the current issue's cover (see selectFrontPage in
+    assets/js/site.js). This catches the conditions that let an old cover sit
+    in front of a new issue: cover flags left on a story from an archived
+    issue, a current issue with no published story or no cover, and an issue
+    record whose coverStory does not resolve to a story in that issue.
+    """
+    warnings = []
+    cur_id = (registry or {}).get("currentIssueId")
+    issue = next((i for i in (registry or {}).get("issues", [])
+                  if i.get("issueId") == cur_id and i.get("status") == "current"), None)
+    if not issue:
+        return [f"issue registry has no current issue matching currentIssueId {cur_id!r}."], None
+    pub = [s for s in stories if s.get("status") == "published"]
+    current = [s for s in pub if s.get("issueId") == cur_id]
+    for s in pub:
+        if (s.get("coverStory") or s.get("featured")) and s.get("issueId") != cur_id:
+            warnings.append(f"story {s['slug']} still carries cover/featured flags from issue "
+                            f"{s.get('issueId')}, but the current issue is {cur_id}.")
+    covers = [s for s in current if s.get("coverStory")]
+    if not current:
+        warnings.append(f"current issue {cur_id} has no published stories; the homepage leads with the issue summary.")
+    elif not covers:
+        warnings.append(f"current issue {cur_id} has published stories but none is marked coverStory.")
+    lead = covers[0] if covers else (sorted(current, key=lambda s: s.get("date") or "", reverse=True) or [None])[0]
+    if lead and issue.get("weekOf") and (lead.get("date") or "") < issue["weekOf"]:
+        warnings.append(f"cover {lead['slug']} is dated {lead.get('date')}, before the current issue's "
+                        f"week of {issue['weekOf']}.")
+    return warnings, (lead["slug"] if lead else None)
+
+
 def report():
     today = date.today()
     warnings = []
@@ -76,6 +109,17 @@ def report():
         ok = False
         warnings.append(f"{len(stale_guides)} Coming Soon guide(s) exceed their review interval: {', '.join(stale_guides)}")
 
+    stories = load("stories.json", [])
+    registry = load("issues/index.json", {})
+    cover_warnings, current_cover = check_current_cover(stories, registry)
+    issue_doc = load(f"issues/{registry.get('currentIssueId')}.json", {}) if registry.get("currentIssueId") else {}
+    if issue_doc.get("coverStory") and issue_doc["coverStory"] != current_cover:
+        cover_warnings.append(f"issue {registry.get('currentIssueId')} names coverStory "
+                              f"{issue_doc['coverStory']!r} but the homepage lead resolves to {current_cover!r}.")
+    if cover_warnings:
+        ok = False
+        warnings.extend(cover_warnings)
+
     content_index = load("content-index.json", {"records": []})
     missing_urls = []
     for r in content_index.get("records", []):
@@ -103,6 +147,8 @@ def report():
         "staleComingSoonGuides": len(stale_guides),
         "contentIndexRecordCount": content_index.get("recordCount", len(content_index.get("records", []))),
         "contentIndexMissingUrls": len(missing_urls),
+        "currentIssueId": registry.get("currentIssueId"),
+        "currentCover": current_cover,
         "nextRequiredReview": next_review.isoformat() if next_review else "unknown — verify events.json",
         "overallStatus": "OK" if ok else "REVIEW NEEDED",
         "warnings": warnings,
@@ -129,6 +175,7 @@ def main():
     print(f"Stale Coming Soon guides:  {summary['staleComingSoonGuides']}")
     print(f"Search index records:      {summary['contentIndexRecordCount']}")
     print(f"Index records w/ dead URL: {summary['contentIndexMissingUrls']}")
+    print(f"Current issue / cover:     {summary['currentIssueId']} / {summary['currentCover']}")
     print(f"Next required review:      {summary['nextRequiredReview']}")
     print(f"Overall status:            {summary['overallStatus']}")
     if summary["warnings"]:

@@ -7,7 +7,7 @@
   "status": "current",
   "byline": "Delaware Beach Finds Editorial",
   "summary": "A late-week edition for the Oct. 2–4 weekend, built around Lewes Maritime Weekend: Boast the Coast fills the canalfront Saturday, 11 a.m.–2 p.m., and UD's free Coast Day marks its 50th year Sunday, 10 a.m.–3 p.m., at the Hugh R. Sharp Campus. Sidewalk sales run through Sunday in Lewes and Rehoboth, the Cape Henlopen hawk watch continues through November, and October brings Apple-Scrapple, True Blue Jazz and Sea Witch's Community Fair and costume parade on Oct. 23–24.",
-  "coverStory": null,
+  "coverStory": "lewes-maritime-weekend-2026",
   "hiddenGem": null,
   "hiddenGemNote": "No new Hidden Gem was published this week.",
   "eventIds": [
@@ -82,7 +82,9 @@
     "https://news.delaware.gov/2026/07/20/dnrec-seeks-volunteers-for-2026-delaware-coastal-cleanup-on-saturday-sept-19/",
     "https://www.nanticokeindians.org/event/48th-annual-nanticoke-indian-powwow/2026-09-13/",
     "https://events.udel.edu/event/coast-day-2026",
-    "https://www.udel.edu/udaily/2026/september/coast-day-2026-events-lewes-sharp-campus/"
+    "https://www.udel.edu/udaily/2026/september/coast-day-2026-events-lewes-sharp-campus/",
+    "https://www.lewes250.com/event-list/boast-the-coast-maritime-festival",
+    "https://dnrec.delaware.gov/fish-wildlife/conservation/hawk-watch/"
   ],
   "editorialNotes": "W40 published 2026-10-02, four days into the week, as a late-week edition for Oct. 2–4. Daily slots for Sept. 28 – Oct. 1 were not published because those days had passed. Coast Day hours, free admission and 50th year confirmed against University of Delaware sources 2026-10-02. Unverified items were held back; see editorialHolds in automation/candidates/candidate-2026-09-27.json. First-party-ingested events were reused rather than duplicated. No story was published with this issue.",
   "access_level": "public",
