@@ -317,40 +317,6 @@
  ],
  "dailySlots": [
   {
-   "date": "2026-09-28",
-   "day": "Monday",
-   "kind": "Week Ahead",
-   "headline": "A Lewes maritime weekend anchors this week",
-   "note": "Boast the Coast on Saturday and Coast Day's 50th anniversary on Sunday give Lewes back-to-back reasons to head to the canal and the Hugh R. Sharp Campus. Rehoboth and Dewey run their Fall Sidewalk Sale the same weekend, and the Cape Henlopen Hawk Watch keeps running daily through November.",
-   "ref": "https://www.udel.edu/academics/colleges/ceoe/about/coastday/",
-   "eventId": "2026w40-coast-day-50th"
-  },
-  {
-   "date": "2026-09-29",
-   "day": "Tuesday",
-   "kind": "nature observation",
-   "headline": "Look up: hawk migration is underway at the Point",
-   "note": "Cape Henlopen's fall hawk watch runs Sept. 1 through Nov. 30, with a professional raptor counter on site most days alongside Sussex Bird Club volunteers. No experience needed to stop and watch, and the running counts are posted at hawkcount.org.",
-   "ref": "https://www.fochsp.org/hawk-watch",
-   "eventId": "2026w40-hawk-watch-season"
-  },
-  {
-   "date": "2026-09-30",
-   "day": "Wednesday",
-   "kind": "Delaware history micro-feature",
-   "headline": "The hull beneath Cape Henlopen: HMS DeBraak",
-   "note": "The recovered hull of the DeBraak, an 18th-century British warship lost off Lewes, is kept at a conservation facility near Cape Henlopen State Park. The Division of Historical and Cultural Affairs runs free 'Walk to the DeBraak' tours for up to 18 visitors ages 10 and up, pairing the hull with the ship's history and crew. Check the Zwaanendael Museum for the next tour date.",
-   "ref": "https://history.delaware.gov/event/hms-debraak-tour-5/"
-  },
-  {
-   "date": "2026-10-01",
-   "day": "Thursday",
-   "kind": "practical local knowledge",
-   "headline": "Fall surf-fishing access, explained",
-   "note": "With Labor Day past, the summer reservation system for beach-driving at Cape Henlopen and Delaware Seashore has lifted — no reservation needed at Gordon's Pond, Herring Point, Navy Crossing, Point Crossing or 3 Rs. A surf-fishing vehicle permit is still required year-round, along with a shovel, jack, tow rope, support board and low-pressure tire gauge; beach speed limit is 15 mph.",
-   "ref": "https://www.destateparks.com/surf-fishing/"
-  },
-  {
    "date": "2026-10-02",
    "day": "Friday",
    "kind": "weekend recommendation",
@@ -465,6 +431,7 @@
   "Dropped seven candidate events that duplicate live records and kept the existing record: 2026w40-rehoboth-fall-sidewalk-sale -> rehoboth-46044, 2026w40-hook-ladder-brewfest -> rehoboth-52039, 2026w40-rehoboth-farmers-market -> rehoboth-10001043, 2026w40-lewes-farmers-market -> historic-lewes-farmers-market-fall-2026, 2026w40-harvest-fair-1776 -> lewes-2074, 2026w40-apple-scrapple -> bridgeville-apple-scrapple-2026, 2026w40-sea-witch-2026 -> rehoboth-46048.",
   "Conflicts kept at the existing record, flagged for review: BrewFest/Oktoberfest end 17:30 (candidate) vs 16:00 (city calendar); Harvest Fair end 16:00 vs 15:00 (Lewes Historical Society); Apple-Scrapple start Oct. 9 vs Oct. 8 (W39-verified record).",
   "dailySlots: moved sourceUrl into ref (site.js renders ref as the source link); the event id is kept as eventId.",
-  "Applied editorial holds listed in editorialHolds."
+  "Applied editorial holds listed in editorialHolds.",
+  "Published late (2026-10-02): dailySlots dated before publication (Sept. 28 - Oct. 1) dropped; expireEventIds computed as of the publication date."
  ]
 }

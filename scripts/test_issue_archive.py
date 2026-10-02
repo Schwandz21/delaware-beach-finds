@@ -11,7 +11,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
-from publish_issue import promote  # noqa: E402
+from publish_issue import mirror_status, promote  # noqa: E402
 
 passed = failed = 0
 
@@ -72,6 +72,15 @@ check("still exactly one current issue after promotion",
       len([i for i in after["issues"] if i.get("status") == "current"]) == 1)
 check("archived is distinct from expired/superseded-as-wrong",
       all(i.get("status") in {"current", "archived", "draft"} for i in after["issues"]))
+
+# --- mirroring status onto issue files ---
+# 2026-W33's registry entry has supersededBy but no supersededAt; --apply used
+# to crash on it with a KeyError before writing anything.
+legacy = mirror_status({"status": "archived", "supersededBy": "2026-W37"}, {"status": "current"})
+check("mirroring tolerates an entry with no supersededAt",
+      legacy == {"status": "archived", "supersededBy": "2026-W37"}, legacy)
+full = mirror_status({"status": "archived", "supersededBy": "X", "supersededAt": "9999-01-02"}, {})
+check("mirroring copies supersededAt when present", full.get("supersededAt") == "9999-01-02", full)
 
 # --- refusals ---
 def refuses(desc, index, issue_id):

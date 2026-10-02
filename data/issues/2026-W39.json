@@ -4,7 +4,7 @@
   "weekEnding": "2026-09-27",
   "title": "Week of September 21, 2026",
   "publishedAt": "2026-09-21",
-  "status": "current",
+  "status": "archived",
   "byline": "Delaware Beach Finds Editorial",
   "summary": "Fall arrives Tuesday night as the coast settles into shoulder season: hawks are moving over Cape Henlopen, Grove Park's market keeps going, and James Farm is this week's free Hidden Gem near Bethany. Looking ahead, The Point's bayside beach reopens Oct. 1, the Lewes market shifts to its fall home, and October's festival calendar starts filling fast.",
   "coverStory": null,
@@ -101,5 +101,7 @@
   "revision": 1,
   "edition": "September 2026",
   "editionTheme": "The Second Season",
-  "editionCoverLine": "Summer ends. The coast doesn't."
+  "editionCoverLine": "Summer ends. The coast doesn't.",
+  "supersededBy": "2026-W40",
+  "supersededAt": "2026-10-02"
 }

@@ -57,6 +57,17 @@ def promote(index, issue_id, today=None):
     return index, outgoing
 
 
+def mirror_status(entry, doc):
+    """Copy a registry entry's lifecycle fields onto its issue file."""
+    doc["status"] = entry["status"]
+    if entry.get("supersededBy"):
+        doc["supersededBy"] = entry["supersededBy"]
+        # Older registry entries (e.g. 2026-W33) predate supersededAt.
+        if entry.get("supersededAt"):
+            doc["supersededAt"] = entry["supersededAt"]
+    return doc
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("issue_id")
@@ -86,12 +97,7 @@ def main():
     for entry in index["issues"]:
         path = os.path.join(ROOT, "data", entry["file"])
         if os.path.exists(path):
-            doc = load(path)
-            doc["status"] = entry["status"]
-            if entry.get("supersededBy"):
-                doc["supersededBy"] = entry["supersededBy"]
-                doc["supersededAt"] = entry["supersededAt"]
-            save(path, doc)
+            save(path, mirror_status(entry, load(path)))
 
     save(INDEX, index)
     print(f"\nwrote {INDEX} and {len(index['issues'])} issue file(s)")
