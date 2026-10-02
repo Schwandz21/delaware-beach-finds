@@ -14,6 +14,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+from datetime import timedelta
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
@@ -64,26 +65,31 @@ def codes(r):
 
 
 NOW = T("2026-10-02T18:00")
+# A healthy runway sized from the policy itself: a story every 48h from Oct 4,
+# enough of them to clear both the minimum count and the minimum runway.
+_n = POLICY["minimumScheduledStories"]
+while _n * 2 < POLICY["minimumRunwayDays"] + 2:
+    _n += 1
 HEALTHY = [pub("last", "2026-10-02T16:45")] + [
-    sched("s%d" % i, at) for i, at in enumerate(
-        ["2026-10-04T06:00", "2026-10-05T06:00", "2026-10-07T06:00", "2026-10-09T06:00",
-         "2026-10-11T06:00", "2026-10-12T06:00", "2026-10-14T06:00"])]
+    sched("s%d" % i, (T("2026-10-04T06:00") + timedelta(hours=48 * i)).strftime("%Y-%m-%dT%H:%M"))
+    for i in range(_n)]
+HEALTHY_END = HEALTHY[-1]["publishAt"]
+MIN_N, MIN_DAYS = POLICY["minimumScheduledStories"], POLICY["minimumRunwayDays"]
 
 print("\n=== Runway SLA ===")
 r = runway(HEALTHY, NOW, POLICY)
 check("healthy runway passes", r["healthy"] and not codes(r), r["violations"])
 check("largest planned gap is computed", r["maxGapHours"] == 48.0, r["maxGapHours"])
-check("runway end and days are computed", r["runwayEnd"] == "2026-10-14T06:00" and r["runwayDays"] >= 10, r)
+check("runway end and days are computed", r["runwayEnd"] == HEALTHY_END and r["runwayDays"] >= MIN_DAYS, r)
 
-gap = [pub("last", "2026-10-02T16:45")] + [sched("a", "2026-10-04T06:00"), sched("b", "2026-10-07T12:00"),
-                                           sched("c", "2026-10-09T06:00"), sched("d", "2026-10-11T06:00"),
-                                           sched("e", "2026-10-14T06:00")]
+gap = copy.deepcopy(HEALTHY)
+gap[2]["publishAt"] = "2026-10-07T12:00"  # Oct 4 06:00 -> Oct 7 12:00 is 78h
 r = runway(gap, NOW, POLICY)
 check("a planned gap over 72h fails", "GAP_EXCEEDS_MAX" in codes(r) and not r["healthy"], r["violations"])
 
-r = runway(HEALTHY[:4], NOW, POLICY)
-check("fewer than 5 scheduled stories fails", "TOO_FEW_SCHEDULED" in codes(r), r["violations"])
-check("less than 10 days of runway fails", "RUNWAY_TOO_SHORT" in codes(r), r["violations"])
+r = runway(HEALTHY[:MIN_N], NOW, POLICY)
+check("fewer than %d scheduled stories fails" % MIN_N, "TOO_FEW_SCHEDULED" in codes(r), r["violations"])
+check("less than %d days of runway fails" % MIN_DAYS, "RUNWAY_TOO_SHORT" in codes(r), r["violations"])
 
 r = runway([pub("last", "2026-09-28T06:00")] + HEALTHY[1:], NOW, POLICY)
 check("last story older than 72h fails", "LAST_PUBLISHED_TOO_OLD" in codes(r), r["violations"])
@@ -102,7 +108,8 @@ plan = suggest_slots([pub("last", "2026-10-02T16:45")], NOW, POLICY)
 slots = [T(s) for s in plan["slots"]]
 seq = [T("2026-10-02T16:45")] + slots
 spacing = [(b - a).total_seconds() / 3600 for a, b in zip(seq, seq[1:])]
-check("planner restores at least 5 stories and 10 days", len(slots) >= 5 and (slots[-1] - NOW).days >= 10, plan["slots"])
+check("planner restores at least %d stories and %d days" % (MIN_N, MIN_DAYS),
+      len(slots) >= MIN_N and (slots[-1] - NOW).total_seconds() >= MIN_DAYS * 86400, plan["slots"])
 check("no planned gap exceeds 72h", max(spacing) <= 72, spacing)
 check("planned gaps target ~48h (never below the 12h minimum)", all(12 <= h <= 48 for h in spacing), spacing)
 check("every week the runway enters opens on Monday morning",
@@ -117,7 +124,7 @@ stories = copy.deepcopy(HEALTHY) + [{"slug": "ok-approved", "status": "approved"
 done = schedule_approved(stories, NOW, POLICY)
 s = next(x for x in stories if x["slug"] == "ok-approved")
 check("--schedule slots an approved story after the runway end",
-      done == ["ok-approved"] and s["status"] == "scheduled" and T(s["publishAt"]) > T("2026-10-14T06:00"), s)
+      done == ["ok-approved"] and s["status"] == "scheduled" and T(s["publishAt"]) > T(HEALTHY_END), s)
 check("--schedule is idempotent", schedule_approved(stories, NOW, POLICY) == [])
 
 print("\n=== Weekly cover placement ===")

@@ -4,9 +4,9 @@
   "targetGapHours": 48,
   "maximumGapHours": 72,
   "minimumGapHours": 12,
-  "minimumScheduledStories": 5,
-  "minimumRunwayDays": 10,
-  "researchLookaheadDays": 21,
+  "minimumScheduledStories": 15,
+  "minimumRunwayDays": 30,
+  "researchLookaheadDays": 45,
   "timezone": "America/New_York",
   "defaultPublishTime": "06:00",
   "homepageStaleAfterHours": 72,
@@ -38,7 +38,11 @@
     },
     "minimumSources": 2,
     "minimumAuthoritativeSources": 1,
-    "authoritativeSourceTypes": ["first-party", "government", "institutional"],
+    "authoritativeSourceTypes": [
+      "first-party",
+      "government",
+      "institutional"
+    ],
     "maximumVerificationAgeDays": 7,
     "minimumBodyWords": 300,
     "forbiddenPatterns": {
