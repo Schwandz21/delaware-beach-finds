@@ -67,6 +67,12 @@ def emit_output(slugs):
 
 # ------------------------------------------------------------------ issues ---
 
+def week_title(monday):
+    """'Week of October 5, 2026' — the form every existing issue title uses."""
+    d = parse_publish_at(monday)
+    return 'Week of %s %d, %d' % (d.strftime('%B'), d.day, d.year)
+
+
 def issue_path(issue_id):
     return os.path.join(DATA, 'issues', '%s.json' % issue_id)
 
@@ -85,7 +91,7 @@ def ensure_issue(issue_id, when, story, dry_run=False):
             'issueId': issue_id,
             'weekOf': monday,
             'weekEnding': iso_date(parse_publish_at(monday) + timedelta(days=6)),
-            'title': 'Week of %s' % monday,
+            'title': week_title(monday),
             'publishedAt': iso_date(when),
             'status': 'current',
             'coverStory': None,
@@ -128,7 +134,7 @@ def roll_issue_index(new_issue_id, when, dry_run=False):
         idx.setdefault('issues', []).append({
             'issueId': new_issue_id,
             'weekOf': week_of(when),
-            'title': 'Week of %s' % week_of(when),
+            'title': week_title(week_of(when)),
             'publishedAt': iso_date(when),
             'status': 'current',
             # Paths in the index resolve from data/, so the `issues/` prefix

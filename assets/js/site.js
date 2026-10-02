@@ -121,22 +121,39 @@ function lazyLiveFrame(frameEl, url, {autoplay=true}={}){
  // `featured` alone is not enough: the Sept. 7 cover kept featured=true for a
  // month and led the homepage under W39 and W40. A story from an archived issue
  // can never be this week's cover, whatever flags it still carries.
- //   mode 'story'  current issue has a published story: its cover, else its newest
- //   mode 'issue'  current issue has no published story: lead with the issue itself
+ //   mode 'story'  current issue has a recent published story: its cover, else its newest
+ //   mode 'issue'  no story in the last FRONT_STALE_HOURS (reason 'stale'), or none in the
+ //                 current issue (reason 'no-current-story'): lead with the issue itself.
+ //                 A display failsafe for a stalled autopilot — never a fake publication.
  //   mode 'none'   registry unavailable: newest story, labelled as latest, not cover
- function selectFrontPage(stories, registry){
+ const FRONT_STALE_HOURS = 72;  // mirrors homepageStaleAfterHours in data/editorial-autopilot.json
+ function storyMoment(s){
+   const d = s.publishedAt || s.date || '';
+   let v = (s.publishAt && String(s.publishAt).slice(0,10) === d) ? String(s.publishAt) : d;
+   if(!v) return 0;
+   if(/^\d{4}-\d{2}-\d{2}$/.test(v)) v += 'T00:00';
+   if(/T\d{2}:\d{2}$/.test(v)) v += ':00';
+   const t = Date.parse(v + '-04:00');
+   return isNaN(t) ? 0 : t;
+ }
+ function selectFrontPage(stories, registry, nowMs){
+   const now = (typeof nowMs === 'number') ? nowMs : Date.now();
    const pub = (stories||[]).filter(s=>s && s.status==='published')
-     .sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+     .sort((a,b)=>storyMoment(b)-storyMoment(a) || (b.date||'').localeCompare(a.date||''));
    const curId = registry && registry.currentIssueId;
    const issue = curId ? ((registry.issues||[]).find(i=>i.issueId===curId && i.status==='current') || null) : null;
    if(!issue){
      return {mode: pub.length ? 'none' : 'empty', issue: null, cover: pub[0] || null,
              thisWeek: [], archive: pub.slice(1, 5)};
    }
+   const newest = pub.length ? storyMoment(pub[0]) : 0;
+   if(!newest || now - newest > FRONT_STALE_HOURS * 3600000){
+     return {mode: 'issue', reason: 'stale', issue: issue, cover: null, thisWeek: [], archive: pub.slice(0, 4)};
+   }
    const current = pub.filter(s=>s.issueId===issue.issueId);
    const cover = current.find(s=>s.coverStory) || current.find(s=>s.featured) || current[0] || null;
    if(!cover){
-     return {mode: 'issue', issue: issue, cover: null, thisWeek: [], archive: pub.slice(0, 4)};
+     return {mode: 'issue', reason: 'no-current-story', issue: issue, cover: null, thisWeek: [], archive: pub.slice(0, 4)};
    }
    const thisWeek = current.filter(s=>s.slug!==cover.slug).slice(0, 4);
    const archive = pub.filter(s=>s.issueId!==issue.issueId).slice(0, 4 - thisWeek.length);
@@ -1604,11 +1621,12 @@ if(frontMount){
     // "Also This Week" only ever heads stories from the current issue; anything
     // older is labelled as the archive it is.
     const stack = (pick.thisWeek.length ? `<div class="stack-head">Also This Week</div>${pick.thisWeek.map(stackItem).join('')}` : '')
-      + (pick.archive.length ? `<div class="stack-head">${pick.mode==='none'?'More Stories':'From the Archive'}</div>${pick.archive.map(stackItem).join('')}` : '');
+      + (pick.archive.length ? `<div class="stack-head">${pick.mode==='story'?'From the Archive':'Recent Stories'}</div>${pick.archive.map(stackItem).join('')}` : '');
 
     let lead;
     if(pick.mode==='issue'){
       // No published story belongs to this issue: lead with the issue itself.
+      // Drawn only from the current issue record: no story is relabelled as new.
       const i = pick.issue;
       lead = `
       <a class="cover-story is-issue-lead" href="this-week.html">
@@ -1617,7 +1635,7 @@ if(frontMount){
           ${sceneImg('ocean-blue-1.svg', '')}
         </div>
         <span class="cover-label">Week of ${esc(fmt(i.weekOf))}</span>
-        <h2 class="cover-headline">${esc(i.title || ('Week of ' + fmt(i.weekOf)))}</h2>
+        <h2 class="cover-headline">This Week at the Delaware Coast</h2>
         ${i.summary?`<p class="cover-dek">${esc(i.summary)}</p>`:''}
         <div class="cover-byline"><span>This week at the Delaware coast &rarr;</span></div>
       </a>`;

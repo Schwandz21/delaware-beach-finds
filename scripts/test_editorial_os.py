@@ -183,7 +183,7 @@ def test_scenarios():
                                       s[old_cover].get('coverStory')))
         check('B: no story lost its published status',
               all(x['status'] == 'published' for x in sb.stories()
-                  if x['slug'] in [y['slug'] for y in before]))
+                  if x['slug'] in [y['slug'] for y in before if y.get('status') == 'published']))
         page = os.path.join(sb.dir, 'stories', 'test-future-cover.html')
         check('B: an article page was generated', os.path.exists(page))
 

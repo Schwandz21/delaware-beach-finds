@@ -1,0 +1,52 @@
+{
+  "_note": "Editorial autopilot policy. Governs story CADENCE (stories publish continuously; weekly issues only organise them) and which researched stories may be approved without a human. Read by scripts/editorial_autopilot.py, scripts/ingest_story_package.py and scripts/runway_guard.py. The hourly publisher (scripts/publish_due.py) is unchanged: it still publishes only status=scheduled + approvedAt + due.",
+  "enabled": true,
+  "targetGapHours": 48,
+  "maximumGapHours": 72,
+  "minimumGapHours": 12,
+  "minimumScheduledStories": 5,
+  "minimumRunwayDays": 10,
+  "researchLookaheadDays": 21,
+  "timezone": "America/New_York",
+  "defaultPublishTime": "06:00",
+  "homepageStaleAfterHours": 72,
+  "dailySlotsMaxAgeDays": 7,
+  "autoApproval": {
+    "_note": "A story may be approved by autopilot only if it is in an auto-approvable risk class AND meets every sourcing rule. Anything else is ingested as status=held with a heldReason, and never publishes until a human approves it.",
+    "autoApprovableRiskClasses": {
+      "event-field-guide": "Sourced weekend/event field guides.",
+      "nature-explainer": "Nature and wildlife explainers.",
+      "seasonal-observation": "Seasonal coastal observations based on authoritative sources.",
+      "practical-guide": "Practical local guides based on current first-party information.",
+      "history-explainer": "Delaware history explainers sourced to institutional or primary sources.",
+      "event-preview": "Event preview and context stories.",
+      "field-note": "Short Field Notes based wholly on sourced facts."
+    },
+    "heldRiskClasses": {
+      "allegation": "Allegations about identifiable people or businesses.",
+      "legal": "Legal accusations.",
+      "crime-investigative": "Crime or investigative claims.",
+      "medical-health": "Medical or health advice.",
+      "political-advocacy": "Political advocacy.",
+      "interview": "Interviews (none may be invented).",
+      "first-person": "First-person visit claims.",
+      "product-endorsement": "Product endorsements presented as editorial fact.",
+      "uncertain-logistics": "Uncertain access, parking, fees or hours.",
+      "community-submission": "Community submissions (require real permission).",
+      "sponsored": "Sponsored material.",
+      "single-weak-source": "Key premise depends on a single weak or unverified source."
+    },
+    "minimumSources": 2,
+    "minimumAuthoritativeSources": 1,
+    "authoritativeSourceTypes": ["first-party", "government", "institutional"],
+    "maximumVerificationAgeDays": 7,
+    "minimumBodyWords": 300,
+    "forbiddenPatterns": {
+      "_note": "Case-insensitive regular expressions. A match in an auto-approval-eligible story's prose rejects the package: these are the shapes invented visits, interviews and quotes take.",
+      "first-person-visit": "\\b(we|i) (visited|went|stopped by|drove|walked|attended|tried|tasted|spoke|talked|asked|met)\\b",
+      "dbf-visit": "\\b(on our visit|when we were there|our reporter|this reporter|we were there)\\b",
+      "interview": "\\b(told (delaware beach finds|dbf|us)|in an interview|said in an interview|speaking to (us|dbf))\\b",
+      "direct-quote": "[\"\\u201c][^\"\\u201d]{12,}[\"\\u201d]\\s*(,\\s*)?(said|says|added|explained|noted)\\b"
+    }
+  }
+}

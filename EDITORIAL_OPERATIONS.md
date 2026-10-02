@@ -158,6 +158,43 @@ silently dropped, and never republished twice.
 
 ---
 
+## The editorial autopilot (story cadence)
+
+Stories publish continuously. Weekly issues only organise them. The service
+level, set in `data/editorial-autopilot.json`:
+
+- a new story about every **48 hours**, never a planned gap over **72 hours**;
+- a runway of at least **5** scheduled stories and **10 days**.
+
+How it runs:
+
+1. A scheduled research task follows `automation/CLAUDE_EDITORIAL_AUTOPILOT_PROMPT.md`.
+   When the runway is short, it researches and writes complete, sourced
+   stories into `automation/story-packages/` (schema:
+   `automation/STORY_PACKAGE_SCHEMA.md`).
+2. `python3 scripts/ingest_story_package.py <package>` validates the
+   package. Low-risk stories that meet every sourcing rule are
+   **approved and scheduled** automatically (`approvedAt` + explicit
+   `publishAt`). Anything else is **held** with a reason and never
+   publishes until you approve it.
+3. The hourly publisher, unchanged, publishes them when they're due.
+4. `.github/workflows/editorial-runway-guard.yml` checks every 6 hours.
+   When anything is wrong, it keeps one issue open, titled *DBF editorial
+   autopilot: attention required*, and closes it when the runway is healthy
+   again.
+5. If no story has published for 72 hours, the homepage stops leading with
+   a story. It shows a "This Week at the Delaware Coast" package built from
+   the current issue, and never relabels an old story as new.
+
+```bash
+python3 scripts/editorial_autopilot.py --status    # the runway
+python3 scripts/editorial_autopilot.py --prepare   # slots to fill
+python3 scripts/runway_guard.py                    # the full failsafe check
+```
+
+To approve a held story: set `status` to `approved` with an `approvedAt`, then
+run `python3 scripts/editorial_autopilot.py --schedule` to slot it.
+
 ## How the event schedule works
 
 Events are deliberately **not** on the story lifecycle. They move faster and are

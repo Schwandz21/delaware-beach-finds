@@ -99,6 +99,18 @@ else
 fi
 
 echo ""
+echo "=== Editorial autopilot ==="
+python3 scripts/test_editorial_autopilot.py >/tmp/dbf-autopilot-out 2>&1
+if [ $? -eq 0 ]; then
+  echo "  ok  - runway SLA, package ingestion, failsafe and publisher hand-off"
+  PASS=$((PASS+1))
+else
+  echo "FAIL  - editorial autopilot regression test failed"
+  sed 's/^/        /' /tmp/dbf-autopilot-out
+  FAIL=$((FAIL+1))
+fi
+
+echo ""
 echo "=== Photo location attribution ==="
 python3 scripts/test_location_attribution.py >/tmp/dbf-loc-out 2>&1
 if [ $? -eq 0 ]; then

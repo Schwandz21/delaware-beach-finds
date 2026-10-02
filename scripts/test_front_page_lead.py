@@ -45,13 +45,17 @@ if not m:
 SELECTOR = m.group(0)
 
 
-def select(stories, registry):
-    """Run the real selectFrontPage from site.js in Node."""
+# Fixtures are judged at a fixed moment so the suite never depends on the clock.
+FIXTURE_NOW = "2026-10-03T12:00:00-04:00"
+
+
+def select(stories, registry, now=FIXTURE_NOW):
+    """Run the real selectFrontPage from site.js in Node, at `now` (None = real clock)."""
     script = SELECTOR + "\nconst a=JSON.parse(require('fs').readFileSync(0,'utf8'));" \
-        "const r=selectFrontPage(a.stories,a.registry);" \
-        "console.log(JSON.stringify({mode:r.mode,issue:r.issue&&r.issue.issueId," \
+        "const r=selectFrontPage(a.stories,a.registry,a.now?Date.parse(a.now):undefined);" \
+        "console.log(JSON.stringify({mode:r.mode,reason:r.reason||null,issue:r.issue&&r.issue.issueId," \
         "cover:r.cover&&r.cover.slug,thisWeek:r.thisWeek.map(s=>s.slug),archive:r.archive.map(s=>s.slug)}));"
-    out = subprocess.run(["node", "-e", script], input=json.dumps({"stories": stories, "registry": registry}),
+    out = subprocess.run(["node", "-e", script], input=json.dumps({"stories": stories, "registry": registry, "now": now}),
                          capture_output=True, text=True, check=True)
     return json.loads(out.stdout)
 
@@ -88,11 +92,28 @@ check("no current stories -> old cover is not the lead", r["cover"] is None, r)
 check("no current stories -> nothing is presented as 'this week'", r["thisWeek"] == [], r)
 
 # 4. An archived issue's featured story can never become the current cover.
-r = select([OLD_COVER, story("cur-plain", "W40", "2026-09-30")], REG)
+r = select([OLD_COVER, story("cur-plain", "W40", "2026-10-01")], REG)
 check("archived issue's featured story never becomes the current cover",
       r["cover"] == "cur-plain" and "old-cover" not in r["thisWeek"], r)
 r = select([story("newer-but-old-issue", "W37", "2026-10-05", featured=True)], REG)
 check("a featured story from another issue is not the cover even when newest", r["mode"] == "issue", r)
+
+# 6. Display failsafe: no new story for more than 72h -> "This Week" issue lead,
+#    even though the current issue's cover is still flagged. Never a stale cover.
+fresh = [OLD_COVER, story("new-cover", "W40", "2026-09-28", featured=True, coverStory=True,
+                           publishAt="2026-09-28T06:00", publishedAt="2026-09-28")]
+r = select(fresh, REG, now="2026-09-30T06:00:00-04:00")
+check("story 48h old: the current cover still leads", r["mode"] == "story" and r["cover"] == "new-cover", r)
+r = select(fresh, REG, now="2026-10-01T07:00:00-04:00")
+check("autopilot stalled >72h: homepage switches to the This Week issue lead",
+      r["mode"] == "issue" and r["reason"] == "stale" and r["cover"] is None, r)
+check("stalled: older stories stay below as recent reading, not as 'this week'",
+      r["thisWeek"] == [] and "new-cover" in r["archive"], r)
+check("stalled lead is titled This Week at the Delaware Coast",
+      "This Week at the Delaware Coast" in SITE_JS)
+policy = json.load(open(os.path.join(ROOT, "data", "editorial-autopilot.json"), encoding="utf-8"))
+check("site.js stale threshold matches the autopilot policy",
+      f"FRONT_STALE_HOURS = {policy['homepageStaleAfterHours']};" in SITE_JS)
 
 # 5. Registry unavailable -> newest story, labelled latest rather than cover.
 r = select([OLD_COVER, story("cur-newest", "W40", "2026-10-02")], None)
@@ -125,12 +146,15 @@ check("freshness report is clean for a current, in-issue cover", w == [] and lea
 # The real data.
 stories = json.load(open(os.path.join(ROOT, "data", "stories.json"), encoding="utf-8"))
 registry = json.load(open(os.path.join(ROOT, "data", "issues", "index.json"), encoding="utf-8"))
-r = select(stories, registry)
-issue_doc = json.load(open(os.path.join(ROOT, "data", "issues", registry["currentIssueId"] + ".json"), encoding="utf-8"))
-check("live data: lead is the current issue's cover",
-      r["mode"] == "story" and r["cover"] == issue_doc.get("coverStory"), (r, issue_doc.get("coverStory")))
-w, lead = check_current_cover(stories, registry)
-check("live data: freshness report finds no cover mismatch", w == [], w)
+# These hold whatever the date: the hourly publisher runs this suite before it
+# commits, so a live check here must be an invariant the publisher maintains,
+# never a freshness judgement (that belongs to scripts/runway_guard.py).
+r = select(stories, registry, now=None)
+by_slug = {s["slug"]: s for s in stories}
+check("live data: the lead is never a story from another issue",
+      r["mode"] != "story" or by_slug[r["cover"]].get("issueId") == registry["currentIssueId"], r)
+check("live data: 'Also This Week' holds only current-issue stories",
+      all(by_slug[x].get("issueId") == registry["currentIssueId"] for x in r["thisWeek"]), r)
 covers = [s["slug"] for s in stories if s.get("status") == "published" and (s.get("coverStory") or s.get("featured"))]
 check("live data: exactly one published story carries cover flags", len(covers) == 1, covers)
 
