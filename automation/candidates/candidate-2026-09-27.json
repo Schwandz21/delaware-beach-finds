@@ -35,7 +35,7 @@
   {
    "id": "2026w40-coast-day-50th",
    "title": "Coast Day — 50th Anniversary",
-   "description": "The University of Delaware's coastal, marine, and environmental science open house marks its 50th anniversary at the Hugh R. Sharp Campus, with hands-on activities, live demonstrations, and lab and ship tours. A fifth-grade essay contest on 'Habitats and Ecosystems of Delaware' accepts entries through Oct. 9.",
+   "description": "The University of Delaware's free coastal, marine and environmental science open house marks its 50th year at the Hugh R. Sharp Campus, with hands-on activities, live demonstrations, and lab and ship tours. A fifth-grade essay contest on 'Habitats and Ecosystems of Delaware' accepts entries through Oct. 9.",
    "town": "Lewes",
    "venue": "University of Delaware Hugh R. Sharp Campus, 700 Pilottown Rd.",
    "category": "science-education",
@@ -43,15 +43,15 @@
    "endDate": "2026-10-04",
    "startTime": "10:00",
    "endTime": "15:00",
-   "displayDate": "Sunday, October 4",
-   "sourceUrl": "https://www.udel.edu/academics/colleges/ceoe/about/coastday/",
+   "displayDate": "Sunday, October 4, 10 a.m.–3 p.m.",
+   "sourceUrl": "https://events.udel.edu/event/coast-day-2026",
    "sourceOrg": "University of Delaware College of Earth, Ocean & Environment",
-   "verifiedAt": "2026-09-27",
+   "verifiedAt": "2026-10-02",
    "status": "confirmed",
    "featured": true,
-   "editorialNote": "The 50th anniversary is this issue's lead. The Lewes Chamber calendar lists 10 a.m.–3 p.m.; UD's page did not print hours, so confirm before publishing times.",
+   "editorialNote": "Free. Date, 10 a.m.–3 p.m. hours and 50th year confirmed against University of Delaware sources 2026-10-02.",
    "scene": "science-education",
-   "relatedUrl": "https://leweschamber.com/boast-the-coast-event-on-october-3-2026-kicking-off-lewes-maritime-weekend/",
+   "relatedUrl": "https://www.udel.edu/udaily/2026/september/coast-day-2026-events-lewes-sharp-campus/",
    "archiveEligible": true,
    "access_level": "public"
   },
@@ -311,10 +311,7 @@
    "access_level": "public"
   }
  ],
- "expireEventIds": [
-  "cape-henlopen-point-bayside-reopens-2026",
-  "evt-lewes-farmers-market-saturday-2026"
- ],
+ "expireEventIds": [],
  "dailySlots": [
   {
    "date": "2026-10-02",
@@ -326,12 +323,21 @@
    "eventId": "2026w40-lewes-sidewalk-sale"
   },
   {
+   "date": "2026-10-03",
+   "day": "Saturday",
+   "kind": "Weekend anchor",
+   "headline": "Boast the Coast opens Lewes Maritime Weekend",
+   "note": "Lewes Maritime Weekend starts today at 1812 Park and the City Dock on the canalfront, 11 a.m. to 2 p.m. It's free: Freedom Boat Club canal tours, live music from Jgar, kids' entertainment and free admission to the Cannonball House. A one-hour narrated history cruise with Cape Water Tours is the one paid extra.",
+   "ref": "https://leweschamber.com/boast-the-coast-event-on-october-3-2026-kicking-off-lewes-maritime-weekend/",
+   "eventId": "2026w40-boast-the-coast"
+  },
+  {
    "date": "2026-10-04",
    "day": "Sunday",
    "kind": "field-guide insight",
    "headline": "Fifty years of Coast Day",
-   "note": "Coast Day turns 50 this year. The University of Delaware opens its Lewes campus for hands-on marine science, live demonstrations, and lab and ship tours. Fifth graders can still enter the essay contest on Delaware's habitats and ecosystems through Oct. 9.",
-   "ref": "https://www.udel.edu/academics/colleges/ceoe/about/coastday/",
+   "note": "Coast Day turns 50 today. The University of Delaware opens its Hugh R. Sharp Campus in Lewes from 10 a.m. to 3 p.m., free, for hands-on marine science, live demonstrations, and lab and ship tours. Fifth graders can still enter the essay contest on Delaware's habitats and ecosystems through Oct. 9.",
+   "ref": "https://events.udel.edu/event/coast-day-2026",
    "eventId": "2026w40-coast-day-50th"
   }
  ],
@@ -405,7 +411,9 @@
   "https://rbfarmersmarket.com/",
   "https://history.delaware.gov/event/hms-debraak-tour-5/",
   "https://news.delaware.gov/2026/07/20/dnrec-seeks-volunteers-for-2026-delaware-coastal-cleanup-on-saturday-sept-19/",
-  "https://www.nanticokeindians.org/event/48th-annual-nanticoke-indian-powwow/2026-09-13/"
+  "https://www.nanticokeindians.org/event/48th-annual-nanticoke-indian-powwow/2026-09-13/",
+  "https://events.udel.edu/event/coast-day-2026",
+  "https://www.udel.edu/udaily/2026/september/coast-day-2026-events-lewes-sharp-campus/"
  ],
  "heldSources": [
   "https://www.delawonder.com/places/tower-7-the-observatory/",
@@ -413,7 +421,6 @@
   "https://www.officeholidays.com/holidays/usa/delaware/return-day-delaware"
  ],
  "validationWarnings": [
-  "Coast Day hours: the Lewes Chamber calendar lists 10 a.m.–3 p.m.; UD's own page did not print hours this run. Confirm before publishing times.",
   "86 Hook & Ladder BrewFest / Coastal Oktoberfest: ticket pricing and exact organizing entity ('86 Hook & Ladder') were not clarified by the source — likely tied to a local fire company fundraiser, but this should be confirmed rather than assumed.",
   "Sea Witch Festival: only the Oct. 24 parade date and the Oct. 23 nonprofit Community Fair were confirmed; no parade time or other 2026 programming was verified.",
   "Return Day's exact 2026 date (Thursday, Nov. 5) is inferred from the fixed 'Thursday after a general Election Day in an even year' pattern, not from a source that had yet posted a confirmed 2026 date — flagged as tentative in comingSoonUpdates rather than treated as a full event.",
@@ -432,6 +439,8 @@
   "Conflicts kept at the existing record, flagged for review: BrewFest/Oktoberfest end 17:30 (candidate) vs 16:00 (city calendar); Harvest Fair end 16:00 vs 15:00 (Lewes Historical Society); Apple-Scrapple start Oct. 9 vs Oct. 8 (W39-verified record).",
   "dailySlots: moved sourceUrl into ref (site.js renders ref as the source link); the event id is kept as eventId.",
   "Applied editorial holds listed in editorialHolds.",
+  "Coast Day hours (10 a.m.-3 p.m.), free admission and 50th year confirmed against University of Delaware sources 2026-10-02; the hours warning is resolved and removed.",
+  "Oct. 3 slot: Boast the Coast weekend anchor, written from the verified candidate event (the Tower 7 Hidden Gem slot stays held).",
   "Published late (2026-10-02): dailySlots dated before publication (Sept. 28 - Oct. 1) dropped; expireEventIds computed as of the publication date."
  ]
 }

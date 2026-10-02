@@ -1653,6 +1653,29 @@ if(folioMount){
   }).catch(()=>{ gateHide(folioMount); });
 }
 
+// Current-week labels ("September 28–October 4 · ..."). The week comes from the
+// issue registry, never from markup: a date typed into the HTML went stale and
+// shipped "September 7–13" as current for most of a month. The raw markup
+// carries only the undated tagline; the registry adds the week in front of it.
+const weekLines = document.querySelectorAll('[data-current-week-line]');
+if(weekLines.length){
+  fetchJson('issues/index.json').then(idx=>{
+    const cur = (idx.issues||[]).find(i => i.issueId === idx.currentIssueId && i.status === 'current');
+    if(!cur || !/^\d{4}-\d{2}-\d{2}$/.test(cur.weekOf||'')) return;
+    const start = new Date(cur.weekOf+'T12:00:00Z');
+    const end = new Date(start.getTime() + 6*86400000);
+    const fmt = o => new Intl.DateTimeFormat('en-US', Object.assign({timeZone:'UTC'}, o));
+    const sm = fmt({month:'long'}).format(start), em = fmt({month:'long'}).format(end);
+    const sd = fmt({day:'numeric'}).format(start), ed = fmt({day:'numeric'}).format(end);
+    const range = sm === em ? `${sm} ${sd}\u2013${ed}` : `${sm} ${sd}\u2013${em} ${ed}`;
+    weekLines.forEach(el=>{
+      const tagline = el.getAttribute('data-tagline') || el.textContent.trim();
+      el.setAttribute('data-tagline', tagline);
+      el.textContent = `${range} \u00b7 ${tagline}`;
+    });
+  }).catch(()=>{});
+}
+
 // Worth Knowing Today — the CURRENT-WEEK editorial surface.
 // Reads data/daily-slots.json only. It never touches data/issues/*.json, so
 // publishing or superseding a weekly issue can never disturb what renders here.

@@ -81,6 +81,13 @@ check("mirroring tolerates an entry with no supersededAt",
       legacy == {"status": "archived", "supersededBy": "2026-W37"}, legacy)
 full = mirror_status({"status": "archived", "supersededBy": "X", "supersededAt": "9999-01-02"}, {})
 check("mirroring copies supersededAt when present", full.get("supersededAt") == "9999-01-02", full)
+pub = mirror_status({"status": "current", "publishedAt": "9999-01-02"}, {"status": "draft"})
+check("mirroring copies publishedAt onto the issue file", pub.get("publishedAt") == "9999-01-02", pub)
+for entry in INDEX["issues"]:
+    if entry.get("publishedAt"):
+        doc = json.load(open(os.path.join(ROOT, "data", entry["file"])))
+        check(f"{entry['issueId']} file publishedAt matches registry",
+              doc.get("publishedAt") == entry["publishedAt"], doc.get("publishedAt"))
 
 # --- refusals ---
 def refuses(desc, index, issue_id):

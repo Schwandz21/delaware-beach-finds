@@ -14,12 +14,21 @@
       "eventId": "2026w40-lewes-sidewalk-sale"
     },
     {
+      "date": "2026-10-03",
+      "day": "Saturday",
+      "kind": "Weekend anchor",
+      "headline": "Boast the Coast opens Lewes Maritime Weekend",
+      "note": "Lewes Maritime Weekend starts today at 1812 Park and the City Dock on the canalfront, 11 a.m. to 2 p.m. It's free: Freedom Boat Club canal tours, live music from Jgar, kids' entertainment and free admission to the Cannonball House. A one-hour narrated history cruise with Cape Water Tours is the one paid extra.",
+      "ref": "https://leweschamber.com/boast-the-coast-event-on-october-3-2026-kicking-off-lewes-maritime-weekend/",
+      "eventId": "2026w40-boast-the-coast"
+    },
+    {
       "date": "2026-10-04",
       "day": "Sunday",
       "kind": "field-guide insight",
       "headline": "Fifty years of Coast Day",
-      "note": "Coast Day turns 50 this year. The University of Delaware opens its Lewes campus for hands-on marine science, live demonstrations, and lab and ship tours. Fifth graders can still enter the essay contest on Delaware's habitats and ecosystems through Oct. 9.",
-      "ref": "https://www.udel.edu/academics/colleges/ceoe/about/coastday/",
+      "note": "Coast Day turns 50 today. The University of Delaware opens its Hugh R. Sharp Campus in Lewes from 10 a.m. to 3 p.m., free, for hands-on marine science, live demonstrations, and lab and ship tours. Fifth graders can still enter the essay contest on Delaware's habitats and ecosystems through Oct. 9.",
+      "ref": "https://events.udel.edu/event/coast-day-2026",
       "eventId": "2026w40-coast-day-50th"
     }
   ]

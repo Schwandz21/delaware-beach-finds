@@ -60,6 +60,8 @@ def promote(index, issue_id, today=None):
 def mirror_status(entry, doc):
     """Copy a registry entry's lifecycle fields onto its issue file."""
     doc["status"] = entry["status"]
+    if entry.get("publishedAt"):
+        doc["publishedAt"] = entry["publishedAt"]
     if entry.get("supersededBy"):
         doc["supersededBy"] = entry["supersededBy"]
         # Older registry entries (e.g. 2026-W33) predate supersededAt.
