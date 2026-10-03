@@ -78,7 +78,7 @@ jobs:
           git config user.name  "dbf-publisher[bot]"
           git config user.email "dbf-publisher[bot]@users.noreply.github.com"
           # Deliberate staging: only the surfaces publication is allowed to touch.
-          git add data/stories.json data/issues data/content-index.json stories sitemap.xml
+          git add data/stories.json data/issues data/content-index.json data/story-archive.json stories sitemap.xml
           if [ -z "$(git diff --cached --name-only)" ]; then
             echo "No publication surfaces changed — nothing to commit."
             exit 0

@@ -30,6 +30,10 @@ def build():
     guides = load("guides.json") or []
     towns = load("towns.json") or []
 
+    # A story in the archive ledger is archived, whatever its age; everything
+    # else published belongs to the current issue.
+    archived = {e["slug"] for e in (load("story-archive.json") or {}).get("stories", [])}
+
     index = []
 
     for s in stories:
@@ -48,7 +52,7 @@ def build():
             "tags": [t for t in [s.get("category"), s.get("series")] if t],
             "publishedDate": s.get("date"),
             "updatedDate": s.get("date"),
-            "status": "current",
+            "status": "archived" if s["slug"] in archived else "current",
             "access_level": s.get("access_level", "public"),
             "scene": s.get("scene"),
         })

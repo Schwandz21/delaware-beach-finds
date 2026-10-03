@@ -111,6 +111,18 @@ else
 fi
 
 echo ""
+echo "=== Story archive ==="
+python3 scripts/test_story_archive.py >/tmp/dbf-archive-out 2>&1
+if [ $? -eq 0 ]; then
+  echo "  ok  - archive ledger preserved, checksums pinned, export verified, premium gate holds"
+  PASS=$((PASS+1))
+else
+  echo "FAIL  - story archive regression test failed"
+  sed 's/^/        /' /tmp/dbf-archive-out
+  FAIL=$((FAIL+1))
+fi
+
+echo ""
 echo "=== Photo location attribution ==="
 python3 scripts/test_location_attribution.py >/tmp/dbf-loc-out 2>&1
 if [ $? -eq 0 ]; then

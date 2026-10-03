@@ -164,11 +164,12 @@ Stories publish continuously. Weekly issues only organise them. The service
 level, set in `data/editorial-autopilot.json`:
 
 - a new story about every **48 hours**, never a planned gap over **72 hours**;
-- a runway of at least **5** scheduled stories and **10 days**.
+- a runway of at least **15** scheduled stories and **30 days**, researched up to **45 days** ahead.
 
 How it runs:
 
-1. A scheduled research task follows `automation/CLAUDE_EDITORIAL_AUTOPILOT_PROMPT.md`.
+1. A daily (about 04:00 America/New_York) repository-connected research task
+   follows `automation/CLAUDE_EDITORIAL_AUTOPILOT_PROMPT.md`.
    When the runway is short, it researches and writes complete, sourced
    stories into `automation/story-packages/` (schema:
    `automation/STORY_PACKAGE_SCHEMA.md`).
@@ -194,6 +195,31 @@ python3 scripts/runway_guard.py                    # the full failsafe check
 
 To approve a held story: set `status` to `approved` with an `approvedAt`, then
 run `python3 scripts/editorial_autopilot.py --schedule` to slot it.
+
+## The story archive (back catalog)
+
+Every published story older than the current issue is recorded in
+`data/story-archive.json`, an append-only ledger of metadata. It holds no
+prose. Each entry records the original date, the issue (null for the Aug. 19,
+2026 stories, which predate issues; that is never back-filled), the prose and
+page paths, and a SHA-256 of the canonical prose.
+
+- `python3 scripts/build_story_archive.py` updates the ledger. The publisher
+  runs it on every publication, so stories join the archive when their issue
+  rolls over. `--check` verifies without writing.
+- Entries are never removed. Dates and issues are frozen. To change archived
+  prose, record why:
+  `python3 scripts/build_story_archive.py --revise SLUG --reason "..."`.
+  Otherwise the tests fail.
+- `python3 scripts/export_story_archive.py` writes a private, checksummed owner
+  copy to `private-exports/dbf-story-archive-YYYYMMDD.zip`. That folder is
+  git-ignored. **Never commit an export.**
+- `archive.html` lists the ledger with original dates. This-week stories are
+  marked separately.
+
+Premium access is **disabled** (`data/premium-archive.json`). See
+`PREMIUM_ARCHIVE.md` for what it takes to enable it. It cannot be switched on
+while archived full text is still public.
 
 ## How the event schedule works
 

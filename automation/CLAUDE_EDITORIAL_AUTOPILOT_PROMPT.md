@@ -8,7 +8,10 @@ task at this file. It is the only automated process that writes new stories.
 
 * A new story about every **48 hours**.
 * Never a planned gap longer than **72 hours**.
-* Runway: at least **5** future scheduled stories and **10 days** of coverage.
+* Runway: at least **15** future scheduled stories and **30 days** of coverage,
+  so DBF keeps publishing through a research outage.
+* Research looks **45 days** ahead.
+* This run is scheduled **daily at about 04:00 America/New_York**.
 
 Weekly issues organise stories; they are not the cadence. The hourly publisher
 (`.github/workflows/publish-scheduled.yml` → `scripts/publish_due.py`)
@@ -27,8 +30,8 @@ never set `status: published`, never edit `publishedAt`, and never run
    python3 scripts/editorial_autopilot.py --status
    python3 scripts/editorial_autopilot.py --prepare
    ```
-3. **If the runway is healthy**, meaning at least 5 scheduled stories, at
-   least 10 days of runway and no planned gap over 72h, do **not** create
+3. **If the runway is healthy**, meaning at least 15 scheduled stories, at
+   least 30 days of runway and no planned gap over 72h, do **not** create
    filler. You may improve research notes for future topics. Then stop.
 4. **Otherwise**, research enough high-quality stories to restore the
    runway. `--prepare` lists the slots needed (≈48h apart, Mondays preferred
@@ -90,7 +93,7 @@ never set `status: published`, never edit `publishedAt`, and never run
     git pull --rebase origin main && bash scripts/run_tests.sh && git push origin HEAD:main
     ```
     Do not force-push. If `main` moved, rebase, re-run the checks, push again.
-12. **Report** the scheduled count, the next ten days of `publishAt` and
+12. **Report** the scheduled count, every future `publishAt` and
     headlines, the largest planned gap, the runway end, and every held story
     with its reason.
 

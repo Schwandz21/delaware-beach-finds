@@ -19,3 +19,6 @@ Instagram reels/
 
 # Local reference docs
 *.docx
+
+# Private owner archive exports (scripts/export_story_archive.py). NEVER commit.
+private-exports/

@@ -15,7 +15,7 @@ wait for a human.
 
 Policy lives in `data/editorial-autopilot.json`. Cadence target: a new story
 every **48 hours**. Hard maximum: **72 hours** between stories. Runway: at
-least **5** scheduled stories and **10 days** of coverage.
+least **15** scheduled stories and **30 days** of coverage.
 
 ## File shape
 

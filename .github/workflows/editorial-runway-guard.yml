@@ -46,10 +46,17 @@ jobs:
           d = json.load(open("runway-guard.json"))
           r = d["runway"]
           print("healthy=%s" % ("true" if d["healthy"] else "false"))
-          lines = ["- " + p for p in d["problems"]] or ["- (none)"]
-          lines += ["", "**Runway:** %d scheduled, ends %s (%.1f days), largest planned gap %sh."
-                    % (r["scheduledCount"], r["runwayEnd"], r["runwayDays"], r["maxGapHours"])]
-          lines += ["**Homepage lead:** %s" % json.dumps(d["lead"])]
+          pol = r["policy"]
+          nxt, last = r.get("nextScheduled") or {}, r.get("lastPublished") or {}
+          lines = ["| Measure | Value | Requirement |", "| --- | --- | --- |",
+                   "| Scheduled future stories | %d | at least %d |" % (r["scheduledCount"], pol["minimumScheduledStories"]),
+                   "| Next publication | %s (%s, in %sh) | within %dh |" % (nxt.get("at", "none"), nxt.get("slug", "-"), r.get("hoursUntilNext"), pol["maximumGapHours"]),
+                   "| Largest planned gap | %sh | at most %dh (target %dh) |" % (r["maxGapHours"], pol["maximumGapHours"], pol["targetGapHours"]),
+                   "| Runway end | %s (%.1f days) | at least %d days |" % (r["runwayEnd"], r["runwayDays"] or 0, pol["minimumRunwayDays"]),
+                   "| Latest published | %s (%s, %sh ago) | under %dh old |" % (last.get("at", "none"), last.get("slug", "-"), r.get("hoursSinceLastPublished"), pol["maximumGapHours"]),
+                   "", "**Failures:**"]
+          lines += ["- " + p for p in d["problems"]] or ["- (none)"]
+          lines += ["", "**Homepage lead:** %s" % json.dumps(d["lead"])]
           if r["scheduled"]:
               lines += ["", "| Publishes | Story |", "| --- | --- |"]
               lines += ["| %s | %s |" % (s["at"], s["headline"]) for s in r["scheduled"]]

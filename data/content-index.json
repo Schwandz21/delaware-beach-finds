@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T20:49:15Z",
+  "generatedAt": "2026-10-03T01:13:31Z",
   "recordCount": 39,
   "records": [
     {
@@ -15,7 +15,7 @@
       ],
       "publishedDate": "2026-07-26",
       "updatedDate": "2026-07-26",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "bay-morning-1.svg"
     },
@@ -32,7 +32,7 @@
       ],
       "publishedDate": "2026-07-26",
       "updatedDate": "2026-07-26",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "dune-fence-sunset-2.jpg"
     },
@@ -49,7 +49,7 @@
       ],
       "publishedDate": "2026-07-26",
       "updatedDate": "2026-07-26",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "delaware-marsh-channel-sunset.jpg"
     },
@@ -67,7 +67,7 @@
       ],
       "publishedDate": "2026-07-25",
       "updatedDate": "2026-07-25",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "field-tower-delaware-seashore-20260831.jpg"
     },
@@ -85,7 +85,7 @@
       ],
       "publishedDate": "2026-07-25",
       "updatedDate": "2026-07-25",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "delaware-waterfront-sunset.jpg"
     },
@@ -103,7 +103,7 @@
       ],
       "publishedDate": "2026-07-25",
       "updatedDate": "2026-07-25",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "delaware-bay-sunset-calm-water.jpg"
     },
@@ -120,7 +120,7 @@
       ],
       "publishedDate": "2026-07-15",
       "updatedDate": "2026-07-15",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "indian-river-inlet-bridge-beach-evening.jpg"
     },
@@ -137,7 +137,7 @@
       ],
       "publishedDate": "2026-07-08",
       "updatedDate": "2026-07-08",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "field-rehoboth-bandstand-wide-20260830.jpg"
     },
@@ -154,7 +154,7 @@
       ],
       "publishedDate": "2026-06-30",
       "updatedDate": "2026-06-30",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "field-bethany-chief-little-owl-context-20260831.jpg"
     },
@@ -171,7 +171,7 @@
       ],
       "publishedDate": "2026-06-18",
       "updatedDate": "2026-06-18",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "delaware-beach-dune-fence-summer.jpg"
     },
@@ -188,7 +188,7 @@
       ],
       "publishedDate": "2026-06-05",
       "updatedDate": "2026-06-05",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "atlantic-surf-close.jpg"
     },
@@ -206,7 +206,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "coastal-sunset-aerial-1.jpg"
     },
@@ -224,7 +224,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "lewes-street-under-trees.jpg"
     },
@@ -242,7 +242,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "marsh-dawn-1.svg"
     },
@@ -259,7 +259,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "lewes-canal-waterfront.jpg"
     },
@@ -276,7 +276,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "moonlight-over-the-water.jpg"
     },
@@ -293,7 +293,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "marsh-ghost-forest-dusk.jpg"
     },
@@ -310,7 +310,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "delaware-blue-crabs.jpg"
     },
@@ -327,7 +327,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "night-holiday-1.svg"
     },
@@ -344,7 +344,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "great-blue-heron-standing.jpg"
     },
@@ -361,7 +361,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "great-blue-heron-marsh-flight.jpg"
     },
@@ -379,7 +379,7 @@
       ],
       "publishedDate": "2026-08-19",
       "updatedDate": "2026-08-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "field-fort-miles-artillery-20260831.jpg"
     },
@@ -396,7 +396,7 @@
       ],
       "publishedDate": "2026-09-07",
       "updatedDate": "2026-09-07",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "atlantic-surf-close.jpg"
     },

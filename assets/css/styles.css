@@ -2111,3 +2111,4 @@ html.js-reveal .reveal{
   .edition-plate{padding-top:12px;gap:4px}
   .edition-line{font-size:1rem}
 }
+.story-archive-row.is-current{background:var(--paper-deep);border-color:var(--navy)}

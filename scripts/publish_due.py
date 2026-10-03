@@ -19,7 +19,8 @@ What one run does:
          unpublishing it (publication status != homepage prominence)
   5. create/refresh the issue record for that week and roll the issue index
   6. re-render article pages
-  7. rebuild the content index (archive + search)
+  7. add stories that left the current issue to data/story-archive.json
+  8. rebuild the content index (archive + search)
 
 Idempotent. A second run finds nothing due and changes nothing.
 
@@ -274,6 +275,12 @@ def run(at=None, dry_run=False, only_slug=None, force_now=False):
 
     render_story.render_all(quiet=True)
     log('  article pages rendered')
+
+    # Stories that just left the current issue join the immutable archive
+    # ledger before the index is rebuilt, so the index labels them archived.
+    subprocess.run([sys.executable, os.path.join(REPO, 'scripts', 'build_story_archive.py')],
+                   check=True, capture_output=True)
+    log('  story archive ledger updated')
 
     subprocess.run([sys.executable, os.path.join(REPO, 'scripts', 'build_content_index.py')],
                    check=True, capture_output=True)

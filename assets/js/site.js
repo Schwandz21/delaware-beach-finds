@@ -1836,6 +1836,84 @@ if(issuesMount){
   }).catch(()=>{ gateHide(issuesMount); });
 }
 
+// <story-archive-view>
+// Story Archive — built from data/story-archive.json, the immutable ledger.
+// Current-issue stories and archived stories are kept visibly apart: a story in
+// the ledger is never labelled current, and a published story outside the
+// current issue is always shown as archive even before the ledger catches up.
+function buildStoryArchiveView(ledger, stories, registry){
+  const current = (registry && registry.currentIssueId) || null;
+  const entries = ((ledger && ledger.stories) || []).slice();
+  const inLedger = new Set(entries.map(e=>e.slug));
+  const pub = (stories || []).filter(s=>s && s.status==='published');
+  const toItem = (s, state)=>({
+    slug: s.slug, headline: s.headline || s.slug, date: (s.date || s.publishedAt || '').slice(0,10),
+    issueId: s.issueId === undefined ? null : s.issueId, category: s.category || '',
+    url: 'stories/' + s.slug + '.html', state: state
+  });
+  const currentItems = pub.filter(s=>current && s.issueId===current && !inLedger.has(s.slug))
+    .map(s=>toItem(s, 'current'));
+  const archiveItems = entries.map(e=>toItem(e, 'archived'))
+    .concat(pub.filter(s=>!inLedger.has(s.slug) && !(current && s.issueId===current)).map(s=>toItem(s, 'archived')));
+  const byNewest = (a,b)=> b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug);
+  currentItems.sort(byNewest); archiveItems.sort(byNewest);
+  const categories = Array.from(new Set(archiveItems.map(i=>i.category).filter(Boolean))).sort();
+  return {currentIssueId: current, current: currentItems, archive: archiveItems, categories: categories};
+}
+// </story-archive-view>
+
+const storyArchiveMount = document.querySelector('[data-mount="story-archive"]');
+if(storyArchiveMount){
+  Promise.all([
+    fetchJson('story-archive.json').catch(()=>({stories: []})),
+    fetchJson('stories.json'),
+    fetchJson('issues/index.json').catch(()=>({})),
+    fetchJson('premium-archive.json').catch(()=>({enabled: false}))
+  ]).then(([ledger, stories, registry, premium])=>{
+    const view = buildStoryArchiveView(ledger, stories, registry);
+    const fmt = d=>{ try{ return new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}).format(new Date(d+'T12:00:00Z')); }catch(e){ return d; } };
+    const label = c=>CAT_LABELS[c] || c;
+    const row = i=>`<a class="issue-card story-archive-row is-${i.state}" href="${esc(i.url)}" data-category="${esc(i.category)}" data-title="${esc((i.headline||'').toLowerCase())}">
+        <span class="issue-badge ${i.state==='current'?'is-current':'is-archived'}">${i.state==='current'?'This Week':'Archive'}</span>
+        <div><h3>${esc(i.headline)}</h3><p>${esc(label(i.category))} &middot; ${esc(fmt(i.date))}</p></div>
+        <span class="issue-meta">${esc(i.issueId || 'Before issues')}</span>
+      </a>`;
+    // Honest access line: no paywall exists, so nothing pretends one does.
+    const access = premium && premium.enabled ? '' :
+      'Every archived story is free to read.';
+    storyArchiveMount.innerHTML = `
+      <div class="section-head" style="margin-bottom:14px">
+        <div><div class="kicker">Story Archive</div><h2 style="margin:0">Every story we've published</h2></div>
+      </div>
+      <p class="issue-note">Stories from the current issue (${esc(view.currentIssueId || 'none')}) are marked
+      <strong>This Week</strong>. Everything older is kept in the archive with its original date — ${view.archive.length}
+      stories so far — and nothing leaves it because it aged. Stories published before weekly issues began
+      (August 2026) are marked &ldquo;Before issues&rdquo;. ${esc(access)}</p>
+      ${view.current.length ? `<div class="issue-list story-archive-current">${view.current.map(row).join('')}</div>` : ''}
+      <div class="archive-filters" role="group" aria-label="Filter story archive" style="margin:8px 0 16px">
+        <input type="search" class="story-archive-search" placeholder="Find a story by title" aria-label="Find a story by title"
+          style="flex:1 1 220px;padding:9px 14px;border:1px solid var(--line-strong);background:var(--paper);font:inherit">
+        <select class="story-archive-cat" aria-label="Category" style="padding:9px 14px;border:1px solid var(--line-strong);background:var(--paper);font:inherit">
+          <option value="">All categories</option>${view.categories.map(c=>`<option value="${esc(c)}">${esc(label(c))}</option>`).join('')}
+        </select>
+      </div>
+      <div class="issue-list story-archive-list">${view.archive.map(row).join('')}</div>
+      <p class="muted story-archive-none hidden">No archived story matches.</p>`;
+    const q = storyArchiveMount.querySelector('.story-archive-search');
+    const cat = storyArchiveMount.querySelector('.story-archive-cat');
+    const none = storyArchiveMount.querySelector('.story-archive-none');
+    const apply = ()=>{
+      const term = (q.value||'').trim().toLowerCase(); let shown = 0;
+      storyArchiveMount.querySelectorAll('.story-archive-list .story-archive-row').forEach(el=>{
+        const ok = (!term || el.getAttribute('data-title').indexOf(term) !== -1) && (!cat.value || el.getAttribute('data-category')===cat.value);
+        el.style.display = ok ? '' : 'none'; if(ok) shown++;
+      });
+      none.classList.toggle('hidden', shown > 0);
+    };
+    q.addEventListener('input', apply); cat.addEventListener('change', apply);
+  }).catch(()=>{ gateHide(storyArchiveMount); });
+}
+
 // Restrained scroll-reveal for .reveal elements — no-op visually under prefers-reduced-motion
 // (CSS already neutralizes the effect there; this just avoids the redundant observer work)
 const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

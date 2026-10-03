@@ -151,6 +151,10 @@ def main():
             elif m.get('verifiedAt'):
                 errors.append('audience metric %s is empty but carries verifiedAt' % k)
 
+    # Premium archive safety: never enabled while premium full text is public.
+    from premium_archive import premium_violations
+    errors.extend(premium_violations())
+
     for w in warnings:
         print('  warn - %s' % w)
     for e in errors:
