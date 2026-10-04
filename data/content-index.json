@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-03T01:13:31Z",
-  "recordCount": 39,
+  "generatedAt": "2026-10-04T15:04:37Z",
+  "recordCount": 40,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -433,6 +433,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "dune-sunrise-1.svg"
+    },
+    {
+      "id": "story-the-point-cape-henlopen-reopens-2026",
+      "type": "story",
+      "title": "The Point Is Open Again",
+      "excerpt": "Closed since March for nesting and migrating shorebirds, both beaches at the tip of Cape Henlopen are open again. Here is why it closes, and what the reopening means.",
+      "url": "stories/the-point-cape-henlopen-reopens-2026.html",
+      "town": "Cape Henlopen",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-10-04",
+      "updatedDate": "2026-10-04",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-sunrise-2.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
