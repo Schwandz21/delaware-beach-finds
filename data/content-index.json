@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-04T15:04:37Z",
-  "recordCount": 40,
+  "generatedAt": "2026-10-05T17:41:54Z",
+  "recordCount": 41,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -413,7 +413,7 @@
       ],
       "publishedDate": "2026-10-02",
       "updatedDate": "2026-10-02",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "lewes-canal-waterfront.jpg"
     },
@@ -430,7 +430,7 @@
       ],
       "publishedDate": "2026-10-02",
       "updatedDate": "2026-10-02",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "dune-sunrise-1.svg"
     },
@@ -447,9 +447,26 @@
       ],
       "publishedDate": "2026-10-04",
       "updatedDate": "2026-10-04",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "dune-sunrise-2.svg"
+    },
+    {
+      "id": "story-surf-fishing-after-labor-day-2026",
+      "type": "story",
+      "title": "The Off-Season Opens Up the Surf",
+      "excerpt": "From the Tuesday after Labor Day until Memorial Day weekend, Delaware's drive-on surf fishing rules ease. Here is what changes, and what never does.",
+      "url": "stories/surf-fishing-after-labor-day-2026.html",
+      "town": "Delaware Field Guide",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-10-05",
+      "updatedDate": "2026-10-05",
+      "status": "current",
+      "access_level": "public",
+      "scene": "fishing-dawn-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",

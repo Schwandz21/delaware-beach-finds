@@ -1,7 +1,7 @@
 {
   "_note": "Immutable archival ledger of the Delaware Beach Finds back catalog: every published story older than the current issue. Metadata only; prose lives in sourceProsePath and is pinned by sourceProseSHA256. Entries are never removed; publishedAt, date and issueId are frozen; a prose change must be recorded in revisions. issueId is null where the story was published before the issue system existed; it is never back-filled. Built by scripts/build_story_archive.py.",
   "schemaVersion": 1,
-  "storyCount": 23,
+  "storyCount": 26,
   "legacyNullIssueCount": 11,
   "stories": [
     {
@@ -834,6 +834,110 @@
         }
       },
       "wordCount": 934,
+      "revisions": []
+    },
+    {
+      "slug": "cape-henlopen-hawk-watch-fall-2026",
+      "headline": "Look Up at Cape Henlopen",
+      "publishedAt": "2026-10-02",
+      "date": "2026-10-02",
+      "issueId": "2026-W40",
+      "publicationWeek": "2026-W40",
+      "category": "coast",
+      "author": "coast-nature",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/cape-henlopen-hawk-watch-fall-2026.html",
+      "sourceProsePath": "content/stories/cape-henlopen-hawk-watch-fall-2026.html",
+      "renderedPagePath": "stories/cape-henlopen-hawk-watch-fall-2026.html",
+      "sourceProseSHA256": "ddae54357830bf81c96c500b1ca851e537cd661dc0785e460f6db6bb1343c74c",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-05",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://dnrec.delaware.gov/fish-wildlife/conservation/hawk-watch/",
+        "https://www.fochsp.org/hawk-watch"
+      ],
+      "imageProvenance": {
+        "heroImage": "dune-sunrise-1.svg",
+        "scene": "dune-sunrise-1.svg",
+        "heroAlt": "Dunes at sunrise (illustration)",
+        "heroImageAlt": "An illustration of coastal dunes at sunrise",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": null,
+        "locationAttribution": null
+      },
+      "wordCount": 521,
+      "revisions": []
+    },
+    {
+      "slug": "lewes-maritime-weekend-2026",
+      "headline": "Lewes Has a Maritime Weekend",
+      "publishedAt": "2026-10-02",
+      "date": "2026-10-02",
+      "issueId": "2026-W40",
+      "publicationWeek": "2026-W40",
+      "category": "field-guide",
+      "author": "field-notes",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/lewes-maritime-weekend-2026.html",
+      "sourceProsePath": "content/stories/lewes-maritime-weekend-2026.html",
+      "renderedPagePath": "stories/lewes-maritime-weekend-2026.html",
+      "sourceProseSHA256": "0af3e9eb03986ac966c5419f07f3421757858defc41344a386573c906211a350",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-05",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.lewes250.com/event-list/boast-the-coast-maritime-festival",
+        "https://events.udel.edu/event/coast-day-2026",
+        "https://www.udel.edu/udaily/2026/september/coast-day-2026-events-lewes-sharp-campus/"
+      ],
+      "imageProvenance": {
+        "heroImage": "lewes-canal-waterfront.jpg",
+        "scene": "lewes-canal-waterfront.jpg",
+        "heroAlt": "The Lewes canal waterfront",
+        "heroImageAlt": "The Lewes canal waterfront",
+        "photoCredit": "Delaware Beach Finds",
+        "heroProvenance": null,
+        "locationAttribution": {
+          "place": "Lewes",
+          "evidence": "landmark",
+          "mustNotClaim": []
+        }
+      },
+      "wordCount": 833,
+      "revisions": []
+    },
+    {
+      "slug": "the-point-cape-henlopen-reopens-2026",
+      "headline": "The Point Is Open Again",
+      "publishedAt": "2026-10-04",
+      "date": "2026-10-04",
+      "issueId": "2026-W40",
+      "publicationWeek": "2026-W40",
+      "category": "coast",
+      "author": "coast-nature",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/the-point-cape-henlopen-reopens-2026.html",
+      "sourceProsePath": "content/stories/the-point-cape-henlopen-reopens-2026.html",
+      "renderedPagePath": "stories/the-point-cape-henlopen-reopens-2026.html",
+      "sourceProseSHA256": "0e56028efc6ff8fe09a55143328db31ff529008c0b809e585bb7bc8c6f7ec97b",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-05",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://news.delaware.gov/2026/08/25/the-point-at-cape-henlopen-oceanside-opens-sept-1/",
+        "https://news.delaware.gov/2026/02/26/dnrec-closes-the-point-at-cape-henlopen-march-1-to-protect-nesting-migrating-birds/"
+      ],
+      "imageProvenance": {
+        "heroImage": "dune-sunrise-2.svg",
+        "scene": "dune-sunrise-2.svg",
+        "heroAlt": "Dunes at sunrise (illustration)",
+        "heroImageAlt": "Dunes at sunrise (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim. No photograph in the library is verified as The Point.",
+        "locationAttribution": null
+      },
+      "wordCount": 494,
       "revisions": []
     }
   ]
