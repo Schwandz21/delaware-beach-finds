@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T17:41:54Z",
-  "recordCount": 41,
+  "generatedAt": "2026-10-07T15:59:03Z",
+  "recordCount": 42,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -467,6 +467,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "fishing-dawn-1.svg"
+    },
+    {
+      "id": "story-apple-scrapple-festival-2026",
+      "type": "story",
+      "title": "Apple-Scrapple, Hour by Hour",
+      "excerpt": "Bridgeville's 34th Apple-Scrapple Festival starts with a Thursday carnival night and runs through Saturday. Here is the schedule, and the street closures the town has posted.",
+      "url": "stories/apple-scrapple-festival-2026.html",
+      "town": "This Weekend in Bridgeville",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-10-07",
+      "updatedDate": "2026-10-07",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-gold-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
