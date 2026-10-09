@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-07T15:59:03Z",
-  "recordCount": 42,
+  "generatedAt": "2026-10-09T15:43:27Z",
+  "recordCount": 43,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -484,6 +484,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "marsh-gold-1.svg"
+    },
+    {
+      "id": "story-overfalls-the-last-lightship",
+      "type": "story",
+      "title": "The Last Lightship",
+      "excerpt": "The lightship in Lewes was built in Maine in 1938 and spent its working life off New England. How it came to carry a Delaware Bay name is the story of a station, a historical society and a one-dollar sale.",
+      "url": "stories/overfalls-the-last-lightship.html",
+      "town": "Lewes Maritime",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-09",
+      "updatedDate": "2026-10-09",
+      "status": "current",
+      "access_level": "public",
+      "scene": "lewes-canal-morning.jpg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
