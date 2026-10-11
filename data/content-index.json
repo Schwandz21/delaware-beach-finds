@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-09T15:43:27Z",
-  "recordCount": 43,
+  "generatedAt": "2026-10-11T15:15:04Z",
+  "recordCount": 44,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -501,6 +501,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "lewes-canal-morning.jpg"
+    },
+    {
+      "id": "story-delaware-state-parks-at-75",
+      "type": "story",
+      "title": "Delaware's State Parks Turn 75",
+      "excerpt": "In 1951, Delaware authorized three state parks. Seventy-five years later the system protects more than 27,000 acres, including the long state park beaches at Cape Henlopen, Delaware Seashore and Fenwick Island.",
+      "url": "stories/delaware-state-parks-at-75.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-11",
+      "updatedDate": "2026-10-11",
+      "status": "current",
+      "access_level": "public",
+      "scene": "dune-fence-sunset-1.jpg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
