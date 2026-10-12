@@ -1,7 +1,7 @@
 {
   "_note": "Immutable archival ledger of the Delaware Beach Finds back catalog: every published story older than the current issue. Metadata only; prose lives in sourceProsePath and is pinned by sourceProseSHA256. Entries are never removed; publishedAt, date and issueId are frozen; a prose change must be recorded in revisions. issueId is null where the story was published before the issue system existed; it is never back-filled. Built by scripts/build_story_archive.py.",
   "schemaVersion": 1,
-  "storyCount": 26,
+  "storyCount": 30,
   "legacyNullIssueCount": 11,
   "stories": [
     {
@@ -938,6 +938,154 @@
         "locationAttribution": null
       },
       "wordCount": 494,
+      "revisions": []
+    },
+    {
+      "slug": "surf-fishing-after-labor-day-2026",
+      "headline": "The Off-Season Opens Up the Surf",
+      "publishedAt": "2026-10-05",
+      "date": "2026-10-05",
+      "issueId": "2026-W41",
+      "publicationWeek": "2026-W41",
+      "category": "field-guide",
+      "author": "field-notes",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/surf-fishing-after-labor-day-2026.html",
+      "sourceProsePath": "content/stories/surf-fishing-after-labor-day-2026.html",
+      "renderedPagePath": "stories/surf-fishing-after-labor-day-2026.html",
+      "sourceProseSHA256": "63f9e8e94d6b4bff2951b88e420f75cf3bf0ac52c9917b31471ec94d85ea12c5",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-12",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.destateparks.com/surf-fishing/",
+        "https://news.delaware.gov/2026/05/13/required-reservations-for-five-most-popular-drive-on-surf-fishing-beaches-begin-may-23/",
+        "https://news.delaware.gov/2026/08/25/the-point-at-cape-henlopen-oceanside-opens-sept-1/"
+      ],
+      "imageProvenance": {
+        "heroImage": "fishing-dawn-1.svg",
+        "scene": "fishing-dawn-1.svg",
+        "heroAlt": "Surf fishing at dawn (illustration)",
+        "heroImageAlt": "Surf fishing at dawn (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no place claim. The library's drive-on photo is registered as Indian River Inlet and may not be presented as Cape Henlopen.",
+        "locationAttribution": null
+      },
+      "wordCount": 541,
+      "revisions": []
+    },
+    {
+      "slug": "apple-scrapple-festival-2026",
+      "headline": "Apple-Scrapple, Hour by Hour",
+      "publishedAt": "2026-10-07",
+      "date": "2026-10-07",
+      "issueId": "2026-W41",
+      "publicationWeek": "2026-W41",
+      "category": "field-guide",
+      "author": "field-notes",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/apple-scrapple-festival-2026.html",
+      "sourceProsePath": "content/stories/apple-scrapple-festival-2026.html",
+      "renderedPagePath": "stories/apple-scrapple-festival-2026.html",
+      "sourceProseSHA256": "c19a2b8f26b5b3283363df83740608a03b13eda1d890e3f78d92dc8021358bda",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-12",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://applescrapple.com/schedule/",
+        "https://bridgeville.delaware.gov/2026-apple-scrapple-festival-resident-updates",
+        "https://applescrapple.com/"
+      ],
+      "imageProvenance": {
+        "heroImage": "marsh-gold-1.svg",
+        "scene": "marsh-gold-1.svg",
+        "heroAlt": "A golden autumn landscape (illustration)",
+        "heroImageAlt": "A golden autumn landscape (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no place claim. No Bridgeville photograph exists in the library.",
+        "locationAttribution": null
+      },
+      "wordCount": 455,
+      "revisions": []
+    },
+    {
+      "slug": "overfalls-the-last-lightship",
+      "headline": "The Last Lightship",
+      "publishedAt": "2026-10-09",
+      "date": "2026-10-09",
+      "issueId": "2026-W41",
+      "publicationWeek": "2026-W41",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/overfalls-the-last-lightship.html",
+      "sourceProsePath": "content/stories/overfalls-the-last-lightship.html",
+      "renderedPagePath": "stories/overfalls-the-last-lightship.html",
+      "sourceProseSHA256": "f8583d015c5ba8191528f5f8c9c8dd591067f084f5a12ee53f8347bf2cd2b22f",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-12",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://overfalls.org/the-ship/history/",
+        "https://archives.delaware.gov/delaware-historical-markers/lightship-overfalls/",
+        "https://www.hmdb.org/m.asp?m=232749"
+      ],
+      "imageProvenance": {
+        "heroImage": "lewes-canal-morning.jpg",
+        "scene": "lewes-canal-morning.jpg",
+        "heroAlt": "The Lewes canal by the Savannah Road drawbridge",
+        "heroImageAlt": "The Lewes canal by the Savannah Road drawbridge",
+        "photoCredit": "Delaware Beach Finds",
+        "heroProvenance": "data/location-attributions.json: Lewes, evidence 'sequence' (adjacent frame to the drawbridge landmark shot). Alt names only the canal and bridge in frame; it does not claim the lightship is pictured.",
+        "locationAttribution": {
+          "place": "Lewes",
+          "evidence": "sequence",
+          "mustNotClaim": []
+        }
+      },
+      "wordCount": 448,
+      "revisions": []
+    },
+    {
+      "slug": "delaware-state-parks-at-75",
+      "headline": "Delaware's State Parks Turn 75",
+      "publishedAt": "2026-10-11",
+      "date": "2026-10-11",
+      "issueId": "2026-W41",
+      "publicationWeek": "2026-W41",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/delaware-state-parks-at-75.html",
+      "sourceProsePath": "content/stories/delaware-state-parks-at-75.html",
+      "renderedPagePath": "stories/delaware-state-parks-at-75.html",
+      "sourceProseSHA256": "230e2ba85809cedb9e5a852625ca7242673edad981389efa7892e8e9eaa6d326",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-12",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.destateparks.com/our-story/",
+        "https://www.destateparks.com/75-years/",
+        "https://news.delaware.gov/2026/01/14/delaware-state-parks-holds-day-of-service-for-75th-anniversary/",
+        "https://news.delaware.gov/2026/02/24/fee-season-begins-march-1-for-75th-anniversary/",
+        "https://news.delaware.gov/2025/12/30/delaware-state-parks-kick-off-75th-anniversary-year-with-first-day-hikes/",
+        "https://news.delaware.gov/2026/06/22/delaware-state-parks-kicks-off-virtual-5k-fundraiser-to-celebrate-75th-anniversary/",
+        "https://www.destateparks.com/tree-titans-working-to-preserve-and-improve-our-public-lands/"
+      ],
+      "imageProvenance": {
+        "heroImage": "dune-fence-sunset-1.jpg",
+        "scene": "dune-fence-sunset-1.jpg",
+        "heroAlt": "Dune fencing at sunset",
+        "heroImageAlt": "Dune fencing at sunset",
+        "photoCredit": "Delaware Beach Finds",
+        "heroProvenance": "data/location-attributions.json: neutral (no place in frame). Used generically; neither alt nor headline nor kicker names a place.",
+        "locationAttribution": {
+          "place": null,
+          "evidence": "none",
+          "mustNotClaim": []
+        }
+      },
+      "wordCount": 426,
       "revisions": []
     }
   ]

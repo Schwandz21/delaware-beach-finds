@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T15:15:04Z",
-  "recordCount": 44,
+  "generatedAt": "2026-10-12T11:33:04Z",
+  "recordCount": 45,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -464,7 +464,7 @@
       ],
       "publishedDate": "2026-10-05",
       "updatedDate": "2026-10-05",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "fishing-dawn-1.svg"
     },
@@ -481,7 +481,7 @@
       ],
       "publishedDate": "2026-10-07",
       "updatedDate": "2026-10-07",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "marsh-gold-1.svg"
     },
@@ -498,7 +498,7 @@
       ],
       "publishedDate": "2026-10-09",
       "updatedDate": "2026-10-09",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "lewes-canal-morning.jpg"
     },
@@ -515,9 +515,26 @@
       ],
       "publishedDate": "2026-10-11",
       "updatedDate": "2026-10-11",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "dune-fence-sunset-1.jpg"
+    },
+    {
+      "id": "story-rehoboth-beach-jazz-festival-2026",
+      "type": "story",
+      "title": "The Jazz Festival Comes Back to Rehoboth",
+      "excerpt": "The 37th Rehoboth Beach Jazz Festival runs Thursday through Sunday, Oct. 15–18, on stages across Rehoboth, Lewes and Dewey. Who is playing, and where to find the schedule.",
+      "url": "stories/rehoboth-beach-jazz-festival-2026.html",
+      "town": "This Week in Rehoboth",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-10-12",
+      "updatedDate": "2026-10-12",
+      "status": "current",
+      "access_level": "public",
+      "scene": "boardwalk-evening-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
