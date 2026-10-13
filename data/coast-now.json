@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T19:06:50Z",
+  "generatedAt": "2026-10-13T02:36:00Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -8,33 +8,25 @@
       "lat": 38.7746,
       "lon": -75.1393,
       "weather": {
-        "period": "Columbus Day",
-        "temperature": 71,
+        "period": "Tonight",
+        "temperature": 58,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny",
-        "windSpeed": "10 mph",
-        "windDirection": "NW",
-        "isDaytime": true,
+        "shortForecast": "Patchy Fog",
+        "windSpeed": "5 mph",
+        "windDirection": "W",
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false,
-        "precipProbability": 0
+        "precipProbability": 2
       },
       "alerts": {
-        "items": [
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 12 at 1:55PM EDT until October 12 at 5:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf02e3d136fcaaa6ea078200cbbbb3c2eb1fa909.003.1",
-            "ends": "2026-10-12T17:00:00-04:00"
-          }
-        ],
+        "items": [],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "tides": {
@@ -64,17 +56,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 65.8,
-        "observedAt": "2026-10-12 15:00",
+        "temperatureF": 66.2,
+        "observedAt": "2026-10-12 22:30",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       }
     },
@@ -84,33 +76,25 @@
       "lat": 38.7168,
       "lon": -75.076,
       "weather": {
-        "period": "Columbus Day",
-        "temperature": 70,
+        "period": "Tonight",
+        "temperature": 61,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny",
-        "windSpeed": "10 to 15 mph",
+        "shortForecast": "Mostly Clear then Patchy Fog",
+        "windSpeed": "5 mph",
         "windDirection": "NW",
-        "isDaytime": true,
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false,
-        "precipProbability": 0
+        "precipProbability": 2
       },
       "alerts": {
-        "items": [
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 12 at 1:55PM EDT until October 12 at 5:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf02e3d136fcaaa6ea078200cbbbb3c2eb1fa909.003.1",
-            "ends": "2026-10-12T17:00:00-04:00"
-          }
-        ],
+        "items": [],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "tides": {
@@ -140,17 +124,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 65.8,
-        "observedAt": "2026-10-12 15:00",
+        "temperatureF": 66.2,
+        "observedAt": "2026-10-12 22:30",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       }
     },
@@ -160,33 +144,25 @@
       "lat": 38.6884,
       "lon": -75.0755,
       "weather": {
-        "period": "Columbus Day",
-        "temperature": 71,
+        "period": "Tonight",
+        "temperature": 58,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny",
-        "windSpeed": "10 to 15 mph",
+        "shortForecast": "Patchy Fog",
+        "windSpeed": "5 mph",
         "windDirection": "NW",
-        "isDaytime": true,
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false,
-        "precipProbability": 0
+        "precipProbability": 2
       },
       "alerts": {
-        "items": [
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 12 at 1:55PM EDT until October 12 at 5:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf02e3d136fcaaa6ea078200cbbbb3c2eb1fa909.003.1",
-            "ends": "2026-10-12T17:00:00-04:00"
-          }
-        ],
+        "items": [],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "tides": {
@@ -216,17 +192,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 65.8,
-        "observedAt": "2026-10-12 15:00",
+        "temperatureF": 66.2,
+        "observedAt": "2026-10-12 22:30",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       }
     },
@@ -236,33 +212,25 @@
       "lat": 38.5385,
       "lon": -75.0552,
       "weather": {
-        "period": "Columbus Day",
-        "temperature": 70,
+        "period": "Tonight",
+        "temperature": 61,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny",
-        "windSpeed": "10 to 15 mph",
+        "shortForecast": "Mostly Clear then Patchy Fog",
+        "windSpeed": "5 mph",
         "windDirection": "NW",
-        "isDaytime": true,
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false,
-        "precipProbability": 0
+        "precipProbability": 1
       },
       "alerts": {
-        "items": [
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 12 at 1:55PM EDT until October 12 at 5:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf02e3d136fcaaa6ea078200cbbbb3c2eb1fa909.003.1",
-            "ends": "2026-10-12T17:00:00-04:00"
-          }
-        ],
+        "items": [],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "tides": {
@@ -292,17 +260,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 66.9,
-        "observedAt": "2026-10-12 15:00",
+        "temperatureF": 67.1,
+        "observedAt": "2026-10-12 22:30",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       }
     },
@@ -312,33 +280,25 @@
       "lat": 38.461,
       "lon": -75.051,
       "weather": {
-        "period": "Columbus Day",
-        "temperature": 70,
+        "period": "Tonight",
+        "temperature": 61,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny",
-        "windSpeed": "10 to 15 mph",
+        "shortForecast": "Mostly Clear then Patchy Fog",
+        "windSpeed": "5 mph",
         "windDirection": "NW",
-        "isDaytime": true,
+        "isDaytime": false,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false,
-        "precipProbability": 0
+        "precipProbability": 1
       },
       "alerts": {
-        "items": [
-          {
-            "event": "Coastal Flood Advisory",
-            "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 12 at 1:55PM EDT until October 12 at 5:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.cf02e3d136fcaaa6ea078200cbbbb3c2eb1fa909.003.1",
-            "ends": "2026-10-12T17:00:00-04:00"
-          }
-        ],
+        "items": [],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "tides": {
@@ -368,17 +328,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 66.9,
-        "observedAt": "2026-10-12 15:00",
+        "temperatureF": 67.1,
+        "observedAt": "2026-10-12 22:30",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-12T19:06:50Z",
+        "fetchedAt": "2026-10-13T02:36:00Z",
         "stale": false
       }
     }
@@ -390,7 +350,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-10-12T19:06:50Z"
+    "fetchedAt": "2026-10-13T02:36:00Z"
   },
   "sources": [
     {
