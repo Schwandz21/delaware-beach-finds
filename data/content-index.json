@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T11:33:04Z",
-  "recordCount": 45,
+  "generatedAt": "2026-10-14T12:42:44Z",
+  "recordCount": 46,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -535,6 +535,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "boardwalk-evening-1.svg"
+    },
+    {
+      "id": "story-debraak-wreck-off-cape-henlopen",
+      "type": "story",
+      "title": "The Warship That Went Down Off Cape Henlopen",
+      "excerpt": "On May 25, 1798, the British warship DeBraak capsized in a sudden squall off Cape Henlopen. Almost two centuries later its hull came back up, and Delaware has looked after it ever since.",
+      "url": "stories/debraak-wreck-off-cape-henlopen.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-14",
+      "updatedDate": "2026-10-14",
+      "status": "current",
+      "access_level": "public",
+      "scene": "wave-navy-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
