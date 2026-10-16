@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T12:42:44Z",
-  "recordCount": 46,
+  "generatedAt": "2026-10-16T10:28:34Z",
+  "recordCount": 47,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -552,6 +552,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "wave-navy-1.svg"
+    },
+    {
+      "id": "story-indian-river-life-saving-station",
+      "type": "story",
+      "title": "The Surfmen of Indian River",
+      "excerpt": "Between 1876 and 1915, the surfmen of the Indian River Life-Saving Station saved more than 400 sailors. Their station still stands in Delaware Seashore State Park.",
+      "url": "stories/indian-river-life-saving-station.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-16",
+      "updatedDate": "2026-10-16",
+      "status": "current",
+      "access_level": "public",
+      "scene": "wave-teal-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
