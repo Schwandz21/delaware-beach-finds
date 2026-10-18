@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T10:28:34Z",
-  "recordCount": 47,
+  "generatedAt": "2026-10-18T12:22:11Z",
+  "recordCount": 48,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -569,6 +569,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "wave-teal-1.svg"
+    },
+    {
+      "id": "story-indian-river-inlet-bridge",
+      "type": "story",
+      "title": "The Fifth Bridge Over the Inlet",
+      "excerpt": "The cable-stayed bridge over Indian River Inlet opened in 2012. It replaced a line of earlier bridges the inlet itself kept wearing down.",
+      "url": "stories/indian-river-inlet-bridge.html",
+      "town": "Delaware Coast",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-10-18",
+      "updatedDate": "2026-10-18",
+      "status": "current",
+      "access_level": "public",
+      "scene": "ocean-blue-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
