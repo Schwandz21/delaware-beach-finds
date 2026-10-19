@@ -1,7 +1,7 @@
 {
   "_note": "Immutable archival ledger of the Delaware Beach Finds back catalog: every published story older than the current issue. Metadata only; prose lives in sourceProsePath and is pinned by sourceProseSHA256. Entries are never removed; publishedAt, date and issueId are frozen; a prose change must be recorded in revisions. issueId is null where the story was published before the issue system existed; it is never back-filled. Built by scripts/build_story_archive.py.",
   "schemaVersion": 1,
-  "storyCount": 30,
+  "storyCount": 34,
   "legacyNullIssueCount": 11,
   "stories": [
     {
@@ -1086,6 +1086,145 @@
         }
       },
       "wordCount": 426,
+      "revisions": []
+    },
+    {
+      "slug": "rehoboth-beach-jazz-festival-2026",
+      "headline": "The Jazz Festival Comes Back to Rehoboth",
+      "publishedAt": "2026-10-12",
+      "date": "2026-10-12",
+      "issueId": "2026-W42",
+      "publicationWeek": "2026-W42",
+      "category": "field-guide",
+      "author": "field-notes",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/rehoboth-beach-jazz-festival-2026.html",
+      "sourceProsePath": "content/stories/rehoboth-beach-jazz-festival-2026.html",
+      "renderedPagePath": "stories/rehoboth-beach-jazz-festival-2026.html",
+      "sourceProseSHA256": "24538c1c49767a706015c0fac82adc590cac040de7b2d6dff15025877875d7e1",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-19",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.rehobothjazz.com/index.php/schedule-tickets",
+        "https://www.rehobothbeachde.gov/event/jazz-festival-2/",
+        "https://www.capegazette.com/article/rehoboth-beach-jazz-festival-return-oct-15-18/300270",
+        "https://www.wmdt.com/2026/09/discover-delmarva-arts-rehoboth-beach-jazz-festival/",
+        "https://www.beach-fun.com/sea-witch-halloween-fiddlers-festival.html"
+      ],
+      "imageProvenance": {
+        "heroImage": "boardwalk-evening-1.svg",
+        "scene": "boardwalk-evening-1.svg",
+        "heroAlt": "A boardwalk in the evening (illustration)",
+        "heroImageAlt": "A boardwalk in the evening (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no place or venue claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 321,
+      "revisions": []
+    },
+    {
+      "slug": "debraak-wreck-off-cape-henlopen",
+      "headline": "The Warship That Went Down Off Cape Henlopen",
+      "publishedAt": "2026-10-14",
+      "date": "2026-10-14",
+      "issueId": "2026-W42",
+      "publicationWeek": "2026-W42",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/debraak-wreck-off-cape-henlopen.html",
+      "sourceProsePath": "content/stories/debraak-wreck-off-cape-henlopen.html",
+      "renderedPagePath": "stories/debraak-wreck-off-cape-henlopen.html",
+      "sourceProseSHA256": "cc400630dbf9a773c2a8b475ca2e371519dc6f15025122e8b4fc552cb02bb98d",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-19",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://history.delaware.gov/2023/04/10/debraak-225th-anniversary/",
+        "https://history.delaware.gov/2022/12/12/caring-for-the-hms-debraak/",
+        "https://history.delaware.gov/event/hms-debraak-tour-5/",
+        "https://news.delaware.gov/2022/05/13/wooden-world-revealed-at-zwaanendael/",
+        "https://www.hmdb.org/m.asp?m=38436"
+      ],
+      "imageProvenance": {
+        "heroImage": "wave-navy-1.svg",
+        "scene": "wave-navy-1.svg",
+        "heroAlt": "Dark sea (illustration)",
+        "heroImageAlt": "Dark sea (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no place claim. No photograph of the DeBraak or its site exists in the library.",
+        "locationAttribution": null
+      },
+      "wordCount": 430,
+      "revisions": []
+    },
+    {
+      "slug": "indian-river-life-saving-station",
+      "headline": "The Surfmen of Indian River",
+      "publishedAt": "2026-10-16",
+      "date": "2026-10-16",
+      "issueId": "2026-W42",
+      "publicationWeek": "2026-W42",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/indian-river-life-saving-station.html",
+      "sourceProsePath": "content/stories/indian-river-life-saving-station.html",
+      "renderedPagePath": "stories/indian-river-life-saving-station.html",
+      "sourceProseSHA256": "df59190e9e1bef7670a10b9c1544534e0dfa117a7677a4f7a5270f89f03da6db",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-19",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.destateparks.com/park/indian-river-life-saving-station/",
+        "https://archives.delaware.gov/delaware-historical-markers/indian-river-life-saving-station/"
+      ],
+      "imageProvenance": {
+        "heroImage": "wave-teal-1.svg",
+        "scene": "wave-teal-1.svg",
+        "heroAlt": "Surf on the coast (illustration)",
+        "heroImageAlt": "Surf on the coast (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 476,
+      "revisions": []
+    },
+    {
+      "slug": "indian-river-inlet-bridge",
+      "headline": "The Fifth Bridge Over the Inlet",
+      "publishedAt": "2026-10-18",
+      "date": "2026-10-18",
+      "issueId": "2026-W42",
+      "publicationWeek": "2026-W42",
+      "category": "coast",
+      "author": "coast-nature",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/indian-river-inlet-bridge.html",
+      "sourceProsePath": "content/stories/indian-river-inlet-bridge.html",
+      "renderedPagePath": "stories/indian-river-inlet-bridge.html",
+      "sourceProseSHA256": "f152fae0f3c53269be2859315e8ec3ab19721e7699a8b030646328fbe3f7d5e9",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-19",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://deldot.gov/projects/archived/indian_river_bridge/",
+        "http://ccee.udel.edu/2020/10/19/structural-health-monitoring-system-used-to-monitor-the-indian-river-inlet-bridge/",
+        "https://en.wikipedia.org/wiki/Indian_River_Inlet_Bridge"
+      ],
+      "imageProvenance": {
+        "heroImage": "ocean-blue-1.svg",
+        "scene": "ocean-blue-1.svg",
+        "heroAlt": "Open water (illustration)",
+        "heroImageAlt": "Open water (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 420,
       "revisions": []
     }
   ]

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-18T12:22:11Z",
-  "recordCount": 48,
+  "generatedAt": "2026-10-19T11:48:34Z",
+  "recordCount": 49,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -532,7 +532,7 @@
       ],
       "publishedDate": "2026-10-12",
       "updatedDate": "2026-10-12",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "boardwalk-evening-1.svg"
     },
@@ -549,7 +549,7 @@
       ],
       "publishedDate": "2026-10-14",
       "updatedDate": "2026-10-14",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "wave-navy-1.svg"
     },
@@ -566,7 +566,7 @@
       ],
       "publishedDate": "2026-10-16",
       "updatedDate": "2026-10-16",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "wave-teal-1.svg"
     },
@@ -583,9 +583,26 @@
       ],
       "publishedDate": "2026-10-18",
       "updatedDate": "2026-10-18",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "ocean-blue-1.svg"
+    },
+    {
+      "id": "story-storm-of-1962-delaware-coast",
+      "type": "story",
+      "title": "Five High Tides: The Storm of 1962",
+      "excerpt": "For three days in March 1962, a nor'easter sat off the Delaware coast through five high tides. It took seven lives in Delaware and reshaped the beach towns.",
+      "url": "stories/storm-of-1962-delaware-coast.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-19",
+      "updatedDate": "2026-10-19",
+      "status": "current",
+      "access_level": "public",
+      "scene": "wave-navy-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",

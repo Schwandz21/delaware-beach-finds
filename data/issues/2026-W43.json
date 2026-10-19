@@ -1,0 +1,17 @@
+{
+  "issueId": "2026-W43",
+  "weekOf": "2026-10-19",
+  "weekEnding": "2026-10-25",
+  "title": "Week of October 19, 2026",
+  "publishedAt": "2026-10-19",
+  "status": "current",
+  "coverStory": "storm-of-1962-delaware-coast",
+  "eventIds": [],
+  "sources": [
+    "https://archives.delaware.gov/digital-archives/storm-of-1962/",
+    "http://www1.udel.edu/udaily/2012/feb/march-62-storm-020612.html",
+    "https://www1.udel.edu/PR/UDaily/01-02/marchstorm030802.html"
+  ],
+  "access_level": "public",
+  "editorialNotes": "Issue opened automatically when its first approved story published."
+}
