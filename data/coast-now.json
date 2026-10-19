@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T16:30:41Z",
+  "generatedAt": "2026-10-19T21:34:23Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -9,15 +9,15 @@
       "lon": -75.1393,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 62,
+        "temperature": 63,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Sunny",
-        "windSpeed": "15 to 20 mph",
+        "shortForecast": "Sunny",
+        "windSpeed": "15 mph",
         "windDirection": "NE",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -26,15 +26,15 @@
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 19 at 4:02AM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef946bbf6394b7746a44c04f43ac1fbfd53a73dd.002.1",
+            "headline": "Coastal Flood Advisory issued October 19 at 3:54PM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2214b7a89ab8e520e658d0f66f503c27cd183863.002.1",
             "ends": "2026-10-20T21:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "tides": {
@@ -64,17 +64,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 57.9,
-        "observedAt": "2026-10-19 12:24",
+        "temperatureF": 61.3,
+        "observedAt": "2026-10-19 17:24",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       }
     },
@@ -85,15 +85,15 @@
       "lon": -75.076,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 62,
+        "temperature": 63,
         "temperatureUnit": "F",
-        "shortForecast": "Partly Sunny",
+        "shortForecast": "Sunny",
         "windSpeed": "20 mph",
         "windDirection": "NE",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -102,15 +102,15 @@
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 19 at 4:02AM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef946bbf6394b7746a44c04f43ac1fbfd53a73dd.002.1",
+            "headline": "Coastal Flood Advisory issued October 19 at 3:54PM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2214b7a89ab8e520e658d0f66f503c27cd183863.002.1",
             "ends": "2026-10-20T21:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "tides": {
@@ -140,17 +140,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 57.9,
-        "observedAt": "2026-10-19 12:24",
+        "temperatureF": 61.3,
+        "observedAt": "2026-10-19 17:24",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       }
     },
@@ -161,15 +161,15 @@
       "lon": -75.0755,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 62,
+        "temperature": 63,
         "temperatureUnit": "F",
-        "shortForecast": "Partly Sunny",
+        "shortForecast": "Sunny",
         "windSpeed": "20 mph",
         "windDirection": "NE",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -178,15 +178,15 @@
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 19 at 4:02AM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef946bbf6394b7746a44c04f43ac1fbfd53a73dd.002.1",
+            "headline": "Coastal Flood Advisory issued October 19 at 3:54PM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2214b7a89ab8e520e658d0f66f503c27cd183863.002.1",
             "ends": "2026-10-20T21:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "tides": {
@@ -216,17 +216,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 57.9,
-        "observedAt": "2026-10-19 12:24",
+        "temperatureF": 61.3,
+        "observedAt": "2026-10-19 17:24",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       }
     },
@@ -237,32 +237,32 @@
       "lon": -75.0552,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 62,
+        "temperature": 63,
         "temperatureUnit": "F",
-        "shortForecast": "Partly Sunny",
+        "shortForecast": "Mostly Sunny",
         "windSpeed": "25 mph",
         "windDirection": "NE",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false,
-        "precipProbability": 1
+        "precipProbability": 0
       },
       "alerts": {
         "items": [
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 19 at 4:02AM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef946bbf6394b7746a44c04f43ac1fbfd53a73dd.002.1",
+            "headline": "Coastal Flood Advisory issued October 19 at 3:54PM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2214b7a89ab8e520e658d0f66f503c27cd183863.002.1",
             "ends": "2026-10-20T21:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "tides": {
@@ -292,17 +292,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 60.1,
-        "observedAt": "2026-10-19 12:24",
+        "temperatureF": 62.2,
+        "observedAt": "2026-10-19 17:24",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       }
     },
@@ -313,32 +313,32 @@
       "lon": -75.051,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 61,
+        "temperature": 62,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Cloudy",
+        "shortForecast": "Mostly Sunny",
         "windSpeed": "25 mph",
-        "windDirection": "NE",
+        "windDirection": "N",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false,
-        "precipProbability": 1
+        "precipProbability": 0
       },
       "alerts": {
         "items": [
           {
             "event": "Coastal Flood Advisory",
             "severity": "Minor",
-            "headline": "Coastal Flood Advisory issued October 19 at 4:02AM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.ef946bbf6394b7746a44c04f43ac1fbfd53a73dd.002.1",
+            "headline": "Coastal Flood Advisory issued October 19 at 3:54PM EDT until October 20 at 9:00PM EDT by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.2214b7a89ab8e520e658d0f66f503c27cd183863.002.1",
             "ends": "2026-10-20T21:00:00-04:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "tides": {
@@ -368,17 +368,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 60.1,
-        "observedAt": "2026-10-19 12:24",
+        "temperatureF": 62.2,
+        "observedAt": "2026-10-19 17:24",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-19T16:30:41Z",
+        "fetchedAt": "2026-10-19T21:34:23Z",
         "stale": false
       }
     }
@@ -390,7 +390,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-10-19T16:30:41Z"
+    "fetchedAt": "2026-10-19T21:34:23Z"
   },
   "sources": [
     {
