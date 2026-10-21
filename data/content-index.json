@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-19T11:48:34Z",
-  "recordCount": 49,
+  "generatedAt": "2026-10-21T10:59:06Z",
+  "recordCount": 50,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -603,6 +603,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "wave-navy-1.svg"
+    },
+    {
+      "id": "story-trap-pond-baldcypress",
+      "type": "story",
+      "title": "The Northernmost Cypress Swamp",
+      "excerpt": "Trap Pond State Park holds the northernmost naturally occurring stand of baldcypress in the United States. Most of what stands there now grew back after the loggers left.",
+      "url": "stories/trap-pond-baldcypress.html",
+      "town": "Delaware Field Guide",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-10-21",
+      "updatedDate": "2026-10-21",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-green-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
