@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-21T10:59:06Z",
-  "recordCount": 50,
+  "generatedAt": "2026-10-23T10:51:06Z",
+  "recordCount": 51,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -620,6 +620,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "marsh-green-1.svg"
+    },
+    {
+      "id": "story-delaware-inland-bays-explained",
+      "type": "story",
+      "title": "The Bays Behind the Beaches",
+      "excerpt": "Rehoboth Bay, Indian River Bay and Little Assawoman Bay sit behind the barrier beaches. Congress called them an estuary of national significance in 1988.",
+      "url": "stories/delaware-inland-bays-explained.html",
+      "town": "Delaware Coast",
+      "category": "coast",
+      "tags": [
+        "coast"
+      ],
+      "publishedDate": "2026-10-23",
+      "updatedDate": "2026-10-23",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-dawn-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
