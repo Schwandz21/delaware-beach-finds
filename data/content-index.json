@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-23T10:51:06Z",
-  "recordCount": 51,
+  "generatedAt": "2026-10-25T13:29:24Z",
+  "recordCount": 52,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -637,6 +637,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "marsh-dawn-1.svg"
+    },
+    {
+      "id": "story-cape-henlopen-lighthouse-1926",
+      "type": "story",
+      "title": "The Lighthouse That Fell Into the Sea",
+      "excerpt": "Cape Henlopen's lighthouse was lit in 1769, survived the Revolution and stood for more than a century and a half. On April 13, 1926, the eroding dune let it go.",
+      "url": "stories/cape-henlopen-lighthouse-1926.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-25",
+      "updatedDate": "2026-10-25",
+      "status": "current",
+      "access_level": "public",
+      "scene": "lighthouse-dusk-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
