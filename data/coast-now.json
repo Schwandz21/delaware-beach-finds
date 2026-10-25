@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T23:20:22Z",
+  "generatedAt": "2026-10-25T13:44:26Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -8,16 +8,16 @@
       "lat": 38.7746,
       "lon": -75.1393,
       "weather": {
-        "period": "Tonight",
-        "temperature": 49,
+        "period": "Today",
+        "temperature": 61,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Clear",
+        "shortForecast": "Sunny",
         "windSpeed": "0 to 5 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -26,7 +26,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "tides": {
@@ -34,39 +34,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-10-24 01:15",
+            "time": "2026-10-25 01:56",
             "type": "low",
-            "heightFt": 0.4
+            "heightFt": 0.2
           },
           {
-            "time": "2026-10-24 07:38",
+            "time": "2026-10-25 08:21",
             "type": "high",
-            "heightFt": 4.8
+            "heightFt": 5.1
           },
           {
-            "time": "2026-10-24 13:47",
+            "time": "2026-10-25 14:34",
             "type": "low",
-            "heightFt": 0.3
+            "heightFt": 0.1
           },
           {
-            "time": "2026-10-24 20:00",
+            "time": "2026-10-25 20:44",
             "type": "high",
-            "heightFt": 4.5
+            "heightFt": 4.4
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 59.7,
-        "observedAt": "2026-10-24 19:12",
+        "temperatureF": 58.8,
+        "observedAt": "2026-10-25 09:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       }
     },
@@ -76,16 +76,16 @@
       "lat": 38.7168,
       "lon": -75.076,
       "weather": {
-        "period": "Tonight",
-        "temperature": 53,
+        "period": "Today",
+        "temperature": 60,
         "temperatureUnit": "F",
-        "shortForecast": "Clear",
-        "windSpeed": "5 mph",
+        "shortForecast": "Sunny",
+        "windSpeed": "5 to 10 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -94,7 +94,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "tides": {
@@ -102,39 +102,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-10-24 01:15",
+            "time": "2026-10-25 01:56",
             "type": "low",
-            "heightFt": 0.4
+            "heightFt": 0.2
           },
           {
-            "time": "2026-10-24 07:38",
+            "time": "2026-10-25 08:21",
             "type": "high",
-            "heightFt": 4.8
+            "heightFt": 5.1
           },
           {
-            "time": "2026-10-24 13:47",
+            "time": "2026-10-25 14:34",
             "type": "low",
-            "heightFt": 0.3
+            "heightFt": 0.1
           },
           {
-            "time": "2026-10-24 20:00",
+            "time": "2026-10-25 20:44",
             "type": "high",
-            "heightFt": 4.5
+            "heightFt": 4.4
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 59.7,
-        "observedAt": "2026-10-24 19:12",
+        "temperatureF": 58.8,
+        "observedAt": "2026-10-25 09:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       }
     },
@@ -144,16 +144,16 @@
       "lat": 38.6884,
       "lon": -75.0755,
       "weather": {
-        "period": "Tonight",
-        "temperature": 51,
+        "period": "Today",
+        "temperature": 60,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Clear",
-        "windSpeed": "5 mph",
+        "shortForecast": "Sunny",
+        "windSpeed": "5 to 10 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -162,7 +162,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "tides": {
@@ -170,39 +170,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-10-24 01:15",
+            "time": "2026-10-25 01:56",
             "type": "low",
-            "heightFt": 0.4
+            "heightFt": 0.2
           },
           {
-            "time": "2026-10-24 07:38",
+            "time": "2026-10-25 08:21",
             "type": "high",
-            "heightFt": 4.8
+            "heightFt": 5.1
           },
           {
-            "time": "2026-10-24 13:47",
+            "time": "2026-10-25 14:34",
             "type": "low",
-            "heightFt": 0.3
+            "heightFt": 0.1
           },
           {
-            "time": "2026-10-24 20:00",
+            "time": "2026-10-25 20:44",
             "type": "high",
-            "heightFt": 4.5
+            "heightFt": 4.4
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 59.7,
-        "observedAt": "2026-10-24 19:12",
+        "temperatureF": 58.8,
+        "observedAt": "2026-10-25 09:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       }
     },
@@ -212,16 +212,16 @@
       "lat": 38.5385,
       "lon": -75.0552,
       "weather": {
-        "period": "Tonight",
-        "temperature": 54,
+        "period": "Today",
+        "temperature": 60,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Clear",
+        "shortForecast": "Sunny",
         "windSpeed": "5 to 10 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -230,7 +230,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "tides": {
@@ -238,39 +238,39 @@
         "stationName": "Ocean City Inlet",
         "predictions": [
           {
-            "time": "2026-10-24 00:26",
+            "time": "2026-10-25 01:05",
             "type": "low",
-            "heightFt": 0.3
+            "heightFt": 0.2
           },
           {
-            "time": "2026-10-24 06:51",
+            "time": "2026-10-25 07:36",
             "type": "high",
-            "heightFt": 2.6
+            "heightFt": 2.8
           },
           {
-            "time": "2026-10-24 13:03",
+            "time": "2026-10-25 13:50",
             "type": "low",
-            "heightFt": 0.3
+            "heightFt": 0.2
           },
           {
-            "time": "2026-10-24 19:09",
+            "time": "2026-10-25 19:52",
             "type": "high",
             "heightFt": 2.4
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 59.9,
-        "observedAt": "2026-10-24 19:12",
+        "temperatureF": 59.7,
+        "observedAt": "2026-10-25 09:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       }
     },
@@ -280,16 +280,16 @@
       "lat": 38.461,
       "lon": -75.051,
       "weather": {
-        "period": "Tonight",
-        "temperature": 55,
+        "period": "Today",
+        "temperature": 61,
         "temperatureUnit": "F",
-        "shortForecast": "Mostly Clear",
+        "shortForecast": "Sunny",
         "windSpeed": "5 to 10 mph",
         "windDirection": "NE",
-        "isDaytime": false,
+        "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false,
         "precipProbability": 0
       },
@@ -298,7 +298,7 @@
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "tides": {
@@ -306,39 +306,39 @@
         "stationName": "Ocean City Inlet",
         "predictions": [
           {
-            "time": "2026-10-24 00:26",
+            "time": "2026-10-25 01:05",
             "type": "low",
-            "heightFt": 0.3
+            "heightFt": 0.2
           },
           {
-            "time": "2026-10-24 06:51",
+            "time": "2026-10-25 07:36",
             "type": "high",
-            "heightFt": 2.6
+            "heightFt": 2.8
           },
           {
-            "time": "2026-10-24 13:03",
+            "time": "2026-10-25 13:50",
             "type": "low",
-            "heightFt": 0.3
+            "heightFt": 0.2
           },
           {
-            "time": "2026-10-24 19:09",
+            "time": "2026-10-25 19:52",
             "type": "high",
             "heightFt": 2.4
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 59.9,
-        "observedAt": "2026-10-24 19:12",
+        "temperatureF": 59.7,
+        "observedAt": "2026-10-25 09:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-10-24T23:20:22Z",
+        "fetchedAt": "2026-10-25T13:44:26Z",
         "stale": false
       }
     }
@@ -350,7 +350,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-10-24T23:20:22Z"
+    "fetchedAt": "2026-10-25T13:44:26Z"
   },
   "sources": [
     {
