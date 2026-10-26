@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-25T13:29:24Z",
-  "recordCount": 52,
+  "generatedAt": "2026-10-26T14:44:54Z",
+  "recordCount": 53,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -600,7 +600,7 @@
       ],
       "publishedDate": "2026-10-19",
       "updatedDate": "2026-10-19",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "wave-navy-1.svg"
     },
@@ -617,7 +617,7 @@
       ],
       "publishedDate": "2026-10-21",
       "updatedDate": "2026-10-21",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "marsh-green-1.svg"
     },
@@ -634,7 +634,7 @@
       ],
       "publishedDate": "2026-10-23",
       "updatedDate": "2026-10-23",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "marsh-dawn-1.svg"
     },
@@ -651,9 +651,26 @@
       ],
       "publishedDate": "2026-10-25",
       "updatedDate": "2026-10-25",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "lighthouse-dusk-1.svg"
+    },
+    {
+      "id": "story-bombardment-of-lewes-1813",
+      "type": "story",
+      "title": "The Day the British Shelled Lewes",
+      "excerpt": "On April 6 and 7, 1813, a British squadron bombarded Lewes. A cannonball is still lodged in the foundation of one of the houses it hit.",
+      "url": "stories/bombardment-of-lewes-1813.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-26",
+      "updatedDate": "2026-10-26",
+      "status": "current",
+      "access_level": "public",
+      "scene": "night-pier-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",

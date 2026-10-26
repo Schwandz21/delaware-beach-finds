@@ -1,7 +1,7 @@
 {
   "_note": "Immutable archival ledger of the Delaware Beach Finds back catalog: every published story older than the current issue. Metadata only; prose lives in sourceProsePath and is pinned by sourceProseSHA256. Entries are never removed; publishedAt, date and issueId are frozen; a prose change must be recorded in revisions. issueId is null where the story was published before the issue system existed; it is never back-filled. Built by scripts/build_story_archive.py.",
   "schemaVersion": 1,
-  "storyCount": 34,
+  "storyCount": 38,
   "legacyNullIssueCount": 11,
   "stories": [
     {
@@ -1225,6 +1225,141 @@
         "locationAttribution": null
       },
       "wordCount": 420,
+      "revisions": []
+    },
+    {
+      "slug": "storm-of-1962-delaware-coast",
+      "headline": "Five High Tides: The Storm of 1962",
+      "publishedAt": "2026-10-19",
+      "date": "2026-10-19",
+      "issueId": "2026-W43",
+      "publicationWeek": "2026-W43",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/storm-of-1962-delaware-coast.html",
+      "sourceProsePath": "content/stories/storm-of-1962-delaware-coast.html",
+      "renderedPagePath": "stories/storm-of-1962-delaware-coast.html",
+      "sourceProseSHA256": "8d2e0ad29b154a78088f6e8fd2cf026696488c8001688627f3ca115fdea722f9",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-26",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://archives.delaware.gov/digital-archives/storm-of-1962/",
+        "http://www1.udel.edu/udaily/2012/feb/march-62-storm-020612.html",
+        "https://www1.udel.edu/PR/UDaily/01-02/marchstorm030802.html"
+      ],
+      "imageProvenance": {
+        "heroImage": "wave-navy-1.svg",
+        "scene": "wave-navy-1.svg",
+        "heroAlt": "Heavy sea (illustration)",
+        "heroImageAlt": "Heavy sea (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 416,
+      "revisions": []
+    },
+    {
+      "slug": "trap-pond-baldcypress",
+      "headline": "The Northernmost Cypress Swamp",
+      "publishedAt": "2026-10-21",
+      "date": "2026-10-21",
+      "issueId": "2026-W43",
+      "publicationWeek": "2026-W43",
+      "category": "field-guide",
+      "author": "coast-nature",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/trap-pond-baldcypress.html",
+      "sourceProsePath": "content/stories/trap-pond-baldcypress.html",
+      "renderedPagePath": "stories/trap-pond-baldcypress.html",
+      "sourceProseSHA256": "b76cc620fce040742e0c21c6c182b8a3b77000d167a9432a4ff8829886843c32",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-26",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.destateparks.com/park/trap-pond/",
+        "https://dnrec.delaware.gov/watershed-stewardship/nps/success-stories/trap-pond/",
+        "https://www.destateparks.com/our-story/"
+      ],
+      "imageProvenance": {
+        "heroImage": "marsh-green-1.svg",
+        "scene": "marsh-green-1.svg",
+        "heroAlt": "Still water and trees (illustration)",
+        "heroImageAlt": "Still water and trees (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 373,
+      "revisions": []
+    },
+    {
+      "slug": "delaware-inland-bays-explained",
+      "headline": "The Bays Behind the Beaches",
+      "publishedAt": "2026-10-23",
+      "date": "2026-10-23",
+      "issueId": "2026-W43",
+      "publicationWeek": "2026-W43",
+      "category": "coast",
+      "author": "coast-nature",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/delaware-inland-bays-explained.html",
+      "sourceProsePath": "content/stories/delaware-inland-bays-explained.html",
+      "renderedPagePath": "stories/delaware-inland-bays-explained.html",
+      "sourceProseSHA256": "924ca11f98c57b8754972696eed7f9bd0d61c495166ac3d94dc6045bddbc3697",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-26",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://inlandbays.org/about/",
+        "https://inlandbays.org/visit-the-preserve/"
+      ],
+      "imageProvenance": {
+        "heroImage": "marsh-dawn-1.svg",
+        "scene": "marsh-dawn-1.svg",
+        "heroAlt": "A marsh at first light (illustration)",
+        "heroImageAlt": "A marsh at first light (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 374,
+      "revisions": []
+    },
+    {
+      "slug": "cape-henlopen-lighthouse-1926",
+      "headline": "The Lighthouse That Fell Into the Sea",
+      "publishedAt": "2026-10-25",
+      "date": "2026-10-25",
+      "issueId": "2026-W43",
+      "publicationWeek": "2026-W43",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/cape-henlopen-lighthouse-1926.html",
+      "sourceProsePath": "content/stories/cape-henlopen-lighthouse-1926.html",
+      "renderedPagePath": "stories/cape-henlopen-lighthouse-1926.html",
+      "sourceProseSHA256": "2ee95cc4466b4ab3cf9122b9697203e1b90ca5cecea94039bcdacc14b19076d2",
+      "archiveState": "archived",
+      "archivedAt": "2026-10-26",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/Lighthouses-Light-Stations/Article/2005439/cape-henlopen-ligthhouse/",
+        "https://www.hmdb.org/m.asp?m=79167",
+        "https://www.capegazette.com/article/cape-henlopen-lighthouse-fell-97-years-ago/256119"
+      ],
+      "imageProvenance": {
+        "heroImage": "lighthouse-dusk-1.svg",
+        "scene": "lighthouse-dusk-1.svg",
+        "heroAlt": "A lighthouse at dusk (illustration)",
+        "heroImageAlt": "A lighthouse at dusk (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 355,
       "revisions": []
     }
   ]

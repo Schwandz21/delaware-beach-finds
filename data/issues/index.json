@@ -1,13 +1,22 @@
 {
-  "currentIssueId": "2026-W43",
+  "currentIssueId": "2026-W44",
   "_note": "Immutable registry of published weekly issues. A new issue becomes current; prior issues move to 'archived' and are never deleted. Gaps are real: no issue was published for 2026-W34 through 2026-W36. Those weeks are not backfilled, because inventing them would be a lie about publication history.",
   "issues": [
+    {
+      "issueId": "2026-W44",
+      "weekOf": "2026-10-26",
+      "title": "Week of October 26, 2026",
+      "publishedAt": "2026-10-26",
+      "status": "current",
+      "file": "issues/2026-W44.json",
+      "access_level": "public"
+    },
     {
       "issueId": "2026-W43",
       "weekOf": "2026-10-19",
       "title": "Week of October 19, 2026",
       "publishedAt": "2026-10-19",
-      "status": "current",
+      "status": "archived",
       "file": "issues/2026-W43.json",
       "access_level": "public"
     },
