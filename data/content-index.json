@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-26T14:44:54Z",
-  "recordCount": 53,
+  "generatedAt": "2026-10-28T13:43:27Z",
+  "recordCount": 54,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -671,6 +671,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "night-pier-1.svg"
+    },
+    {
+      "id": "story-delaware-breakwater-lighthouses",
+      "type": "story",
+      "title": "Two Lights on the Breakwaters",
+      "excerpt": "Off Cape Henlopen, two lighthouses stand on stone breakwaters built to make a harbor where there was none. Their story starts with an act of Congress in 1825.",
+      "url": "stories/delaware-breakwater-lighthouses.html",
+      "town": "Lewes Maritime",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-28",
+      "updatedDate": "2026-10-28",
+      "status": "current",
+      "access_level": "public",
+      "scene": "lighthouse-day-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
