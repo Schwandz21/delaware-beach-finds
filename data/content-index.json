@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-28T13:43:27Z",
-  "recordCount": 54,
+  "generatedAt": "2026-10-30T16:26:08Z",
+  "recordCount": 55,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -688,6 +688,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "lighthouse-day-1.svg"
+    },
+    {
+      "id": "story-zwaanendael-museum-building",
+      "type": "story",
+      "title": "A Dutch Town Hall in Lewes",
+      "excerpt": "The Zwaanendael Museum was built in 1931 for the 300th anniversary of Delaware's first European colony, and modeled on the town hall of Hoorn in the Netherlands.",
+      "url": "stories/zwaanendael-museum-building.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-10-30",
+      "updatedDate": "2026-10-30",
+      "status": "current",
+      "access_level": "public",
+      "scene": "boardwalk-morning-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
