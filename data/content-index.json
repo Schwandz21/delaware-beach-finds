@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-30T16:26:08Z",
-  "recordCount": 55,
+  "generatedAt": "2026-11-01T15:40:11Z",
+  "recordCount": 56,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -705,6 +705,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "boardwalk-morning-1.svg"
+    },
+    {
+      "id": "story-fenwick-island-lighthouse",
+      "type": "story",
+      "title": "The Light at the Bottom of Delaware",
+      "excerpt": "The Fenwick Island Lighthouse was lit in 1859 and shone for nearly 120 years. At its base is a stone that marked the Delaware–Maryland line in 1751.",
+      "url": "stories/fenwick-island-lighthouse.html",
+      "town": "First State History",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-11-01",
+      "updatedDate": "2026-11-01",
+      "status": "current",
+      "access_level": "public",
+      "scene": "lighthouse-day-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
