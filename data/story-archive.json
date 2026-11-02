@@ -1,7 +1,7 @@
 {
   "_note": "Immutable archival ledger of the Delaware Beach Finds back catalog: every published story older than the current issue. Metadata only; prose lives in sourceProsePath and is pinned by sourceProseSHA256. Entries are never removed; publishedAt, date and issueId are frozen; a prose change must be recorded in revisions. issueId is null where the story was published before the issue system existed; it is never back-filled. Built by scripts/build_story_archive.py.",
   "schemaVersion": 1,
-  "storyCount": 38,
+  "storyCount": 42,
   "legacyNullIssueCount": 11,
   "stories": [
     {
@@ -1360,6 +1360,143 @@
         "locationAttribution": null
       },
       "wordCount": 355,
+      "revisions": []
+    },
+    {
+      "slug": "bombardment-of-lewes-1813",
+      "headline": "The Day the British Shelled Lewes",
+      "publishedAt": "2026-10-26",
+      "date": "2026-10-26",
+      "issueId": "2026-W44",
+      "publicationWeek": "2026-W44",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/bombardment-of-lewes-1813.html",
+      "sourceProsePath": "content/stories/bombardment-of-lewes-1813.html",
+      "renderedPagePath": "stories/bombardment-of-lewes-1813.html",
+      "sourceProseSHA256": "d61a2d0c67429356e30ef2f3c67274b81bacc15c4aa9e8638740e1d88db65f4b",
+      "archiveState": "archived",
+      "archivedAt": "2026-11-02",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://archives.delaware.gov/delaware-historical-markers/cannonball-house/",
+        "https://www.historiclewes.org/buildings/cannonball-house"
+      ],
+      "imageProvenance": {
+        "heroImage": "night-pier-1.svg",
+        "scene": "night-pier-1.svg",
+        "heroAlt": "A harbor at night (illustration)",
+        "heroImageAlt": "A harbor at night (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 405,
+      "revisions": []
+    },
+    {
+      "slug": "delaware-breakwater-lighthouses",
+      "headline": "Two Lights on the Breakwaters",
+      "publishedAt": "2026-10-28",
+      "date": "2026-10-28",
+      "issueId": "2026-W44",
+      "publicationWeek": "2026-W44",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/delaware-breakwater-lighthouses.html",
+      "sourceProsePath": "content/stories/delaware-breakwater-lighthouses.html",
+      "renderedPagePath": "stories/delaware-breakwater-lighthouses.html",
+      "sourceProseSHA256": "044937c944c2f4cbea3caae21a8f28132f24f2df6c0a7e4b5114834635feb22e",
+      "archiveState": "archived",
+      "archivedAt": "2026-11-02",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/All/Article/1944527/harbor-of-refuge-lighthouse/",
+        "https://www.hmdb.org/m.asp?m=39378",
+        "https://www.destateparks.com/shining-a-light-on-delawares-historic-southern-coast-lighthouses/"
+      ],
+      "imageProvenance": {
+        "heroImage": "lighthouse-day-1.svg",
+        "scene": "lighthouse-day-1.svg",
+        "heroAlt": "A lighthouse by day (illustration)",
+        "heroImageAlt": "A lighthouse by day (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 375,
+      "revisions": []
+    },
+    {
+      "slug": "zwaanendael-museum-building",
+      "headline": "A Dutch Town Hall in Lewes",
+      "publishedAt": "2026-10-30",
+      "date": "2026-10-30",
+      "issueId": "2026-W44",
+      "publicationWeek": "2026-W44",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/zwaanendael-museum-building.html",
+      "sourceProsePath": "content/stories/zwaanendael-museum-building.html",
+      "renderedPagePath": "stories/zwaanendael-museum-building.html",
+      "sourceProseSHA256": "ea0786917a7958b1698f09ab47045612ec737c8a28dedd94f41b2c7e62cecb40",
+      "archiveState": "archived",
+      "archivedAt": "2026-11-02",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://history.delaware.gov/zwaanendael-museum/zm_history/",
+        "https://history.delaware.gov/2020/06/18/rehabilitation-of-zwaanendael-museum-exterior-set-to-begin/",
+        "https://history.delaware.gov/2018/03/08/state-sen-lopez-visits-the-zwaanendael-museum-to-celebrate-accreditation-by-the-american-alliance-of-museums/",
+        "https://news.delaware.gov/2022/09/28/zwaanendael-mysteries-of-history-2022/"
+      ],
+      "imageProvenance": {
+        "heroImage": "boardwalk-morning-1.svg",
+        "scene": "boardwalk-morning-1.svg",
+        "heroAlt": "A town street in the morning (illustration)",
+        "heroImageAlt": "A town street in the morning (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 381,
+      "revisions": []
+    },
+    {
+      "slug": "fenwick-island-lighthouse",
+      "headline": "The Light at the Bottom of Delaware",
+      "publishedAt": "2026-11-01",
+      "date": "2026-11-01",
+      "issueId": "2026-W44",
+      "publicationWeek": "2026-W44",
+      "category": "history",
+      "author": "first-state-history",
+      "canonicalUrl": "https://delawarebeachfinds.com/stories/fenwick-island-lighthouse.html",
+      "sourceProsePath": "content/stories/fenwick-island-lighthouse.html",
+      "renderedPagePath": "stories/fenwick-island-lighthouse.html",
+      "sourceProseSHA256": "7b885884f21537aa822e5dd258de6c65148d3a054bdce3c930d8b9c879822668",
+      "archiveState": "archived",
+      "archivedAt": "2026-11-02",
+      "premiumEligible": true,
+      "currentAccessLevel": "public",
+      "originalSources": [
+        "https://history.delaware.gov/2014/07/23/history-was-made-here-fenwick-island-lighthouse/",
+        "https://history.delaware.gov/2024/09/19/an-update-from-fenwick-islands-historic-lighthouse/",
+        "https://history.delaware.gov/2025/08/21/1858-fenwick-island-lightkeepers-house-now-under-hcas-care/",
+        "https://www.history.uscg.mil/Browse-by-Topic/Assets/Land/Lighthouses-Light-Stations/Article/1916107/fenwick-island-lighthouse/"
+      ],
+      "imageProvenance": {
+        "heroImage": "lighthouse-day-1.svg",
+        "scene": "lighthouse-day-1.svg",
+        "heroAlt": "A lighthouse by day (illustration)",
+        "heroImageAlt": "A lighthouse by day (illustration)",
+        "photoCredit": "Illustration: Delaware Beach Finds",
+        "heroProvenance": "House illustration; makes no photographic or place claim.",
+        "locationAttribution": null
+      },
+      "wordCount": 432,
       "revisions": []
     }
   ]

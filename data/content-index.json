@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-01T15:40:11Z",
-  "recordCount": 56,
+  "generatedAt": "2026-11-02T17:40:07Z",
+  "recordCount": 57,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -668,7 +668,7 @@
       ],
       "publishedDate": "2026-10-26",
       "updatedDate": "2026-10-26",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "night-pier-1.svg"
     },
@@ -685,7 +685,7 @@
       ],
       "publishedDate": "2026-10-28",
       "updatedDate": "2026-10-28",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "lighthouse-day-1.svg"
     },
@@ -702,7 +702,7 @@
       ],
       "publishedDate": "2026-10-30",
       "updatedDate": "2026-10-30",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "boardwalk-morning-1.svg"
     },
@@ -719,9 +719,26 @@
       ],
       "publishedDate": "2026-11-01",
       "updatedDate": "2026-11-01",
-      "status": "current",
+      "status": "archived",
       "access_level": "public",
       "scene": "lighthouse-day-1.svg"
+    },
+    {
+      "id": "story-bethany-beach-at-125",
+      "type": "story",
+      "title": "Bethany Beach at 125",
+      "excerpt": "Bethany Beach was founded in July 1901 as a church seaside retreat and incorporated in 1909. This year the town marked its 125th summer.",
+      "url": "stories/bethany-beach-at-125.html",
+      "town": "Delaware Coast",
+      "category": "history",
+      "tags": [
+        "history"
+      ],
+      "publishedDate": "2026-11-02",
+      "updatedDate": "2026-11-02",
+      "status": "current",
+      "access_level": "public",
+      "scene": "boardwalk-evening-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
