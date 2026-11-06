@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-04T16:44:53Z",
-  "recordCount": 58,
+  "generatedAt": "2026-11-06T15:31:47Z",
+  "recordCount": 59,
   "records": [
     {
       "id": "story-oldest-migration-on-the-bay",
@@ -756,6 +756,23 @@
       "status": "current",
       "access_level": "public",
       "scene": "boardwalk-morning-1.svg"
+    },
+    {
+      "id": "story-prime-hook-marsh-restoration",
+      "type": "story",
+      "title": "Rebuilding a Marsh at Prime Hook",
+      "excerpt": "After Hurricane Sandy broke through the dunes at Prime Hook National Wildlife Refuge, the U.S. Fish and Wildlife Service rebuilt about 4,000 acres of tidal marsh.",
+      "url": "stories/prime-hook-marsh-restoration.html",
+      "town": "Delaware Field Guide",
+      "category": "field-guide",
+      "tags": [
+        "field-guide"
+      ],
+      "publishedDate": "2026-11-06",
+      "updatedDate": "2026-11-06",
+      "status": "current",
+      "access_level": "public",
+      "scene": "marsh-gold-1.svg"
     },
     {
       "id": "guide-silver-lake-rehoboth",
