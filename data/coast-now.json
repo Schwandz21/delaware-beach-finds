@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-13T17:15:13Z",
+  "generatedAt": "2026-11-13T22:42:29Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -11,22 +11,30 @@
         "period": "This Afternoon",
         "temperature": 46,
         "temperatureUnit": "F",
-        "shortForecast": "Light Rain Likely",
-        "windSpeed": "15 to 20 mph",
+        "shortForecast": "Chance Light Rain",
+        "windSpeed": "15 mph",
         "windDirection": "NW",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false,
-        "precipProbability": 56
+        "precipProbability": 32
       },
       "alerts": {
-        "items": [],
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued November 13 at 2:47PM EST until November 14 at 4:00AM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d7aedd8d793109ff23a1eeb66de15b021136a222.004.1",
+            "ends": "2026-11-14T04:00:00-05:00"
+          }
+        ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "tides": {
@@ -56,17 +64,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 57.4,
-        "observedAt": "2026-11-13 12:06",
+        "temperatureF": 56.8,
+        "observedAt": "2026-11-13 17:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       }
     },
@@ -80,21 +88,29 @@
         "temperature": 47,
         "temperatureUnit": "F",
         "shortForecast": "Chance Light Rain",
-        "windSpeed": "20 to 25 mph",
+        "windSpeed": "15 mph",
         "windDirection": "NW",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false,
-        "precipProbability": 52
+        "precipProbability": 38
       },
       "alerts": {
-        "items": [],
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued November 13 at 2:47PM EST until November 14 at 4:00AM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d7aedd8d793109ff23a1eeb66de15b021136a222.004.1",
+            "ends": "2026-11-14T04:00:00-05:00"
+          }
+        ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "tides": {
@@ -124,17 +140,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 57.4,
-        "observedAt": "2026-11-13 12:06",
+        "temperatureF": 56.8,
+        "observedAt": "2026-11-13 17:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       }
     },
@@ -148,21 +164,29 @@
         "temperature": 47,
         "temperatureUnit": "F",
         "shortForecast": "Chance Light Rain",
-        "windSpeed": "20 to 25 mph",
+        "windSpeed": "15 mph",
         "windDirection": "NW",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false,
-        "precipProbability": 49
+        "precipProbability": 37
       },
       "alerts": {
-        "items": [],
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued November 13 at 2:47PM EST until November 14 at 4:00AM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d7aedd8d793109ff23a1eeb66de15b021136a222.004.1",
+            "ends": "2026-11-14T04:00:00-05:00"
+          }
+        ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "tides": {
@@ -192,17 +216,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 57.4,
-        "observedAt": "2026-11-13 12:06",
+        "temperatureF": 56.8,
+        "observedAt": "2026-11-13 17:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       }
     },
@@ -216,21 +240,29 @@
         "temperature": 47,
         "temperatureUnit": "F",
         "shortForecast": "Chance Light Rain",
-        "windSpeed": "20 to 25 mph",
+        "windSpeed": "15 mph",
         "windDirection": "NW",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false,
-        "precipProbability": 32
+        "precipProbability": 31
       },
       "alerts": {
-        "items": [],
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued November 13 at 2:47PM EST until November 14 at 4:00AM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d7aedd8d793109ff23a1eeb66de15b021136a222.004.1",
+            "ends": "2026-11-14T04:00:00-05:00"
+          }
+        ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "tides": {
@@ -260,17 +292,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 59.5,
-        "observedAt": "2026-11-13 12:06",
+        "temperatureF": 58.6,
+        "observedAt": "2026-11-13 17:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       }
     },
@@ -284,21 +316,29 @@
         "temperature": 48,
         "temperatureUnit": "F",
         "shortForecast": "Chance Light Rain",
-        "windSpeed": "20 to 25 mph",
+        "windSpeed": "15 mph",
         "windDirection": "NW",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false,
-        "precipProbability": 26
+        "precipProbability": 27
       },
       "alerts": {
-        "items": [],
+        "items": [
+          {
+            "event": "Coastal Flood Advisory",
+            "severity": "Minor",
+            "headline": "Coastal Flood Advisory issued November 13 at 2:47PM EST until November 14 at 4:00AM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d7aedd8d793109ff23a1eeb66de15b021136a222.004.1",
+            "ends": "2026-11-14T04:00:00-05:00"
+          }
+        ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "tides": {
@@ -328,17 +368,17 @@
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 59.5,
-        "observedAt": "2026-11-13 12:06",
+        "temperatureF": 58.6,
+        "observedAt": "2026-11-13 17:36",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-13T17:15:13Z",
+        "fetchedAt": "2026-11-13T22:42:29Z",
         "stale": false
       }
     }
@@ -350,7 +390,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-11-13T17:15:13Z"
+    "fetchedAt": "2026-11-13T22:42:29Z"
   },
   "sources": [
     {
