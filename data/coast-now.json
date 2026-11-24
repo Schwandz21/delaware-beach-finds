@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T21:29:50Z",
+  "generatedAt": "2026-11-24T20:12:19Z",
   "timezone": "America/New_York",
   "locations": [
     {
@@ -9,39 +9,39 @@
       "lon": -75.1393,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 71,
+        "temperature": 49,
         "temperatureUnit": "F",
         "shortForecast": "Sunny",
-        "windSpeed": "5 mph",
-        "windDirection": "NW",
+        "windSpeed": "15 mph",
+        "windDirection": "N",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false,
-        "precipProbability": 4
+        "precipProbability": 0
       },
       "alerts": {
         "items": [
           {
-            "event": "High Wind Watch",
+            "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "High Wind Watch issued November 23 at 2:00PM EST until November 27 at 1:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5df1e5be37e42de79ddcc8f2fd4c3460c38f7fbd.001.1",
-            "ends": "2026-11-27T01:00:00-05:00"
+            "headline": "Coastal Flood Warning issued November 24 at 2:30PM EST until November 27 at 3:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d06f6a6ba7134076d837ace270ff0f1ace0f385f.002.2",
+            "ends": "2026-11-27T15:00:00-05:00"
           },
           {
-            "event": "Coastal Flood Watch",
-            "severity": "Moderate",
-            "headline": "Coastal Flood Watch issued November 23 at 1:45PM EST until November 27 at 3:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4b6f814b94876c13a51a1b9b713e50b56e660e3.004.1",
-            "ends": "2026-11-27T03:00:00-05:00"
+            "event": "High Wind Warning",
+            "severity": "Severe",
+            "headline": "High Wind Warning issued November 24 at 1:51PM EST until November 26 at 10:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f34d1003a6e4e4d688048f6b99465cf4a3ab0184.001.2",
+            "ends": "2026-11-26T22:00:00-05:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "tides": {
@@ -49,39 +49,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-11-23 00:20",
+            "time": "2026-11-24 01:08",
             "type": "low",
-            "heightFt": -0.2
+            "heightFt": -0.3
           },
           {
-            "time": "2026-11-23 06:53",
+            "time": "2026-11-24 07:42",
             "type": "high",
-            "heightFt": 5.1
+            "heightFt": 5.4
           },
           {
-            "time": "2026-11-23 13:14",
+            "time": "2026-11-24 14:05",
             "type": "low",
-            "heightFt": -0.1
+            "heightFt": -0.3
           },
           {
-            "time": "2026-11-23 19:18",
+            "time": "2026-11-24 20:09",
             "type": "high",
             "heightFt": 3.9
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 56.3,
-        "observedAt": "2026-11-23 16:24",
+        "temperatureF": 54.7,
+        "observedAt": "2026-11-24 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       }
     },
@@ -92,39 +92,39 @@
       "lon": -75.076,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 70,
+        "temperature": 49,
         "temperatureUnit": "F",
         "shortForecast": "Sunny",
-        "windSpeed": "5 mph",
-        "windDirection": "NW",
+        "windSpeed": "15 mph",
+        "windDirection": "N",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false,
-        "precipProbability": 4
+        "precipProbability": 0
       },
       "alerts": {
         "items": [
           {
-            "event": "High Wind Watch",
+            "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "High Wind Watch issued November 23 at 2:00PM EST until November 27 at 1:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5df1e5be37e42de79ddcc8f2fd4c3460c38f7fbd.001.1",
-            "ends": "2026-11-27T01:00:00-05:00"
+            "headline": "Coastal Flood Warning issued November 24 at 2:30PM EST until November 27 at 3:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d06f6a6ba7134076d837ace270ff0f1ace0f385f.002.2",
+            "ends": "2026-11-27T15:00:00-05:00"
           },
           {
-            "event": "Coastal Flood Watch",
-            "severity": "Moderate",
-            "headline": "Coastal Flood Watch issued November 23 at 1:45PM EST until November 27 at 3:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4b6f814b94876c13a51a1b9b713e50b56e660e3.004.1",
-            "ends": "2026-11-27T03:00:00-05:00"
+            "event": "High Wind Warning",
+            "severity": "Severe",
+            "headline": "High Wind Warning issued November 24 at 1:51PM EST until November 26 at 10:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f34d1003a6e4e4d688048f6b99465cf4a3ab0184.001.2",
+            "ends": "2026-11-26T22:00:00-05:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "tides": {
@@ -132,39 +132,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-11-23 00:20",
+            "time": "2026-11-24 01:08",
             "type": "low",
-            "heightFt": -0.2
+            "heightFt": -0.3
           },
           {
-            "time": "2026-11-23 06:53",
+            "time": "2026-11-24 07:42",
             "type": "high",
-            "heightFt": 5.1
+            "heightFt": 5.4
           },
           {
-            "time": "2026-11-23 13:14",
+            "time": "2026-11-24 14:05",
             "type": "low",
-            "heightFt": -0.1
+            "heightFt": -0.3
           },
           {
-            "time": "2026-11-23 19:18",
+            "time": "2026-11-24 20:09",
             "type": "high",
             "heightFt": 3.9
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 56.3,
-        "observedAt": "2026-11-23 16:24",
+        "temperatureF": 54.7,
+        "observedAt": "2026-11-24 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       }
     },
@@ -175,39 +175,39 @@
       "lon": -75.0755,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 70,
+        "temperature": 49,
         "temperatureUnit": "F",
         "shortForecast": "Sunny",
-        "windSpeed": "5 mph",
-        "windDirection": "NW",
+        "windSpeed": "15 mph",
+        "windDirection": "N",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false,
-        "precipProbability": 4
+        "precipProbability": 0
       },
       "alerts": {
         "items": [
           {
-            "event": "High Wind Watch",
+            "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "High Wind Watch issued November 23 at 2:00PM EST until November 27 at 1:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5df1e5be37e42de79ddcc8f2fd4c3460c38f7fbd.001.1",
-            "ends": "2026-11-27T01:00:00-05:00"
+            "headline": "Coastal Flood Warning issued November 24 at 2:30PM EST until November 27 at 3:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d06f6a6ba7134076d837ace270ff0f1ace0f385f.002.2",
+            "ends": "2026-11-27T15:00:00-05:00"
           },
           {
-            "event": "Coastal Flood Watch",
-            "severity": "Moderate",
-            "headline": "Coastal Flood Watch issued November 23 at 1:45PM EST until November 27 at 3:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4b6f814b94876c13a51a1b9b713e50b56e660e3.004.1",
-            "ends": "2026-11-27T03:00:00-05:00"
+            "event": "High Wind Warning",
+            "severity": "Severe",
+            "headline": "High Wind Warning issued November 24 at 1:51PM EST until November 26 at 10:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f34d1003a6e4e4d688048f6b99465cf4a3ab0184.001.2",
+            "ends": "2026-11-26T22:00:00-05:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "tides": {
@@ -215,39 +215,39 @@
         "stationName": "Lewes",
         "predictions": [
           {
-            "time": "2026-11-23 00:20",
+            "time": "2026-11-24 01:08",
             "type": "low",
-            "heightFt": -0.2
+            "heightFt": -0.3
           },
           {
-            "time": "2026-11-23 06:53",
+            "time": "2026-11-24 07:42",
             "type": "high",
-            "heightFt": 5.1
+            "heightFt": 5.4
           },
           {
-            "time": "2026-11-23 13:14",
+            "time": "2026-11-24 14:05",
             "type": "low",
-            "heightFt": -0.1
+            "heightFt": -0.3
           },
           {
-            "time": "2026-11-23 19:18",
+            "time": "2026-11-24 20:09",
             "type": "high",
             "heightFt": 3.9
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "water": {
         "station": "8557380",
         "stationName": "Lewes",
-        "temperatureF": 56.3,
-        "observedAt": "2026-11-23 16:24",
+        "temperatureF": 54.7,
+        "observedAt": "2026-11-24 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8557380",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       }
     },
@@ -258,39 +258,39 @@
       "lon": -75.0552,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 72,
+        "temperature": 50,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny",
-        "windSpeed": "5 mph",
-        "windDirection": "W",
+        "shortForecast": "Mostly Sunny",
+        "windSpeed": "15 mph",
+        "windDirection": "N",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false,
-        "precipProbability": 4
+        "precipProbability": 0
       },
       "alerts": {
         "items": [
           {
-            "event": "High Wind Watch",
+            "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "High Wind Watch issued November 23 at 2:00PM EST until November 27 at 1:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5df1e5be37e42de79ddcc8f2fd4c3460c38f7fbd.001.1",
-            "ends": "2026-11-27T01:00:00-05:00"
+            "headline": "Coastal Flood Warning issued November 24 at 2:30PM EST until November 27 at 3:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d06f6a6ba7134076d837ace270ff0f1ace0f385f.002.2",
+            "ends": "2026-11-27T15:00:00-05:00"
           },
           {
-            "event": "Coastal Flood Watch",
-            "severity": "Moderate",
-            "headline": "Coastal Flood Watch issued November 23 at 1:45PM EST until November 27 at 3:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4b6f814b94876c13a51a1b9b713e50b56e660e3.004.1",
-            "ends": "2026-11-27T03:00:00-05:00"
+            "event": "High Wind Warning",
+            "severity": "Severe",
+            "headline": "High Wind Warning issued November 24 at 1:51PM EST until November 26 at 10:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f34d1003a6e4e4d688048f6b99465cf4a3ab0184.001.2",
+            "ends": "2026-11-26T22:00:00-05:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "tides": {
@@ -298,34 +298,39 @@
         "stationName": "Ocean City Inlet",
         "predictions": [
           {
-            "time": "2026-11-23 06:12",
-            "type": "high",
-            "heightFt": 2.7
-          },
-          {
-            "time": "2026-11-23 12:32",
+            "time": "2026-11-24 00:18",
             "type": "low",
-            "heightFt": 0.1
+            "heightFt": -0.2
           },
           {
-            "time": "2026-11-23 18:22",
+            "time": "2026-11-24 07:03",
             "type": "high",
-            "heightFt": 2.1
+            "heightFt": 2.9
+          },
+          {
+            "time": "2026-11-24 13:22",
+            "type": "low",
+            "heightFt": 0.0
+          },
+          {
+            "time": "2026-11-24 19:13",
+            "type": "high",
+            "heightFt": 2.2
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 58.5,
-        "observedAt": "2026-11-23 16:24",
+        "temperatureF": 56.3,
+        "observedAt": "2026-11-24 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       }
     },
@@ -336,39 +341,39 @@
       "lon": -75.051,
       "weather": {
         "period": "This Afternoon",
-        "temperature": 71,
+        "temperature": 50,
         "temperatureUnit": "F",
-        "shortForecast": "Sunny",
-        "windSpeed": "5 mph",
-        "windDirection": "W",
+        "shortForecast": "Mostly Sunny",
+        "windSpeed": "15 mph",
+        "windDirection": "N",
         "isDaytime": true,
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false,
-        "precipProbability": 4
+        "precipProbability": 0
       },
       "alerts": {
         "items": [
           {
-            "event": "High Wind Watch",
+            "event": "Coastal Flood Warning",
             "severity": "Severe",
-            "headline": "High Wind Watch issued November 23 at 2:00PM EST until November 27 at 1:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.5df1e5be37e42de79ddcc8f2fd4c3460c38f7fbd.001.1",
-            "ends": "2026-11-27T01:00:00-05:00"
+            "headline": "Coastal Flood Warning issued November 24 at 2:30PM EST until November 27 at 3:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.d06f6a6ba7134076d837ace270ff0f1ace0f385f.002.2",
+            "ends": "2026-11-27T15:00:00-05:00"
           },
           {
-            "event": "Coastal Flood Watch",
-            "severity": "Moderate",
-            "headline": "Coastal Flood Watch issued November 23 at 1:45PM EST until November 27 at 3:00AM EST by NWS Mount Holly NJ",
-            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.b4b6f814b94876c13a51a1b9b713e50b56e660e3.004.1",
-            "ends": "2026-11-27T03:00:00-05:00"
+            "event": "High Wind Warning",
+            "severity": "Severe",
+            "headline": "High Wind Warning issued November 24 at 1:51PM EST until November 26 at 10:00PM EST by NWS Mount Holly NJ",
+            "url": "https://api.weather.gov/alerts/urn:oid:2.49.0.1.840.0.f34d1003a6e4e4d688048f6b99465cf4a3ab0184.001.2",
+            "ends": "2026-11-26T22:00:00-05:00"
           }
         ],
         "source": "National Weather Service",
         "sourceUrl": "https://www.weather.gov/",
         "zone": "DEZ004",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "tides": {
@@ -376,34 +381,39 @@
         "stationName": "Ocean City Inlet",
         "predictions": [
           {
-            "time": "2026-11-23 06:12",
-            "type": "high",
-            "heightFt": 2.7
-          },
-          {
-            "time": "2026-11-23 12:32",
+            "time": "2026-11-24 00:18",
             "type": "low",
-            "heightFt": 0.1
+            "heightFt": -0.2
           },
           {
-            "time": "2026-11-23 18:22",
+            "time": "2026-11-24 07:03",
             "type": "high",
-            "heightFt": 2.1
+            "heightFt": 2.9
+          },
+          {
+            "time": "2026-11-24 13:22",
+            "type": "low",
+            "heightFt": 0.0
+          },
+          {
+            "time": "2026-11-24 19:13",
+            "type": "high",
+            "heightFt": 2.2
           }
         ],
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       },
       "water": {
         "station": "8570283",
         "stationName": "Ocean City Inlet",
-        "temperatureF": 58.5,
-        "observedAt": "2026-11-23 16:24",
+        "temperatureF": 56.3,
+        "observedAt": "2026-11-24 15:06",
         "source": "NOAA Tides & Currents",
         "sourceUrl": "https://tidesandcurrents.noaa.gov/stationhome.html?id=8570283",
-        "fetchedAt": "2026-11-23T21:29:50Z",
+        "fetchedAt": "2026-11-24T20:12:19Z",
         "stale": false
       }
     }
@@ -415,7 +425,7 @@
     "sourceUrl": "https://recwaters.dnrec.delaware.gov/",
     "infoUrl": "https://dnrec.delaware.gov/watershed-stewardship/assessment/recreational-water-monitoring/",
     "mode": "official-link",
-    "fetchedAt": "2026-11-23T21:29:50Z"
+    "fetchedAt": "2026-11-24T20:12:19Z"
   },
   "sources": [
     {
